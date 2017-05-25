@@ -1,0 +1,93 @@
+/**
+ * Module Parts
+ */
+.module {
+    @extend .u-py-4;
+    &.has-background {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+.module__content {
+    @include display(flex);
+    .module--basic &,
+    .module--carousel & {
+        @include flex-wrap(wrap);
+    }
+    .module--feature & {
+        height: 100%;
+        @extend .u-flex-items-center;
+    }
+}
+.module__header {
+    flex: 1 100%;
+}
+.module__body {
+    flex: 1 0 75%;
+    .module__header+& {
+        @extend .u-mt-4;
+    }
+    .module--basic & {
+        @extend .module__content;
+    }
+    .module--carousel & {
+        max-width: 100%;
+        width: 100%;
+    }
+    .has-sidebar & {
+        @include flex-grow(0);
+    }
+}
+.module__sidebar {
+    flex: 0 0 25%;
+    @extend .u-mt-4;
+}
+.module__footer {
+    @extend .module__header;
+    @extend .u-text-center;
+    @extend .u-mt-4;
+}
+/**
+ * Module Elements
+ */
+.module-title {
+    @extend .u-py-1;
+    @extend .u-text-center;
+    color: $dark-gray;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    [class*='u-bg-'] & {
+        color: white;
+        border-color: rgba(255,255,255,.15);
+    }
+    .u-bg-tan & {
+        color: $dark-gray;
+        border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+}
+.module-row {
+    @extend .module__content;
+    flex: 1 100%;
+    &+& {
+        @extend .u-mt-4;
+    }
+}
+.module-column {
+    flex: 1 0 25%;
+    padding: 0 rem(8);
+}
+/**
+ * Module Types
+ */
+.module--basic {
+    
+}
+.module--list {
+    
+}
+.module--feature {
+    height: rem(640);
+}
+.module--carousel {
+    
+}

@@ -1,0 +1,51 @@
+button {
+    background: none;
+}
+.button {
+    @include display(inline-block);
+    padding: rem(8) rem(32);
+    color: $dark-gray;
+    border: 1px solid $dark-gray;
+    [class*='u-bg-'] & {
+        color: $tan;
+        border-color: $tan;
+    }
+    .u-bg-tan & {
+        color: $dark-gray;
+        border-color: rgba(0,0,0,.15);
+    }
+    &:hover {
+        color: $red;
+        border-color: $red;
+    }
+    .u-bg-red &:hover {
+        color: $dark-gray;
+        border-color: $dark-gray;
+    }
+}
+.ui-button {
+    font-size: 1rem;
+    line-height: 1;
+    @extend .u-pa-1;
+    border: none;
+    background: none;
+    &:focus {
+        outline: 0;
+    }
+    [class*='u-bg-'] & {
+        color: $tan;
+        border-color: $tan;
+    }
+    .u-bg-tan & {
+        color: $dark-gray;
+        border-color: rgba(0,0,0,.15);
+    }
+    &:hover {
+        color: $red;
+        border-color: $red;
+    }
+    .u-bg-red &:hover {
+        color: $dark-gray;
+        border-color: $dark-gray;
+    }
+}

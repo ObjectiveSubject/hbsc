@@ -1,0 +1,206 @@
+
+/* Typography
+ * ------------------------------------------ */
+
+html {
+	font-size: 100%;
+	@include media($xl) {
+		font-size: 18px;
+	}
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color-text-main;
+	font-size: rem(18);
+	line-height: 1.375;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings
+ * ------------------------------------------ */
+ h1, .h1 {
+	font-size: rem(48);
+	text-transform: uppercase;
+	@include media($md) {
+        font-size: rem(96);
+	}
+ }
+ h2, .h2 {
+	font-size: rem(36);
+	text-transform: uppercase;
+	@include media($md) {
+        font-size: rem(72);
+	}
+ }
+ h3, .h3 {
+	font-size: rem(24);
+	text-transform: uppercase;
+	@include media($md) {
+        font-size: rem(48);
+	}
+ }
+ h4, .h4 {
+	font-size: rem(20);
+	text-transform: uppercase;
+	@include media($md) {
+        font-size: rem(28);
+	}
+ }
+ h5, .h5 {
+	font-size: rem(16);
+	text-transform: uppercase;
+	@include media($md) {
+        font-size: rem(22);
+	}
+ }
+ h6, .h6 {
+	font-size: rem(14);
+	text-transform: uppercase;
+	@include media($md) {
+        font-size: rem(18);
+	}
+ }
+
+ /* Links
+  * ------------------------------------------- */
+
+ a {
+    color: $dark-gray;
+ 	text-decoration: none;
+ 	@include transition(all 300ms ease);
+     
+    &:hover,
+    &:focus,
+    &:active {
+        color: $red;
+    }
+
+ 	&:focus {
+ 		outline: 0;
+ 	}
+ 	&:hover,
+ 	&:active {
+ 		outline: 0;
+ 	}
+ }
+
+
+/* Copy
+ * ------------------------------------------ */
+
+p {
+	margin-top: $leading;
+    margin-bottom: 0;
+}
+
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+address {
+    font-style: normal;
+}
+
+blockquote {
+	@extend h2;
+    text-transform: none;
+    margin: 0;
+
+	p {
+		margin: 0;
+	}
+}
+
+pre {
+	background: $color-background-pre;
+	font-family: $font-pre;
+	font-size: rem(14);
+	line-height: $font-line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1em;
+}
+
+code, kbd, tt, var {
+	font-family: $font-code;
+	font-family: 400;
+	background: $color-background-pre;
+	color: $color-code;
+	p & {
+		padding: 0.25em;
+		font-size: rem(14);
+	}
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+hr {
+	background-color: $color-background-hr;
+	border: 0;
+	height: 1px;
+	margin: $leading 0 0;
+	width: 100%;
+}
+
+/* Text meant only for screen readers.
+ * ------------------------------------------------- */
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+
+   &:hover,
+   &:active,
+   &:focus {
+	   background-color: #f1f1f1;
+	   border-radius: 3px;
+	   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	   clip: auto !important;
+	   color: #21759b;
+	   display: block;
+	   font-size: rem(0.875);
+	   font-weight: 700;
+	   height: auto;
+	   left: 5px;
+	   line-height: normal;
+	   padding: 15px 23px 14px;
+	   text-decoration: none;
+	   top: 5px;
+	   width: auto;
+	   z-index: 100000; /* Above WP toolbar. */
+   }
+}

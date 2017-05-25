@@ -1,0 +1,37 @@
+.menu-item {
+    .header-menu & {
+        @include display(none);
+        border-top: 1px solid shade( $tan, 10%);
+        a {
+            @include display(block);
+            @extend .h6;
+            margin: rem(4) 0;
+            @extend .u-transition-300;
+        }
+    }
+    .sub-menu & {
+        a {
+            color: shade( $tan, 25% );
+            &:hover {
+                color: $red;
+            }
+        }  
+    }
+    // Test classes
+    .site-menu.is-expanded &,
+    body.home & {
+        @include display(block);
+        .sub-menu .menu-item {
+            @include display(none);
+        }
+        .sub-menu.is-visible .menu-item {
+            @include display(block);
+        }
+    }
+    &.current-page-item {
+        @include display(block);
+    }
+    &.current-page-item-parent {
+        @include display(block);
+    }
+}

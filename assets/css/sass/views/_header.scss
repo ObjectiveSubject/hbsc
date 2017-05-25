@@ -1,0 +1,56 @@
+.site-header {
+    padding: 0.25rem 0;
+    font-size: rem(12);
+    text-transform: uppercase;
+    pointer-events: initial;
+}
+.site-nav {
+    
+}
+.site-menu {
+    @include position(relative);
+    @include display(inline-block);
+    background: $tan;
+    pointer-events: initial;
+    &::before {
+        content: '';
+        @include position(absolute);
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        right: 100%;
+        background: $tan;
+    }
+}
+.search-toggle {
+    color: $tan;
+    &:hover {
+        color: $red;
+    }
+}
+.header-logo {
+    width: rem(192);
+}
+.header-menu {
+    .sub-menu {
+        &.is-visible {
+            @include display(block);
+        }
+    }
+}
+.site-menu-toggle {
+    @include position(absolute);
+    bottom: rem(8);
+    right: 0;
+    color: shade( $tan, 25% );
+    @extend .u-transition-300;
+    &:hover {
+        color: $red;
+    }
+    &:focus {
+        outline: 0;
+    }
+    .site-menu.is-expanded & {
+        transform: rotate(180deg);
+    }
+}

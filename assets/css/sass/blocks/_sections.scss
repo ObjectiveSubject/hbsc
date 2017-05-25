@@ -1,0 +1,26 @@
+.section {
+    @extend .module;
+}
+
+.section__content {
+    @include display(flex);
+    @include flex-wrap(wrap);
+}
+.section__header {
+    @extend .module__header;
+}
+.section__body {
+    flex: 1 100%;
+    .section__header+& {
+        @extend .u-mt-4;
+    }
+}
+.section__footer {
+    @extend .module__footer;
+}
+/**
+ * Module Elements
+ */
+.section-title {
+    @extend .module-title;
+}

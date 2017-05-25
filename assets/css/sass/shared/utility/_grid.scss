@@ -1,0 +1,55 @@
+// Grid system
+// ------------------------------------------ /
+@for $i from 1 through $grid-columns {
+
+    @if $i >= 3 and $i <= 9 {
+
+        .u-span-#{$i} {
+            @include span-columns($grid-columns);
+            margin-right: 0;
+
+            @if $i <= 4 {
+                @include media($md) {
+                    @include span-columns(6);
+                    &:nth-child(2n) { margin-right: 0; }
+                    &:nth-child(2n+1) { clear: left; }
+                }
+                @include media($lg) {
+                    @include span-columns($i);
+                    &:nth-child(2n) { margin-right: flex-gutter($grid-columns); }
+                    &:nth-child(2n+1) { clear: none; }
+                    &:nth-child( #{$grid-columns/$i}n ) { margin-right: 0; }
+                    &:nth-child( #{$grid-columns/$i}n + 1) { clear: left; }
+                }
+            }
+            @if $i >= 5 and $i <= 7 {
+                @include media($md) {
+                    @include span-columns($i);
+                    &:nth-child( #{$grid-columns/$i}n ) { margin-right: 0; }
+                    &:nth-child( #{$grid-columns/$i}n + 1) { clear: left; }
+                }
+            }
+            @if $i >= 8 {
+                @include media($lg) {
+                    @include span-columns($i);
+                    &:nth-child( #{$grid-columns/$i}n ) { margin-right: 0; }
+                    &:nth-child( #{$grid-columns/$i}n + 1) { clear: left; }
+                }
+            }
+        }
+
+        .u-max-width-#{$i} {
+            @include media($md) {
+                max-width: flex-grid( $i, $grid-columns );
+            }
+        }
+
+    }
+
+}
+
+[class*="u-span-"]{
+    &:last-child {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,39 @@
+.site-footer {
+    a {
+        color: white;
+        &:hover {
+            color: $red;
+        }
+    }
+}
+.footer-row {
+    @include display(flex);
+    @extend .u-py-2;
+    &+& {
+        border-top: 1px solid rgba(255,255,255,.15);
+    }
+}
+.footer-column {
+    flex: 1 0 50%;
+    color: white;
+}
+.footer-menu {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    .menu-item {
+        flex: 1 0 33.33333%;
+        &:nth-child(2n) {
+            flex: 1 0 66.66667%;
+        }
+    }
+}
+.social__item {
+    display: inline-block;
+    a {
+        display: block;
+        font-size: rem(24);
+    }
+    &+& {
+        @extend .u-ml-1;
+    }
+}

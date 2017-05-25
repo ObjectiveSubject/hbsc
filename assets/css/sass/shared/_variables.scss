@@ -1,0 +1,98 @@
+// Structure
+// ------------------------------------------- /
+$max-width: rem(1128) !global;
+$grid-columns: 12 !global;
+
+$container-padding: rem(64);
+
+// Breakpoints
+// ------------------------------------------- /
+$sm: 500px;
+$md: 768px;
+$lg: 1000px;
+$xl: 1500px;
+
+// Colors
+// ------------------------------------------- /
+
+// Primary
+$blue: #1d374a;
+$red: #e74949;
+$tan: #dddad5;
+$gold: #dda538;
+// Neutrals
+$dark-gray: #272727;
+$light-gray: #f0efed;
+
+$color_map: (
+	// Primary
+	'blue'				: $blue,
+	'red'				: $red,
+	'tan'			    : $tan,
+	'gold'			    : $gold,
+	// Neutrals
+	'black'				: black,
+    'dark-gray'         : $dark-gray,
+    'light-gray'        : $light-gray,
+	'white'				: white,
+);
+
+$color-text-main: black;
+
+$color-link: black;
+$color-link-visited: black;
+$color-link-hover: $blue;
+
+$color-code: black;
+
+$color-blockquote: black;
+
+$color-background-body: white;
+$color-background-hr: lightgray;
+$color-background-pre: #eeeeee;
+
+$color-background-selection: $blue;
+$color-selection-text: white;
+
+$color-btn: $color-text-main;
+$color-btn-hover: $color-text-main;
+$color-btn-bg: lightgray;
+$color-btn-bg-hover: gray;
+$color-btn-disabled: gray;
+$color-btn-disabled-bg: lightgray;
+
+$color-border-input: black;
+$color-border-input-hover: $dark-gray;
+$color-border-input-focus: black;
+
+$color-text-input: black;
+$color-text-input-hover: $dark-gray;
+$color-text-input-focus: black;
+
+$color-text-muted: lightgray;
+
+$color-facebook: #3b5997;
+$color-twitter: #55abed;
+$color-youtube: #cd201f;
+$color-linkedin: #0077b4;
+$color-google: #F44336;
+
+
+// Typography
+// ------------------------------------------- /
+$font-code: "Menlo", monospace;
+$font-pre: "Menlo", monospace;
+$leading: 1rem;
+$font-line-height-pre: 1.6rem;
+
+
+// Tables
+// ------------------------------------------- /
+$table-bg: transparent;
+$table-bg-accent: gray;
+$table-bg-hover: gray;
+$table-bg-nested: transparent;
+$table-cell-padding: 0.5em;
+$line-height-base: $leading;
+$table-border-color: gray;
+$table-condensed-cell-padding: 5px;

@@ -1,0 +1,47 @@
+.card {
+    @include display(flex);
+    @include flex-direction(column);
+    @extend .u-pa-3;
+    text-align: center;
+    &.has-badge {
+        position: relative;
+        margin-top: rem(72); // half of badge size
+        padding-top: rem(72); // half of badge size
+    }
+    .module--feature & {
+        flex: 0 0 57.5%;
+    }
+    .module--carousel & {
+        width: rem(360);
+        height: rem(492);
+        @extend .u-mt-3;
+    }
+}
+.card-positioner {
+    .module--carousel & {
+        float: right;
+        position: relative;
+        z-index: 10;
+    }
+}
+.card-title {
+    @extend .module-title;
+}
+.card-content {
+    @extend .u-my-3;
+    [class*='u-bg-'] & {
+        color: white;
+    }
+    .u-bg-tan & {
+        color: $dark-gray;
+    }
+    span {
+        @include display(block); // line-break for every font change
+    }
+    .module--carousel & {
+        flex-grow: 1;
+        @include display(flex);
+        @include flex-direction(column);
+        @include justify-content(center);
+    }
+}

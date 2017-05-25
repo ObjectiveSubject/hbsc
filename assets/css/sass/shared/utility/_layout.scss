@@ -1,0 +1,48 @@
+// Clearfix
+// ------------------------------------------ /
+.u-clear {
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Layout
+// --------------------------------------- /
+.u-container {
+    position: relative;
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 0 $leading;
+    @include media($md) {
+        padding: 0 $container_padding;
+    }
+}
+
+// Spacing
+// -------
+// Borrowed from: http://v4-alpha.getbootstrap.com/utilities/spacing/
+// ---------------------------------------------------------------- /
+.u-mt-nudge { margin-top: $leading/2; }
+.u-mb-nudge { margin-bottom: $leading/2; }
+.u-my-nudge { margin-top: $leading/2; margin-bottom: $leading/2; }
+@for $i from 0 through 6 {
+    $val: $leading * $i;
+    .u-ma-#{$i} { margin: $val; }
+    .u-mt-#{$i} { margin-top: $val; }
+    .u-mr-#{$i} { margin-right: $val; }
+    .u-mb-#{$i} { margin-bottom: $val; }
+    .u-ml-#{$i} { margin-left: $val; }
+    .u-mx-#{$i} { margin-left: $val; margin-right: $val; }
+    .u-my-#{$i} { margin-top: $val; margin-bottom: $val; }
+    .u-pa-#{$i} { padding: $val; }
+    .u-pt-#{$i} { padding-top: $val; }
+    .u-pr-#{$i} { padding-right: $val; }
+    .u-pb-#{$i} { padding-bottom: $val; }
+    .u-pl-#{$i} { padding-left: $val; }
+    .u-px-#{$i} { padding-left: $val; padding-right: $val; }
+    .u-py-#{$i} { padding-top: $val; padding-bottom: $val; }
+}

@@ -1,0 +1,25 @@
+.badge {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    text-align: center;
+    .module--carousel & {
+        @extend .u-mb-3;
+    }
+}
+.badge-positioner {
+    position: absolute;
+    pointer-events: none;
+    .module--carousel & {
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+}
+// Badge Types
+.badge--date {
+    @include flex-direction(column);
+    @include size(rem(144));
+    @extend .u-bg-red;
+    color: white;
+}
