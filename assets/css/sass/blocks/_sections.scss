@@ -11,15 +11,20 @@
 }
 .section__body {
     flex: 1 100%;
+    @extend .u-text-center;
     .section__header+& {
         @extend .u-mt-4;
+    }
+    .page-introduction & {
+        @extend .u-mt-2;
+        @extend .u-mx-5;
     }
 }
 .section__footer {
     @extend .module__footer;
 }
 /**
- * Module Elements
+ * Section Elements
  */
 .section-title {
     @extend .module-title;

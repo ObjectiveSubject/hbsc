@@ -1,0 +1,20 @@
+.preface {
+    @extend .u-text-contrast;
+}
+.preface-title {
+    span {
+        @include display(block); // line-break on every font change
+        &:nth-child(2n) {
+            font-style: italic;
+        }
+    }
+}
+.preface-text {
+    @extend .u-mx-5;
+    [class*='u-bg-'] & {
+        color: $tan;
+    }
+    .u-bg-tan & {
+        color: $dark-gray;
+    }
+}

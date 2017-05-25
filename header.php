@@ -33,8 +33,8 @@ if ( $is_top_page ) {
                     <address>77 Forest Street, Hartford</address>
                     <div>Open Today: 9:30AM - 5:00PM</div>
                     <div>
+                        <input id="site-search" class="site-search u-mr-1 u-display-none" type="text">
                         <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-field-open" data-focus="#site-search"><span class="icon icon-search"></span></a>
-                        <input id="site-search" type="text" class="u-display-none">
                     </div>
                 </div>
             </div>

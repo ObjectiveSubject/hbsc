@@ -29,12 +29,7 @@
 }
 .card-content {
     @extend .u-my-3;
-    [class*='u-bg-'] & {
-        color: white;
-    }
-    .u-bg-tan & {
-        color: $dark-gray;
-    }
+    @extend .u-text-contrast;
     span {
         @include display(block); // line-break for every font change
     }

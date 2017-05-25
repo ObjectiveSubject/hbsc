@@ -8,7 +8,7 @@ get_header(); ?>
 
         <section class="section home-introduction u-bg-tan">
             <div class="section__content u-container">
-                <div class="introduction-text" style="margin-left: 20rem;">We preserve and interpret Stowe's <i>Hartford home</i> and the center's historic collections, promote <i>vibrant discussion</i> of her life and work, and inspire commitment to social justice and positive change.</div>
+                <div class="introduction-text">We preserve and interpret Stowe's <i>Hartford home</i> and the center's historic collections, promote <i>vibrant discussion</i> of her life and work, and inspire commitment to social justice and positive change.</div>
             </div>
         </section>
         
@@ -19,8 +19,8 @@ get_header(); ?>
                         News
                     </div>
                     <div class="card-content h3">
-                        Stowe Prize Winner
-                        <span class="alt-font">Ta-Nahesi Coates</span>
+                        <span>Stowe Prize Winner</span>
+                        <span>Ta-Nehisi Coates</span>
                     </div>
                     <div class="card-button">
                         <a href="#" class="button">Watch Speech</a>
@@ -75,7 +75,7 @@ get_header(); ?>
                 <header class="section__header">
                     <div class="section-title">Harriet Beecher Stowe</div>
                 </header>
-                <div class="section__body u-text-center">
+                <div class="section__body">
                     <ul>
                         <li>Harriet Beecher Stowe's Life</li>
                         <li>Uncle Tom's Cabin</li>

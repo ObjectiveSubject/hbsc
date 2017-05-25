@@ -26,6 +26,7 @@ textarea {
  h1, .h1 {
 	font-size: rem(48);
 	text-transform: uppercase;
+    margin: 0;
 	@include media($md) {
         font-size: rem(96);
 	}
@@ -33,6 +34,7 @@ textarea {
  h2, .h2 {
 	font-size: rem(36);
 	text-transform: uppercase;
+    margin: 0;
 	@include media($md) {
         font-size: rem(72);
 	}
@@ -40,6 +42,7 @@ textarea {
  h3, .h3 {
 	font-size: rem(24);
 	text-transform: uppercase;
+    margin: 0;
 	@include media($md) {
         font-size: rem(48);
 	}
@@ -47,6 +50,7 @@ textarea {
  h4, .h4 {
 	font-size: rem(20);
 	text-transform: uppercase;
+    margin: 0;
 	@include media($md) {
         font-size: rem(28);
 	}
@@ -54,6 +58,7 @@ textarea {
  h5, .h5 {
 	font-size: rem(16);
 	text-transform: uppercase;
+    margin: 0;
 	@include media($md) {
         font-size: rem(22);
 	}
@@ -61,6 +66,7 @@ textarea {
  h6, .h6 {
 	font-size: rem(14);
 	text-transform: uppercase;
+    margin: 0;
 	@include media($md) {
         font-size: rem(18);
 	}

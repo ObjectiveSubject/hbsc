@@ -37,6 +37,9 @@
     .has-sidebar & {
         @include flex-grow(0);
     }
+    .page-header & {
+        @extend .u-mt-2;
+    }
 }
 .module__sidebar {
     flex: 0 0 25%;
@@ -52,6 +55,7 @@
  */
 .module-title {
     @extend .u-py-1;
+    @extend .h6;
     @extend .u-text-center;
     color: $dark-gray;
     text-transform: uppercase;
@@ -62,7 +66,7 @@
     }
     .u-bg-tan & {
         color: $dark-gray;
-        border-bottom: 1px solid rgba(0,0,0,.15);
+        border-color: rgba(0,0,0,.15);
     }
 }
 .module-row {
