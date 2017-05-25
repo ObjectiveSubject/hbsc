@@ -11,13 +11,3 @@
 .u-text-left { text-align: left; }
 .u-text-center { text-align: center; }
 .u-text-right { text-align: right; }
-.u-text-contrast {
-    &[class*='u-bg-'],
-    [class*='u-bg-'] & {
-        color: white;
-    }
-    &.u-bg-tan,
-    .u-bg-tan & {
-        color: $dark-gray;
-    }
-}

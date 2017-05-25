@@ -29,7 +29,6 @@
 }
 .card-content {
     @extend .u-my-3;
-    @extend .u-text-contrast;
     span {
         @include display(block); // line-break for every font change
     }
@@ -38,5 +37,13 @@
         @include display(flex);
         @include flex-direction(column);
         @include justify-content(center);
+    }
+    [class*='u-bg-'] & {
+        color: white;
+    }
+    .u-bg-white &,
+    .u-bg-light-gray &,
+    .u-bg-tan & {
+        color: $dark-gray;
     }
 }

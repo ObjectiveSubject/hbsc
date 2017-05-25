@@ -61,9 +61,11 @@
     text-transform: uppercase;
     border-bottom: 1px solid rgba(0,0,0,.15);
     [class*='u-bg-'] & {
-        color: white;
+        color: $tan;
         border-color: rgba(255,255,255,.15);
     }
+    .u-bg-white &,
+    .u-bg-light-gray &,
     .u-bg-tan & {
         color: $dark-gray;
         border-color: rgba(0,0,0,.15);

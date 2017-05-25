@@ -1,5 +1,5 @@
 .preface {
-    @extend .u-text-contrast;
+    
 }
 .preface-title {
     span {
@@ -8,12 +8,22 @@
             font-style: italic;
         }
     }
+    [class*='u-bg-'] & {
+        color: white;
+    }
+    .u-bg-white &,
+    .u-bg-light-gray &,
+    .u-bg-tan & {
+        color: $dark-gray;
+    }
 }
 .preface-text {
     @extend .u-mx-5;
     [class*='u-bg-'] & {
         color: $tan;
     }
+    .u-bg-white &,
+    .u-bg-light-gray &,
     .u-bg-tan & {
         color: $dark-gray;
     }
