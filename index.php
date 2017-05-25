@@ -15,7 +15,7 @@ get_header(); ?>
         <?php endwhile; ?>
         
         <?php get_template_part( 'content', 'modules' ); ?>
-        <!--<?php get_template_part( 'content', 'components' ); ?>-->
+        <?php get_template_part( 'content', 'components' ); ?>
 
     </div>
 

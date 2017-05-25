@@ -73,7 +73,7 @@ get_header(); ?>
         <section class="section u-bg-tan">
             <div class="section__content u-container">
                 <header class="section__header">
-                    <div class="section-title">Salons at Stowe</div>
+                    <div class="section-title">Harriet Beecher Stowe</div>
                 </header>
                 <div class="section__body u-text-center">
                     <ul>
@@ -88,8 +88,43 @@ get_header(); ?>
             </div>
         </section>
         
-        <?php get_template_part( 'content', 'modules' ); ?>
-        <?php get_template_part( 'content', 'components' ); ?>
+        <section class="module module--feature has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
+            <div class="module__content u-flex-justify-end u-container">
+                <div class="card u-bg-tan js-slide-in">
+                    <div class="card-title">
+                        Collections
+                    </div>
+                    <div class="card-content h3">
+                        Treasures
+                        <span class="alt-font">of a Transformative Writer</span>
+                    </div>
+                    <div class="card-button">
+                        <a href="#" class="button">View Collections</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="module module--basic u-bg-blue">
+            <div class="module__content u-container">
+                <header class="module__header">
+                    <div class="module-title">2016 Stowe Prize Recipient</div>
+                </header>
+                <div class="module__body">
+                    <div class="module-column">
+                        Bryan Stevenson
+                    </div>
+                    <div class="module-column">
+                        To be in the same company as past Stowe Prize winners Ta-Nehisi Coates, Michelle Alexander, Nicholas Kristof and Sheryl WuDunn is an honor.
+                    </div>
+                </div>
+                <footer class="module__footer">
+                    <div class="module-button">
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
 
     </div>
 
