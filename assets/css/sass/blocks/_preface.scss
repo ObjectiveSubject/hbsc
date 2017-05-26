@@ -18,7 +18,7 @@
     }
 }
 .preface-text {
-    @extend .u-mx-5;
+    @extend .u-mx-6;
     [class*='u-bg-'] & {
         color: $tan;
     }

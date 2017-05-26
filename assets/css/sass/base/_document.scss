@@ -16,6 +16,12 @@ body {
 	overflow-x: hidden;
 }
 
+section {
+    &:focus {
+        outline: 0;
+    }
+}
+
 @include selection {
 	color: $color-selection-text;
     background: $color-background-selection;

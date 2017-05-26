@@ -1,7 +1,6 @@
 .section {
     @extend .module;
 }
-
 .section__content {
     @include display(flex);
     @include flex-wrap(wrap);
@@ -15,13 +14,12 @@
     .section__header+& {
         @extend .u-mt-4;
     }
-    .page-introduction & {
-        @extend .u-mt-2;
-        @extend .u-mx-5;
-    }
 }
 .section__footer {
     @extend .module__footer;
+    .preface & {
+        @extend .u-mx-6;
+    }
 }
 /**
  * Section Elements

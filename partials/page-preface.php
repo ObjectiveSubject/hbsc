@@ -20,5 +20,16 @@
                 <?php the_content(); ?>
             </div>
         </div>
+        <?php if( have_rows('module') && get_field('display_module_anchors') ) : ?>
+        <footer class="section__footer">
+            <?php while( have_rows('module') ): the_row();
+            $title = get_sub_field('module_title');
+            ?>
+            <a href="#module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="button button--preface">
+                <?php echo $title; ?>
+            </a>
+            <?php endwhile; ?>
+        </footer>
+        <?php endif; ?>
     </div>
 </section>

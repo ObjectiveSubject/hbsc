@@ -633,7 +633,7 @@ html {
 .u-ma-2 {
   margin: 2rem; }
 
-.u-mt-2, .page-header .module__body, .page-introduction .section__body {
+.u-mt-2, .page-header .module__body {
   margin-top: 2rem; }
 
 .u-mr-2 {
@@ -783,7 +783,7 @@ html {
 .u-ml-5 {
   margin-left: 5rem; }
 
-.u-mx-5, .preface-text, .page-introduction .section__body {
+.u-mx-5 {
   margin-left: 5rem;
   margin-right: 5rem; }
 
@@ -829,7 +829,7 @@ html {
 .u-ml-6 {
   margin-left: 6rem; }
 
-.u-mx-6 {
+.u-mx-6, .preface-text, .preface .section__footer {
   margin-left: 6rem;
   margin-right: 6rem; }
 
@@ -1083,6 +1083,9 @@ html {
 
 body {
   overflow-x: hidden; }
+
+section:focus {
+  outline: 0; }
 
 ::-moz-selection {
   color: white;
@@ -1430,6 +1433,10 @@ button {
   .u-bg-red .ui-button:hover, .badge--date .ui-button:hover {
     color: #272727;
     border-color: #272727; }
+
+.button--preface {
+  width: 200px;
+  padding: 1rem 0; }
 
 .card {
   display: -webkit-box;
