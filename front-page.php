@@ -5,14 +5,18 @@
 get_header(); ?>
 
     <div class="site-content">
-
-        <section class="section home-introduction u-bg-tan">
+        
+        <section class="preface section u-bg-tan">
             <div class="section__content u-container">
-                <div class="introduction-text">We preserve and interpret Stowe's <i>Hartford home</i> and the center's historic collections, promote <i>vibrant discussion</i> of her life and work, and inspire commitment to social justice and positive change.</div>
+                <div class="section__body">
+                    <div class="preface-text">
+                        We preserve and interpret Stowe's <i>Hartford home</i> and the center's historic collections, promote <i>vibrant discussion</i> of her life and work, and inspire commitment to social justice and positive change.
+                    </div>
+                </div>
             </div>
         </section>
         
-        <section class="module module--feature has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
+        <section class="module module--hero has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
             <div class="module__content u-flex-justify-start u-container">
                 <div class="card-positioner">
                     <div class="card u-bg-red js-slide-in">
@@ -90,7 +94,7 @@ get_header(); ?>
             </div>
         </section>
         
-        <section class="module module--feature has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
+        <section class="module module--hero has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
             <div class="module__content u-flex-justify-end u-container">
                 <div class="card-positioner">
                     <div class="card u-bg-tan js-slide-in">

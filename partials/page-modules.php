@@ -45,9 +45,9 @@ if( $type == 'module--basic' ) :
     </div>
 </section>
 
-<?php elseif( $type == 'module--feature' ) : ?>
+<?php elseif( $type == 'module--hero' ) : ?>
 
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--feature has-background" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
+<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--hero has-background" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
     <div class="module__content u-container <?php echo $content_position; ?>">
         <div class="card-positioner">
             <div class="card <?php echo $color; ?> js-slide-in">

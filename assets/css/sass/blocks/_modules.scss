@@ -23,7 +23,7 @@
     .module--carousel & {
         @include flex-wrap(wrap);
     }
-    .module--feature & {
+    .module--hero & {
         height: 100%;
         @extend .u-flex-items-center;
     }
@@ -95,7 +95,7 @@
 .module--list {
     
 }
-.module--feature {
+.module--hero {
     height: rem(800);
 }
 .module--carousel {

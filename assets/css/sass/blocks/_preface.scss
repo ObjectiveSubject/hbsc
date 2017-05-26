@@ -1,5 +1,7 @@
 .preface {
-    
+    body.home & {
+        padding-top: 6.75rem;
+    }
 }
 .preface-title {
     span {
@@ -26,6 +28,11 @@
     .u-bg-light-gray &,
     .u-bg-tan & {
         color: $dark-gray;
+    }
+    body.home & {
+        @extend .h4;
+        margin-left: rem(320);
+        text-align: left;
     }
 }
 .preface-button {

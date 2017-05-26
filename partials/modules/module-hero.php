@@ -1,4 +1,4 @@
-<section class="module module--feature u-bg-red">
+<section class="module module--hero u-bg-red">
     <div class="module__content u-flex-justify-start u-container">
         <div class="card-positioner">
             <div class="card u-bg-dark-gray js-slide-in">
@@ -9,7 +9,7 @@
         </div>
     </div>
 </section>
-<section class="module module--feature u-bg-blue">
+<section class="module module--hero u-bg-blue">
     <div class="module__content u-flex-justify-end u-container">
         <div class="card-positioner">
             <div class="card u-bg-red js-slide-in">
@@ -21,7 +21,7 @@
         </div>
     </div>
 </section>
-<section class="module module--feature u-bg-red">
+<section class="module module--hero u-bg-red">
     <div class="module__content u-flex-justify-start u-container">
         <div class="card-positioner">
             <div class="card u-bg-dark-gray js-slide-in">

@@ -377,7 +377,7 @@ html {
 [class*="u-span-"]:last-child {
   margin-right: 0; }
 
-.u-flex-items-center, .module--feature .module__content, .module--feature .module--basic .module__body, .module--basic .module--feature .module__body, .module--feature .module-row {
+.u-flex-items-center, .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
   -webkit-box-align: center;
   -moz-box-align: center;
   box-align: center;
@@ -1222,12 +1222,12 @@ h3, .h3 {
     h3, .h3 {
       font-size: 3rem; } }
 
-h4, .h4, .introduction-text {
+h4, .h4, body.home .preface-text {
   font-size: 1.25rem;
   text-transform: uppercase;
   margin: 0; }
   @media screen and (min-width: 768px) {
-    h4, .h4, .introduction-text {
+    h4, .h4, body.home .preface-text {
       font-size: 1.75rem; } }
 
 h5, .h5 {
@@ -1469,7 +1469,7 @@ button {
     width: 22.5rem;
     height: 30.75rem; }
 
-.module--feature .card-positioner {
+.module--hero .card-positioner {
   flex: 0 0 57.5%; }
 
 .module--carousel .card-positioner {
@@ -1829,7 +1829,7 @@ body.home .menu-item {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
-.module--feature .module__content, .module--feature .module--basic .module__body, .module--basic .module--feature .module__body, .module--feature .module-row {
+.module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
   height: 100%; }
 
 .module__body {
@@ -1867,8 +1867,11 @@ body.home .menu-item {
 /**
  * Module Types
  */
-.module--feature {
+.module--hero {
   height: 50rem; }
+
+body.home .preface {
+  padding-top: 6.75rem; }
 
 .preface-title span {
   display: block; }
@@ -1890,6 +1893,10 @@ body.home .menu-item {
 .u-bg-light-gray .preface-text,
 .u-bg-tan .preface-text {
   color: #272727; }
+
+body.home .preface-text {
+  margin-left: 20rem;
+  text-align: left; }
 
 .preface-button {
   width: 15rem;
@@ -2076,9 +2083,6 @@ caption {
   .social__item a {
     display: block;
     font-size: 1.5rem; }
-
-.home-introduction {
-  padding-top: 6.75rem; }
 
 .site-header {
   padding: 0.25rem 0;
