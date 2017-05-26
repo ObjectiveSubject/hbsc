@@ -7,15 +7,6 @@
         background-size: cover;
         background-position: center center;
     }
-    &.has-image {
-        padding-top: 0;
-    }
-}
-.module__image {
-    height: rem(256);
-    background-size: cover;
-    background-position: center;
-    @extend .u-mb-4;
 }
 .module__content {
     @include display(flex);
@@ -32,7 +23,7 @@
     flex: 1 100%;
 }
 .module__body {
-    flex: 1 0 75%; 
+    flex: 1 0 75%;
     .module__header+& {
         @extend .u-mt-4;
     }

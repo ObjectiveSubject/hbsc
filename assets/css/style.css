@@ -731,7 +731,7 @@ html {
 .u-mr-4 {
   margin-right: 4rem; }
 
-.u-mb-4, .module__image {
+.u-mb-4 {
   margin-bottom: 4rem; }
 
 .u-ml-4 {
@@ -1792,14 +1792,6 @@ body.home .menu-item {
 .module.has-background, .has-background.section {
   background-size: cover;
   background-position: center center; }
-
-.module.has-image, .has-image.section {
-  padding-top: 0; }
-
-.module__image {
-  height: 16rem;
-  background-size: cover;
-  background-position: center; }
 
 .module__content, .module--basic .module__body, .module-row {
   display: -webkit-box;
