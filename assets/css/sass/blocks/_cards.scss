@@ -8,9 +8,6 @@
         margin-top: rem(72); // half of badge size
         padding-top: rem(72); // half of badge size
     }
-    .module--feature & {
-        flex: 0 0 57.5%;
-    }
     .module--carousel & {
         width: rem(360);
         height: rem(492);
@@ -18,6 +15,9 @@
     }
 }
 .card-positioner {
+    .module--feature & {
+        flex: 0 0 57.5%;
+    }
     .module--carousel & {
         float: right;
         position: relative;

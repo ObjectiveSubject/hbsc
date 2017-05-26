@@ -2,7 +2,7 @@
  * Module Parts
  */
 .module {
-    @extend .u-py-4;
+    @extend .section;
     &.has-background {
         background-size: cover;
         background-position: center center;
@@ -18,7 +18,7 @@
     @extend .u-mb-4;
 }
 .module__content {
-    @include display(flex);
+    @extend .section__content;
     .module--basic &,
     .module--carousel & {
         @include flex-wrap(wrap);
@@ -29,10 +29,22 @@
     }
 }
 .module__header {
-    flex: 1 100%;
+    @extend .section__header;
 }
 .module__body {
-    flex: 1 0 75%; 
+    flex: 1 0 75%;
+    p {
+        [class*='u-bg-'] & {
+            color: $tan;
+            border-color: rgba(255,255,255,.15);
+        }
+        .u-bg-white &,
+        .u-bg-light-gray &,
+        .u-bg-tan & {
+            color: $dark-gray;
+            border-color: rgba(0,0,0,.15);
+        }
+    }
     .module__header+& {
         @extend .u-mt-4;
     }
@@ -55,30 +67,13 @@
     @extend .u-mt-4;
 }
 .module__footer {
-    @extend .module__header;
-    @extend .u-text-center;
-    @extend .u-mt-4;
+    @extend .section__footer;
 }
 /**
  * Module Elements
  */
 .module-title {
-    @extend .u-py-1;
-    @extend .h6;
-    @extend .u-text-center;
-    color: $dark-gray;
-    text-transform: uppercase;
-    border-bottom: 1px solid rgba(0,0,0,.15);
-    [class*='u-bg-'] & {
-        color: $tan;
-        border-color: rgba(255,255,255,.15);
-    }
-    .u-bg-white &,
-    .u-bg-light-gray &,
-    .u-bg-tan & {
-        color: $dark-gray;
-        border-color: rgba(0,0,0,.15);
-    }
+    @extend .section-title;
 }
 .module-row {
     @extend .module__content;
@@ -101,7 +96,7 @@
     
 }
 .module--feature {
-    height: rem(640);
+    height: rem(800);
 }
 .module--carousel {
     

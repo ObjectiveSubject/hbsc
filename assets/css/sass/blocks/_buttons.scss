@@ -10,6 +10,8 @@ button {
         color: $tan;
         border-color: $tan;
     }
+    .u-bg-white &,
+    .u-bg-light-gray &,
     .u-bg-tan & {
         color: $dark-gray;
         border-color: rgba(0,0,0,.15);
@@ -48,8 +50,4 @@ button {
         color: $dark-gray;
         border-color: $dark-gray;
     }
-}
-.button--preface {
-    width: 200px;
-    padding: $leading 0;
 }

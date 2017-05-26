@@ -28,3 +28,12 @@
         color: $dark-gray;
     }
 }
+.preface-button {
+    width: rem(240);
+    margin: rem(8);
+    .button {
+        @include display(block);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

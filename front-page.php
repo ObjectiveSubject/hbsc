@@ -14,16 +14,18 @@ get_header(); ?>
         
         <section class="module module--feature has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
             <div class="module__content u-flex-justify-start u-container">
-                <div class="card u-bg-red js-slide-in">
-                    <div class="card-title">
-                        News
-                    </div>
-                    <div class="card-content h3">
-                        <span>Stowe Prize Winner</span>
-                        <span>Ta-Nehisi Coates</span>
-                    </div>
-                    <div class="card-button">
-                        <a href="#" class="button">Watch Speech</a>
+                <div class="card-positioner">
+                    <div class="card u-bg-red js-slide-in">
+                        <div class="card-title">
+                            News
+                        </div>
+                        <div class="card-content">
+                            <span>Stowe Prize Winner</span>
+                            <span>Ta-Nehisi Coates</span>
+                        </div>
+                        <div class="card-button">
+                            <a href="#" class="button">Watch Speech</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,7 +50,7 @@ get_header(); ?>
                                 <div class="card-positioner">
                                     <div class="card u-bg-tan">
                                         <div class="h4 card-content">
-                                            Policing the Police:
+                                            <span>Policing the Police:</span>
                                             <span>How can communities transform law enforcement?</span>
                                         </div>
                                         <div class="card-button">
@@ -90,16 +92,18 @@ get_header(); ?>
         
         <section class="module module--feature has-background u-bg-red" style="background-image: url('wp-content/themes/hbsc/assets/images/sample/large.jpg');">
             <div class="module__content u-flex-justify-end u-container">
-                <div class="card u-bg-tan js-slide-in">
-                    <div class="card-title">
-                        Collections
-                    </div>
-                    <div class="card-content h3">
-                        Treasures
-                        <span class="alt-font">of a Transformative Writer</span>
-                    </div>
-                    <div class="card-button">
-                        <a href="#" class="button">View Collections</a>
+                <div class="card-positioner">
+                    <div class="card u-bg-tan js-slide-in">
+                        <div class="card-title">
+                            Collections
+                        </div>
+                        <div class="card-content">
+                            <span>Treasures</span>
+                            <span>of a Transformative Writer</span>
+                        </div>
+                        <div class="card-button">
+                            <a href="#" class="button">View Collections</a>
+                        </div>
                     </div>
                 </div>
             </div>

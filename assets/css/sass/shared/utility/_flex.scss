@@ -48,3 +48,8 @@
 .u-flex-justify-between {
     @include justify-content(space-between);
 }
+
+// Flex wrap
+.u-flex-wrap {
+    @include flex-wrap(wrap);
+}
