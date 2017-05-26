@@ -1523,7 +1523,6 @@ button {
     padding-left: 4.5rem;
     z-index: 0; }
   .carousel-slide__content .image {
-    background-image: url(../images/sample/medium.jpg);
     background-size: cover;
     background-position: center;
     height: 0;
