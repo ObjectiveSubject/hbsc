@@ -12,9 +12,6 @@
 .section__body {
     flex: 1 100%;
     @extend .u-text-center;
-    .section__header+& {
-        @extend .u-mt-4;
-    }
 }
 .section__footer {
     @extend .section__header;

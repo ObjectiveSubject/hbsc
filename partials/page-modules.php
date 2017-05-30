@@ -121,7 +121,7 @@ if( $type == 'module--basic' ) :
                             </div>
                         </div>
                         <div class="card-positioner">
-                            <div class="card u-bg-tan">
+                            <div class="card <?php echo $color; ?>">
                                 <div class="card-content">
                                     <?php echo $content; ?>
                                 </div>

@@ -642,7 +642,7 @@ html {
 .u-ma-2 {
   margin: 2rem; }
 
-.u-mt-2, .page-header .module__body {
+.u-mt-2 {
   margin-top: 2rem; }
 
 .u-mr-2 {
@@ -734,7 +734,7 @@ html {
 .u-ma-4 {
   margin: 4rem; }
 
-.u-mt-4, .module-row + .module-row, .section__header + .section__body, .module__header + .section__body, .section__footer + .section__body, .module__footer + .section__body, .section__footer, .module__footer {
+.u-mt-4, .module-row + .module-row, .section__footer, .module__footer {
   margin-top: 4rem; }
 
 .u-mr-4 {
@@ -1224,14 +1224,16 @@ h3, .h3 {
 
 h4, .h4, body.home .preface-text {
   font-size: 1.25rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0; }
   @media screen and (min-width: 768px) {
     h4, .h4, body.home .preface-text {
       font-size: 1.75rem; } }
 
 h5, .h5 {
   font-size: 1rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0; }
   @media screen and (min-width: 768px) {
     h5, .h5 {
       font-size: 1.38rem; } }
