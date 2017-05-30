@@ -734,13 +734,13 @@ html {
 .u-ma-4 {
   margin: 4rem; }
 
-.u-mt-4, .module__header + .module__body, .module__sidebar, .module-row + .module-row, .section__header + .section__body, .module__header + .section__body, .section__footer + .section__body, .module__footer + .section__body, .section__footer, .module__footer {
+.u-mt-4, .module-row + .module-row, .section__header + .section__body, .module__header + .section__body, .section__footer + .section__body, .module__footer + .section__body, .section__footer, .module__footer {
   margin-top: 4rem; }
 
 .u-mr-4 {
   margin-right: 4rem; }
 
-.u-mb-4, .module__image {
+.u-mb-4, .module__image, .section__header, .module__header, .section__footer, .module__footer {
   margin-bottom: 4rem; }
 
 .u-ml-4 {
@@ -861,7 +861,7 @@ html {
 .u-pl-6 {
   padding-left: 6rem; }
 
-.u-px-6 {
+.u-px-6, .has-sidebar .module__body {
   padding-left: 6rem;
   padding-right: 6rem; }
 
@@ -1224,24 +1224,21 @@ h3, .h3 {
 
 h4, .h4, body.home .preface-text {
   font-size: 1.25rem;
-  text-transform: uppercase;
-  margin: 0; }
+  text-transform: uppercase; }
   @media screen and (min-width: 768px) {
     h4, .h4, body.home .preface-text {
       font-size: 1.75rem; } }
 
 h5, .h5 {
   font-size: 1rem;
-  text-transform: uppercase;
-  margin: 0; }
+  text-transform: uppercase; }
   @media screen and (min-width: 768px) {
     h5, .h5 {
       font-size: 1.38rem; } }
 
 h6, .h6, .header-menu .menu-item a, .section-title, .module-title, .card-title {
   font-size: 0.88rem;
-  text-transform: uppercase;
-  margin: 0; }
+  text-transform: uppercase; }
   @media screen and (min-width: 768px) {
     h6, .h6, .header-menu .menu-item a, .section-title, .module-title, .card-title {
       font-size: 1.13rem; } }
@@ -1844,11 +1841,6 @@ body.home .menu-item {
   .module--carousel .module__body {
     max-width: 100%;
     width: 100%; }
-  .has-sidebar .module__body {
-    -webkit-flex-grow: 0;
-    -moz-flex-grow: 0;
-    flex-grow: 0;
-    -ms-flex-positive: 0; }
 
 .module__sidebar {
   flex: 0 0 25%; }
@@ -1931,6 +1923,7 @@ body.home .preface-text {
  * Section Elements
  */
 .section-title, .module-title, .card-title {
+  width: 100%;
   color: #272727;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15); }

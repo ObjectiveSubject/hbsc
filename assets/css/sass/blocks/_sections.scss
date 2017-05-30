@@ -7,6 +7,7 @@
 }
 .section__header {
     flex: 1 100%;
+    @extend .u-mb-4;
 }
 .section__body {
     flex: 1 100%;
@@ -27,6 +28,7 @@
  * Section Elements
  */
 .section-title {
+    width: 100%;
     @extend .u-py-1;
     @extend .h6;
     @extend .u-text-center;

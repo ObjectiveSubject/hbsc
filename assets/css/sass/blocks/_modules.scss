@@ -45,9 +45,6 @@
             border-color: rgba(0,0,0,.15);
         }
     }
-    .module__header+& {
-        @extend .u-mt-4;
-    }
     .module--basic & {
         @extend .module__content;
     }
@@ -56,7 +53,8 @@
         width: 100%;
     }
     .has-sidebar & {
-        @include flex-grow(0);
+        //@include flex-grow(0);
+        @extend .u-px-6;
     }
     .page-header & {
         @extend .u-mt-2;
@@ -64,7 +62,6 @@
 }
 .module__sidebar {
     flex: 0 0 25%;
-    @extend .u-mt-4;
 }
 .module__footer {
     @extend .section__footer;

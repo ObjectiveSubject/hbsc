@@ -11,26 +11,21 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	// NOTE: Uncomment to activate shortcode
-	// add_shortcode( 'example_shortcode', $n( 'example_shortcode' ) );
+	add_shortcode( 'section-title', $n( 'section_title_func' ) );
 }
 
-
-
- /**
-  * Create an example shortcode
-  *
-  * @param $attributes array List of attributes from the given shortcode
-  *
-  * @return mixed HTML output for the shortcode
-  */
- function example_shortcode( $attributes, $content = null ) {
- 	$data = shortcode_atts( array(
- 		'class' => 'h2',
- 		'text'	=> 'Hello World',
- 	), $attributes );
-
- 	$html = '<div class="' . $data['class'] . '">' . $data['text'] . '</div>';
-
- 	return $html;
- }
+/**
+ * Create a section title
+ *
+ * Example: [section-title]Title[/section-title]
+ *
+ * @param $attributes array List of attributes from the given shortcode
+ * @param $content mixed The content of the section
+ *
+ * @return mixed HTML output for the shortcode
+ */
+function section_title_func( $attributes, $content = null ) {
+	$content = preg_replace( '#^<\/p>|^<br \/>|<p>$#', '', $content );
+	$html = '<div class="section-title u-mt-4">' . do_shortcode( shortcode_unautop( trim( $content ) ) ) . '</div>';
+	return $html;
+}

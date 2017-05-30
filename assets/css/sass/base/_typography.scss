@@ -50,7 +50,6 @@ textarea {
  h4, .h4 {
 	font-size: rem(20);
 	text-transform: uppercase;
-    margin: 0;
 	@include media($md) {
         font-size: rem(28);
 	}
@@ -58,7 +57,6 @@ textarea {
  h5, .h5 {
 	font-size: rem(16);
 	text-transform: uppercase;
-    margin: 0;
 	@include media($md) {
         font-size: rem(22);
 	}
@@ -66,7 +64,6 @@ textarea {
  h6, .h6 {
 	font-size: rem(14);
 	text-transform: uppercase;
-    margin: 0;
 	@include media($md) {
         font-size: rem(18);
 	}
