@@ -10,13 +10,16 @@
     }
     .module--carousel & {
         width: rem(360);
-        height: rem(492);
+        min-height: rem(492);
         @extend .u-mt-3;
     }
 }
 .card-positioner {
     .module--hero & {
-        flex: 0 0 57.5%;
+        width: 100%;
+        @include media($md) {
+            width: 57.5%;
+        }
     }
     .module--carousel & {
         float: right;
@@ -29,9 +32,6 @@
 }
 .card-content {
     @extend .u-my-3;
-    span {
-        @include display(block); // line-break for every font change
-    }
     .module--carousel & {
         flex-grow: 1;
         @include display(flex);

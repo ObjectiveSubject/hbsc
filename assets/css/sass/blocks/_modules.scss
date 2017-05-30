@@ -10,6 +10,12 @@
     &.has-image {
         padding-top: 0;
     }
+    .module--hero+& {
+        padding-top: rem(400);
+        @include media($md) {
+            padding-top: $leading*4;
+        }
+    }
 }
 .module__image {
     height: rem(256);
@@ -24,8 +30,12 @@
         @include flex-wrap(wrap);
     }
     .module--hero & {
+        top: 100%;
         height: 100%;
-        @extend .u-flex-items-center;
+        @include media($md) {
+            top: 0;
+            @include align-items(center);
+        }
     }
 }
 .module__header {
@@ -89,7 +99,10 @@
     
 }
 .module--hero {
-    height: rem(800);
+    height: rem(400);
+    @include media($md) {
+        height: rem(800);
+    }
 }
 .module--carousel {
     

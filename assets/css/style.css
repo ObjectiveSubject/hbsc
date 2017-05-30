@@ -377,7 +377,7 @@ html {
 [class*="u-span-"]:last-child {
   margin-right: 0; }
 
-.u-flex-items-center, .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
+.u-flex-items-center {
   -webkit-box-align: center;
   -moz-box-align: center;
   box-align: center;
@@ -838,7 +838,7 @@ html {
 .u-ml-6 {
   margin-left: 6rem; }
 
-.u-mx-6, .preface-text, .preface .section__footer, .preface .module__footer {
+.u-mx-6 {
   margin-left: 6rem;
   margin-right: 6rem; }
 
@@ -1466,18 +1466,18 @@ button {
     padding-top: 4.5rem; }
   .module--carousel .card {
     width: 22.5rem;
-    height: 30.75rem; }
+    min-height: 30.75rem; }
 
 .module--hero .card-positioner {
-  flex: 0 0 57.5%; }
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .module--hero .card-positioner {
+      width: 57.5%; } }
 
 .module--carousel .card-positioner {
   float: right;
   position: relative;
   z-index: 10; }
-
-.card-content span {
-  display: block; }
 
 .module--carousel .card-content {
   flex-grow: 1;
@@ -1809,6 +1809,12 @@ body.home .menu-item {
 .module.has-image {
   padding-top: 0; }
 
+.module--hero + .module {
+  padding-top: 25rem; }
+  @media screen and (min-width: 768px) {
+    .module--hero + .module {
+      padding-top: 4rem; } }
+
 .module__image {
   height: 16rem;
   background-size: cover;
@@ -1828,7 +1834,20 @@ body.home .menu-item {
   flex-wrap: wrap; }
 
 .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
+  top: 100%;
   height: 100%; }
+  @media screen and (min-width: 768px) {
+    .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
+      top: 0;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center; } }
 
 .module__body {
   flex: 1 0 75%; }
@@ -1861,7 +1880,10 @@ body.home .menu-item {
  * Module Types
  */
 .module--hero {
-  height: 50rem; }
+  height: 25rem; }
+  @media screen and (min-width: 768px) {
+    .module--hero {
+      height: 50rem; } }
 
 body.home .preface {
   padding-top: 6.75rem; }
@@ -1890,6 +1912,10 @@ body.home .preface {
 body.home .preface-text {
   margin-left: 20rem;
   text-align: left; }
+
+@media screen and (min-width: 768px) {
+  .preface-text {
+    margin: 0 6rem; } }
 
 .preface-button {
   width: 15rem;
@@ -1920,6 +1946,11 @@ body.home .preface-text {
 
 .section__body {
   flex: 1 100%; }
+
+@media screen and (min-width: 768px) {
+  .preface .section__footer, .preface .module__footer {
+    margin-left: 6rem;
+    margin-right: 6rem; } }
 
 /**
  * Section Elements

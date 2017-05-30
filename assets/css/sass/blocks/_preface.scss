@@ -20,7 +20,6 @@
     }
 }
 .preface-text {
-    @extend .u-mx-6;
     [class*='u-bg-'] & {
         color: $tan;
     }
@@ -33,6 +32,9 @@
         @extend .h4;
         margin-left: rem(320);
         text-align: left;
+    }
+    @include media($md) {
+        margin: 0 $leading*6;
     }
 }
 .preface-button {

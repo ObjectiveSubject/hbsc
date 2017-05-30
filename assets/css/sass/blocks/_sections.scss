@@ -18,7 +18,10 @@
     @extend .u-text-center;
     @extend .u-mt-4;
     .preface & {
-        @extend .u-mx-6;
+        @include media($md) {
+            margin-left: $leading*6;
+            margin-right: $leading*6;
+        }
     }
 }
 /**
