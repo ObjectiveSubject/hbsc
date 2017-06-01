@@ -25,10 +25,6 @@
 }
 .module__content {
     @extend .section__content;
-    .module--basic &,
-    .module--carousel & {
-        @include flex-wrap(wrap);
-    }
     .module--hero & {
         top: 100%;
         height: 100%;
@@ -80,7 +76,7 @@
 }
 .module-row {
     @extend .module__content;
-    flex: 1 100%;
+    width: 100%;
     &+& {
         @extend .u-mt-4;
     }
@@ -92,18 +88,9 @@
 /**
  * Module Types
  */
-.module--basic {
-    
-}
-.module--list {
-    
-}
 .module--hero {
     height: rem(400);
     @include media($md) {
         height: rem(800);
     }
-}
-.module--carousel {
-    
 }

@@ -42,7 +42,7 @@ if ( $is_top_page ) {
         <nav class="site-nav">
             <div class="u-container">
                 <div id="site-menu" class="site-menu">
-                    <div class="u-py-1 u-mr-3">
+                    <div class="header-logo-container">
                         <div class="header-logo">
                             <a id="hbsc-logo" class="hbsc-logo u-display-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                 <?php get_template_part( 'partials/ui', 'logo' ); ?>

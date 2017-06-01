@@ -635,7 +635,7 @@ html {
   padding-left: 1rem;
   padding-right: 1rem; }
 
-.u-py-1, .form-field:focus, .section-title, .module-title, .card-title {
+.u-py-1, .form-field:focus, .section-title, .module-title, .card-title, .header-logo-container {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
@@ -691,7 +691,7 @@ html {
 .u-mt-3, .module--carousel .card {
   margin-top: 3rem; }
 
-.u-mr-3 {
+.u-mr-3, .header-logo-container {
   margin-right: 3rem; }
 
 .u-mb-3, .module--carousel .badge {
@@ -1799,6 +1799,9 @@ body.home .menu-item {
 .menu-item.current-page-item-parent {
   display: block; }
 
+body.home .masthead--collapsed .header-menu {
+  display: none; }
+
 /**
  * Module Parts
  */
@@ -1819,19 +1822,6 @@ body.home .menu-item {
   height: 16rem;
   background-size: cover;
   background-position: center; }
-
-.module--basic .module__content, .module--basic .module__body, .module--basic .module-row,
-.module--carousel .module__content,
-.module--carousel .module--basic .module__body, .module--basic
-.module--carousel .module__body,
-.module--carousel .module-row {
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
 
 .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
   top: 100%;
@@ -1870,7 +1860,7 @@ body.home .menu-item {
  * Module Elements
  */
 .module-row {
-  flex: 1 100%; }
+  width: 100%; }
 
 .module-column {
   flex: 1 0 25%;
@@ -2133,6 +2123,9 @@ caption {
   color: #dddad5; }
   .search-toggle:hover {
     color: #e74949; }
+
+body.home .masthead--collapsed .header-logo-container {
+  width: 0; }
 
 .header-logo {
   width: 12rem; }

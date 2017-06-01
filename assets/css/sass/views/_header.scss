@@ -28,6 +28,13 @@
         color: $red;
     }
 }
+.header-logo-container {
+    @extend .u-py-1;
+    @extend .u-mr-3;
+    body.home .masthead--collapsed & {
+        width: 0;
+    }
+}
 .header-logo {
     width: rem(192);
 }
