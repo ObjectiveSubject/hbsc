@@ -1,7 +1,7 @@
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--hero has-background" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
-    <div class="module__content u-container <?php echo $content_position; ?>">
-        <div class="card-positioner">
-            <div class="card <?php echo $color; ?> js-slide-in">
+<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--hero has-background <?php echo $contentVerticalPosClass;?> <?php echo $color; ?>" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
+    <div class="module__content u-container">
+        <div class="card-positioner <?php echo $cardVerticalPosClass; ?>">
+            <div class="card <?php echo $cardColor; ?> js-slide-in">
                 <?php if( $display_title ) : ?>
                 <div class="card-title">
                     <?php echo $title; ?>

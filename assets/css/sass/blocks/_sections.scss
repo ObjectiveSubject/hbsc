@@ -1,5 +1,5 @@
 .section {
-    @extend .u-py-4;
+    overflow: hidden;
 }
 .section__content {
     @include display(flex);

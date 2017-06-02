@@ -6,16 +6,37 @@
     &.has-background {
         background-size: cover;
         background-position: center center;
+        background-repeat: no-repeat; 
+        &.module--hero
+        {
+            background-position: top;
+            background-size: contain;
+            /*background-size: auto 18rem;*/
+
+            @include media($md) {
+                background-size: cover;
+                background-position: center center;
+            }
+        }
     }
     &.has-image {
         padding-top: 0;
     }
     .module--hero+& {
-        padding-top: rem(400);
         @include media($md) {
             padding-top: $leading*4;
         }
     }
+
+    &.module--hero {
+        padding-top:0;
+        padding-bottom:0;
+    }
+
+    &.module--basic,
+    &.module--carousel {
+        @extend .u-py-4;
+    }    
 }
 .module__image {
     height: rem(256);
@@ -92,8 +113,8 @@
  * Module Types
  */
 .module--hero {
-    height: rem(400);
+    min-height: rem(400);
     @include media($md) {
         height: rem(800);
-    }
+    }    
 }

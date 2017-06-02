@@ -1,3 +1,6 @@
+<?php
+    $carouselDotsColor = get_sub_field('carousel_dots_color');
+?>
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--carousel <?php echo $color; ?>">
     <div class="module__content u-container">
         <?php if( $display_title ) : ?>
@@ -7,14 +10,14 @@
         <?php endif; ?>
         <?php if(have_rows('carousel_slides')) : ?>
         <div class="module__body">
-            <ul class="carousel js-carousel">
+            <ul class="carousel js-carousel <?php echo $carouselDotsColor;?>">
                 <?php while( have_rows('carousel_slides') ): the_row();
                 
                 $content = get_sub_field('slide_content');
                 $color = get_sub_field('slide_background_color');
                 $image = get_sub_field('slide_image');
-                $button_link = get_sub_field('slide_button_link');
-                $button_text = get_sub_field('slide_button_text');
+                $slideButtonLink = get_sub_field('slide_button_link');
+                $slideButtonText = get_sub_field('slide_button_text');
                 
                 $badgeLargeText = get_sub_field('slide_badge_large_text');
                 $badgeSmallText = get_sub_field('slide_badge_small_text');
@@ -44,9 +47,9 @@
                                 </div>
                                 <?php endif; ?>
 
-                                <?php if( $display_button && $button_link && $button_text ) : ?>
+                                <?php if( $display_button && $slideButtonLink && $slideButtonText ) : ?>
                                 <div class="card-button">
-                                    <a href="<?php echo $button_link; ?>" class="button js-hover-toggle" data-target="#<?php echo preg_replace('/\W+/', '-', strtolower($content)); ?>" data-class="image--grayscale"><?php echo $button_text; ?></a>
+                                    <a href="<?php echo $slideButtonLink; ?>" class="button js-hover-toggle" data-target="#<?php echo preg_replace('/\W+/', '-', strtolower($content)); ?>" data-class="image--grayscale"><?php echo $slideButtonText; ?></a>
                                 </div>
                                 <?php endif; ?>
                             </div>

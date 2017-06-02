@@ -49,6 +49,14 @@
     @include justify-content(space-between);
 }
 
+.u-flex-self-start{
+    @include align-self(flex-start)
+}
+
+.u-flex-self-end{
+    @include align-self(flex-end);
+}
+
 // Flex wrap
 .u-flex-wrap {
     @include flex-wrap(wrap);
