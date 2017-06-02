@@ -1796,6 +1796,10 @@ figure {
   .header-menu .menu-item a {
     display: block;
     margin: 0.25rem 0; }
+  .header-menu .menu-item.current-page-item {
+    display: block; }
+  .header-menu .menu-item.current-page-item-parent {
+    display: block; }
 
 .sub-menu .menu-item a {
   color: #a6a4a0; }
@@ -2127,9 +2131,6 @@ caption {
 .header-logo {
   width: 12rem; }
 
-.header-menu .sub-menu.is-visible {
-  display: block; }
-
 .site-menu-toggle {
   position: absolute;
   bottom: 0.5rem;
@@ -2142,21 +2143,25 @@ caption {
   .site-menu.is-expanded .site-menu-toggle {
     transform: rotate(180deg); }
 
-.site-menu.is-expanded .menu-item,
-body.home .menu-item {
+.header-menu .sub-menu.is-expanded {
   display: block; }
-  .site-menu.is-expanded .menu-item .sub-menu .menu-item,
-  body.home .menu-item .sub-menu .menu-item {
+
+.site-menu.is-expanded .header-menu {
+  display: block; }
+
+.site-menu.is-expanded .menu-item {
+  display: block; }
+  .site-menu.is-expanded .menu-item .sub-menu .menu-item {
     display: none; }
-  .site-menu.is-expanded .menu-item .sub-menu.is-visible .menu-item,
-  body.home .menu-item .sub-menu.is-visible .menu-item {
+  .site-menu.is-expanded .menu-item .sub-menu.is-expanded .menu-item {
     display: block; }
 
-.menu-item.current-page-item {
+body.home .menu-item {
   display: block; }
-
-.menu-item.current-page-item-parent {
-  display: block; }
+  body.home .menu-item .sub-menu .menu-item {
+    display: none; }
+  body.home .menu-item .sub-menu.is-expanded .menu-item {
+    display: block; }
 
 body.home .masthead--collapsed .header-menu {
   display: none; }

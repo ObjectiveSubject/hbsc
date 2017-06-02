@@ -35,13 +35,6 @@
 .header-logo {
     width: rem(192);
 }
-.header-menu {
-    .sub-menu {
-        &.is-visible {
-            @include display(block);
-        }
-    }
-}
 .site-menu-toggle {
     @include position(absolute);
     bottom: rem(8);
@@ -58,44 +51,58 @@
         transform: rotate(180deg);
     }
 }
-.menu-item {
-    .site-menu.is-expanded &,
-    body.home & {
+// Menu toggle behaviour
+.header-menu {
+    .sub-menu {
+        &.is-expanded {
+            @include display(block);
+        }
+    }
+}
+.site-menu.is-expanded {
+    .header-menu {
+        @include display(block);
+    }
+    .menu-item {
         @include display(block);
         .sub-menu .menu-item {
             @include display(none);
         }
-        .sub-menu.is-visible .menu-item {
+        .sub-menu.is-expanded .menu-item {
             @include display(block);
         }
     }
-    &.current-page-item {
-        @include display(block);
-    }
-    &.current-page-item-parent {
-        @include display(block);
-    } 
 }
-// Menu toggle behaviour
-body.home .masthead--collapsed {
-    .header-menu {
-        display: none;
+body.home {
+    .menu-item {
+        @include display(block);
+        .sub-menu .menu-item {
+            @include display(none);
+        }
+        .sub-menu.is-expanded .menu-item {
+            @include display(block);
+        }
     }
-    .header-logo-container {
-        width: 0;
-    }
-    .site-menu.is-expanded {
+    .masthead--collapsed {
         .header-menu {
-        display: block;
+            @include display(none);
         }
         .header-logo-container {
-            width: auto;
+            width: 0;
         }
-        .hbsc-logo {
-            @include transform(translateX(0));
-            .logotype {
-                opacity: 1;
-                visibility: visible;
+        .site-menu.is-expanded {
+            .header-menu {
+                @include display(block);
+            }
+            .header-logo-container {
+                width: auto;
+            }
+            .hbsc-logo {
+                @include transform(translateX(0));
+                .logotype {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
     }

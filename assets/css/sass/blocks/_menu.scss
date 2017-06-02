@@ -8,6 +8,12 @@
             margin: rem(4) 0;
             @extend .u-transition-300;
         }
+        &.current-page-item {
+            @include display(block);
+        }
+        &.current-page-item-parent {
+            @include display(block);
+        }
     }
     .sub-menu & {
         a {
