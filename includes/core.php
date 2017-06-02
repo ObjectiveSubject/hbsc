@@ -81,8 +81,11 @@ function styles( $debug = false ) {
 	);
     
     wp_enqueue_style(
-        "//cloud.typenetwork.com/projects/1467/fontface.css/"
-    ;)
+        'miller-font',
+        "//cloud.typenetwork.com/projects/1467/fontface.css/",
+		array(),
+		false
+    );
 }
 
 /**
