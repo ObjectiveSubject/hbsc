@@ -1,229 +1,27 @@
-<section class="module module--basic u-bg-blue">
+<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--basic <?php echo $color; echo ( $image ) ? ' has-image' : ''; echo ( $display_sidebar ) ? ' has-sidebar' : ''; ?>">
+    <?php if( $image ) : ?>
+    <div class="module__image" <?php echo "style='background-image: url(" . $image . ")'"; ?>></div>
+    <?php endif; ?>
     <div class="module__content u-container">
+        <?php if( $display_title ) : ?>
         <header class="module__header">
             <div class="module-title">
-                Basic Module
+                <?php echo $title; ?>
             </div>
         </header>
+        <?php endif; ?>
         <div class="module__body">
-            This is the module content.
+            <?php echo $content; ?>
         </div>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-   <section class="module module--basic">
-    <div class="module__content u-container">
-        <header class="module__header">
-            <div class="module-title">
-                Basic Module w/ sidebar
-            </div>
-        </header>
-        <div class="module__body">
-            This is the module content.
-        </div>
+        <?php if( $display_sidebar && $sidebar ) : ?>
         <aside class="module__sidebar">
-            This is the module sidebar
+            <?php echo $sidebar; ?>
         </aside>
+        <?php endif; ?>
+        <?php if( $display_button && $button_link && $button_text ) : ?>
         <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
+            <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>
         </footer>
-    </div>
-</section>
-<section class="module module--basic u-bg-red">
-    <div class="module__content u-container">
-        <header class="module__header">
-            <div class="module-title">
-                Basic Module w/ two columns
-            </div>
-        </header>
-        <div class="module__body">
-           <div class="module-row">
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            </div>
-           <div class="module-row">
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            </div>
-        </div>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-<section class="module module--basic u-bg-blue">
-    <div class="module__content u-container">
-        <div class="module__body">
-            <div class="module-column">
-                <div class="module-title">
-                    Basic Module w/ no header
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    + two columns
-                </div>
-            </div>
-        </div>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-<section class="module module--basic u-bg-red">
-    <div class="module__content u-container">
-        <div class="module__body">
-            <div class="module-column">
-                <div class="module-title">
-                    Basic Module w/ no header + sidebar
-                </div>
-            </div>
-        </div>
-        <aside class="module__sidebar">
-            This is the module sidebar
-        </aside>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-<section class="module module--basic">
-    <div class="module__content u-container u-container">
-        <header class="module__header">
-            <div class="module-title">
-                Basic Module w/ three columns
-            </div>
-        </header>
-        <div class="module__body">
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-        </div>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-<section class="module module--basic u-bg-blue">
-    <div class="module__content u-container">
-        <header class="module__header">
-            <div class="module-title">
-                Basic Module w/ four columns
-            </div>
-        </header>
-        <div class="module__body">
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-        </div>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-<section class="module module--basic u-bg-red">
-    <div class="module__content u-container">
-        <header class="module__header">
-            <div class="module-title">
-                Basic Module w/ two columns + sidebar
-            </div>
-        </header>
-        <div class="module__body">
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-        </div>
-        <aside class="module__sidebar">
-            This is the module sidebar
-        </aside>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
-    </div>
-</section>
-<section class="module module--basic u-bg-blue">
-    <div class="module__content u-container">
-        <header class="module__header">
-            <div class="module-title">
-                Basic Module w/ three columns + sidebar
-            </div>
-        </header>
-        <div class="module__body">
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-            <div class="module-column">
-                <div class="module-title">
-                    This is a module column
-                </div>
-            </div>
-        </div>
-        <aside class="module__sidebar">
-            This is the module sidebar
-        </aside>
-        <footer class="module__footer">
-            <a href="#" class="button module-button">Sample Button</a>
-        </footer>
+        <?php endif; ?>
     </div>
 </section>
