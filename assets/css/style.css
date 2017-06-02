@@ -38,7 +38,7 @@ html {
 .u-color-red {
   color: #e74949 !important; }
 
-.u-bg-red, .badge--date {
+.u-bg-red, .badge {
   background-color: #e74949 !important; }
 
 .u-color-tan {
@@ -699,7 +699,7 @@ html {
 .u-ma-3 {
   margin: 3rem; }
 
-.u-mt-3, .module--carousel .card {
+.u-mt-3, .module--carousel .card, .preface-text p {
   margin-top: 3rem; }
 
 .u-mr-3, .header-logo-container {
@@ -1218,30 +1218,40 @@ textarea {
 /* Headings
  * ------------------------------------------ */
 h1, .h1 {
+  display: block;
+  font-family: RamaGothicE-Heavy;
   font-size: 3rem;
   text-transform: uppercase;
+  line-height: 1;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h1, .h1 {
       font-size: 6rem; } }
 
 h2, blockquote, .h2 {
+  display: block;
+  font-family: RamaGothicE-Heavy;
   font-size: 2.25rem;
   text-transform: uppercase;
+  line-height: 1;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h2, blockquote, .h2 {
       font-size: 4.5rem; } }
 
 h3, .h3 {
+  display: block;
+  font-family: RamaGothicE-Heavy;
   font-size: 1.5rem;
   text-transform: uppercase;
+  line-height: 1;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h3, .h3 {
       font-size: 3rem; } }
 
 h4, .h4, body.home .preface-text {
+  display: block;
   font-size: 1.25rem;
   text-transform: uppercase;
   margin: 0; }
@@ -1250,6 +1260,7 @@ h4, .h4, body.home .preface-text {
       font-size: 1.75rem; } }
 
 h5, .h5 {
+  display: block;
   font-size: 1rem;
   text-transform: uppercase;
   margin: 0; }
@@ -1258,6 +1269,7 @@ h5, .h5 {
       font-size: 1.38rem; } }
 
 h6, .h6, .header-menu .menu-item a, .section-title, .module-title, .card-title {
+  display: block;
   font-size: 0.88rem;
   text-transform: uppercase; }
   @media screen and (min-width: 768px) {
@@ -1398,17 +1410,6 @@ hr {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  text-align: center; }
-
-.badge-positioner {
-  position: absolute;
-  pointer-events: none; }
-  .module--carousel .badge-positioner {
-    left: 0;
-    bottom: 0;
-    z-index: 10; }
-
-.badge--date {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   box-orient: vertical;
@@ -1418,7 +1419,16 @@ hr {
   -ms-flex-direction: column;
   height: 9rem;
   width: 9rem;
-  color: white; }
+  color: white;
+  text-align: center; }
+
+.badge-positioner {
+  position: absolute;
+  pointer-events: none; }
+  .module--carousel .badge-positioner {
+    left: 0;
+    bottom: 0;
+    z-index: 10; }
 
 button {
   background: none; }
@@ -1439,7 +1449,7 @@ button {
   .button:hover {
     color: #e74949;
     border-color: #e74949; }
-  .u-bg-red .button:hover, .badge--date .button:hover {
+  .u-bg-red .button:hover, .badge .button:hover {
     color: #272727;
     border-color: #272727; }
 
@@ -1459,7 +1469,7 @@ button {
   .ui-button:hover {
     color: #e74949;
     border-color: #e74949; }
-  .u-bg-red .ui-button:hover, .badge--date .ui-button:hover {
+  .u-bg-red .ui-button:hover, .badge .ui-button:hover {
     color: #272727;
     border-color: #272727; }
 
@@ -1845,14 +1855,66 @@ figure {
 
 .module__body {
   flex: 1 0 75%; }
-  [class*='u-bg-'] .module__body p {
-    color: #dddad5;
-    border-color: rgba(255, 255, 255, 0.15); }
-  .u-bg-white .module__body p,
-  .u-bg-light-gray .module__body p,
-  .u-bg-tan .module__body p {
-    color: #272727;
-    border-color: rgba(0, 0, 0, 0.15); }
+  .module__body h1, .module__body h2, .module__body blockquote, .module__body h3, .module__body h4, .module__body h5, .module__body h6,
+  .module__body .h1, .module__body .h2, .module__body .h3, .module__body .h4, .module__body body.home .preface-text, body.home .module__body .preface-text, .module__body .h5, .module__body .h6, .module__body .header-menu .menu-item a, .header-menu .menu-item .module__body a, .module__body .section-title, .module__body .module-title, .module__body .card-title,
+  .module__body p {
+    width: 100%; }
+    [class*='u-bg-'] .module__body h1, [class*='u-bg-'] .module__body h2, [class*='u-bg-'] .module__body blockquote, [class*='u-bg-'] .module__body h3, [class*='u-bg-'] .module__body h4, [class*='u-bg-'] .module__body h5, [class*='u-bg-'] .module__body h6, [class*='u-bg-']
+    .module__body .h1, [class*='u-bg-'] .module__body .h2, [class*='u-bg-'] .module__body .h3, [class*='u-bg-'] .module__body .h4, [class*='u-bg-'] .module__body body.home .preface-text, body.home [class*='u-bg-'] .module__body .preface-text, [class*='u-bg-'] .module__body .h5, [class*='u-bg-'] .module__body .h6, [class*='u-bg-'] .module__body .header-menu .menu-item a, .header-menu .menu-item [class*='u-bg-'] .module__body a, [class*='u-bg-'] .module__body .section-title, [class*='u-bg-'] .module__body .module-title, [class*='u-bg-'] .module__body .card-title, [class*='u-bg-']
+    .module__body p {
+      color: #dddad5;
+      border-color: rgba(255, 255, 255, 0.15); }
+    .u-bg-white .module__body h1,
+    .u-bg-light-gray .module__body h1,
+    .u-bg-tan .module__body h1, .u-bg-white .module__body h2, .u-bg-white .module__body blockquote,
+    .u-bg-light-gray .module__body h2,
+    .u-bg-light-gray .module__body blockquote,
+    .u-bg-tan .module__body h2,
+    .u-bg-tan .module__body blockquote, .u-bg-white .module__body h3,
+    .u-bg-light-gray .module__body h3,
+    .u-bg-tan .module__body h3, .u-bg-white .module__body h4,
+    .u-bg-light-gray .module__body h4,
+    .u-bg-tan .module__body h4, .u-bg-white .module__body h5,
+    .u-bg-light-gray .module__body h5,
+    .u-bg-tan .module__body h5, .u-bg-white .module__body h6,
+    .u-bg-light-gray .module__body h6,
+    .u-bg-tan .module__body h6, .u-bg-white
+    .module__body .h1,
+    .u-bg-light-gray
+    .module__body .h1,
+    .u-bg-tan
+    .module__body .h1, .u-bg-white .module__body .h2,
+    .u-bg-light-gray .module__body .h2,
+    .u-bg-tan .module__body .h2, .u-bg-white .module__body .h3,
+    .u-bg-light-gray .module__body .h3,
+    .u-bg-tan .module__body .h3, .u-bg-white .module__body .h4, .u-bg-white .module__body body.home .preface-text, body.home .u-bg-white .module__body .preface-text,
+    .u-bg-light-gray .module__body .h4,
+    .u-bg-light-gray .module__body body.home .preface-text, body.home
+    .u-bg-light-gray .module__body .preface-text,
+    .u-bg-tan .module__body .h4,
+    .u-bg-tan .module__body body.home .preface-text, body.home
+    .u-bg-tan .module__body .preface-text, .u-bg-white .module__body .h5,
+    .u-bg-light-gray .module__body .h5,
+    .u-bg-tan .module__body .h5, .u-bg-white .module__body .h6, .u-bg-white .module__body .header-menu .menu-item a, .header-menu .menu-item .u-bg-white .module__body a, .u-bg-white .module__body .section-title, .u-bg-white .module__body .module-title, .u-bg-white .module__body .card-title,
+    .u-bg-light-gray .module__body .h6,
+    .u-bg-light-gray .module__body .header-menu .menu-item a, .header-menu .menu-item
+    .u-bg-light-gray .module__body a,
+    .u-bg-light-gray .module__body .section-title,
+    .u-bg-light-gray .module__body .module-title,
+    .u-bg-light-gray .module__body .card-title,
+    .u-bg-tan .module__body .h6,
+    .u-bg-tan .module__body .header-menu .menu-item a, .header-menu .menu-item
+    .u-bg-tan .module__body a,
+    .u-bg-tan .module__body .section-title,
+    .u-bg-tan .module__body .module-title,
+    .u-bg-tan .module__body .card-title, .u-bg-white
+    .module__body p,
+    .u-bg-light-gray
+    .module__body p,
+    .u-bg-tan
+    .module__body p {
+      color: #272727;
+      border-color: rgba(0, 0, 0, 0.15); }
   .module--carousel .module__body {
     max-width: 100%;
     width: 100%; }
@@ -1881,19 +1943,6 @@ figure {
 
 body.home .preface {
   padding-top: 6.75rem; }
-
-.preface-title span {
-  display: block; }
-  .preface-title span:nth-child(2n) {
-    font-style: italic; }
-
-[class*='u-bg-'] .preface-title {
-  color: white; }
-
-.u-bg-white .preface-title,
-.u-bg-light-gray .preface-title,
-.u-bg-tan .preface-title {
-  color: #272727; }
 
 [class*='u-bg-'] .preface-text {
   color: #dddad5; }

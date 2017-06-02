@@ -24,30 +24,40 @@ textarea {
 /* Headings
  * ------------------------------------------ */
  h1, .h1 {
+    @include display(block);
+    font-family: $rama-gothic;
 	font-size: rem(48);
 	text-transform: uppercase;
+    line-height: 1;
     margin: 0;
 	@include media($md) {
         font-size: rem(96);
 	}
  }
  h2, .h2 {
+    @include display(block);
+    font-family: $rama-gothic;
 	font-size: rem(36);
 	text-transform: uppercase;
+    line-height: 1;
     margin: 0;
 	@include media($md) {
         font-size: rem(72);
 	}
  }
  h3, .h3 {
+    @include display(block);
+    font-family: $rama-gothic;
 	font-size: rem(24);
 	text-transform: uppercase;
+    line-height: 1;
     margin: 0;
 	@include media($md) {
         font-size: rem(48);
 	}
  }
  h4, .h4 {
+    @include display(block);
 	font-size: rem(20);
 	text-transform: uppercase;
     margin: 0;
@@ -56,6 +66,7 @@ textarea {
 	}
  }
  h5, .h5 {
+    @include display(block);
 	font-size: rem(16);
 	text-transform: uppercase;
     margin: 0;
@@ -64,6 +75,7 @@ textarea {
 	}
  }
  h6, .h6 {
+    @include display(block);
 	font-size: rem(14);
 	text-transform: uppercase;
 	@include media($md) {

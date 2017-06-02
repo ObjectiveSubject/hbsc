@@ -3,23 +3,10 @@
         padding-top: 6.75rem;
     }
 }
-.preface-title {
-    span {
-        @include display(block); // line-break on every font change
-        &:nth-child(2n) {
-            font-style: italic;
-        }
-    }
-    [class*='u-bg-'] & {
-        color: white;
-    }
-    .u-bg-white &,
-    .u-bg-light-gray &,
-    .u-bg-tan & {
-        color: $dark-gray;
-    }
-}
 .preface-text {
+    p {
+        @extend .u-mt-3;
+    }
     [class*='u-bg-'] & {
         color: $tan;
     }

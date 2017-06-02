@@ -79,6 +79,10 @@ function styles( $debug = false ) {
 		array(),
 		HBSC_VERSION
 	);
+    
+    wp_enqueue_style(
+        "//cloud.typenetwork.com/projects/1467/fontface.css/"
+    ;)
 }
 
 /**

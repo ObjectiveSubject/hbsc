@@ -1,7 +1,7 @@
 <section class="preface section <?php the_field('preface_background_color'); ?>">
     <div class="section__content u-container">
         <header class="section__header">
-            <h1 class="page-title section-title"><?php the_title(); ?></h1>
+            <h1 class="section-title"><?php the_title(); ?></h1>
         </header>
         <div class="section__body">
             <div class="preface-text">

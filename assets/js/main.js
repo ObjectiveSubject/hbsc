@@ -140,7 +140,7 @@
     ScrollEffects.slideIn = function () {
         var $element = $('.js-slide-in'),
             viewTop = $(window).scrollTop(),
-            viewBottom = viewTop + $(window).height();
+            viewBottom = viewTop + $(window).height(); 
         $element.each(function () {
             var elementTop = $(this).offset().top;
             var elementBottom = elementTop + $(this).height();
