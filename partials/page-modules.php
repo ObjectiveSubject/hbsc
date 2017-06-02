@@ -71,28 +71,6 @@ if( $type == 'module--basic' ) :
 
 <?php elseif( $type == 'module--carousel' ) : ?>
 
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--hero has-background" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
-    <div class="module__content u-container <?php echo $content_position; ?>">
-        <div class="card-positioner">
-            <div class="card <?php echo $color; ?> js-slide-in">
-                <?php if( $display_title ) : ?>
-                <div class="card-title">
-                    <?php echo $title; ?>
-                </div>
-                <?php endif; ?>
-                <div class="card-content">
-                    <?php echo $content ?>
-                </div>
-                <?php if( $display_button && $button_link && $button_text ) : ?>
-                <div class="card-button">
-                    <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>
-                </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--carousel <?php echo $color; ?>">
     <div class="module__content u-container">
         <?php if( $display_title ) : ?>
