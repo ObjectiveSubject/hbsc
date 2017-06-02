@@ -3,8 +3,10 @@ button {
 }
 .button {
     @include display(inline-block);
-    padding: rem(8) rem(32);
+    @extend .u-font-miller-bold;
+    font-size: 1rem;
     color: $dark-gray;
+    padding: rem(8) rem(32);
     border: 1px solid $dark-gray;
     [class*='u-bg-'] & {
         color: $tan;

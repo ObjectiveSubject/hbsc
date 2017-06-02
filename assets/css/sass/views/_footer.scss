@@ -1,6 +1,7 @@
 .site-footer {
     a {
         color: white;
+        @extend .u-font-miller;
         &:hover {
             color: $red;
         }

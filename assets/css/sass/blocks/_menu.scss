@@ -4,8 +4,10 @@
         border-top: 1px solid shade( $tan, 10%);
         a {
             @include display(block);
-            @extend .h6;
-            margin: rem(4) 0;
+            @extend .u-font-miller-bold;
+            font-size: rem(14);
+            text-transform: uppercase;
+            margin: rem(6) 0;
             @extend .u-transition-300;
         }
         &.current-page-item {

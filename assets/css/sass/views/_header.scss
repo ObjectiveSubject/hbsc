@@ -1,6 +1,7 @@
 .site-header {
-    padding: 0.25rem 0;
-    font-size: rem(12);
+    @extend .u-font-miller-bold;
+    padding: rem(6) 0;
+    font-size: rem(10);
     text-transform: uppercase;
     pointer-events: initial;
 }

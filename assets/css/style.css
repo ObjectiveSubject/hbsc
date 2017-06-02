@@ -895,6 +895,9 @@ html {
 .u-caps {
   text-transform: uppercase; }
 
+.u-font-size-xs {
+  font-size: 50%; }
+
 .u-font-size-sm {
   font-size: 75%; }
 
@@ -921,7 +924,7 @@ html {
   font-family: RamaSlabM-Bold;
   text-transform: uppercase; }
 
-.u-font-miller {
+.u-font-miller, h4, .h4, body.home .preface-text, h5, .h5, h6, .h6, .section-title, .module-title, .card-title, p, .site-footer a {
   font-family: "Miller Text Rom";
   font-style: Normal;
   font-weight: Normal; }
@@ -931,7 +934,7 @@ html {
   font-style: Italic;
   font-weight: Normal; }
 
-.u-font-miller-bold {
+.u-font-miller-bold, .button, .header-menu .menu-item a, .site-header {
   font-family: "Miller Text Bd";
   font-style: Normal;
   font-weight: Normal; }
@@ -1262,7 +1265,7 @@ h2, blockquote, .h2 {
 h3, .h3 {
   display: block;
   font-family: RamaGothicE-Heavy;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   line-height: 1;
   margin: 0; }
@@ -1272,28 +1275,25 @@ h3, .h3 {
 
 h4, .h4, body.home .preface-text {
   display: block;
-  font-size: 1.25rem;
-  text-transform: uppercase;
+  font-size: 1.5rem;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h4, .h4, body.home .preface-text {
-      font-size: 1.75rem; } }
+      font-size: 2rem; } }
 
 h5, .h5 {
   display: block;
   font-size: 1rem;
-  text-transform: uppercase;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h5, .h5 {
-      font-size: 1.38rem; } }
+      font-size: 1.5rem; } }
 
-h6, .h6, .header-menu .menu-item a, .section-title, .module-title, .card-title {
+h6, .h6, .section-title, .module-title, .card-title {
   display: block;
-  font-size: 0.88rem;
-  text-transform: uppercase; }
+  font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
-    h6, .h6, .header-menu .menu-item a, .section-title, .module-title, .card-title {
+    h6, .h6, .section-title, .module-title, .card-title {
       font-size: 1.13rem; } }
 
 /* Links
@@ -1455,8 +1455,9 @@ button {
 
 .button {
   display: inline-block;
-  padding: 0.5rem 2rem;
+  font-size: 1rem;
   color: #272727;
+  padding: 0.5rem 2rem;
   border: 1px solid #272727; }
   [class*='u-bg-'] .button {
     color: #dddad5;
@@ -1825,7 +1826,9 @@ figure {
   border-top: 1px solid #c7c4c0; }
   .header-menu .menu-item a {
     display: block;
-    margin: 0.25rem 0; }
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    margin: 0.38rem 0; }
   .header-menu .menu-item.current-page-item {
     display: block; }
   .header-menu .menu-item.current-page-item-parent {
@@ -1876,11 +1879,11 @@ figure {
 .module__body {
   flex: 1 0 75%; }
   .module__body h1, .module__body h2, .module__body blockquote, .module__body h3, .module__body h4, .module__body h5, .module__body h6,
-  .module__body .h1, .module__body .h2, .module__body .h3, .module__body .h4, .module__body body.home .preface-text, body.home .module__body .preface-text, .module__body .h5, .module__body .h6, .module__body .header-menu .menu-item a, .header-menu .menu-item .module__body a, .module__body .section-title, .module__body .module-title, .module__body .card-title,
+  .module__body .h1, .module__body .h2, .module__body .h3, .module__body .h4, .module__body body.home .preface-text, body.home .module__body .preface-text, .module__body .h5, .module__body .h6, .module__body .section-title, .module__body .module-title, .module__body .card-title,
   .module__body p {
     width: 100%; }
     [class*='u-bg-'] .module__body h1, [class*='u-bg-'] .module__body h2, [class*='u-bg-'] .module__body blockquote, [class*='u-bg-'] .module__body h3, [class*='u-bg-'] .module__body h4, [class*='u-bg-'] .module__body h5, [class*='u-bg-'] .module__body h6, [class*='u-bg-']
-    .module__body .h1, [class*='u-bg-'] .module__body .h2, [class*='u-bg-'] .module__body .h3, [class*='u-bg-'] .module__body .h4, [class*='u-bg-'] .module__body body.home .preface-text, body.home [class*='u-bg-'] .module__body .preface-text, [class*='u-bg-'] .module__body .h5, [class*='u-bg-'] .module__body .h6, [class*='u-bg-'] .module__body .header-menu .menu-item a, .header-menu .menu-item [class*='u-bg-'] .module__body a, [class*='u-bg-'] .module__body .section-title, [class*='u-bg-'] .module__body .module-title, [class*='u-bg-'] .module__body .card-title, [class*='u-bg-']
+    .module__body .h1, [class*='u-bg-'] .module__body .h2, [class*='u-bg-'] .module__body .h3, [class*='u-bg-'] .module__body .h4, [class*='u-bg-'] .module__body body.home .preface-text, body.home [class*='u-bg-'] .module__body .preface-text, [class*='u-bg-'] .module__body .h5, [class*='u-bg-'] .module__body .h6, [class*='u-bg-'] .module__body .section-title, [class*='u-bg-'] .module__body .module-title, [class*='u-bg-'] .module__body .card-title, [class*='u-bg-']
     .module__body p {
       color: #dddad5;
       border-color: rgba(255, 255, 255, 0.15); }
@@ -1915,16 +1918,12 @@ figure {
     .u-bg-tan .module__body body.home .preface-text, body.home
     .u-bg-tan .module__body .preface-text, .u-bg-white .module__body .h5,
     .u-bg-light-gray .module__body .h5,
-    .u-bg-tan .module__body .h5, .u-bg-white .module__body .h6, .u-bg-white .module__body .header-menu .menu-item a, .header-menu .menu-item .u-bg-white .module__body a, .u-bg-white .module__body .section-title, .u-bg-white .module__body .module-title, .u-bg-white .module__body .card-title,
+    .u-bg-tan .module__body .h5, .u-bg-white .module__body .h6, .u-bg-white .module__body .section-title, .u-bg-white .module__body .module-title, .u-bg-white .module__body .card-title,
     .u-bg-light-gray .module__body .h6,
-    .u-bg-light-gray .module__body .header-menu .menu-item a, .header-menu .menu-item
-    .u-bg-light-gray .module__body a,
     .u-bg-light-gray .module__body .section-title,
     .u-bg-light-gray .module__body .module-title,
     .u-bg-light-gray .module__body .card-title,
     .u-bg-tan .module__body .h6,
-    .u-bg-tan .module__body .header-menu .menu-item a, .header-menu .menu-item
-    .u-bg-tan .module__body a,
     .u-bg-tan .module__body .section-title,
     .u-bg-tan .module__body .module-title,
     .u-bg-tan .module__body .card-title, .u-bg-white
@@ -2020,6 +2019,7 @@ body.home .preface-text {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
+  letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
@@ -2173,8 +2173,8 @@ caption {
     font-size: 1.5rem; }
 
 .site-header {
-  padding: 0.25rem 0;
-  font-size: 0.75rem;
+  padding: 0.38rem 0;
+  font-size: 0.63rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
