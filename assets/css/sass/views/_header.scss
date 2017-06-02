@@ -31,9 +31,6 @@
 .header-logo-container {
     @extend .u-py-1;
     @extend .u-mr-3;
-    body.home .masthead--collapsed & {
-        width: 0;
-    }
 }
 .header-logo {
     width: rem(192);
@@ -59,5 +56,47 @@
     }
     .site-menu.is-expanded & {
         transform: rotate(180deg);
+    }
+}
+.menu-item {
+    .site-menu.is-expanded &,
+    body.home & {
+        @include display(block);
+        .sub-menu .menu-item {
+            @include display(none);
+        }
+        .sub-menu.is-visible .menu-item {
+            @include display(block);
+        }
+    }
+    &.current-page-item {
+        @include display(block);
+    }
+    &.current-page-item-parent {
+        @include display(block);
+    } 
+}
+// Menu toggle behaviour
+body.home .masthead--collapsed {
+    .header-menu {
+        display: none;
+    }
+    .header-logo-container {
+        width: 0;
+    }
+    .site-menu.is-expanded {
+        .header-menu {
+        display: block;
+        }
+        .header-logo-container {
+            width: auto;
+        }
+        .hbsc-logo {
+            @include transform(translateX(0));
+            .logotype {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
 }

@@ -17,27 +17,4 @@
             }
         }  
     }
-    // Temporary behaviour, JS will do a better job in the long run
-    .site-menu.is-expanded &,
-    body.home & {
-        @include display(block);
-        .sub-menu .menu-item {
-            @include display(none);
-        }
-        .sub-menu.is-visible .menu-item {
-            @include display(block);
-        }
-    }
-    &.current-page-item {
-        @include display(block);
-    }
-    &.current-page-item-parent {
-        @include display(block);
-    }
-}
-// Temporary behaviour, JS will do a better job in the long run
-.header-menu {
-    body.home .masthead--collapsed & {
-        display: none;
-    }
 }

@@ -1802,25 +1802,6 @@ figure {
   .sub-menu .menu-item a:hover {
     color: #e74949; }
 
-.site-menu.is-expanded .menu-item,
-body.home .menu-item {
-  display: block; }
-  .site-menu.is-expanded .menu-item .sub-menu .menu-item,
-  body.home .menu-item .sub-menu .menu-item {
-    display: none; }
-  .site-menu.is-expanded .menu-item .sub-menu.is-visible .menu-item,
-  body.home .menu-item .sub-menu.is-visible .menu-item {
-    display: block; }
-
-.menu-item.current-page-item {
-  display: block; }
-
-.menu-item.current-page-item-parent {
-  display: block; }
-
-body.home .masthead--collapsed .header-menu {
-  display: none; }
-
 /**
  * Module Parts
  */
@@ -2143,9 +2124,6 @@ caption {
   .search-toggle:hover {
     color: #e74949; }
 
-body.home .masthead--collapsed .header-logo-container {
-  width: 0; }
-
 .header-logo {
   width: 12rem; }
 
@@ -2163,5 +2141,43 @@ body.home .masthead--collapsed .header-logo-container {
     outline: 0; }
   .site-menu.is-expanded .site-menu-toggle {
     transform: rotate(180deg); }
+
+.site-menu.is-expanded .menu-item,
+body.home .menu-item {
+  display: block; }
+  .site-menu.is-expanded .menu-item .sub-menu .menu-item,
+  body.home .menu-item .sub-menu .menu-item {
+    display: none; }
+  .site-menu.is-expanded .menu-item .sub-menu.is-visible .menu-item,
+  body.home .menu-item .sub-menu.is-visible .menu-item {
+    display: block; }
+
+.menu-item.current-page-item {
+  display: block; }
+
+.menu-item.current-page-item-parent {
+  display: block; }
+
+body.home .masthead--collapsed .header-menu {
+  display: none; }
+
+body.home .masthead--collapsed .header-logo-container {
+  width: 0; }
+
+body.home .masthead--collapsed .site-menu.is-expanded .header-menu {
+  display: block; }
+
+body.home .masthead--collapsed .site-menu.is-expanded .header-logo-container {
+  width: auto; }
+
+body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0); }
+  body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo .logotype {
+    opacity: 1;
+    visibility: visible; }
 
 /*# sourceMappingURL=style.css.map */
