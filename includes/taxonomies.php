@@ -11,16 +11,15 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	// NOTE: Uncomment to activate taxonomy
-	//add_action( 'init', $n( 'register_taxonomy' ) );
+	add_action( 'init', $n( 'register_event_type' ) );
 
 }
 
 /**
- * Register the my_taxo taxonomy and assign it to posts.
+ * Register the event-type taxonomy and assign it to events.
  *
  * See https://github.com/johnbillion/extended-taxos for more info on using the extended-taxos library
  */
-function register_taxonomy() {
-	register_extended_taxonomy( 'my_taxo', 'post' );
+function register_event_type() {
+	register_extended_taxonomy( 'event-type', 'event' );
 }
