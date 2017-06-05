@@ -12,6 +12,7 @@ function setup() {
 	};
 
 	add_action( 'init', $n( 'register_event' ) );
+	add_action( 'init', $n( 'register_people' ) );
 
 }
 
@@ -34,4 +35,20 @@ function register_event() {
 			),
 		),
     ) );
+}
+
+/**
+ * Register the 'people' post type
+ */
+function register_people() {
+	register_extended_post_type( 'people', array(
+		'menu_icon' => 'dashicons-groups',
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'has_archive' => false,
+	), array(
+		# Override the base names used for labels:
+		'singular' => 'Person',
+		'plural'   => 'People',
+		'slug'     => 'people'
+	) );
 }
