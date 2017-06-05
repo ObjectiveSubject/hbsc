@@ -14,10 +14,10 @@
                 color: $dark-gray;
             }
         }
-        &.current-page-item {
+        &.current_page_item {
             @include display(block);
         }
-        &.current-page-item-parent {
+        &.current-menu-parent {
             @include display(block);
         }
     }

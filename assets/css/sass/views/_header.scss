@@ -12,7 +12,7 @@
     @include position(relative);
     @include display(inline-block);
     background: $tan;
-    pointer-events: initial;
+    pointer-events: auto;
     &::before {
         content: '';
         @include position(absolute);

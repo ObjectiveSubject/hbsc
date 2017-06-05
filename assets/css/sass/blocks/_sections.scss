@@ -5,6 +5,9 @@
     @include display(flex);
     @include flex-wrap(wrap);
     @extend .u-py-4;
+    .preface & {
+        padding-top: 0;
+    }
 }
 .section__header {
     flex: 1 100%;

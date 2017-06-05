@@ -1891,9 +1891,9 @@ figure {
     margin: 0.38rem 0; }
     .header-menu .menu-item a:focus {
       color: #272727; }
-  .header-menu .menu-item.current-page-item {
+  .header-menu .menu-item.current_page_item {
     display: block; }
-  .header-menu .menu-item.current-page-item-parent {
+  .header-menu .menu-item.current-menu-parent {
     display: block; }
 
 .sub-menu .menu-item a {
@@ -2067,6 +2067,8 @@ body.home .preface-text {
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
+  .preface .section__content, .preface .module__content, .preface .module--basic .module__body, .module--basic .preface .module__body, .preface .module-row {
+    padding-top: 0; }
 
 .section__header, .module__header, .section__footer, .module__footer {
   flex: 1 100%; }
@@ -2248,7 +2250,7 @@ caption {
   position: relative;
   display: inline-block;
   background: #dddad5;
-  pointer-events: initial; }
+  pointer-events: auto; }
   .site-menu::before {
     content: '';
     position: absolute;

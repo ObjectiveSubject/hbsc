@@ -59,7 +59,7 @@
 	 * ------------------- */
 	Toggles.subMenuToggles = function() {
 
-		$('#site-menu').on( 'click', '.menu-item-has-children a', function(e){
+		$('#site-menu').on( 'click', '.menu-item-has-children>a', function(e){
             e.preventDefault();
             var $target = $(this).next('.sub-menu');
             $target.toggleClass('is-expanded');
