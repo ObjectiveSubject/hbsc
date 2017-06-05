@@ -12,7 +12,7 @@ function setup() {
 	};
 
 	// NOTE: Uncomment to activate taxonomy
-	//add_action( 'init', $n( 'register_taxonomy' ) );
+	add_action( 'init', $n( 'register_taxonomy' ) );
 
 }
 

@@ -13,14 +13,14 @@
             <ul class="carousel js-carousel <?php echo $carouselDotsColor;?>">
                 <?php while( have_rows('carousel_slides') ): the_row();
                 
-                $content = get_sub_field('slide_content');
-                $color = get_sub_field('slide_background_color');
-                $image = get_sub_field('slide_image');
-                $slideButtonLink = get_sub_field('slide_button_link');
-                $slideButtonText = get_sub_field('slide_button_text');
-                
-                $badgeLargeText = get_sub_field('slide_badge_large_text');
-                $badgeSmallText = get_sub_field('slide_badge_small_text');
+                    $content = get_sub_field('slide_content');
+                    $color = get_sub_field('slide_background_color');
+                    $image = get_sub_field('slide_image');
+                    $slideButtonLink = get_sub_field('slide_button_link');
+                    $slideButtonText = get_sub_field('slide_button_text');
+                    
+                    $badgeLargeText = get_sub_field('slide_badge_large_text');
+                    $badgeSmallText = get_sub_field('slide_badge_small_text');
                 ?>
                 <li class="carousel-slide">
                     <div class="carousel-slide__content">

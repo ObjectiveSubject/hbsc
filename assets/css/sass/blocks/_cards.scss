@@ -17,7 +17,7 @@
 .card-positioner {
     .module--hero & {
         width: 100%;
-        padding-top: 50%;
+        padding-top: 0;
         @include media($md) {
             width: 57.5%;
             padding-top: 0;
