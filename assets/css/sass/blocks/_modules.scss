@@ -6,12 +6,24 @@
     &.has-background {
         background-size: cover;
         background-position: center center;
+        background-repeat: no-repeat;
+
+        &.module--hero
+        {
+            background-position: top;
+            background-size: contain;
+
+            @include media($md) {
+                background-size: cover;
+                background-position: center center;
+            }
+        }
     }
+    
     &.has-image {
         padding-top: 0;
     }
     .module--hero+& {
-        padding-top: rem(400);
         @include media($md) {
             padding-top: $leading*4;
         }
@@ -92,8 +104,11 @@
  * Module Types
  */
 .module--hero {
-    height: rem(400);
-    @include media($md) {
-        height: rem(800);
-    }
+    .module__content
+    {
+        min-height: rem(400);
+        @include media($md) {
+            min-height: rem(800);
+        }  
+    }  
 }

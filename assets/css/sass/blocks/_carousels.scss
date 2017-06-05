@@ -19,6 +19,7 @@
         }
     }
 }
+
 .slick-controls {
     position: absolute;
     top: 50%;
@@ -46,10 +47,23 @@
         &+li {
             @extend .u-ml-1;
         }
-        &.slick-active button {
-            background-color: white;
+
+        @each $color-name, $hex in $color_map {
+            .slick-dots-#{$color-name} & {
+                &.slick-active button {
+                    background-color: $hex;
+                }                
+            }
         }
+
         button {
+
+            @each $color-name, $hex in $color_map {
+                .slick-dots-#{$color-name} & {
+                    background-color: lighten($hex, 30%);
+                }           
+            }
+
             text-indent: -9999px;
             overflow: hidden;
             @include size(rem(16));
