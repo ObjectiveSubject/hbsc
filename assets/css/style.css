@@ -802,7 +802,7 @@ html {
   padding-left: 4rem;
   padding-right: 4rem; }
 
-.u-py-4, .section__content, .module__content, .module--basic .module__body, .module-row {
+.u-py-4, .section, .module {
   padding-top: 4rem;
   padding-bottom: 4rem; }
 
@@ -1631,24 +1631,6 @@ button {
   text-align: center; }
   .slick-dots li {
     display: inline-block; }
-    .slick-dots-blue .slick-dots li.slick-active button {
-      background-color: #1d374a; }
-    .slick-dots-red .slick-dots li.slick-active button {
-      background-color: #e74949; }
-    .slick-dots-tan .slick-dots li.slick-active button {
-      background-color: #dddad5; }
-    .slick-dots-gold .slick-dots li.slick-active button {
-      background-color: #dda538; }
-    .slick-dots-black .slick-dots li.slick-active button {
-      background-color: black; }
-    .slick-dots-dark-gray .slick-dots li.slick-active button {
-      background-color: #272727; }
-    .slick-dots-gray .slick-dots li.slick-active button {
-      background-color: #898989; }
-    .slick-dots-light-gray .slick-dots li.slick-active button {
-      background-color: #f0efed; }
-    .slick-dots-white .slick-dots li.slick-active button {
-      background-color: white; }
     .slick-dots li button {
       text-indent: -9999px;
       overflow: hidden;
@@ -1659,28 +1641,26 @@ button {
       padding: 0;
       border: 1px solid white;
       border-radius: 50%; }
-      .slick-dots-blue .slick-dots li button {
-        background-color: #4989b7; }
-      .slick-dots-red .slick-dots li button {
-        background-color: #f9d0d0; }
-      .slick-dots-tan .slick-dots li button {
-        background-color: white; }
-      .slick-dots-gold .slick-dots li button {
-        background-color: #f3e0bb; }
-      .slick-dots-black .slick-dots li button {
-        background-color: #4d4d4d; }
-      .slick-dots-dark-gray .slick-dots li button {
-        background-color: #747474; }
-      .slick-dots-gray .slick-dots li button {
-        background-color: #d6d6d6; }
-      .slick-dots-light-gray .slick-dots li button {
-        background-color: white; }
-      .slick-dots-white .slick-dots li button {
-        background-color: white; }
       .slick-dots li button:hover {
         border-color: #e74949; }
       .slick-dots li button:focus {
         outline: 0; }
+    .slick-dots li.slick-active button {
+      background-color: white; }
+    .u-bg-white .slick-dots li button,
+    .u-bg-light-gray .slick-dots li button,
+    .u-bg-tan .slick-dots li button {
+      border-color: #272727; }
+    .u-bg-white .slick-dots li button:hover,
+    .u-bg-light-gray .slick-dots li button:hover,
+    .u-bg-tan .slick-dots li button:hover {
+      border-color: #e74949; }
+    .u-bg-white .slick-dots li.slick-active button,
+    .u-bg-light-gray .slick-dots li.slick-active button,
+    .u-bg-tan .slick-dots li.slick-active button {
+      background-color: #272727; }
+    .u-bg-red .slick-dots li button:hover, .badge .slick-dots li button:hover {
+      border-color: #272727; }
 
 /* Slider */
 .slick-slider {
@@ -2067,8 +2047,6 @@ body.home .preface-text {
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
-  .preface .section__content, .preface .module__content, .preface .module--basic .module__body, .module--basic .preface .module__body, .preface .module-row {
-    padding-top: 0; }
 
 .section__header, .module__header, .section__footer, .module__footer {
   flex: 1 100%; }

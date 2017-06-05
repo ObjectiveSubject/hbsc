@@ -47,23 +47,7 @@
         &+li {
             @extend .u-ml-1;
         }
-
-        @each $color-name, $hex in $color_map {
-            .slick-dots-#{$color-name} & {
-                &.slick-active button {
-                    background-color: $hex;
-                }                
-            }
-        }
-
         button {
-
-            @each $color-name, $hex in $color_map {
-                .slick-dots-#{$color-name} & {
-                    background-color: lighten($hex, 30%);
-                }           
-            }
-
             text-indent: -9999px;
             overflow: hidden;
             @include size(rem(16));
@@ -78,6 +62,27 @@
             }
             &:focus {
                 outline: 0;
+            }
+        }
+        &.slick-active button {
+            background-color: white;
+        }
+        .u-bg-white &,
+        .u-bg-light-gray &,
+        .u-bg-tan & {
+            button {
+                border-color: $dark-gray;
+            }
+            button:hover {
+                border-color: $red;
+            }
+            &.slick-active button {
+                background-color: $dark-gray;
+            }
+        }
+        .u-bg-red & {
+            button:hover {
+                border-color: $dark-gray;
             }
         }
     }
