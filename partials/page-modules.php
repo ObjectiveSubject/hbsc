@@ -1,3 +1,5 @@
+<div class="page-content">
+
 <?php 
 while( have_rows('module') ): the_row(); 
 
@@ -19,7 +21,7 @@ while( have_rows('module') ): the_row();
     $moduleTypeName = str_replace( '--', '-', $type );
     $moduleTypeFilePath = sprintf( dirname( __FILE__ ) . '/modules/%s.php', $moduleTypeName );
 
-    $contentVerticalPosClass = 'u-py-4';
+    /*$contentVerticalPosClass = 'u-py-4';
     $cardVerticalPosClass = '';
 
     // Put somewhere else
@@ -34,7 +36,7 @@ while( have_rows('module') ): the_row();
             $contentVerticalPosClass = 'u-pt-4';
             $cardVerticalPosClass = 'u-flex-self-end';        
         break;        
-    }
+    }*/
 
     if( file_exists( $moduleTypeFilePath ) )
     {
@@ -43,3 +45,5 @@ while( have_rows('module') ): the_row();
 
 endwhile; 
 ?>
+
+</div>

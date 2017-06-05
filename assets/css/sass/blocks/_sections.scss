@@ -31,8 +31,9 @@
 .section-title {
     width: 100%;
     @extend .u-py-1;
-    @extend .h6;
+    @extend .u-font-miller;
     @extend .u-text-center;
+    font-size: rem(18);
     letter-spacing: .2em;
     color: $dark-gray;
     text-transform: uppercase;

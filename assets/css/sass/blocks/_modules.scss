@@ -66,6 +66,9 @@
             border-color: rgba(0,0,0,.15);
         }
     }
+    h4, h5, h6 {
+        @extend .u-mt-4;
+    }
     .module--basic & {
         @extend .module__content;
     }
@@ -75,6 +78,9 @@
     }
     .has-sidebar & {
         @extend .u-px-6;
+    }
+    .module__header+& {
+        padding-top: 0;
     }
 }
 .module__sidebar {
