@@ -1828,7 +1828,10 @@ figure {
     display: block;
     font-size: 0.88rem;
     text-transform: uppercase;
+    color: black;
     margin: 0.38rem 0; }
+    .header-menu .menu-item a:focus {
+      color: black; }
   .header-menu .menu-item.current-page-item {
     display: block; }
   .header-menu .menu-item.current-page-item-parent {
@@ -2224,6 +2227,8 @@ caption {
     display: none; }
   .site-menu.is-expanded .menu-item .sub-menu.is-expanded .menu-item {
     display: block; }
+    .site-menu.is-expanded .menu-item .sub-menu.is-expanded .menu-item.current-page-item a {
+      color: #e74949; }
 
 body.home .menu-item {
   display: block; }

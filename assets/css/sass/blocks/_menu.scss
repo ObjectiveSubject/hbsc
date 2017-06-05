@@ -7,8 +7,12 @@
             @extend .u-font-miller-bold;
             font-size: rem(14);
             text-transform: uppercase;
+            color: black;
             margin: rem(6) 0;
             @extend .u-transition-300;
+            &:focus {
+                color: black;
+            }
         }
         &.current-page-item {
             @include display(block);
