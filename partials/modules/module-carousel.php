@@ -1,6 +1,3 @@
-<?php
-    $carouselDotsColor = get_sub_field('carousel_dots_color');
-?>
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--carousel <?php echo $color; ?>">
     <div class="module__content u-container">
         <?php if( $display_title ) : ?>
@@ -10,7 +7,7 @@
         <?php endif; ?>
         <?php if(have_rows('carousel_slides')) : ?>
         <div class="module__body">
-            <ul class="carousel js-carousel <?php echo $carouselDotsColor;?>">
+            <ul class="carousel js-carousel">
                 <?php while( have_rows('carousel_slides') ): the_row();
                 
                     $content = get_sub_field('slide_content');
@@ -27,7 +24,7 @@
                         
                         <?php if( $badgeLargeText || $badgeSmallText ): ?>
                         <div class="badge-positioner">
-                            <div class="badge badge--date">
+                            <div class="badge">
                                 <?php if( $badgeSmallText): ?>
                                 <span><?php echo $badgeSmallText; ?></span>
                                 <?php endif; ?>

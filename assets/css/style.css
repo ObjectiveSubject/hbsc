@@ -890,7 +890,7 @@ html {
 .u-pl-6 {
   padding-left: 6rem; }
 
-.u-px-6, .has-sidebar .module__body {
+.u-px-6, .has-sidebar .section__body {
   padding-left: 6rem;
   padding-right: 6rem; }
 
@@ -928,7 +928,7 @@ html {
 .u-text-left, caption, th {
   text-align: left; }
 
-.u-text-center, .section__body, .section__footer, .module__footer, .section-title, .module-title, .card-title {
+.u-text-center, .section__footer, .module__footer, .section-title, .module-title, .card-title {
   text-align: center; }
 
 .u-text-right {
@@ -1933,8 +1933,7 @@ figure {
     [class*='u-bg-'] .module__body h1, [class*='u-bg-'] .module__body h2, [class*='u-bg-'] .module__body h3, [class*='u-bg-'] .module__body h4, [class*='u-bg-'] .module__body h5, [class*='u-bg-'] .module__body h6, [class*='u-bg-']
     .module__body .h1, [class*='u-bg-'] .module__body .h2, [class*='u-bg-'] .module__body .h3, [class*='u-bg-'] .module__body .h4, [class*='u-bg-'] .module__body body.home .preface-text, body.home [class*='u-bg-'] .module__body .preface-text, [class*='u-bg-'] .module__body .h5, [class*='u-bg-'] .module__body .h6, [class*='u-bg-']
     .module__body p {
-      color: #dddad5;
-      border-color: rgba(255, 255, 255, 0.15); }
+      color: #dddad5; }
     .u-bg-white .module__body h1,
     .u-bg-light-gray .module__body h1,
     .u-bg-tan .module__body h1, .u-bg-white .module__body h2,
@@ -1972,16 +1971,10 @@ figure {
     .module__body p,
     .u-bg-tan
     .module__body p {
-      color: #272727;
-      border-color: rgba(0, 0, 0, 0.15); }
+      color: #272727; }
   .module--carousel .module__body {
     max-width: 100%;
     width: 100%; }
-  .module__header + .module__body {
-    padding-top: 0; }
-
-.module__sidebar {
-  flex: 0 0 25%; }
 
 /**
  * Module Elements
@@ -2052,7 +2045,10 @@ body.home .preface-text {
   flex: 1 100%; }
 
 .section__body {
-  flex: 1 100%; }
+  flex: 1 0 75%; }
+
+.section__sidebar, .module__sidebar {
+  flex: 0 0 25%; }
 
 @media screen and (min-width: 768px) {
   .preface .section__footer, .preface .module__footer {

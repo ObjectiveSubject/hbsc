@@ -11,8 +11,13 @@
     @extend .u-mb-4;
 }
 .section__body {
-    flex: 1 100%;
-    @extend .u-text-center;
+    flex: 1 0 75%;
+    .has-sidebar & {
+        @extend .u-px-6;
+    }
+}
+.section__sidebar {
+    flex: 0 0 25%;
 }
 .section__footer {
     @extend .section__header;

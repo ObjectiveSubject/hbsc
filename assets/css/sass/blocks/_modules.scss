@@ -7,19 +7,15 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-
-        &.module--hero
-        {
+        &.module--hero {
             background-position: top;
             background-size: contain;
-
             @include media($md) {
                 background-size: cover;
                 background-position: center center;
             }
         }
     }
-    
     &.has-image {
         padding-top: 0;
     }
@@ -57,13 +53,11 @@
         width: 100%;
         [class*='u-bg-'] & {
             color: $tan;
-            border-color: rgba(255,255,255,.15);
         }
         .u-bg-white &,
         .u-bg-light-gray &,
         .u-bg-tan & {
             color: $dark-gray;
-            border-color: rgba(0,0,0,.15);
         }
     }
     h4, h5, h6 {
@@ -76,15 +70,9 @@
         max-width: 100%;
         width: 100%;
     }
-    .has-sidebar & {
-        @extend .u-px-6;
-    }
-    .module__header+& {
-        padding-top: 0;
-    }
 }
 .module__sidebar {
-    flex: 0 0 25%;
+    @extend .section__sidebar;
 }
 .module__footer {
     @extend .section__footer;

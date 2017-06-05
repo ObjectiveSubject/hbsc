@@ -12,7 +12,7 @@ get_header(); ?>
 		    <section class="preface section <?php the_field('preface_background_color'); ?>">
                 <div class="section__content u-container">
                     <header class="section__header">
-                        <h1 class="section-title">Harriet Beecher Stowe's Life</h1>
+                        <h1 class="section-title">Collections</h1>
                     </header>
                     <div class="section__body">
                         <div class="preface-text">
@@ -22,8 +22,13 @@ get_header(); ?>
                     <footer class="section__footer">
                         <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
                             <li class="anchor preface-button">
-                                <a href="#section-childhood-and-education" class="button">
-                                    Childhood &amp; Education
+                                <a href="#section-library-collection" class="button">
+                                    Library Collection
+                                </a>
+                            </li>
+                            <li class="anchor preface-button">
+                                <a href="#section-artifact-collection" class="button">
+                                    Artifact Collection
                                 </a>
                             </li>
                         </ul>
@@ -31,28 +36,21 @@ get_header(); ?>
                 </div>
             </section>
             
-            <section class="section module--hero">
-                <div class="section__content u-flex-justify-end u-container">
-                    <div class="card-positioner">
-                        <div class="card u-bg-red js-slide-in">
-                            <div class="card-content">
-                                <div class="h4 u-font-miller-italic">"There is more done with pens than with swords."</div>
-                                <div class="h6 u-caps u-mt-3"><span class="u-font-size-sm">Harriet Beecher Stowe</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
             <section id="section-childhood-and-education" class="section module--basic u-bg-white has-sidebar">
                 <div class="section__content u-container">
-                    <header class="section__header">
-                        <div class="section-title">
-                            Childhood &amp; Education
-                        </div>
-                    </header>
                     <div class="section__body">
-                        This is the module content
+                        <div class="module-row">
+                            <div class="section-title">Library Collection</div>
+                            <div class="section-button">
+                                <a href="#" class="button">View Collection</a>
+                            </div>
+                        </div>
+                        <div class="module-row">
+                            <div class="section-title">Artifact Collection</div>
+                            <div class="section-button">
+                                <a href="#" class="button">View Collection</a>
+                            </div>
+                        </div>
                     </div>
                     <aside class="section__sidebar">
                         <div class="u-pa-1">
