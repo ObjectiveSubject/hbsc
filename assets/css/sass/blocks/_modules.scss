@@ -13,7 +13,7 @@
     }*/
 }
 .module__image {
-    height: rem(256);
+    height: rem(448);
     background-size: cover;
     background-position: center;
     @extend .u-mb-4;
@@ -53,6 +53,13 @@
     h4, h5, h6 {
         @extend .u-mt-4;
     }
+    ul, ol {
+        @extend .u-pl-2;
+        list-style: initial;
+        li {
+            @extend .u-mt-1;
+        }
+    }
     .module--basic & {
         @extend .module__content;
     }
@@ -73,6 +80,7 @@
     .module--entry & {
         width: rem(240);
         float: right;
+        @extend .u-font-size-sm;
     }
 }
 .module__footer {

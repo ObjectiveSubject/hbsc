@@ -625,7 +625,7 @@ html {
 .u-ma-1 {
   margin: 1rem; }
 
-.u-mt-1, .slick-dots, .form-group {
+.u-mt-1, .slick-dots, .form-group, .module__body ul li, .module__body ol li {
   margin-top: 1rem; }
 
 .u-mr-1 {
@@ -703,7 +703,7 @@ html {
 .u-pb-2 {
   padding-bottom: 2rem; }
 
-.u-pl-2 {
+.u-pl-2, .module__body ul, .module__body ol {
   padding-left: 2rem; }
 
 .u-px-2 {
@@ -717,7 +717,7 @@ html {
 .u-ma-3 {
   margin: 3rem; }
 
-.u-mt-3, .module--carousel .card, .preface-text p {
+.u-mt-3, .module--carousel .card, .preface-text p, .module--entry figure {
   margin-top: 3rem; }
 
 .u-mr-3, .header-logo-container {
@@ -916,7 +916,7 @@ html {
 .u-font-size-xs {
   font-size: 50%; }
 
-.u-font-size-sm, figure figcaption {
+.u-font-size-sm, .module--entry .module__sidebar, figure figcaption {
   font-size: 75%; }
 
 .u-font-size-lg {
@@ -1361,6 +1361,7 @@ address {
   font-style: normal; }
 
 blockquote {
+  font-size: 2rem;
   text-transform: none;
   margin: 0; }
   blockquote p {
@@ -1894,7 +1895,7 @@ figure {
     padding-top: 0; }
 
 .module__image {
-  height: 16rem;
+  height: 28rem;
   background-size: cover;
   background-position: center; }
 
@@ -1965,6 +1966,8 @@ figure {
     .u-bg-tan
     .module__body p {
       color: #272727; }
+  .module__body ul, .module__body ol {
+    list-style: initial; }
   .module--entry .module__body {
     margin-right: 15rem; }
     @media screen and (min-width: 768px) {

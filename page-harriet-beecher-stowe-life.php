@@ -41,8 +41,10 @@ get_header(); ?>
                     <div class="card-positioner">
                         <div class="card u-bg-red js-slide-in">
                             <div class="card-content">
-                                <div class="h4 u-font-miller-italic">"There is more done with pens than with swords."</div>
-                                <div class="h6 u-caps u-mt-3"><span class="u-font-size-sm">Harriet Beecher Stowe</span></div>
+                                <blockquote>"There is more done with pens than with swords."</blockquote>
+                                <div class="h6 u-caps u-mt-3">
+                                    <span class="u-font-size-sm">Harriet Beecher Stowe</span>
+                                </div>
                             </div>
                         </div>
                     </div>
