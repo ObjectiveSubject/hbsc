@@ -33,20 +33,6 @@ get_header(); ?>
                             <?php endwhile; ?>
                         </ul>
                     </footer>
-                    <!--<footer class="section__footer">
-                        <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
-                            <li class="anchor preface-button">
-                                <a href="#section-childhood-and-education" class="button">
-                                    Childhood &amp; Education
-                                </a>
-                            </li>
-                            <li class="anchor preface-button">
-                                <a href="#section-stowe-the-writer" class="button">
-                                    Stowe The Writer
-                                </a>
-                            </li>
-                        </ul>
-                    </footer>-->
                 </div>
             </section>
             
@@ -62,32 +48,6 @@ get_header(); ?>
                     </div>
                 </div>
             </section>
-            
-            <!-- Childhood & Education -->
-            <!--<section id="section-childhood-and-education" class="module module--entry u-bg-white">
-                <div class="module__content u-container">
-                    <header class="module__header">
-                        <div class="module-title">
-                            Childhood &amp; Education
-                        </div>
-                    </header>
-                    <aside class="module__sidebar">
-                        <div class="u-pa-1">
-                        <div class="h6">Family Tree</div>
-                        <div class="u-font-size-sm">Discover more information on the Beecher family <a href="#">here</a>, and visit the Newman Baruch library at CUNY.</div>
-                        </div>
-                    </aside>
-                    <div class="module__body">
-                        <p>This is the module content before the image</p>
-                        <figure>
-                          <figcaption>Stowe Family Portrait (1855)</figcaption>
-                          <img src="../wp-content/themes/hbsc/assets/images/sample/large.jpg" alt="Title">
-                        </figure>
-                        <p>This is the module content after the image</p>
-                    </div>
-                    <aside class="module__sidebar"></aside>
-                </div>
-            </section>-->
 
 		<?php endwhile; ?>
 		
