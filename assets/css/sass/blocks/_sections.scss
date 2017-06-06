@@ -7,19 +7,20 @@
     @include flex-wrap(wrap);
 }
 .section__header {
-    flex: 1 100%;
+    width: 100%;
     @extend .u-mb-4;
+    order: 0;
 }
 .section__body {
     flex: 1 0 75%;
-    .has-sidebar & {
-        @extend .u-px-6;
-    }
+    order: 1;
 }
 .section__sidebar {
     flex: 0 0 25%;
+    order: 2;
 }
 .section__footer {
+    order: 3;
     @extend .section__header;
     @extend .u-text-center;
     @extend .u-mt-4;

@@ -10,14 +10,14 @@
             </div>
         </header>
         <?php endif; ?>
-        <div class="module__body">
-            <?php echo $content; ?>
-        </div>
         <?php if( $display_sidebar && $sidebar ) : ?>
         <aside class="module__sidebar">
             <?php echo $sidebar; ?>
         </aside>
         <?php endif; ?>
+        <div class="module__body">
+            <?php echo $content; ?>
+        </div>
         <?php if( $display_button && $button_link && $button_text ) : ?>
         <footer class="module__footer">
             <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>

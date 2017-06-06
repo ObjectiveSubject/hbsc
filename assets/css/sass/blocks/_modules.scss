@@ -3,27 +3,14 @@
  */
 .module {
     @extend .section;
-    &.has-background {
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        &.module--hero {
-            background-position: top;
-            background-size: contain;
-            @include media($md) {
-                background-size: cover;
-                background-position: center center;
-            }
-        }
-    }
     &.has-image {
         padding-top: 0;
     }
-    .module--hero+& {
+    /*.module--hero+& {
         @include media($md) {
             padding-top: $leading*4;
         }
-    }
+    }*/
 }
 .module__image {
     height: rem(256);
@@ -33,6 +20,9 @@
 }
 .module__content {
     @extend .section__content;
+    .module--entry & {
+        @include display(block);
+    }
     .module--hero & {
         top: 100%;
         height: 100%;
@@ -66,6 +56,13 @@
     .module--basic & {
         @extend .module__content;
     }
+    .module--entry & {
+        margin-right: rem(240);@extend .u-pr-1;
+        @include media($md) {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    }
     .module--carousel & {
         max-width: 100%;
         width: 100%;
@@ -73,6 +70,10 @@
 }
 .module__sidebar {
     @extend .section__sidebar;
+    .module--entry & {
+        width: rem(240);
+        float: right;
+    }
 }
 .module__footer {
     @extend .section__footer;
@@ -98,11 +99,18 @@
  * Module Types
  */
 .module--hero {
-    .module__content
-    {
-        min-height: rem(400);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include media($md) {
+        background-size: cover;
+        background-position: center center;
+    }
+    .section__content,
+    .module__content {
+        min-height: rem(360);
         @include media($md) {
-            min-height: rem(800);
+            min-height: rem(720);
         }  
     }  
 }

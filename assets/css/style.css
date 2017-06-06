@@ -651,7 +651,7 @@ html {
 .u-pt-1, .form-field {
   padding-top: 1rem; }
 
-.u-pr-1 {
+.u-pr-1, .module--entry .module__body, figure figcaption {
   padding-right: 1rem; }
 
 .u-pb-1 {
@@ -890,7 +890,7 @@ html {
 .u-pl-6 {
   padding-left: 6rem; }
 
-.u-px-6, .has-sidebar .section__body {
+.u-px-6 {
   padding-left: 6rem;
   padding-right: 6rem; }
 
@@ -916,7 +916,7 @@ html {
 .u-font-size-xs {
   font-size: 50%; }
 
-.u-font-size-sm {
+.u-font-size-sm, figure figcaption {
   font-size: 75%; }
 
 .u-font-size-lg {
@@ -1884,29 +1884,22 @@ figure {
 /**
  * Module Parts
  */
-.module.has-background {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; }
-  .module.has-background.module--hero {
-    background-position: top;
-    background-size: contain; }
-    @media screen and (min-width: 768px) {
-      .module.has-background.module--hero {
-        background-size: cover;
-        background-position: center center; } }
-
-.module.has-image {
-  padding-top: 0; }
-
-@media screen and (min-width: 768px) {
-  .module--hero + .module {
-    padding-top: 4rem; } }
+.module {
+  /*.module--hero+& {
+        @include media($md) {
+            padding-top: $leading*4;
+        }
+    }*/ }
+  .module.has-image {
+    padding-top: 0; }
 
 .module__image {
   height: 16rem;
   background-size: cover;
   background-position: center; }
+
+.module--entry .module__content, .module--entry .module--basic .module__body, .module--basic .module--entry .module__body, .module--entry .module-row {
+  display: block; }
 
 .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
   top: 100%;
@@ -1972,9 +1965,19 @@ figure {
     .u-bg-tan
     .module__body p {
       color: #272727; }
+  .module--entry .module__body {
+    margin-right: 15rem; }
+    @media screen and (min-width: 768px) {
+      .module--entry .module__body {
+        padding-left: 6rem;
+        padding-right: 6rem; } }
   .module--carousel .module__body {
     max-width: 100%;
     width: 100%; }
+
+.module--entry .module__sidebar {
+  width: 15rem;
+  float: right; }
 
 /**
  * Module Elements
@@ -1989,11 +1992,27 @@ figure {
 /**
  * Module Types
  */
-.module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
-  min-height: 25rem; }
+.module--hero {
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat; }
   @media screen and (min-width: 768px) {
-    .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
-      min-height: 50rem; } }
+    .module--hero {
+      background-size: cover;
+      background-position: center center; } }
+  .module--hero .section__content, .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row,
+  .module--hero .module__content,
+  .module--hero .module--basic .module__body, .module--basic
+  .module--hero .module__body,
+  .module--hero .module-row {
+    min-height: 22.5rem; }
+    @media screen and (min-width: 768px) {
+      .module--hero .section__content, .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row,
+      .module--hero .module__content,
+      .module--hero .module--basic .module__body, .module--basic
+      .module--hero .module__body,
+      .module--hero .module-row {
+        min-height: 45rem; } }
 
 body.home .preface {
   padding-top: 6.75rem; }
@@ -2042,18 +2061,23 @@ body.home .preface-text {
   flex-wrap: wrap; }
 
 .section__header, .module__header, .section__footer, .module__footer {
-  flex: 1 100%; }
+  width: 100%;
+  order: 0; }
 
 .section__body {
-  flex: 1 0 75%; }
+  flex: 1 0 75%;
+  order: 1; }
 
 .section__sidebar, .module__sidebar {
-  flex: 0 0 25%; }
+  flex: 0 0 25%;
+  order: 2; }
 
-@media screen and (min-width: 768px) {
-  .preface .section__footer, .preface .module__footer {
-    margin-left: 6rem;
-    margin-right: 6rem; } }
+.section__footer, .module__footer {
+  order: 3; }
+  @media screen and (min-width: 768px) {
+    .preface .section__footer, .preface .module__footer {
+      margin-left: 6rem;
+      margin-right: 6rem; } }
 
 /**
  * Section Elements
@@ -2297,5 +2321,19 @@ body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo {
   body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo .logotype {
     opacity: 1;
     visibility: visible; }
+
+.module--entry figure {
+  clear: both; }
+  @media screen and (min-width: 768px) {
+    .module--entry figure {
+      margin-left: -6rem;
+      margin-right: -21rem; } }
+
+figure figcaption {
+  width: 20%;
+  float: left; }
+
+figure img {
+  width: 80%; }
 
 /*# sourceMappingURL=style.css.map */
