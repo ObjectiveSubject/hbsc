@@ -26,6 +26,10 @@ require_once HBSC_INC . 'template-tags.php';
 include( HBSC_INC . 'libraries/extended-cpts.php' );
 include( HBSC_INC . 'libraries/extended-taxos.php' );
 
+
+include( HBSC_INC . 'models/BaseModel.php' );
+include( HBSC_INC . 'models/Event.php' );
+
 // Run the setup functions
 HBSC\Core\setup();
 HBSC\Comments\setup();

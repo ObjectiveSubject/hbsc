@@ -86,6 +86,20 @@ function styles( $debug = false ) {
 		array(),
 		false
     );
+
+    wp_enqueue_style(
+        'calendar-event',
+        HBSC_URL . "/assets/css/vendor/eventCalendar_theme_responsive.css",
+		array(),
+		false
+    );
+
+    wp_enqueue_style(
+        'calendar-events',
+        HBSC_URL . "/assets/css/vendor/eventCalendar.css",
+		array(),
+		false
+    );	
 }
 
 /**

@@ -36,7 +36,7 @@ function register_event() {
 		),
     ) );
 }
-
+//Title, Type(Event-Type), Description, Event Info[Date, Location, Doors Open & Reception, Program], if(Salon at Stowe){Hosts[Title, Host[First Name, Last Name, Photo, Description]]}, Online Discussion[boolean, if(true){Title}]
 /**
  * Register the 'people' post type
  */
