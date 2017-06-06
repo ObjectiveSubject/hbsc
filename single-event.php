@@ -4,7 +4,7 @@
  */
 
 $Event = new Event();
-$image = "wp-content/themes/hbsc/assets/images/sample/large.jpg";
+$image = "/wp-content/themes/hbsc/assets/images/sample/large.jpg";
 get_header();
 $postId = null;
 ?>
@@ -13,7 +13,6 @@ $postId = null;
         if( null !== the_ID() && null == $postId )
         {
             $postId = the_ID();
-            //var_dump(the_ID());
         }
     ?>
         <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower(the_title())); ?>" class="module module--hero has-background" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
@@ -25,15 +24,15 @@ $postId = null;
                         </div>
 
                         <div class="card-event-title">
-                            <?php echo the_title() ?>
+                            <?php echo the_title(); ?>
                         </div>
 
                         <div class="card-date">
-                            <?php echo $Event->getEventDateFormatted() ?>
+                            <?php echo $Event->getEventDateFormatted(); ?>
                         </div>
 
                         <div class="card-content">
-                            <?php echo the_content() ?>
+                            <?php echo the_content(); ?>
                         </div>
 
                         <div class="card-event-details">
@@ -95,7 +94,7 @@ $postId = null;
         'meta_key'		 => 'event_date',
         'orderby'        => 'meta_value',
         'order'          => 'DESC',
-         'post__not_in'  => array($postId)
+        'post__not_in'  => array($postId)
     ));
 
     while ( $loop->have_posts() ) : $loop->the_post();

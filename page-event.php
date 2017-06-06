@@ -1,6 +1,5 @@
 <?php
 /* Template Name: Events */
-error_reporting(E_ALL);
 get_header();
 
     $args = array(
