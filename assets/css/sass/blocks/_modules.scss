@@ -6,11 +6,6 @@
     &.has-image {
         padding-top: 0;
     }
-    /*.module--hero+& {
-        @include media($md) {
-            padding-top: $leading*4;
-        }
-    }*/
 }
 .module__image {
     height: rem(448);
@@ -19,11 +14,12 @@
     @extend .u-mb-4;
 }
 .module__content {
-    @extend .section__content;
     .module--entry & {
         @include display(block);
     }
     .module--hero & {
+        @include display(flex);
+        @include flex-wrap(wrap);
         top: 100%;
         height: 100%;
         @include media($md) {
@@ -36,10 +32,7 @@
     @extend .section__header;
 }
 .module__body {
-    width: 100%;
-    h4, h5, h6 {
-        @extend .u-mt-4;
-    }
+    @extend .section__body;
     .module--entry & {
         width: auto;
         margin-right: rem(240);@extend .u-pr-1;
@@ -61,12 +54,9 @@
     }
 }
 .module__sidebar {
-    @extend .section__sidebar;
-    .module--entry & {
-        width: rem(240);
-        float: right;
-        @extend .u-font-size-sm;
-    }
+    width: rem(240);
+    float: right;
+    @extend .u-font-size-sm;
 }
 .module__footer {
     @extend .section__footer;
@@ -78,7 +68,8 @@
     @extend .section-title;
 }
 .module-row {
-    @extend .section__content;
+    @include display(flex);
+    @include flex-wrap(wrap);
     width: 100%;
     &+& {
         @extend .u-mt-4;

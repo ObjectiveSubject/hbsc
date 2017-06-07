@@ -763,7 +763,7 @@ html {
 .u-ma-4 {
   margin: 4rem; }
 
-.u-mt-4, .module__body h4, .module__body h5, .module__body h6, .module-row + .module-row, .section__footer, .module__footer {
+.u-mt-4, .module-row + .module-row, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6, .section__footer, .module__footer {
   margin-top: 4rem; }
 
 .u-mr-4 {
@@ -916,7 +916,7 @@ html {
 .u-font-size-xs {
   font-size: 50%; }
 
-.u-font-size-sm, .module--entry .module__sidebar, figure figcaption {
+.u-font-size-sm, .module__sidebar, figure figcaption {
   font-size: 75%; }
 
 .u-font-size-lg {
@@ -1922,14 +1922,8 @@ figure {
 /**
  * Module Parts
  */
-.module {
-  /*.module--hero+& {
-        @include media($md) {
-            padding-top: $leading*4;
-        }
-    }*/ }
-  .module.has-image {
-    padding-top: 0; }
+.module.has-image {
+  padding-top: 0; }
 
 .module__image {
   height: 28rem;
@@ -1940,6 +1934,20 @@ figure {
   display: block; }
 
 .module--hero .module__content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   top: 100%;
   height: 100%; }
   @media screen and (min-width: 768px) {
@@ -1955,22 +1963,21 @@ figure {
       align-items: center;
       -ms-flex-align: center; } }
 
-.module__body {
-  width: 100%; }
-  .module--entry .module__body {
-    width: auto;
-    margin-right: 15rem; }
-    @media screen and (min-width: 768px) {
-      .module--entry .module__body {
-        padding-left: 6rem;
-        padding-right: 6rem; } }
-    .module--entry .module__body ul, .module--entry .module__body ol {
-      list-style: initial; }
-  .module--carousel .module__body {
-    max-width: 100%;
-    width: 100%; }
+.module--entry .module__body {
+  width: auto;
+  margin-right: 15rem; }
+  @media screen and (min-width: 768px) {
+    .module--entry .module__body {
+      padding-left: 6rem;
+      padding-right: 6rem; } }
+  .module--entry .module__body ul, .module--entry .module__body ol {
+    list-style: initial; }
 
-.module--entry .module__sidebar {
+.module--carousel .module__body {
+  max-width: 100%;
+  width: 100%; }
+
+.module__sidebar {
   width: 15rem;
   float: right; }
 
@@ -1978,6 +1985,20 @@ figure {
  * Module Elements
  */
 .module-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%; }
 
 .module-column {
@@ -1995,11 +2016,11 @@ figure {
     .module--hero {
       background-size: cover;
       background-position: center center; } }
-  .module--hero .section__content, .module--hero .module__content, .module--hero .module-row,
+  .module--hero .section__content,
   .module--hero .module__content {
     min-height: 22.5rem; }
     @media screen and (min-width: 768px) {
-      .module--hero .section__content, .module--hero .module__content, .module--hero .module-row,
+      .module--hero .section__content,
       .module--hero .module__content {
         min-height: 45rem; } }
 
@@ -2029,40 +2050,10 @@ body.home .preface {
 .section, .module {
   overflow: hidden; }
 
-.section__content, .module__content, .module-row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
-.section__header, .module__header, .section__footer, .module__footer {
-  width: 100%;
-  order: 0; }
-
-.section__body {
-  flex: 1 0 75%;
-  order: 1; }
-
-.section__sidebar, .module__sidebar {
-  flex: 0 0 25%;
-  order: 2; }
-
-.section__footer, .module__footer {
-  order: 3; }
-  @media screen and (min-width: 768px) {
-    .preface .section__footer, .preface .module__footer {
-      margin-left: 6rem;
-      margin-right: 6rem; } }
+@media screen and (min-width: 768px) {
+  .preface .section__footer, .preface .module__footer {
+    margin-left: 6rem;
+    margin-right: 6rem; } }
 
 /**
  * Section Elements
