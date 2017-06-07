@@ -26,17 +26,23 @@ class Event extends BaseModel
 
     public function getDateDay()
     {
-        $dt = \DateTime::createFromFormat( 'Ymd', $this->getField('event_start_date') );
-
-        return $dt->format('j');
+        return $this->getStartDate()->format('j');
     }
 
     public function getDateMonth()
     {
-        $dt = \DateTime::createFromFormat( 'Ymd', $this->getField('event_start_date') );
-
-        return $dt->format('M');
+        return $this->getStartDate()->format('M');
     }
+
+    public function getStartDate()
+    {
+        return \DateTime::createFromFormat( 'Ymd', $this->getField('event_start_date') );
+    }
+
+    public function getEndDate()
+    {
+        return \DateTime::createFromFormat( 'Ymd', $this->getField('event_start_date') );
+    }    
 
     public function getTerms()
     {
