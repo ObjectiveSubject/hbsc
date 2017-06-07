@@ -15,11 +15,6 @@
     .u-bg-tan & {
         color: $dark-gray;
     }
-    body.home & {
-        @extend .h4;
-        margin-left: rem(320);
-        text-align: left;
-    }
     @include media($md) {
         margin: 0 $leading*6;
     }

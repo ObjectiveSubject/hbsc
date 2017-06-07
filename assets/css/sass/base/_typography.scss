@@ -26,10 +26,10 @@ textarea {
  * ------------------------------------------ */
  h1, .h1 {
     @include display(block);
-    font-family: $rama-gothic;
+    @extend .u-font-rama-gothic;
 	font-size: rem(48);
-	text-transform: uppercase;
-    line-height: 1;
+    line-height: .75;
+    font-weight: normal;
     margin: 0;
 	@include media($md) {
         font-size: rem(96);
@@ -37,10 +37,10 @@ textarea {
  }
  h2, .h2 {
     @include display(block);
-    font-family: $rama-gothic;
+    @extend .u-font-rama-gothic;
 	font-size: rem(36);
-	text-transform: uppercase;
-    line-height: 1;
+    line-height: .75;
+    font-weight: normal;
     margin: 0;
 	@include media($md) {
         font-size: rem(72);
@@ -48,13 +48,13 @@ textarea {
  }
  h3, .h3 {
     @include display(block);
-    font-family: $rama-gothic;
-	font-size: rem(32);
-	text-transform: uppercase;
-    line-height: 1;
+    @extend .u-font-rama-slab;
+	font-size: rem(36);
+    line-height: .75;
+    font-weight: normal;
     margin: 0;
 	@include media($md) {
-        font-size: rem(48);
+        font-size: rem(72);
 	}
  }
  h4, .h4 {
@@ -83,6 +83,18 @@ textarea {
         font-size: rem(18);
 	}
  }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    [class*='u-bg-'] & {
+        color: $tan;
+    }
+    .u-bg-white &,
+    .u-bg-light-gray &,
+    .u-bg-tan & {
+        color: $dark-gray;
+    }
+}
 
  /* Links
   * ------------------------------------------- */

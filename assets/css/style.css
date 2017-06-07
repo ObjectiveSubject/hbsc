@@ -625,7 +625,7 @@ html {
 .u-ma-1 {
   margin: 1rem; }
 
-.u-mt-1, .slick-dots, .form-group, .module__body ul li, .module__body ol li {
+.u-mt-1, .slick-dots, .form-group, .module--entry .module__body ul li, .module--entry .module__body ol li {
   margin-top: 1rem; }
 
 .u-mr-1 {
@@ -703,7 +703,7 @@ html {
 .u-pb-2 {
   padding-bottom: 2rem; }
 
-.u-pl-2, .module__body ul, .module__body ol {
+.u-pl-2, .module--entry .module__body ul, .module--entry .module__body ol {
   padding-left: 2rem; }
 
 .u-px-2 {
@@ -934,11 +934,11 @@ html {
 .u-text-right {
   text-align: right; }
 
-.u-font-rama-gothic {
+.u-font-rama-gothic, h1, .h1, h2, .h2 {
   font-family: RamaGothicE-Heavy;
   text-transform: uppercase; }
 
-.u-font-rama-slab {
+.u-font-rama-slab, h3, .h3 {
   font-family: RamaSlabM-Bold;
   text-transform: uppercase; }
 
@@ -1261,10 +1261,9 @@ textarea {
  * ------------------------------------------ */
 h1, .h1 {
   display: block;
-  font-family: RamaGothicE-Heavy;
   font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
+  line-height: .75;
+  font-weight: normal;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h1, .h1 {
@@ -1272,10 +1271,9 @@ h1, .h1 {
 
 h2, .h2 {
   display: block;
-  font-family: RamaGothicE-Heavy;
   font-size: 2.25rem;
-  text-transform: uppercase;
-  line-height: 1;
+  line-height: .75;
+  font-weight: normal;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h2, .h2 {
@@ -1283,14 +1281,13 @@ h2, .h2 {
 
 h3, .h3 {
   display: block;
-  font-family: RamaGothicE-Heavy;
-  font-size: 2rem;
-  text-transform: uppercase;
-  line-height: 1;
+  font-size: 2.25rem;
+  line-height: .75;
+  font-weight: normal;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h3, .h3 {
-      font-size: 3rem; } }
+      font-size: 4.5rem; } }
 
 h4, .h4, body.home .preface-text {
   display: block;
@@ -1314,6 +1311,44 @@ h6, .h6 {
   @media screen and (min-width: 768px) {
     h6, .h6 {
       font-size: 1.13rem; } }
+
+[class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
+.h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
+  color: #dddad5; }
+
+.u-bg-white h1,
+.u-bg-light-gray h1,
+.u-bg-tan h1, .u-bg-white h2,
+.u-bg-light-gray h2,
+.u-bg-tan h2, .u-bg-white h3,
+.u-bg-light-gray h3,
+.u-bg-tan h3, .u-bg-white h4,
+.u-bg-light-gray h4,
+.u-bg-tan h4, .u-bg-white h5,
+.u-bg-light-gray h5,
+.u-bg-tan h5, .u-bg-white h6,
+.u-bg-light-gray h6,
+.u-bg-tan h6, .u-bg-white
+.h1,
+.u-bg-light-gray
+.h1,
+.u-bg-tan
+.h1, .u-bg-white .h2,
+.u-bg-light-gray .h2,
+.u-bg-tan .h2, .u-bg-white .h3,
+.u-bg-light-gray .h3,
+.u-bg-tan .h3, .u-bg-white .h4, .u-bg-white body.home .preface-text, body.home .u-bg-white .preface-text,
+.u-bg-light-gray .h4,
+.u-bg-light-gray body.home .preface-text, body.home
+.u-bg-light-gray .preface-text,
+.u-bg-tan .h4,
+.u-bg-tan body.home .preface-text, body.home
+.u-bg-tan .preface-text, .u-bg-white .h5,
+.u-bg-light-gray .h5,
+.u-bg-tan .h5, .u-bg-white .h6,
+.u-bg-light-gray .h6,
+.u-bg-tan .h6 {
+  color: #272727; }
 
 /* Links
   * ------------------------------------------- */
@@ -1580,6 +1615,8 @@ button {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
+  .module--carousel .card-content h2, .module--carousel .card-content h3 {
+    font-size: 3rem; }
 
 [class*='u-bg-'] .card-content {
   color: white; }
@@ -1899,14 +1936,14 @@ figure {
   background-size: cover;
   background-position: center; }
 
-.module--entry .module__content, .module--entry .module--basic .module__body, .module--basic .module--entry .module__body, .module--entry .module-row {
+.module--entry .module__content {
   display: block; }
 
-.module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
+.module--hero .module__content {
   top: 100%;
   height: 100%; }
   @media screen and (min-width: 768px) {
-    .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row {
+    .module--hero .module__content {
       top: 0;
       -webkit-box-align: center;
       -moz-box-align: center;
@@ -1919,61 +1956,16 @@ figure {
       -ms-flex-align: center; } }
 
 .module__body {
-  flex: 1 0 75%; }
-  .module__body h1, .module__body h2, .module__body h3, .module__body h4, .module__body h5, .module__body h6,
-  .module__body .h1, .module__body .h2, .module__body .h3, .module__body .h4, .module__body body.home .preface-text, body.home .module__body .preface-text, .module__body .h5, .module__body .h6,
-  .module__body p {
-    width: 100%; }
-    [class*='u-bg-'] .module__body h1, [class*='u-bg-'] .module__body h2, [class*='u-bg-'] .module__body h3, [class*='u-bg-'] .module__body h4, [class*='u-bg-'] .module__body h5, [class*='u-bg-'] .module__body h6, [class*='u-bg-']
-    .module__body .h1, [class*='u-bg-'] .module__body .h2, [class*='u-bg-'] .module__body .h3, [class*='u-bg-'] .module__body .h4, [class*='u-bg-'] .module__body body.home .preface-text, body.home [class*='u-bg-'] .module__body .preface-text, [class*='u-bg-'] .module__body .h5, [class*='u-bg-'] .module__body .h6, [class*='u-bg-']
-    .module__body p {
-      color: #dddad5; }
-    .u-bg-white .module__body h1,
-    .u-bg-light-gray .module__body h1,
-    .u-bg-tan .module__body h1, .u-bg-white .module__body h2,
-    .u-bg-light-gray .module__body h2,
-    .u-bg-tan .module__body h2, .u-bg-white .module__body h3,
-    .u-bg-light-gray .module__body h3,
-    .u-bg-tan .module__body h3, .u-bg-white .module__body h4,
-    .u-bg-light-gray .module__body h4,
-    .u-bg-tan .module__body h4, .u-bg-white .module__body h5,
-    .u-bg-light-gray .module__body h5,
-    .u-bg-tan .module__body h5, .u-bg-white .module__body h6,
-    .u-bg-light-gray .module__body h6,
-    .u-bg-tan .module__body h6, .u-bg-white
-    .module__body .h1,
-    .u-bg-light-gray
-    .module__body .h1,
-    .u-bg-tan
-    .module__body .h1, .u-bg-white .module__body .h2,
-    .u-bg-light-gray .module__body .h2,
-    .u-bg-tan .module__body .h2, .u-bg-white .module__body .h3,
-    .u-bg-light-gray .module__body .h3,
-    .u-bg-tan .module__body .h3, .u-bg-white .module__body .h4, .u-bg-white .module__body body.home .preface-text, body.home .u-bg-white .module__body .preface-text,
-    .u-bg-light-gray .module__body .h4,
-    .u-bg-light-gray .module__body body.home .preface-text, body.home
-    .u-bg-light-gray .module__body .preface-text,
-    .u-bg-tan .module__body .h4,
-    .u-bg-tan .module__body body.home .preface-text, body.home
-    .u-bg-tan .module__body .preface-text, .u-bg-white .module__body .h5,
-    .u-bg-light-gray .module__body .h5,
-    .u-bg-tan .module__body .h5, .u-bg-white .module__body .h6,
-    .u-bg-light-gray .module__body .h6,
-    .u-bg-tan .module__body .h6, .u-bg-white
-    .module__body p,
-    .u-bg-light-gray
-    .module__body p,
-    .u-bg-tan
-    .module__body p {
-      color: #272727; }
-  .module__body ul, .module__body ol {
-    list-style: initial; }
+  width: 100%; }
   .module--entry .module__body {
+    width: auto;
     margin-right: 15rem; }
     @media screen and (min-width: 768px) {
       .module--entry .module__body {
         padding-left: 6rem;
         padding-right: 6rem; } }
+    .module--entry .module__body ul, .module--entry .module__body ol {
+      list-style: initial; }
   .module--carousel .module__body {
     max-width: 100%;
     width: 100%; }
@@ -2003,18 +1995,12 @@ figure {
     .module--hero {
       background-size: cover;
       background-position: center center; } }
-  .module--hero .section__content, .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row,
-  .module--hero .module__content,
-  .module--hero .module--basic .module__body, .module--basic
-  .module--hero .module__body,
-  .module--hero .module-row {
+  .module--hero .section__content, .module--hero .module__content, .module--hero .module-row,
+  .module--hero .module__content {
     min-height: 22.5rem; }
     @media screen and (min-width: 768px) {
-      .module--hero .section__content, .module--hero .module__content, .module--hero .module--basic .module__body, .module--basic .module--hero .module__body, .module--hero .module-row,
-      .module--hero .module__content,
-      .module--hero .module--basic .module__body, .module--basic
-      .module--hero .module__body,
-      .module--hero .module-row {
+      .module--hero .section__content, .module--hero .module__content, .module--hero .module-row,
+      .module--hero .module__content {
         min-height: 45rem; } }
 
 body.home .preface {
@@ -2027,10 +2013,6 @@ body.home .preface {
 .u-bg-light-gray .preface-text,
 .u-bg-tan .preface-text {
   color: #272727; }
-
-body.home .preface-text {
-  margin-left: 20rem;
-  text-align: left; }
 
 @media screen and (min-width: 768px) {
   .preface-text {
@@ -2047,7 +2029,7 @@ body.home .preface-text {
 .section, .module {
   overflow: hidden; }
 
-.section__content, .module__content, .module--basic .module__body, .module-row {
+.section__content, .module__content, .module-row {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -2240,6 +2222,15 @@ caption {
   .social__item a {
     display: block;
     font-size: 1.5rem; }
+
+body.home .preface {
+  padding-top: 6.75rem; }
+
+body.home .preface-text {
+  margin-left: 20rem;
+  text-align: left; }
+  body.home .preface-text p {
+    margin-top: 0; }
 
 .site-header {
   padding: 0.38rem 0;

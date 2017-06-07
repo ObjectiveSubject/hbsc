@@ -36,7 +36,7 @@ get_header(); ?>
                 </div>
             </section>
             
-            <section class="module module--hero" style="background-image: url('../wp-content/themes/hbsc/assets/images/sample/large.jpg')">
+            <section class="module module--hero" <?php echo "style='background-image: url(" . get_the_post_thumbnail_url() . "')"; ?>>
                 <div class="module__content u-flex-justify-end u-container">
                     <div class="card-positioner">
                         <div class="card u-bg-red js-slide-in">

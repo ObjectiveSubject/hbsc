@@ -1,0 +1,13 @@
+body.home {
+    .preface {
+        padding-top: 6.75rem;
+    }
+    .preface-text {
+        @extend .h4;
+        margin-left: rem(320);
+        text-align: left;
+        p {
+            margin-top: 0;
+        }
+    }
+}

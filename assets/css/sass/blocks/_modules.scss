@@ -36,38 +36,23 @@
     @extend .section__header;
 }
 .module__body {
-    flex: 1 0 75%;
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6,
-    p {
-        width: 100%;
-        [class*='u-bg-'] & {
-            color: $tan;
-        }
-        .u-bg-white &,
-        .u-bg-light-gray &,
-        .u-bg-tan & {
-            color: $dark-gray;
-        }
-    }
+    width: 100%;
     h4, h5, h6 {
         @extend .u-mt-4;
     }
-    ul, ol {
-        @extend .u-pl-2;
-        list-style: initial;
-        li {
-            @extend .u-mt-1;
-        }
-    }
-    .module--basic & {
-        @extend .module__content;
-    }
     .module--entry & {
+        width: auto;
         margin-right: rem(240);@extend .u-pr-1;
         @include media($md) {
             padding-left: 6rem;
             padding-right: 6rem;
+        }
+        ul, ol {
+            @extend .u-pl-2;
+            list-style: initial;
+            li {
+                @extend .u-mt-1;
+            }
         }
     }
     .module--carousel & {
@@ -93,7 +78,7 @@
     @extend .section-title;
 }
 .module-row {
-    @extend .module__content;
+    @extend .section__content;
     width: 100%;
     &+& {
         @extend .u-mt-4;
