@@ -27,6 +27,17 @@ button {
         border-color: $dark-gray;
     }
 }
+@each $color-name, $hex in $color_map {
+	.button--#{$color-name} {
+        color: white !important;
+    	background-color: $hex;
+        &:hover {
+            color: $hex !important;
+            background-color: white !important;
+            border-color: $hex !important;
+        }
+	}
+}
 .ui-button {
     font-size: 1rem;
     line-height: 1;

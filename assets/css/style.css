@@ -1533,6 +1533,78 @@ button {
     color: #272727;
     border-color: #272727; }
 
+.button--blue {
+  color: white !important;
+  background-color: #1d374a; }
+  .button--blue:hover {
+    color: #1d374a !important;
+    background-color: white !important;
+    border-color: #1d374a !important; }
+
+.button--red {
+  color: white !important;
+  background-color: #e74949; }
+  .button--red:hover {
+    color: #e74949 !important;
+    background-color: white !important;
+    border-color: #e74949 !important; }
+
+.button--tan {
+  color: white !important;
+  background-color: #dddad5; }
+  .button--tan:hover {
+    color: #dddad5 !important;
+    background-color: white !important;
+    border-color: #dddad5 !important; }
+
+.button--gold {
+  color: white !important;
+  background-color: #dda538; }
+  .button--gold:hover {
+    color: #dda538 !important;
+    background-color: white !important;
+    border-color: #dda538 !important; }
+
+.button--black {
+  color: white !important;
+  background-color: black; }
+  .button--black:hover {
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important; }
+
+.button--dark-gray {
+  color: white !important;
+  background-color: #272727; }
+  .button--dark-gray:hover {
+    color: #272727 !important;
+    background-color: white !important;
+    border-color: #272727 !important; }
+
+.button--gray {
+  color: white !important;
+  background-color: #898989; }
+  .button--gray:hover {
+    color: #898989 !important;
+    background-color: white !important;
+    border-color: #898989 !important; }
+
+.button--light-gray {
+  color: white !important;
+  background-color: #f0efed; }
+  .button--light-gray:hover {
+    color: #f0efed !important;
+    background-color: white !important;
+    border-color: #f0efed !important; }
+
+.button--white {
+  color: white !important;
+  background-color: white; }
+  .button--white:hover {
+    color: white !important;
+    background-color: white !important;
+    border-color: white !important; }
+
 .ui-button {
   font-size: 1rem;
   line-height: 1;
