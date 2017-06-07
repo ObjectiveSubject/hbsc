@@ -10,11 +10,6 @@
             </div>
         </header>
         <?php endif; ?>
-        <?php if( $display_sidebar && $sidebar ) : ?>
-        <aside class="module__sidebar">
-            <?php echo $sidebar; ?>
-        </aside>
-        <?php endif; ?>
         <div class="module__body">
             <?php echo $content; ?>
         </div>

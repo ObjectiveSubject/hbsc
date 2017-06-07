@@ -5,12 +5,11 @@ while( have_rows('module') ): the_row();
 
     $type = get_sub_field('module_type');
     $color = get_sub_field('module_background_color');
-    $cardColor = get_sub_field('module_card_background_color');
+    $card_color = get_sub_field('module_card_background_color');
     $display_title = get_sub_field('display_module_title');
     $title = get_sub_field('module_title');
     $content = get_sub_field('module_content');
     $content_position = get_sub_field('module_content_position');
-    $display_sidebar = get_sub_field('display_module_sidebar');
     $sidebar = get_sub_field('module_sidebar');
     $display_button = get_sub_field('display_module_button');
     $button_link = get_sub_field('module_button_link');

@@ -1,0 +1,76 @@
+[
+    {
+        "key": "group_592849bcb4aef",
+        "title": "Page Settings",
+        "fields": [
+            {
+                "key": "field_592849c455f52",
+                "label": "Display Module Anchors",
+                "name": "display_module_anchors",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_59284a35329b3",
+                "label": "Preface Background Color",
+                "name": "preface_background_color",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "u-bg-white": "White",
+                    "u-bg-red": "Red",
+                    "u-bg-tan": "Tan",
+                    "u-bg-blue": "Blue",
+                    "u-bg-light-gray": "Light Gray",
+                    "u-bg-dark-gray": "Dark Gray",
+                    "u-bg-black": "Black"
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": "",
+                "disabled": 0,
+                "readonly": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
