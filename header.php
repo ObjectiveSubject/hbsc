@@ -16,7 +16,6 @@ if ( $is_top_page ) {
     $id = $parents[0];
 }
 ?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>

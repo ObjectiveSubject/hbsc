@@ -104,6 +104,7 @@
                 location.hostname == this.hostname
             ) {
                 var target = $(this.hash);
+                console.log(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     e.preventDefault();
