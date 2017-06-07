@@ -13,8 +13,31 @@ function setup() {
 
 	add_action( 'init', $n( 'register_event' ) );
 	add_action( 'init', $n( 'register_people' ) );
-
+	//add_action( 'save_post', 'transition_people_private', 10, 3 );
 }
+
+//  DSL si vous m'entendiez hier soir
+
+function transition_people_private( $postId, $post )
+{
+	$taxonomies = wp_get_post_terms($post->ID, 'role', array(
+            'hide_empty' => true,
+			'fields' => 'slugs'
+    ) );
+			$post->post_status = 'private';
+			wp_update_post( $post );			
+	//var_dump($taxonomies);
+	//discussion-leader
+	switch( true )
+	{
+		case ($post->post_type == 'people'):
+		case ($post->post_status == 'publish'):
+		//case ($old_status  != $new_status):
+		case (!in_array('discussion-leader', $taxonomies)):
+
+		break;
+	}
+} 
 
 /**
  * Register the 'event' post type
@@ -36,7 +59,7 @@ function register_event() {
 		),
     ) );
 }
-//Title, Type(Event-Type), Description, Event Info[Date, Location, Doors Open & Reception, Program], if(Salon at Stowe){Hosts[Title, Host[First Name, Last Name, Photo, Description]]}, Online Discussion[boolean, if(true){Title}]
+
 /**
  * Register the 'people' post type
  */
@@ -44,7 +67,7 @@ function register_people() {
 	register_extended_post_type( 'people', array(
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'has_archive' => false,
+		'has_archive' => false
 	), array(
 		# Override the base names used for labels:
 		'singular' => 'Person',

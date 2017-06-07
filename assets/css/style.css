@@ -1252,7 +1252,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1313,7 +1313,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 /* Links
   * ------------------------------------------- */
@@ -1799,7 +1799,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2087,7 +2087,7 @@ body.home .preface-text {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2243,7 +2243,7 @@ caption {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 

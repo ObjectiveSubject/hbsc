@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Events */
+/* Template Name: Calendar */
 get_header();
 
     $args = array(
@@ -22,7 +22,7 @@ get_header();
         'post_type'      => 'event',
         'posts_per_page' => -1,
         'order'          => 'ASC',
-        'meta_key'		 => 'event_start_date',
+        'meta_key'		 => 'event_date',
         'orderby'        => 'meta_value',
         'order'          => 'DESC',
         'tax_query'      => array(
@@ -45,7 +45,7 @@ get_header();
             </header>
             <div class="module__body">
 <?php 
-    while( $loop->have_posts() ) : $loop->the_post();
+    while ( $loop->have_posts() ) : $loop->the_post();
         $Event = new Event();
         $taxonomies = wp_get_post_terms($post->ID, 'event-type', array(
                 'hide_empty' => true,
