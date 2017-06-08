@@ -67,9 +67,7 @@ th {
     > tbody,
     > tfoot {
         > tr {
-            > td {
-                border-bottom: 1px solid $table-border-color;
-            }
+            border-bottom: 1px solid $table-border-color;
         }
     }
 }

@@ -19,8 +19,10 @@ get_header(); ?>
                 </div>
             </section>
             
-            <section class="module module--entry has-image">
-                <div class="module__image" <?php echo "style='background-image: url(" . $image . ")'"; ?>></div>
+            <section class="module module--entry <?php echo ( get_the_post_thumbnail_url() ) ? 'has-image' : '' ; ?>">
+                <?php if( get_the_post_thumbnail_url() ) : ?>
+                <div class="module__image" <?php echo "style='background-image: url(" . get_the_post_thumbnail_url() . "')"; ?>></div>
+                <?php endif; ?>
                 <div class="module__content u-container">
                     <header class="module__header">
                         <div class="module-title">
@@ -68,6 +70,139 @@ get_header(); ?>
                                 </tr>
                             </tbody>
                         </table>
+                        <h5>House Tour Tickets</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolores magni minima, voluptas quaerat corporis, provident cum veritatis illum, perferendis sint cupiditate! Saepe, dicta, ea! A iure quod dolorum beatae.</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Adults</td>
+                                    <td class="u-text-right">$10</td>
+                                </tr>
+                                <tr>
+                                    <td>Students and Seniors (65+)</td>
+                                    <td class="u-text-right">$9</td>
+                                </tr>
+                                <tr>
+                                    <td>Children (5-16)</td>
+                                    <td class="u-text-right">$7</td>
+                                </tr>
+                                <tr>
+                                    <td>Children under 5</td>
+                                    <td class="u-text-right">Free</td>
+                                </tr>
+                                <tr>
+                                    <td>Hartford Residents (with ID)</td>
+                                    <td class="u-text-right">Free</td>
+                                </tr>
+                                <tr>
+                                    <td>Military (Memorial Day through Labor Day)</td>
+                                    <td class="u-text-right">Free</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h5>The Stowe-Twain Experience</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolores magni minima, voluptas quaerat corporis, provident cum veritatis illum, perferendis sint cupiditate! Saepe, dicta, ea! A iure quod dolorum beatae.</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Adults</td>
+                                    <td class="u-text-right">$26</td>
+                                </tr>
+                                <tr>
+                                    <td>Students and Seniors (65+)</td>
+                                    <td class="u-text-right">$23</td>
+                                </tr>
+                                <tr>
+                                    <td>Children (5-16)</td>
+                                    <td class="u-text-right">$16</td>
+                                </tr>
+                                <tr>
+                                    <td>Children under 5</td>
+                                    <td class="u-text-right">Free</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="module module--basic">
+                <div class="module__content u-container">
+                    <header class="module__header">
+                        <div class="module-title">
+                            Tours
+                        </div>
+                    </header>
+                    <div class="module__body">
+                        <div class="module-row">
+                            <div class="module-column">Accordion</div>
+                            <div class="module-column">Image</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="module module--basic">
+                <div class="module__content u-container">
+                    <header class="module__header">
+                        <div class="module-title">
+                            Directions
+                        </div>
+                    </header>
+                    <div class="module__body">
+                        <h5>Harriet Beecher Stowe Center</h5>
+                        <p>
+                            <?php
+                            echo get_option('hbsc_address') . '<br>';
+                            echo get_option('hbsc_phone') . '<br>';
+                            echo get_option('hbsc_email');
+                            ?>
+                        </p>
+                        <p>MAP</p>
+                        <div class="module-row">
+                            <div class="module-column">
+                                <p>
+                                    <b>From the North</b><br>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
+                                </p>
+                                <p>
+                                    <b>From the South</b><br>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
+                                </p>
+                            </div>
+                            <div class="module-column">
+                                <p>
+                                    <b>From the East</b><br>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
+                                </p>
+                                <p>
+                                    <b>From the West</b><br>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
+                                </p>
+                            </div>
+                        </div>
+                        <h5>Free Parking</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates distinctio nemo quasi quod consequatur nobis ullam dolorem a id minima, vero ad, sint excepturi saepe, omnis odit blanditiis accusamus et.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="module module--basic">
+                <div class="module__content u-container">
+                    <header class="module__header">
+                        <div class="module-title">
+                            Store
+                        </div>
+                    </header>
+                    <div class="module__body">
+                        <div class="module-row">
+                            <div class="module-column">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto repellendus, a tempora dolor adipisci quidem aspernatur quisquam necessitatibus corporis rerum? Recusandae non itaque minima distinctio incidunt, esse eveniet totam numquam.
+                                <p class="u-font-size-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, consectetur.</p>
+                                <a href="#" class="button u-mt-2">Online Store</a>
+                            </div>
+                            <div class="module-column">Image</div>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,4 @@
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--basic <?php echo $color; echo ( $image ) ? ' has-image' : ''; echo ( $display_sidebar ) ? ' has-sidebar' : ''; ?>">
+<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--basic <?php echo $color; echo ( $image ) ? ' has-image' : ''; ?>">
     <?php if( $image ) : ?>
     <div class="module__image" <?php echo "style='background-image: url(" . $image . ")'"; ?>></div>
     <?php endif; ?>

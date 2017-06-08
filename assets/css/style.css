@@ -1517,7 +1517,7 @@ button {
   font-size: 1rem;
   color: #272727;
   padding: 0.5rem 2rem;
-  border: 1px solid #272727; }
+  border: 1px solid rgba(0, 0, 0, 0.15); }
   [class*='u-bg-'] .button {
     color: #dddad5;
     border-color: #dddad5; }
@@ -2198,20 +2198,20 @@ caption {
   .table .table, table .table, .table table, table table {
     background-color: transparent; }
 
-.table--ruled > thead > tr > td, table > thead > tr > td,
-.table--ruled > tbody > tr > td, table > tbody > tr > td,
-.table--ruled > tfoot > tr > td, table > tfoot > tr > td {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+.table--ruled > thead > tr, table > thead > tr,
+.table--ruled > tbody > tr, table > tbody > tr,
+.table--ruled > tfoot > tr, table > tfoot > tr {
+  border-bottom: 1px solid #d8d8d8; }
 
 .table--bordered {
-  border: 1px solid rgba(0, 0, 0, 0.15); }
+  border: 1px solid #d8d8d8; }
   .table--bordered > thead > tr > th,
   .table--bordered > thead > tr > td,
   .table--bordered > tbody > tr > th,
   .table--bordered > tbody > tr > td,
   .table--bordered > tfoot > tr > th,
   .table--bordered > tfoot > tr > td {
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid #d8d8d8;
     padding: 0.5em; }
   .table--bordered > thead > tr > th,
   .table--bordered > thead > tr > td {
