@@ -28,7 +28,7 @@ abstract class BaseModel
         $this->fields[ $fieldName ] = $value;
     }
 
-    public function getField($fieldName, $value)
+    public function getField($fieldName)
     {
         if( !array_key_exists($fieldName, $this->fields) )
         {

@@ -22,6 +22,8 @@ require_once HBSC_INC . 'shortcodes.php';
 require_once HBSC_INC . 'taxonomies.php';
 require_once HBSC_INC . 'template-tags.php';
 
+require_once HBSC_INC . 'utils.php';
+
 // Include lib classes
 include( HBSC_INC . 'libraries/extended-cpts.php' );
 include( HBSC_INC . 'libraries/extended-taxos.php' );

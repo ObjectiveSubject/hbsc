@@ -41,46 +41,20 @@ get_header(); ?>
         </section>
         
         <!-- Events/Salons at Stowe (3) -->
-        <section class="module module--carousel u-bg-dark-gray">
-            <div class="module__content u-container">
-                <header class="module__header">
-                    <div class="module-title">Salons at Stowe</div>
-                </header>
-                <div class="module__body">
-                    <ul class="carousel js-carousel">
-                        <?php for ($i = 0 ; $i < 4; $i++) { ?>
-                        <li class="carousel-slide">
-                            <div class="carousel-slide__content">
-                                <div class="badge-positioner">
-                                    <div class="badge">
-                                        <span class="u-caps">Dec</span>
-                                        <span class="h2 u-font-miller" style="letter-spacing: -.05em">2<?php echo $i; ?></span>
-                                    </div>
-                                </div>
-                                <div class="card-positioner">
-                                    <div class="card u-bg-tan">
-                                        <div class="card-content">
-                                            <h2>Policing the Police:</h2>
-                                            <h3>How can communities transform law enforcement?</h3>
-                                        </div>
-                                        <div class="card-button">
-                                            <a href="#" class="button js-hover-toggle" data-target="#image-<?php echo $i; ?>" data-class="image--grayscale">View Event</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="image-positioner">
-                                    <div id="image-<?php echo $i; ?>" class="image image--grayscale" <?php echo 'style="background-image: url(' .  get_template_directory_uri() . '/assets/images/sample/medium.jpg)"'; ?>></div>
-                                </div>
-                            </div>
-                        </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-                <footer class="module__footer">
-                    <a href="#" class="button">Learn More</a>
-                </footer>
-            </div>
-        </section>
+        <?php
+            // Next 3 salons events
+            $carouselUpcomingSectionConfig = array(
+                'title'        => 'Salons at Stowe',
+                'button_label' => 'Learn More',
+                'button_link'  => '#',
+                'event-type'   => array(
+                    'salon-at-stowe'
+                ),
+                'from_date' => date('Y-m-d')
+            );
+
+            include HBSC_PATH . '/partials/events/carousel-upcoming-section.php';
+        ?>
         
         <!-- Links to Life section -->
         <section class="module module--basic u-bg-tan">

@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Events */
+/* Template Name: Staff Member */
 get_header();
 
     $args = array(
@@ -33,7 +33,7 @@ get_header();
                 'terms'    => $termsList,
             )
         )        
-    ));
+    ) );
 ?>
 <div class="site-content">
     <section class="module u-bg-white">

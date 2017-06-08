@@ -1,5 +1,5 @@
 <?php
-if( $Event->getField('event_display_discussions') == 1 )
+if( get_field('event_display_discussions') == 1 )
 {
 ?>
     <a name="join_the_discussion"></a>

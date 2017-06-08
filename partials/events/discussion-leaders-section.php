@@ -14,7 +14,7 @@
             <div class="module__content u-container">
                 <header class="module__header">
                     <div class="module-title">
-                        <?php echo $Event->getField('event_title_discussion_leaders'); ?>
+                        <?php echo get_field('event_title_discussion_leaders'); ?>
                     </div>
                 </header>
                 <div class="module__body">

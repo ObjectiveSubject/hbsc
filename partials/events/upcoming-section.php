@@ -7,7 +7,7 @@
         'meta_query' => array(
             array(
                 'key' => 'event_end_date',
-                'value' => $Event->getEndDate()->format('Y-m-d'),
+                'value' => get_field('event_end_date'),
                 'compare' => '>=',
                 'type' => 'DATE'
             )

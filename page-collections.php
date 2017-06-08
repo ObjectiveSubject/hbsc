@@ -2,7 +2,6 @@
 /**
  * General page template
  */
-
 get_header(); ?>
 
 	<div class="site-content">
