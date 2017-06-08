@@ -9,14 +9,25 @@
             <div class="u-container">
                 <div class="footer-row">
                     <div class="footer-column">
+                        <?php
+                        $address = get_option( 'hbsc_address' );
+                        $phone = get_option( 'hbsc_phone' );
+                        $email = get_option( 'hbsc_email' );
+                        if( $address ) : ?>
                         <address class="u-font-miller-bold">
-                            <span class="u-display-block">77 Forest Street</span>
-                            <span class="u-display-block">Hartford, CT 06105</span>
+                            <?php echo nl2br( $address ); ?>
                         </address>
-                        <div class="u-font-miller u-mt-2">
-                            <span class="u-display-block"><a href="#">860-522-9258</a></span>
-                            <span class="u-display-block"><a href="#">info@stowecenter.org</a></span>
+                        <?php endif;
+                        if( $phone || $email ) :
+                        ?>
+                        <div class="u-font-miller <?php echo ( $address ) ? 'u-mt-2' : ''; ?>">
+                            <?php if( $phone ) : ?>
+                            <span class="u-display-block"><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></span>
+                            <?php endif; if( $email ) : ?>
+                            <span class="u-display-block"><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></span>
+                            <?php endif; ?>
                         </div>
+                        <?php endif; ?>
                     </div>
                     <div class="footer-column">
                         <nav class="site-nav">
@@ -38,20 +49,33 @@
                 </div>
                 <div class="footer-row">
                     <div class="footer-column">
+                        <?php
+                        $facebook = get_option( 'hbsc_facebook' );
+                        $instagram = get_option( 'hbsc_instagram' );
+                        $twitter = get_option( 'hbsc_twitter' );
+                        $youtube = get_option( 'hbsc_youtube' );
+                        if( $facebook || $instagram || $twitter || $youtube ) :
+                        ?>
                         <ul class="social">
+                            <?php if( $facebook ) : ?>
                             <li class="social__item">
-                                <a href="#" class="icon icon-facebook"></a>
+                                <a href="<?php echo $facebook; ?>" class="icon icon-facebook"></a>
                             </li>
+                            <?php endif; if( $instagram ) : ?>
                             <li class="social__item">
-                                <a href="#" class="icon icon-instagram"></a>
+                                <a href="<?php echo $instagram; ?>" class="icon icon-instagram"></a>
                             </li>
+                            <?php endif; if( $twitter ) : ?>
                             <li class="social__item">
-                                <a href="#" class="icon icon-twitter"></a>
+                                <a href="<?php echo $twitter; ?>" class="icon icon-twitter"></a>
                             </li>
+                            <?php endif; if( $youtube ) : ?>
                             <li class="social__item">
-                                <a href="#" class="icon icon-youtube"></a>
+                                <a href="<?php echo $youtube; ?>" class="icon icon-youtube"></a>
                             </li>
+                            <?php endif; ?>
                         </ul>
+                        <?php endif; ?>
                     </div>
                     <div class="footer-column">
                         <span class="u-font-miller">Newsletter</span>

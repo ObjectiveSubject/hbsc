@@ -17,6 +17,7 @@ define( 'HBSC_ASSETS',       HBSC_TEMPLATE_URL . '/assets/' );
 require_once HBSC_INC . 'core.php';
 
 require_once HBSC_INC . 'comments.php';
+require_once HBSC_INC . 'options.php';
 require_once HBSC_INC . 'post-types.php';
 require_once HBSC_INC . 'shortcodes.php';
 require_once HBSC_INC . 'taxonomies.php';
@@ -35,6 +36,7 @@ include( HBSC_INC . 'models/Event.php' );
 // Run the setup functions
 HBSC\Core\setup();
 HBSC\Comments\setup();
+HBSC\Options\setup();
 HBSC\Shortcodes\setup();
 HBSC\PostTypes\setup();
 HBSC\Taxonomies\setup();
