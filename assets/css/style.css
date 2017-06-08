@@ -38,7 +38,7 @@ html {
 .u-color-red {
   color: #e74949 !important; }
 
-.u-bg-red, .badge {
+.u-bg-red, .badge-positioner .badge {
   background-color: #e74949 !important; }
 
 .u-color-tan {
@@ -723,7 +723,7 @@ html {
 .u-mr-3, .header-logo-container {
   margin-right: 3rem; }
 
-.u-mb-3, .module--carousel .badge {
+.u-mb-3, .module--carousel .badge-positioner .badge {
   margin-bottom: 3rem; }
 
 .u-ml-3 {
@@ -1254,7 +1254,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1312,7 +1312,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1465,44 +1465,6 @@ hr {
     z-index: 100000;
     /* Above WP toolbar. */ }
 
-.badge {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  height: 9rem;
-  width: 9rem;
-  color: white;
-  text-align: center; }
-
 .badge-positioner {
   position: absolute;
   pointer-events: none; }
@@ -1510,6 +1472,43 @@ hr {
     left: 0;
     bottom: 0;
     z-index: 10; }
+  .badge-positioner .badge {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    height: 9rem;
+    width: 9rem;
+    color: white;
+    text-align: center; }
 
 button {
   background: none; }
@@ -1531,7 +1530,7 @@ button {
   .button:hover {
     color: #e74949;
     border-color: #e74949; }
-  .u-bg-red .button:hover, .badge .button:hover {
+  .u-bg-red .button:hover, .badge-positioner .badge .button:hover {
     color: #272727;
     border-color: #272727; }
 
@@ -1623,7 +1622,7 @@ button {
   .ui-button:hover {
     color: #e74949;
     border-color: #e74949; }
-  .u-bg-red .ui-button:hover, .badge .ui-button:hover {
+  .u-bg-red .ui-button:hover, .badge-positioner .badge .ui-button:hover {
     color: #272727;
     border-color: #272727; }
 
@@ -1771,7 +1770,7 @@ button {
     .u-bg-light-gray .slick-dots li.slick-active button,
     .u-bg-tan .slick-dots li.slick-active button {
       background-color: #272727; }
-    .u-bg-red .slick-dots li button:hover, .badge .slick-dots li button:hover {
+    .u-bg-red .slick-dots li button:hover, .badge-positioner .badge .slick-dots li button:hover {
       border-color: #272727; }
 
 /* Slider */
@@ -1910,7 +1909,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2134,7 +2133,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2240,6 +2239,104 @@ caption {
 .table--hover > tbody > tr:hover {
   background-color: gray; }
 
+div.zabuto_calendar .badge-today,
+div.zabuto_calendar div.legend span.badge-today {
+  background-color: #357ebd;
+  color: #ffffff;
+  text-shadow: none;
+  border: 1px solid;
+  border-radius: 18px;
+  padding: 2px 8px; }
+
+.calendar--event-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  border: 1px solid #a6a4a0;
+  margin-bottom: 8px; }
+  .calendar--event-item .event--date {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    height: 9rem;
+    width: 9rem; }
+  .calendar--event-item .event--content {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column; }
+    .calendar--event-item .event--content .event--title {
+      font-family: RamaGothicE-Heavy;
+      text-transform: uppercase;
+      font-size: 2rem; }
+    .calendar--event-item .event--content .event--taxonomies,
+    .calendar--event-item .event--content .event--details {
+      font-family: "Miller Text Rom";
+      font-style: Normal;
+      font-weight: Normal;
+      font-size: 1rem; }
+    .calendar--event-item .event--content .event--taxonomies {
+      font-weight: bold; }
+
 .site-footer a {
   color: white; }
   .site-footer a:hover {
@@ -2297,7 +2394,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
