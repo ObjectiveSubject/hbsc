@@ -931,7 +931,9 @@ html {
 .u-text-center, .section__footer, .module__footer, .section-title, .module-title, .card-title {
   text-align: center; }
 
-.u-text-right {
+.u-text-right, .table > thead > tr > td + td, table > thead > tr > td + td,
+.table > tbody > tr > td + td, table > tbody > tr > td + td,
+.table > tfoot > tr > td + td, table > tfoot > tr > td + td {
   text-align: right; }
 
 .u-font-rama-gothic, h1, .h1, h2, .h2 {

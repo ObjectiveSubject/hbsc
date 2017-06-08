@@ -37,6 +37,9 @@ th {
 
                 > *:first-child { margin-top: 0; }
             }
+            > td+td {
+                @extend .u-text-right;
+            }
         }
     }
     // Bottom align for column headings

@@ -42,31 +42,31 @@ get_header(); ?>
                             <tbody>
                                 <tr>
                                     <td class="u-caps">Monday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_monday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_monday'); ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Tuesday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_tuesday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_tuesday'); ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Wednesday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_wednesday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_wednesday'); ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Thursday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_thursday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_thursday'); ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Friday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_friday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_friday'); ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Saturday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_saturday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_saturday'); ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Sunday</td>
-                                    <td class="u-text-right"><?php echo get_option('hbsc_hours_sunday'); ?></td>
+                                    <td><?php echo get_option('hbsc_hours_sunday'); ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -76,27 +76,27 @@ get_header(); ?>
                             <tbody>
                                 <tr>
                                     <td>Adults</td>
-                                    <td class="u-text-right">$10</td>
+                                    <td>$10</td>
                                 </tr>
                                 <tr>
                                     <td>Students and Seniors (65+)</td>
-                                    <td class="u-text-right">$9</td>
+                                    <td>$9</td>
                                 </tr>
                                 <tr>
                                     <td>Children (5-16)</td>
-                                    <td class="u-text-right">$7</td>
+                                    <td>$7</td>
                                 </tr>
                                 <tr>
                                     <td>Children under 5</td>
-                                    <td class="u-text-right">Free</td>
+                                    <td>Free</td>
                                 </tr>
                                 <tr>
                                     <td>Hartford Residents (with ID)</td>
-                                    <td class="u-text-right">Free</td>
+                                    <td>Free</td>
                                 </tr>
                                 <tr>
                                     <td>Military (Memorial Day through Labor Day)</td>
-                                    <td class="u-text-right">Free</td>
+                                    <td>Free</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -106,19 +106,19 @@ get_header(); ?>
                             <tbody>
                                 <tr>
                                     <td>Adults</td>
-                                    <td class="u-text-right">$26</td>
+                                    <td>$26</td>
                                 </tr>
                                 <tr>
                                     <td>Students and Seniors (65+)</td>
-                                    <td class="u-text-right">$23</td>
+                                    <td>$23</td>
                                 </tr>
                                 <tr>
                                     <td>Children (5-16)</td>
-                                    <td class="u-text-right">$16</td>
+                                    <td>$16</td>
                                 </tr>
                                 <tr>
                                     <td>Children under 5</td>
-                                    <td class="u-text-right">Free</td>
+                                    <td>Free</td>
                                 </tr>
                             </tbody>
                         </table>
