@@ -61,6 +61,14 @@ function scripts( $debug = false ) {
 		HBSC_VERSION,
 		true
 	);
+
+	/*wp_enqueue_script(
+		'zabuto',
+		HBSC_TEMPLATE_URL . "/assets/js/vendor/zabuto_calendar.js",
+		array('jquery'),
+		HBSC_VERSION,
+		true
+	);*/	
 }
 
 /**
@@ -79,13 +87,34 @@ function styles( $debug = false ) {
 		array(),
 		HBSC_VERSION
 	);
+
+	wp_enqueue_style(
+		'zabuto_calendar',
+		HBSC_URL . "/assets/css/vendor/zabuto_calendar.css",
+		array(),
+		HBSC_VERSION
+	);	
     
     wp_enqueue_style(
         'miller-font',
         "//cloud.typenetwork.com/projects/1467/fontface.css/",
 		array(),
 		false
-    );	
+    );		
+
+	wp_enqueue_style(
+		'font-awesome',
+		'//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css',
+		array(),
+		false
+	);
+
+	/*wp_enqueue_style(
+		'bootstrap',
+		'//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css',
+		array(),
+		false
+	);*/
 }
 
 /**

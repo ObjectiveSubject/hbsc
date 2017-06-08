@@ -1,16 +1,3 @@
-.badge {
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-    @include flex-direction(column);
-    @include size(rem(144));
-    @extend .u-bg-red;
-    color: white;
-    text-align: center;
-    .module--carousel & {
-        @extend .u-mb-3;
-    }
-}
 .badge-positioner {
     position: absolute;
     pointer-events: none;
@@ -19,4 +6,18 @@
         bottom: 0;
         z-index: 10;
     }
+
+    .badge {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        @include size(rem(144));
+        @extend .u-bg-red;
+        color: white;
+        text-align: center;
+        .module--carousel & {
+            @extend .u-mb-3;
+        }
+    }    
 }

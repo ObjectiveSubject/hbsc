@@ -43,27 +43,97 @@ get_header();
                     Calendar
                 </div>
             </header>
+            
             <div class="module__body">
+                <div id="events-calendar"></div>
+
+                <div>
+                    <?php 
+                        $termsType = get_terms( 'event-type', array(
+                            'hide_empty' => true,
+                        ) );
+
+                        foreach($termsType as $term)
+                        {
+                            $termChecked = in_array( $term->slug, $termsList );
+                ?>
+                            <div><input type="checkbox" name="events_categories" id="events_categories" value="<?php echo $term->slug; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <?php echo $term->slug;?></div>
+                <?php
+                        }
+                    ?>
+                </div>
+
+                <div class="calendar--events-list">
 <?php 
+    $calendarData = array();
     while ( $loop->have_posts() ) : $loop->the_post();
         $Event = new Event();
         $taxonomies = wp_get_post_terms($post->ID, 'event-type', array(
                 'hide_empty' => true,
-                'fields' => 'slugs'
+                'fields' => 'names'
         ) );
+
+        $calendarData[] = array(
+            'date'  => get_field('event_start_date'),
+            'badge' => false
+        );
 ?>
-                <div>
-                    <div>
-                        <div><?php echo $Event->getDateMonth();?></div>
-                        <div><?php echo $Event->getDateDay();?></div>
+                    <div  class="calendar--event-item" id="calendar-event<?php echo $post->ID; ?>" data-event-date="<?php echo get_field('event_start_date'); ?>">
+                        <div class="event--date">
+                            <span class="u-caps"><?php echo $Event->getDateMonth();?></span>
+                            <span class="h2 u-font-miller"><?php echo $Event->getDateDay();?></span>
+                        </div>
+                        <div class="event--content">
+                            <div class="event--title"><?php echo the_title();?></div>
+                            <div class="event--taxonomies"><?php echo implode(', ', $taxonomies);?></div>
+                            <div class="event--details"><?php echo $Event->getField('event_doors_open') . ', ' . $Event->getField('event_location');?></div>
+                        </div>
                     </div>
-                    <div><?php echo the_title();?></div>
-                    <div>-</div>
-                    <div><?php echo $Event->getField('event_doors_open') . ', ' . $Event->getField('event_location');?></div>
-                </div>
 <?php endwhile;?>
+                </div>
             </div>
         </div>
     </section>
 </div>
 <?php get_footer(); ?>
+<script>window.$ = jQuery;</script>
+<script type='text/javascript' src='/wp-content/themes/hbsc/assets/js/vendor/zabuto_calendar.js?ver=0.1.0'></script>
+<script type="application/javascript">
+    var dataCalendar = <?php echo json_encode($calendarData); ?>;
+    var calendarOptions = {
+        year: <?php echo date('Y'); ?>,
+        show_previous: true,
+        show_next: true,
+        language: 'en',
+        cell_border: true,
+        today: true,
+        show_days: false,
+        weekstartson: 0,
+        nav_icon: {
+            prev: '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+            next: '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+        },        
+        data: dataCalendar,
+        action : function()
+        {
+            return calendarNav(this.id, false);
+        }
+    };
+
+    function calendarNav(id, modal)
+    {
+        var date     = $("#" + id).data("date");
+        var hasEvent = $("#" + id).data("hasEvent");
+
+        if( hasEvent )
+        {
+            console.log(date);
+            console.log(jQuery("#" + id).data());
+        }
+    }
+
+    jQuery(document).ready(function()
+    {
+        jQuery("#events-calendar").zabuto_calendar(calendarOptions);
+    });
+</script>

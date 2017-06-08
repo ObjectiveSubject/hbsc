@@ -1,0 +1,60 @@
+div.zabuto_calendar
+{
+    .badge-today,
+    div.legend span.badge-today
+    {
+        background-color: #357ebd;
+        color: #ffffff;
+        text-shadow: none;
+        border: 1px solid;
+        border-radius: 18px;
+        padding: 2px 8px;
+    }
+}
+
+.calendar--event-item
+{
+    @include display(flex);    
+    @include flex-direction(row);
+
+    border: 1px solid #a6a4a0;
+    margin-bottom: 8px;
+
+    .event--date
+    {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        @include size(rem(144));
+    }
+
+    .event--content
+    {
+        @include display(flex);
+        @include justify-content(center);
+        @include flex-direction(column);
+
+        .event--title
+        {
+            font-family: RamaGothicE-Heavy;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        .event--taxonomies,
+        .event--details
+        {
+            font-family: "Miller Text Rom";
+            font-style: Normal;
+            font-weight: Normal;
+            font-size: 1rem;
+        }
+
+        .event--taxonomies
+        {
+            font-weight: bold;
+        }
+    }
+
+}
