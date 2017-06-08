@@ -31,13 +31,13 @@
                 $OtherSalonsLoop->the_post();
                 $Event = new Event();
      
-                include HBSC_PATH . '/partials/people/other-salons-item.php';
+                include HBSC_PATH . 'partials/people/other-salons-item.php';
             }
         ?>
         </div>
 
         <div class="card-button">
-            <a href="" title="" class="button js-hover-toggle">Salons at Stowe</a>
+            <a href="/programs-learning/salons-at-stowe/" title="Salons at Stowe" class="button js-hover-toggle">Salons at Stowe</a>
         </div>
 
     </div>

@@ -23,7 +23,7 @@
                     {
                         $leadersPosts->the_post();
 
-                        include HBSC_PATH . '/partials/events/discussion-leaders-item.php';
+                        include HBSC_PATH . 'partials/events/discussion-leaders-item.php';
                     }
                 ?>
                 </div>

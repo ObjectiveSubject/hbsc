@@ -33,7 +33,7 @@
                 $upcomingEventsLoop->the_post();
                 $Event = new Event();
      
-                include HBSC_PATH . '/partials/events/upcoming-item.php';
+                include HBSC_PATH . 'partials/events/upcoming-item.php';
             }
         ?>
         </div>

@@ -29,7 +29,7 @@
                     while ( $staffBoardSectionLoop->have_posts() )
                     {
                         $staffBoardSectionLoop->the_post();     
-                        include HBSC_PATH . '/partials/people/staff-board-item.php';
+                        include HBSC_PATH . 'partials/people/staff-board-item.php';
                     }
                 ?>
                 </div>

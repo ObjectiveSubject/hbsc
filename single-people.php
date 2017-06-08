@@ -25,11 +25,11 @@ $postId = null;
                     $postId = $post->ID;
                 }
 
-                include HBSC_PATH . '/partials/people/details-section.php';
+                include HBSC_PATH . 'partials/people/details-section.php';
             }
 
             // Other salons led by this member
-            include HBSC_PATH . '/partials/people/other-salons-section.php';
+            include HBSC_PATH . 'partials/people/other-salons-section.php';
         ?>
     </div>
 <?php get_footer(); ?>
