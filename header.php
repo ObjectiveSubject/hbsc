@@ -29,8 +29,8 @@ if ( $is_top_page ) {
         <div class="site-header u-bg-dark-gray">
             <div class="u-container">
                 <div class="u-display-flex u-flex-justify-between u-color-tan">
-                    <address>77 Forest Street, Hartford</address>
-                    <div>Open Today: 9:30AM - 5:00PM</div>
+                    <address><?php echo get_option('hbsc_address'); ?></address>
+                    <div>Open Today: <?php hbsc_opening_hours_today(); ?></div>
                     <div>
                         <input id="site-search" class="site-search u-mr-1 u-display-none" type="text">
                         <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-field-open" data-focus="#site-search"><span class="icon icon-search"></span></a>

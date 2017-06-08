@@ -2154,66 +2154,64 @@ body.home .preface {
  * -----------------------------------------------------------*/
 table {
   background-color: transparent;
-  margin: 1rem 0 0; }
+  margin: 2rem 0 0; }
 
 caption {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   color: lightgray; }
 
-.table, .page-content table {
+.table, table {
+  width: 100%;
   max-width: 100%; }
-  .table > thead > tr > th, .page-content table > thead > tr > th,
-  .table > thead > tr > td, .page-content table > thead > tr > td,
-  .table > tbody > tr > th, .page-content table > tbody > tr > th,
-  .table > tbody > tr > td, .page-content table > tbody > tr > td,
-  .table > tfoot > tr > th, .page-content table > tfoot > tr > th,
-  .table > tfoot > tr > td, .page-content table > tfoot > tr > td {
-    padding: 0.5em 2rem;
-    vertical-align: top; }
-    .table > thead > tr > th:first-child, .page-content table > thead > tr > th:first-child,
-    .table > thead > tr > td:first-child, .page-content table > thead > tr > td:first-child,
-    .table > tbody > tr > th:first-child, .page-content table > tbody > tr > th:first-child,
-    .table > tbody > tr > td:first-child, .page-content table > tbody > tr > td:first-child,
-    .table > tfoot > tr > th:first-child, .page-content table > tfoot > tr > th:first-child,
-    .table > tfoot > tr > td:first-child, .page-content table > tfoot > tr > td:first-child {
+  .table > thead > tr > th, table > thead > tr > th,
+  .table > thead > tr > td, table > thead > tr > td,
+  .table > tbody > tr > th, table > tbody > tr > th,
+  .table > tbody > tr > td, table > tbody > tr > td,
+  .table > tfoot > tr > th, table > tfoot > tr > th,
+  .table > tfoot > tr > td, table > tfoot > tr > td {
+    padding: 0.5em 0;
+    vertical-align: middle; }
+    .table > thead > tr > th:first-child, table > thead > tr > th:first-child,
+    .table > thead > tr > td:first-child, table > thead > tr > td:first-child,
+    .table > tbody > tr > th:first-child, table > tbody > tr > th:first-child,
+    .table > tbody > tr > td:first-child, table > tbody > tr > td:first-child,
+    .table > tfoot > tr > th:first-child, table > tfoot > tr > th:first-child,
+    .table > tfoot > tr > td:first-child, table > tfoot > tr > td:first-child {
       padding-left: 0; }
-    .table > thead > tr > th > *:first-child, .page-content table > thead > tr > th > *:first-child,
-    .table > thead > tr > td > *:first-child, .page-content table > thead > tr > td > *:first-child,
-    .table > tbody > tr > th > *:first-child, .page-content table > tbody > tr > th > *:first-child,
-    .table > tbody > tr > td > *:first-child, .page-content table > tbody > tr > td > *:first-child,
-    .table > tfoot > tr > th > *:first-child, .page-content table > tfoot > tr > th > *:first-child,
-    .table > tfoot > tr > td > *:first-child, .page-content table > tfoot > tr > td > *:first-child {
+    .table > thead > tr > th > *:first-child, table > thead > tr > th > *:first-child,
+    .table > thead > tr > td > *:first-child, table > thead > tr > td > *:first-child,
+    .table > tbody > tr > th > *:first-child, table > tbody > tr > th > *:first-child,
+    .table > tbody > tr > td > *:first-child, table > tbody > tr > td > *:first-child,
+    .table > tfoot > tr > th > *:first-child, table > tfoot > tr > th > *:first-child,
+    .table > tfoot > tr > td > *:first-child, table > tfoot > tr > td > *:first-child {
       margin-top: 0; }
-  .table > thead > tr > th, .page-content table > thead > tr > th {
+  .table > thead > tr > th, table > thead > tr > th {
     vertical-align: bottom; }
-  .table > caption + thead > tr:first-child > th, .page-content table > caption + thead > tr:first-child > th,
-  .table > caption + thead > tr:first-child > td, .page-content table > caption + thead > tr:first-child > td,
-  .table > colgroup + thead > tr:first-child > th, .page-content table > colgroup + thead > tr:first-child > th,
-  .table > colgroup + thead > tr:first-child > td, .page-content table > colgroup + thead > tr:first-child > td,
-  .table > thead:first-child > tr:first-child > th, .page-content table > thead:first-child > tr:first-child > th,
-  .table > thead:first-child > tr:first-child > td, .page-content table > thead:first-child > tr:first-child > td {
+  .table > caption + thead > tr:first-child > th, table > caption + thead > tr:first-child > th,
+  .table > caption + thead > tr:first-child > td, table > caption + thead > tr:first-child > td,
+  .table > colgroup + thead > tr:first-child > th, table > colgroup + thead > tr:first-child > th,
+  .table > colgroup + thead > tr:first-child > td, table > colgroup + thead > tr:first-child > td,
+  .table > thead:first-child > tr:first-child > th, table > thead:first-child > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td, table > thead:first-child > tr:first-child > td {
     border-top: 0; }
-  .table .table, .page-content table .table, .table .page-content table, .page-content .table table, .page-content table table {
+  .table .table, table .table, .table table, table table {
     background-color: transparent; }
 
-.table--ruled > thead > tr > td, .page-content table > thead > tr > td,
-.table--ruled > tbody > tr > td, .page-content table > tbody > tr > td,
-.table--ruled > tfoot > tr > td, .page-content table > tfoot > tr > td {
-  border-top: 1px solid gray; }
-
-.table--ruled > tbody + tbody, .page-content table > tbody + tbody {
-  border-top: 2px solid gray; }
+.table--ruled > thead > tr > td, table > thead > tr > td,
+.table--ruled > tbody > tr > td, table > tbody > tr > td,
+.table--ruled > tfoot > tr > td, table > tfoot > tr > td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
 
 .table--bordered {
-  border: 1px solid gray; }
+  border: 1px solid rgba(0, 0, 0, 0.15); }
   .table--bordered > thead > tr > th,
   .table--bordered > thead > tr > td,
   .table--bordered > tbody > tr > th,
   .table--bordered > tbody > tr > td,
   .table--bordered > tfoot > tr > th,
   .table--bordered > tfoot > tr > td {
-    border: 1px solid gray;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 0.5em; }
   .table--bordered > thead > tr > th,
   .table--bordered > thead > tr > td {

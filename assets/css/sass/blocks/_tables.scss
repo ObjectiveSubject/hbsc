@@ -3,12 +3,9 @@
 
 table {
     background-color: $table-bg;
-	margin: $leading 0 0;
-
-    .page-content & > {
-        @extend .table;
-        @extend .table--ruled;
-    }
+	margin: rem(32) 0 0;
+    @extend .table;
+    @extend .table--ruled;
 }
 caption {
   @extend .u-text-left;
@@ -23,7 +20,7 @@ th {
 
 // Baseline styles
 .table {
-  // width: 100%;
+  width: 100%;
   max-width: 100%;
     // Cells
     > thead,
@@ -32,8 +29,8 @@ th {
         > tr {
             > th,
             > td {
-                padding: $table-cell-padding 2rem;
-                vertical-align: top;
+                padding: $table-cell-padding 0;
+                vertical-align: middle;
                 &:first-child {
                     padding-left: 0;
                 }
@@ -71,17 +68,9 @@ th {
     > tfoot {
         > tr {
             > td {
-                border-top: 1px solid $table-border-color;
+                border-bottom: 1px solid $table-border-color;
             }
         }
-    }
-
-    // > thead > tr > th {
-    //     border-bottom: 2px solid $table-border-color;
-    // }
-
-    > tbody + tbody {
-        border-top: 2px solid $table-border-color;
     }
 }
 
