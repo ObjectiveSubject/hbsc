@@ -63,15 +63,15 @@ get_header(); ?>
                     <div class="module-title">Harriet Beecher Stowe</div>
                 </header>
                 <div class="module__body">
-                    <ul style="width: 100%;" class="u-text-center">
+                    <ul class="u-text-center">
                         <li>
-                            <a href="#"><span class="h2">Harriet Beecher</span><span class="h3">Stowe's Life</span></a>
+                            <a href="#" class="u-display-inline-block"><span class="h2">Harriet Beecher</span><span class="h3">Stowe's Life</span></a>
                         </li>
                         <li class="u-mt-4">
-                            <a href="#"><span class="h2">Uncle Tom's</span><span class="h3">Cabin</span></a>
+                            <a href="#" class="u-display-inline-block"><span class="h2">Uncle Tom's</span><span class="h3">Cabin</span></a>
                         </li>
                         <li class="u-mt-4">
-                            <a href="#"><span class="h2">Family</span></a>
+                            <a href="#" class="u-display-inline-block"><span class="h2">Family</span></a>
                         </li>
                     </ul>
                 </div>
