@@ -52,6 +52,16 @@
         max-width: 100%;
         width: 100%;
     }
+
+    .module--calendar & {
+        display: flex;
+        flex-direction: column;        
+        justify-content: space-between;
+        @include media($md)
+        {
+            flex-direction: row;
+        }
+    }
 }
 .module__sidebar {
     width: rem(240);

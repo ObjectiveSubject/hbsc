@@ -40,7 +40,7 @@
 
             if( hasTerm )
             {
-                $(elm).show();
+                $(elm).show();                
             }
             else
             {

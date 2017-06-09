@@ -21,7 +21,7 @@ get_header();
     ));
 ?>
 <div class="site-content">
-    <section class="module u-bg-white">
+    <section class="module module--calendar u-bg-off-white">
         <div class="module__content u-container">
             <header class="module__header">
                 <div class="module-title">
@@ -30,19 +30,23 @@ get_header();
             </header>
             
             <div class="module__body">
-                <div id="events-calendar"></div>
+                <aside class="events--calendar-aside">
+                    <div id="events-calendar"></div>
 
-                <div>
-                    <?php 
-                        foreach($termsType as $term)
-                        {
-                            $termChecked = in_array( $term->slug, $termsList );
-                ?>
-                            <div><input type="checkbox" name="events_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <?php echo $term->name;?></div>
-                <?php
-                        }
+                    <div class="events--calendar-terms">
+                        <?php 
+                            foreach($termsType as $term)
+                            {
+                                $termChecked = in_array( $term->slug, $termsList );
                     ?>
-                </div>
+                                <label class="calendar--term-item <?php echo $termChecked ? 'calendar--term-checked' : ''; ?>">
+                                    <input type="checkbox" name="events_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <?php echo $term->name;?>
+                                </label>
+                    <?php
+                            }
+                        ?>
+                    </div>
+                </aside>
 
                 <div class="calendar--events-list">
 <?php 
@@ -94,13 +98,13 @@ get_header();
         show_previous: true,
         show_next: true,
         language: 'en',
-        cell_border: true,
+        cell_border: false,
         today: true,
         show_days: false,
         weekstartson: 0,
         nav_icon: {
-            prev: '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-            next: '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+            prev: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+            next: '<i class="fa fa-angle-right" aria-hidden="true"></i>'
         },        
         data: dataCalendar,
         action : function()
@@ -132,6 +136,15 @@ get_header();
 
         $('input[name="events_categories"]').on( 'change', function()
         {
+            if( $(this).prop('checked') )
+            {
+                $(this).parent().addClass('calendar--term-checked');
+            }
+            else
+            {
+                $(this).parent().removeClass('calendar--term-checked');
+            }
+            console.log($(this).prop('checked'));
             calEvents.filterEventsOnTerms();
         } );
 

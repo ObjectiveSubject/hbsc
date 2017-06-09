@@ -1,15 +1,52 @@
 div.zabuto_calendar
 {
+    .events--calendar-aside &
+    {
+        margin-bottom: 2rem;
+    }
+
     .badge-today,
     div.legend span.badge-today
-    {
-        background-color: #357ebd;
+    { 
+        background-color: $red;
         color: #ffffff;
         text-shadow: none;
         border: 1px solid;
         border-radius: 18px;
-        padding: 2px 8px;
+        padding: 2px 8px 4px 8px;
+
+        .events--calendar-aside &
+        {
+            background-color: $red;
+        }
     }
+}
+
+.events--calendar-aside
+{
+    width: 100%;
+    margin-bottom: 4rem;
+    .module--calendar &
+    {
+        @include media($md)
+        {
+            width: 30%;
+            margin-bottom: 0;
+        }        
+    }
+}
+
+.calendar--events-list
+{
+    width: 100%;
+
+    .module--calendar &
+    {
+        @include media($md)
+        {
+            width: 60%;
+        }        
+    }    
 }
 
 .calendar--event-item
@@ -20,13 +57,40 @@ div.zabuto_calendar
     border: 1px solid #a6a4a0;
     margin-bottom: 8px;
 
+    &:hover
+    {
+        background-color: $red;
+        cursor: pointer;
+    }
+
     .event--date
     {
         @include display(flex);
         @include align-items(center);
         @include justify-content(center);
         @include flex-direction(column);
-        @include size(rem(144));
+        align-self: center;
+        height: 9rem;
+        min-width: 6rem;
+        padding: 1.8rem;
+
+        @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
+        {
+            color: white;
+        }
+
+        .h2
+        {
+            @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
+            {            
+                color: white!important;
+            }
+        }        
+
+        @include media($md)
+        {
+            min-width: 9rem;
+        }
     }
 
     .event--content
@@ -34,19 +98,32 @@ div.zabuto_calendar
         @include display(flex);
         @include justify-content(center);
         @include flex-direction(column);
+        padding: 1rem;
 
-        .event--title a
+        .event--title
         {
-            font-family: RamaGothicE-Heavy;
-            text-transform: uppercase;
-            font-size: 2rem;
-            text-decoration: none;
-            color: $color-text-main;
+            line-height: 1;
+            padding-bottom: .6rem;
 
-            &:hover
+            a
             {
-                text-decoration: underline;
-                color: $dark-gray
+                font-family: RamaGothicE-Heavy;
+                text-transform: uppercase;
+                font-size: 2rem;
+                text-decoration: none;
+                color: $color-text-main;
+                line-height: 1;
+
+                @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
+                {
+                    color: white;
+                }
+
+                &:hover
+                {
+                    text-decoration: underline;
+                    color: $dark-gray
+                }
             }
         }
 
@@ -57,6 +134,10 @@ div.zabuto_calendar
             font-style: Normal;
             font-weight: Normal;
             font-size: 1rem;
+            @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
+            {
+                color: white;
+            }            
         }
 
         .event--taxonomies
@@ -64,5 +145,25 @@ div.zabuto_calendar
             font-weight: bold;
         }
     }
+}
 
+.events--calendar-terms
+{
+    padding-left: 8px;
+
+    .calendar--term-item
+    {
+        color: $gray;
+        margin: rem(6) 0;
+        font-size: 1rem;
+        &.calendar--term-checked
+        {
+            color: $color-text-main;
+        }
+
+        input[type="checkbox"]
+        {
+            margin: 0 rem(8) 0 0;
+        }
+    }
 }
