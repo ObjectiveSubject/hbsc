@@ -62,13 +62,12 @@ function scripts( $debug = false ) {
 		true
 	);
 
-	/*wp_enqueue_script(
-		'zabuto',
-		HBSC_TEMPLATE_URL . "/assets/js/vendor/zabuto_calendar.js",
+	wp_enqueue_script(
+		'lodash',
+		"//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js",
 		array('jquery'),
-		HBSC_VERSION,
-		true
-	);*/	
+		false
+	);
 }
 
 /**
