@@ -95,7 +95,7 @@ html {
 .u-display-inline-block {
   display: inline-block; }
 
-.u-display-flex {
+.u-display-flex, .chart {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -507,7 +507,7 @@ html {
   justify-content: flex-end;
   -ms-flex-pack: end; }
 
-.u-flex-justify-around {
+.u-flex-justify-around, .chart {
   -webkit-box-pack: distribute;
   -moz-box-pack: distribute;
   box-pack: distribute;
@@ -625,7 +625,7 @@ html {
 .u-ma-1 {
   margin: 1rem; }
 
-.u-mt-1, .slick-dots, .form-group, .module--entry .module__body ul li, .module--entry .module__body ol li {
+.u-mt-1, .slick-dots, .chart-data__key, .form-group, .module--entry .module__body ul li, .module--entry .module__body ol li {
   margin-top: 1rem; }
 
 .u-mr-1 {
@@ -660,7 +660,7 @@ html {
 .u-pl-1 {
   padding-left: 1rem; }
 
-.u-px-1 {
+.u-px-1, .chart-data {
   padding-left: 1rem;
   padding-right: 1rem; }
 
@@ -763,7 +763,7 @@ html {
 .u-ma-4 {
   margin: 4rem; }
 
-.u-mt-4, .module-row + .module-row, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6, .section__footer, .module__footer {
+.u-mt-4, .chart, .module-row + .module-row, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6, .section__footer, .module__footer {
   margin-top: 4rem; }
 
 .u-mr-4 {
@@ -798,7 +798,7 @@ html {
 .u-pl-4 {
   padding-left: 4rem; }
 
-.u-px-4 {
+.u-px-4, .chart {
   padding-left: 4rem;
   padding-right: 4rem; }
 
@@ -914,16 +914,19 @@ html {
   text-transform: uppercase; }
 
 .u-font-size-xs {
-  font-size: 50%; }
+  font-size: .5em; }
 
 .u-font-size-sm, .module__sidebar, figure figcaption {
-  font-size: 75%; }
+  font-size: .75em; }
 
 .u-font-size-lg {
-  font-size: 125%; }
+  font-size: 1.5em; }
 
 .u-font-size-xl {
-  font-size: 150%; }
+  font-size: 2.5em; }
+
+.u-font-size-max {
+  font-size: 4em; }
 
 .u-text-left, caption, th {
   text-align: left; }
@@ -1254,7 +1257,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1312,7 +1315,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.12rem; } }
+      font-size: 1.13rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1846,6 +1849,21 @@ button {
 .slick-arrow.slick-hidden {
   display: none; }
 
+.chart-data {
+  max-width: 20%; }
+
+.chart-data__key {
+  text-align: center; }
+
+.chart-data__value {
+  position: relative;
+  height: 320px; }
+  .chart-data__value span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #e74949; }
+
 /* Basic Form Styles
  * ------------------------------------------- */
 label {
@@ -1909,7 +1927,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2133,7 +2151,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2324,10 +2342,15 @@ div.zabuto_calendar div.legend span.badge-today {
     -moz-flex-direction: column;
     flex-direction: column;
     -ms-flex-direction: column; }
-    .calendar--event-item .event--content .event--title {
+    .calendar--event-item .event--content .event--title a {
       font-family: RamaGothicE-Heavy;
       text-transform: uppercase;
-      font-size: 2rem; }
+      font-size: 2rem;
+      text-decoration: none;
+      color: black; }
+      .calendar--event-item .event--content .event--title a:hover {
+        text-decoration: underline;
+        color: #272727; }
     .calendar--event-item .event--content .event--taxonomies,
     .calendar--event-item .event--content .event--details {
       font-family: "Miller Text Rom";
@@ -2394,7 +2417,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.62rem;
+  font-size: 0.63rem;
   text-transform: uppercase;
   pointer-events: initial; }
 

@@ -1,0 +1,24 @@
+.chart {
+    @extend .u-display-flex;
+    @extend .u-flex-justify-around;
+    @extend .u-px-4;
+    @extend .u-mt-4;
+}
+.chart-data {
+    max-width: 20%;
+    @extend .u-px-1;
+}
+.chart-data__key {
+    text-align: center;
+    @extend .u-mt-1;
+}
+.chart-data__value {
+    position: relative;
+    height: 320px;
+    span {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: $red;
+    }
+}

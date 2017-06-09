@@ -24,28 +24,62 @@ get_header(); ?>
                 <div class="module__image" <?php echo "style='background-image: url(" . get_the_post_thumbnail_url() . "')"; ?>></div>
                 <?php endif; ?>
                 <div class="module__content u-container">
+                    <?php if( have_rows('educational_age_groups') ): ?>
                     <header class="module__header">
                         <div class="module-title">
                             Educational Age Group Visits
                         </div>
                     </header>
+                    <?php endif; ?>
                     <div class="module__body">
+                        <?php if( have_rows('educational_age_groups') ): ?>
                         <div class="module-row">
-                            <div class="module-column u-text-center">30K</div>
-                            <div class="module-column u-text-center">40K</div>
-                            <div class="module-column u-text-center">65K</div>
-                            <div class="module-column u-text-center">10K</div>
-                        </div>
-                        <div class="module-row">
+                            <?php while( have_rows('educational_age_groups') ): the_row(); ?>
                             <div class="module-column u-text-center">
+                                <div class="u-font-miller u-color-red u-font-size-max"><?php the_sub_field('educational_age_group_visits'); ?></div>
+                                <div class="u-font-miller-bold u-font-size-lg"><?php the_sub_field('educational_age_group_name'); ?></div>
+                            </div>
+                            <?php endwhile; ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if( have_rows('stowe_prize_years') || have_rows('student_stowe_prize_years') ): ?>
+                        <div class="module-row">
+                            <?php if( have_rows('stowe_prize_years') ): ?>
+                            <div class="module-column">
                                 <div class="module-title">Stowe Prize Entrants</div>
-                                <div>GRAPH</div>
+                                <div class="chart">
+                                    <?php while( have_rows('stowe_prize_years') ): the_row(); ?>
+                                    <div class="chart-data">
+                                        <div class="chart-data__value">
+                                            <span <?php echo ( get_sub_field('stowe_prize_percentage') ) ? 'style="height:' . get_sub_field('stowe_prize_percentage') . '%"' : '' ; ?>></span>
+                                        </div>
+                                        <div class="chart-data__key">
+                                            <?php the_sub_field('stowe_prize_year'); ?>
+                                        </div>
+                                    </div>
+                                    <?php endwhile; ?>
+                                </div>
                             </div>
-                            <div class="module-column u-text-center">
+                            <?php endif;
+                            if( have_rows('student_stowe_prize_years') ): ?>
+                            <div class="module-column">
                                 <div class="module-title">Student Stowe Prize Entrants</div>
-                                <div>GRAPH</div>
+                                <div class="chart">
+                                    <?php while( have_rows('student_stowe_prize_years') ): the_row(); ?>
+                                    <div class="chart-data">
+                                        <div class="chart-data__value">
+                                            <span <?php echo ( get_sub_field('student_stowe_prize_percentage') ) ? 'style="height:' . get_sub_field('student_stowe_prize_percentage') . '%"' : '' ; ?>></span>
+                                        </div>
+                                        <div class="chart-data__key">
+                                            <?php the_sub_field('student_stowe_prize_year'); ?>
+                                        </div>
+                                    </div>
+                                    <?php endwhile; ?>
+                                </div>
                             </div>
+                            <?php endif; ?>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </section>
@@ -66,19 +100,11 @@ get_header(); ?>
                 </div>
             </section>
             
-            <section class="module module--hero has-background" style="background-image: url()">
-                <div class="module__content u-container">
-                    <div class="card-positioner">
-                        <div class="card <?php echo $card_color; ?> js-slide-in">
-                            <div class="card-content">
-                                <blockquote>
-                                    "Since 2008, Salons at Stowe consequatur hic aliquam est fugit quaerat numquam vel rerum. Laborum, amet eaque ad."
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <?php if( have_rows('module') ): ?>
+
+                <?php get_template_part( 'partials/page', 'modules' ); ?>
+
+            <?php endif; ?>
             
             <section class="module module--basic">
                 <div class="module__content u-container">
