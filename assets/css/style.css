@@ -83,6 +83,12 @@ html {
 .u-bg-white {
   background-color: white !important; }
 
+.u-color-off-white {
+  color: #f0efed !important; }
+
+.u-bg-off-white {
+  background-color: #f0efed !important; }
+
 .u-display-block {
   display: block; }
 
@@ -1257,7 +1263,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1315,42 +1321,57 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
   color: #dddad5; }
 
 .u-bg-white h1,
+.u-bg-off-white h1,
 .u-bg-light-gray h1,
 .u-bg-tan h1, .u-bg-white h2,
+.u-bg-off-white h2,
 .u-bg-light-gray h2,
 .u-bg-tan h2, .u-bg-white h3,
+.u-bg-off-white h3,
 .u-bg-light-gray h3,
 .u-bg-tan h3, .u-bg-white h4,
+.u-bg-off-white h4,
 .u-bg-light-gray h4,
 .u-bg-tan h4, .u-bg-white h5,
+.u-bg-off-white h5,
 .u-bg-light-gray h5,
 .u-bg-tan h5, .u-bg-white h6,
+.u-bg-off-white h6,
 .u-bg-light-gray h6,
 .u-bg-tan h6, .u-bg-white
+.h1,
+.u-bg-off-white
 .h1,
 .u-bg-light-gray
 .h1,
 .u-bg-tan
 .h1, .u-bg-white .h2,
+.u-bg-off-white .h2,
 .u-bg-light-gray .h2,
 .u-bg-tan .h2, .u-bg-white .h3,
+.u-bg-off-white .h3,
 .u-bg-light-gray .h3,
 .u-bg-tan .h3, .u-bg-white .h4, .u-bg-white body.home .preface-text, body.home .u-bg-white .preface-text,
+.u-bg-off-white .h4,
+.u-bg-off-white body.home .preface-text, body.home
+.u-bg-off-white .preface-text,
 .u-bg-light-gray .h4,
 .u-bg-light-gray body.home .preface-text, body.home
 .u-bg-light-gray .preface-text,
 .u-bg-tan .h4,
 .u-bg-tan body.home .preface-text, body.home
 .u-bg-tan .preface-text, .u-bg-white .h5,
+.u-bg-off-white .h5,
 .u-bg-light-gray .h5,
 .u-bg-tan .h5, .u-bg-white .h6,
+.u-bg-off-white .h6,
 .u-bg-light-gray .h6,
 .u-bg-tan .h6 {
   color: #272727; }
@@ -1526,6 +1547,7 @@ button {
     color: #dddad5;
     border-color: #dddad5; }
   .u-bg-white .button,
+  .u-bg-off-white .button,
   .u-bg-light-gray .button,
   .u-bg-tan .button {
     color: #272727;
@@ -1608,6 +1630,14 @@ button {
     color: white !important;
     background-color: white !important;
     border-color: white !important; }
+
+.button--off-white {
+  color: white !important;
+  background-color: #f0efed; }
+  .button--off-white:hover {
+    color: #f0efed !important;
+    background-color: white !important;
+    border-color: #f0efed !important; }
 
 .ui-button {
   font-size: 1rem;
@@ -1698,6 +1728,7 @@ button {
   color: white; }
 
 .u-bg-white .card-content,
+.u-bg-off-white .card-content,
 .u-bg-light-gray .card-content,
 .u-bg-tan .card-content {
   color: #272727; }
@@ -1762,14 +1793,17 @@ button {
     .slick-dots li.slick-active button {
       background-color: white; }
     .u-bg-white .slick-dots li button,
+    .u-bg-off-white .slick-dots li button,
     .u-bg-light-gray .slick-dots li button,
     .u-bg-tan .slick-dots li button {
       border-color: #272727; }
     .u-bg-white .slick-dots li button:hover,
+    .u-bg-off-white .slick-dots li button:hover,
     .u-bg-light-gray .slick-dots li button:hover,
     .u-bg-tan .slick-dots li button:hover {
       border-color: #e74949; }
     .u-bg-white .slick-dots li.slick-active button,
+    .u-bg-off-white .slick-dots li.slick-active button,
     .u-bg-light-gray .slick-dots li.slick-active button,
     .u-bg-tan .slick-dots li.slick-active button {
       background-color: #272727; }
@@ -1927,7 +1961,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2068,6 +2102,14 @@ figure {
   max-width: 100%;
   width: 100%; }
 
+.module--calendar .module__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  @media screen and (min-width: 768px) {
+    .module--calendar .module__body {
+      flex-direction: row; } }
+
 .module__sidebar {
   width: 15rem;
   float: right; }
@@ -2122,6 +2164,7 @@ body.home .preface {
   color: #dddad5; }
 
 .u-bg-white .preface-text,
+.u-bg-off-white .preface-text,
 .u-bg-light-gray .preface-text,
 .u-bg-tan .preface-text {
   color: #272727; }
@@ -2151,7 +2194,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2160,6 +2203,9 @@ body.home .preface {
     color: #dddad5;
     border-color: rgba(255, 255, 255, 0.15); }
   .u-bg-white .section-title, .u-bg-white .module-title, .u-bg-white .card-title,
+  .u-bg-off-white .section-title,
+  .u-bg-off-white .module-title,
+  .u-bg-off-white .card-title,
   .u-bg-light-gray .section-title,
   .u-bg-light-gray .module-title,
   .u-bg-light-gray .card-title,
@@ -2257,14 +2303,34 @@ caption {
 .table--hover > tbody > tr:hover {
   background-color: gray; }
 
+.events--calendar-aside div.zabuto_calendar {
+  margin-bottom: 2rem; }
+
 div.zabuto_calendar .badge-today,
 div.zabuto_calendar div.legend span.badge-today {
-  background-color: #357ebd;
+  background-color: #e74949;
   color: #ffffff;
   text-shadow: none;
   border: 1px solid;
   border-radius: 18px;
-  padding: 2px 8px; }
+  padding: 2px 8px 4px 8px; }
+  .events--calendar-aside div.zabuto_calendar .badge-today, .events--calendar-aside
+  div.zabuto_calendar div.legend span.badge-today {
+    background-color: #e74949; }
+
+.events--calendar-aside {
+  width: 100%;
+  margin-bottom: 4rem; }
+  @media screen and (min-width: 768px) {
+    .module--calendar .events--calendar-aside {
+      width: 30%;
+      margin-bottom: 0; } }
+
+.calendar--events-list {
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .module--calendar .calendar--events-list {
+      width: 60%; } }
 
 .calendar--event-item {
   display: -webkit-box;
@@ -2283,6 +2349,9 @@ div.zabuto_calendar div.legend span.badge-today {
   -ms-flex-direction: row;
   border: 1px solid #a6a4a0;
   margin-bottom: 8px; }
+  .calendar--event-item:hover {
+    background-color: #e74949;
+    cursor: pointer; }
   .calendar--event-item .event--date {
     display: -webkit-box;
     display: -moz-box;
@@ -2316,8 +2385,17 @@ div.zabuto_calendar div.legend span.badge-today {
     -moz-flex-direction: column;
     flex-direction: column;
     -ms-flex-direction: column;
+    align-self: center;
     height: 9rem;
-    width: 9rem; }
+    min-width: 6rem;
+    padding: 1.8rem; }
+    .calendar--event-item:hover .event--date {
+      color: white; }
+    .calendar--event-item:hover .event--date .h2 {
+      color: white !important; }
+    @media screen and (min-width: 768px) {
+      .calendar--event-item .event--date {
+        min-width: 9rem; } }
   .calendar--event-item .event--content {
     display: -webkit-box;
     display: -moz-box;
@@ -2341,24 +2419,64 @@ div.zabuto_calendar div.legend span.badge-today {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     flex-direction: column;
-    -ms-flex-direction: column; }
-    .calendar--event-item .event--content .event--title a {
-      font-family: RamaGothicE-Heavy;
-      text-transform: uppercase;
-      font-size: 2rem;
-      text-decoration: none;
-      color: black; }
-      .calendar--event-item .event--content .event--title a:hover {
-        text-decoration: underline;
-        color: #272727; }
+    -ms-flex-direction: column;
+    padding: 1rem; }
+    .calendar--event-item .event--content .event--title {
+      line-height: 1;
+      padding-bottom: .6rem; }
+      .calendar--event-item .event--content .event--title a {
+        font-family: RamaGothicE-Heavy;
+        text-transform: uppercase;
+        font-size: 2rem;
+        text-decoration: none;
+        color: black;
+        line-height: 1; }
+        .calendar--event-item:hover .event--content .event--title a {
+          color: white; }
+        .calendar--event-item .event--content .event--title a:hover {
+          text-decoration: underline;
+          color: #272727; }
     .calendar--event-item .event--content .event--taxonomies,
     .calendar--event-item .event--content .event--details {
       font-family: "Miller Text Rom";
       font-style: Normal;
       font-weight: Normal;
       font-size: 1rem; }
+      .calendar--event-item:hover .event--content .event--taxonomies, .calendar--event-item:hover .event--content .event--details {
+        color: white; }
     .calendar--event-item .event--content .event--taxonomies {
       font-weight: bold; }
+
+.events--calendar-terms {
+  padding-left: 8px; }
+  .events--calendar-terms .calendar--term-item {
+    color: #898989;
+    margin: 0.38rem 0;
+    font-size: 1rem; }
+    .events--calendar-terms .calendar--term-item.calendar--term-checked {
+      color: black; }
+    .events--calendar-terms .calendar--term-item input[type="checkbox"] {
+      margin: 0 0.5rem 0 0; }
+
+.staff-member--item {
+  position: relative; }
+  .staff-member--item.staff-member--item-active .image--positionner {
+    transition: opacity 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
+    opacity: 1; }
+  .staff-member--item.staff-member--item-active .h2,
+  .staff-member--item.staff-member--item-active .h3 {
+    color: #e74949; }
+  .staff-member--item .image--positionner {
+    position: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0; }
+  .staff-member--item .h2,
+  .staff-member--item .h3 {
+    position: relative;
+    z-index: 10;
+    color: #272727; }
 
 .site-footer a {
   color: white; }
@@ -2417,7 +2535,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 

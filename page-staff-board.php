@@ -12,7 +12,7 @@ get_header(); ?>
         <?php
         foreach ( $roles as $role ) :
         ?>
-        <section class="section u-bg-light-gray">
+        <section class="section section--staff-member u-bg-light-gray">
             <div class="section__content u-container">
                 <header class="section__header">
                     <h1 class="section-title"><?php echo $role->name; ?></h1>
@@ -31,14 +31,30 @@ get_header(); ?>
                         )
                     );
                     $people = new WP_Query($args);
-                    if ( $people->have_posts() ) : ?>
-                      <ul>
-                      <?php while ( $people->have_posts() ) : $people->the_post(); ?>
-                        <li class="u-mt-3">
-                            <a href="<?php the_permalink(); ?>" class="u-display-inline-block">
+                    
+                    if ( $people->have_posts() ) :                         
+                        $cnt = 0;
+                    ?>
+                      <ul class="staff-member--list">
+                      <?php 
+                        while ( $people->have_posts() ) : $people->the_post();                            
+                            $mod = $cnt % 2;
+
+                            $imagePos = 'image--positionner-left';
+
+                            if($cnt % 2)
+                            {
+                                $imagePos = 'image--positionner-right';
+                            }
+                            
+                            $cnt++;
+                      ?>
+                        <li class="u-mt-3 staff-member--item">
+                            <a href="<?php the_permalink(); ?>" class="u-display-inline-block staff-member--name-title">
                                 <span class="h2"><?php the_title(); ?></span>
-                                <span class="h3"><?php echo get_field('person_title'); ?></span>
+                                <span class="h3"><?php echo get_field('person_title'); ?></span>                                                              
                             </a>
+                            <div class="image--positionner <?php echo $imagePos; ?>" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')[0];?>');"></div>
                         </li>
                     <?php endwhile; ?>
                     </ul>
@@ -51,3 +67,12 @@ get_header(); ?>
 	</div>
 
 <?php get_footer(); ?>
+<script>
+    var StaffMemberList;
+
+    jQuery(document).ready(function()
+    {
+        StaffMemberList = new StaffMember();
+        StaffMemberList.init();
+    });
+</script>
