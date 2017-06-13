@@ -72,58 +72,24 @@ get_header(); ?>
                                 </tr>
                             </tbody>
                         </table>
-                        <h5>House Tour Tickets</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolores magni minima, voluptas quaerat corporis, provident cum veritatis illum, perferendis sint cupiditate! Saepe, dicta, ea! A iure quod dolorum beatae.</p>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Adults</td>
-                                    <td>$10</td>
-                                </tr>
-                                <tr>
-                                    <td>Students and Seniors (65+)</td>
-                                    <td>$9</td>
-                                </tr>
-                                <tr>
-                                    <td>Children (5-16)</td>
-                                    <td>$7</td>
-                                </tr>
-                                <tr>
-                                    <td>Children under 5</td>
-                                    <td>Free</td>
-                                </tr>
-                                <tr>
-                                    <td>Hartford Residents (with ID)</td>
-                                    <td>Free</td>
-                                </tr>
-                                <tr>
-                                    <td>Military (Memorial Day through Labor Day)</td>
-                                    <td>Free</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h5>The Stowe-Twain Experience</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolores magni minima, voluptas quaerat corporis, provident cum veritatis illum, perferendis sint cupiditate! Saepe, dicta, ea! A iure quod dolorum beatae.</p>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Adults</td>
-                                    <td>$26</td>
-                                </tr>
-                                <tr>
-                                    <td>Students and Seniors (65+)</td>
-                                    <td>$23</td>
-                                </tr>
-                                <tr>
-                                    <td>Children (5-16)</td>
-                                    <td>$16</td>
-                                </tr>
-                                <tr>
-                                    <td>Children under 5</td>
-                                    <td>Free</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <?php if( have_rows('tours') ):
+                            while( have_rows('tours') ): the_row(); ?>
+                            <h5><?php the_sub_field('tour_name'); ?></h5>
+                            <p><?php the_sub_field('tour_description'); ?></p>
+                            <?php if( have_rows('tour_ticket_pricing') ): ?>
+                            <table>
+                                <tbody>
+                                    <?php while( have_rows('tour_ticket_pricing') ): the_row(); ?>
+                                    <tr>
+                                        <td><?php the_sub_field('tour_ticket_type'); ?></td>
+                                        <td><?php the_sub_field('tour_ticket_price'); ?></td>
+                                    </tr>
+                                    <?php endwhile; ?>
+                                </tbody>
+                            </table>
+                            <?php endif;
+                            endwhile;
+                        endif; ?>
                     </div>
                 </div>
             </section>
