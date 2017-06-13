@@ -2,11 +2,10 @@
 /**
  * General page template
  */
- $postId = null;
+$postId = null;
 get_header(); ?>
 
 	<div class="site-content">
-
 		<?php 
             while ( have_posts() ) :
                 the_post(); 
@@ -16,7 +15,6 @@ get_header(); ?>
                     $postId = $post->ID;
                 }                
         ?>
-		
 		    <section class="preface section <?php the_field('preface_background_color'); ?>">
                 <div class="section__content u-container">
                     <header class="section__header">
@@ -33,12 +31,6 @@ get_header(); ?>
                     </footer>
                 </div>
             </section>
-            <!-- Video Module -->
-
-            <!-- Upcoming -->
-
-            <!-- Shows section -->
-
 		<?php endwhile; ?>
 
 		<?php if( have_rows('module') ): ?>
@@ -47,7 +39,7 @@ get_header(); ?>
 
         <?php endif; ?>
 
-
+        <!-- Upcoming section -->
         <?php
             // UPCOMING SALONS
             $upcomingEventsSectionConfig = array(
@@ -58,6 +50,7 @@ get_header(); ?>
             include HBSC_PATH . 'partials/events/upcoming-section.php';
         ?>     
 
+        <!-- Shows section -->
         <?php
             // PAST SALONS
             $pastSalonsSectionConfig = array(
@@ -67,6 +60,5 @@ get_header(); ?>
 
             include HBSC_PATH . 'partials/events/past-salons-section.php';
         ?>
-
 	</div>
 <?php get_footer(); ?>

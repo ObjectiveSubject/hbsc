@@ -1408,7 +1408,7 @@ blockquote {
   blockquote p {
     margin: 0; }
   .u-bg-red blockquote, .badge-positioner .badge blockquote,
-  .u-bg-dark-gray blockquote {
+  .u-bg-dark-gray blockquote, .module--past-salons .badge-positioner .badge blockquote {
     color: white; }
   .u-bg-blue blockquote {
     color: #dddad5; }
@@ -1736,6 +1736,12 @@ TODO clean up the !important
   .module--carousel .card {
     width: 22.5rem;
     min-height: 30.75rem; }
+  .card .card-event-title {
+    margin-bottom: 2rem; }
+  .card .card-date {
+    color: white;
+    margin: 0  0 2rem 0;
+    font-size: 2.2rem; }
   .module--events-upcoming-inline .card,
   .module--events-upcoming-list .card {
     min-height: 26.75rem; }
@@ -1780,6 +1786,72 @@ TODO clean up the !important
     min-height: 16.5rem;
     justify-content: center;
     padding: 3rem 1.5rem; }
+  .card .card-event-details {
+    -webkit-box-pack: distribute;
+    -moz-box-pack: distribute;
+    box-pack: distribute;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+    -ms-flex-pack: distribute;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 0 0 3rem 0; }
+    @media screen and (min-width: 768px) {
+      .card .card-event-details {
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-direction: row; } }
+    .card .card-event-details .card-event-item {
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-direction: column;
+      display: flex;
+      margin-bottom: 1rem; }
+      .card .card-event-details .card-event-item:last-child {
+        margin-bottom: 0rem; }
+      @media screen and (min-width: 768px) {
+        .card .card-event-details .card-event-item {
+          margin-bottom: 0rem; } }
+    .card .card-event-details .event-item-title {
+      color: #f0efed; }
+    .card .card-event-details .event-item-content {
+      color: white; }
+
+.card-event-register {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  margin-right: 0rem;
+  z-index: 15; }
+  .card-event-register .button {
+    background-color: #e74949 !important;
+    border: none;
+    text-transform: uppercase;
+    padding: .5rem 3rem;
+    color: white; }
+    .card-event-register .button:hover {
+      color: #f0efed; }
 
 .module--hero .card-positioner {
   width: 100%;
@@ -1788,6 +1860,16 @@ TODO clean up the !important
     .module--hero .card-positioner {
       width: 57.5%;
       padding-top: 0; } }
+
+.card-positioner.card-positioner-fullwidth {
+  width: 100%; }
+  .card-positioner.card-positioner-fullwidth .card-content {
+    margin-top: 0; }
+    .card-positioner.card-positioner-fullwidth .card-content p {
+      margin-top: 0; }
+    @media screen and (min-width: 768px) {
+      .card-positioner.card-positioner-fullwidth .card-content {
+        margin-top: 0; } }
 
 .module--carousel .card-positioner {
   float: right;
