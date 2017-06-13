@@ -19,7 +19,7 @@
             _this.resizeItems();
             _this.setItemsInactive();
         }, 
-        150, {
+        50, {
             'leading': true,
             'trailing': true
         } ));
@@ -64,56 +64,21 @@
         var parentOffsetLeft = jQuery(elm).parent().offset().left;
         var offset = jQuery(elm).offset().top;
         var scrollTop = jQuery(window).scrollTop();
-
         var nameTitleHeight = jQuery(elm).parent().find('.staff-member--name-title:first' ).height();
-
         var sectionBounds = this.getElementBounds( jQuery(elm).closest('.staff-member--item') );
-
-        //offset = (offset - scrollTop);
-        //offset = offset - ( ( parentWidth / 100 ) * 15 ) - ( nameTitleHeight * 0.5 );
-        //offset = (offset < 0 ? 0 : offset);
 
         var itemProps = {
             top : offset,
             width: ( ( parentWidth / 100 ) * 50 ),
             height: ( ( parentWidth / 100 ) * 30 ),
-            marginTop: ( ( parentWidth / 100 ) * 15 ) - ( nameTitleHeight * 0.5 )
+            marginTop: ( ( ( parentWidth / 100 ) * 15 ) - ( nameTitleHeight * 0.5 ) )
         };
-
 
         var maxTopPos = ( sectionBounds.bottom -  itemProps.height ) ;
         var minTopPos = ( sectionBounds.top );
-        /*console.log('******');
-        console.log(sectionBounds, itemProps.top, minTopPos, maxTopPos);
-
-
-        else
-        if( itemProps.top + itemProps.height > maxTopPos  )
-        {
-            itemProps.top = ( maxTopPos - itemProps.height );
-            console.log( 'Item top too high', itemProps.top, maxTopPos );
-        } */       
-
-        //var iTop = (itemProps.top < minTopPos ) ? minTopPos : itemProps.top;
-        //itemProps.top = (itemProps.top > maxTopPos ) ? (maxTopPos - itemProps.height ) : iTop;
-console.log('******');
-
-        /*if( itemProps.top < minTopPos )
-        {
-            console.log( 'Item top too looow', itemProps.top, minTopPos );
-            itemProps.top = minTopPos;
-            
-        }
-        else*/
-        /*if( offset > maxTopPos && offset > minTopPos )
-        {
-            itemProps.top = maxTopPos;
-            console.log( 'Item top too high', itemProps.top, maxTopPos );
-        }*/
         
         if( ( itemProps.top - itemProps.marginTop )  <= minTopPos )
         {
-            console.log( 'Item top too looow', itemProps.top, minTopPos );
             itemProps.top = minTopPos;
         }
         else
@@ -122,15 +87,13 @@ console.log('******');
             itemProps.top = maxTopPos;
         }
 
-
-
         var styles = {
             'top': ( itemProps.top - scrollTop ) + 'px',
             'width' :  itemProps.width+ 'px',
             'height' : itemProps.height + 'px',
-            'marginTop' : -itemProps.marginTop + 'px'
+            'marginTop' : -( itemProps.marginTop * 0.33 ) + 'px'
         };
-        //console.log(sectionBounds, styles, minTopPos, maxTopPos, offset);
+        
         var img = jQuery(elm).parent().find('.image--positionner:first');
         var leftRight = (jQuery(img).hasClass('image--positionner-right') ? 'right' : 'left');
         styles[leftRight] = (parentOffsetLeft + 'px');
@@ -156,8 +119,7 @@ console.log('******');
 
     StaffMember.prototype.setItemsInactive = function()
     {
-
-        //jQuery( '.staff-member--item' ).removeClass('staff-member--item-active');
+        jQuery( '.staff-member--item' ).removeClass('staff-member--item-active');
     };
 
     StaffMember.prototype.setItemActive = function(elm)

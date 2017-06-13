@@ -717,8 +717,7 @@ html {
 .u-ma-3 {
   margin: 3rem; }
 
-.u-mt-3, .module--carousel .card,
-.module--events-upcoming-inline .card,
+.u-mt-3, .module--carousel .card, .module--events-upcoming-inline .card,
 .module--events-upcoming-list .card, .preface-text p, .module--entry figure {
   margin-top: 3rem; }
 
@@ -1259,7 +1258,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1317,7 +1316,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1473,7 +1472,9 @@ hr {
 .badge-positioner {
   position: absolute;
   pointer-events: none;
-  top: 2rem; }
+  left: 0;
+  bottom: 0;
+  z-index: 10; }
   .module--carousel .badge-positioner {
     left: 0;
     bottom: 0;
@@ -1483,13 +1484,15 @@ hr {
     z-index: 14; }
     @media screen and (min-width: 768px) {
       .event--upcoming-item-left .badge-positioner {
-        left: 7.25rem; } }
+        left: 7.25rem;
+        top: 2rem; } }
   .event--upcoming-item-right .badge-positioner {
     right: 0;
     z-index: 14; }
     @media screen and (min-width: 768px) {
       .event--upcoming-item-right .badge-positioner {
-        right: 7.25rem; } }
+        right: 7.25rem;
+        top: 2rem; } }
   .badge-positioner .badge {
     display: -webkit-box;
     display: -moz-box;
@@ -1652,7 +1655,7 @@ button {
 /*
 TODO clean up the !important
 */
-.card-button {
+.module--events-upcoming-list .card-button {
   display: flex;
   padding: 2rem 3rem;
   color: white !important;
@@ -1667,11 +1670,11 @@ TODO clean up the !important
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
-  .card-button a {
+  .module--events-upcoming-list .card-button a {
     color: white !important;
     border-color: rgba(255, 255, 255, 0.15) !important; }
   @media screen and (min-width: 768px) {
-    .card-button {
+    .module--events-upcoming-list .card-button {
       padding: 0rem 2rem 2rem 2rem;
       background-color: #272727 !important;
       justify-content: center;
@@ -1697,16 +1700,16 @@ TODO clean up the !important
     position: relative;
     margin-top: 4.5rem;
     padding-top: 4.5rem; }
-  .module--carousel .card,
+  .module--carousel .card {
+    width: 22.5rem;
+    min-height: 30.75rem; }
   .module--events-upcoming-inline .card,
   .module--events-upcoming-list .card {
-    width: 22.5rem;
-    min-height: 26.75rem;
-    /*rem(492);*/ }
-  @media screen and (min-width: 768px) {
-    .module--events-upcoming-inline .card,
-    .module--events-upcoming-list .card {
-      padding: 7rem 2rem 0rem 2rem; } }
+    min-height: 26.75rem; }
+    @media screen and (min-width: 768px) {
+      .module--events-upcoming-inline .card,
+      .module--events-upcoming-list .card {
+        padding: 7rem 2rem 0rem 2rem; } }
   .module--events-upcoming-list .card {
     -webkit-box-pack: center;
     -moz-box-pack: center;
@@ -1736,12 +1739,10 @@ TODO clean up the !important
       width: 57.5%;
       padding-top: 0; } }
 
-.module--carousel .card-positioner,
-.event--upcoming-item-right .card-positioner {
-  position: absolute;
-  right: 0;
-  z-index: 10;
-  top: 2rem; }
+.module--carousel .card-positioner {
+  float: right;
+  position: relative;
+  z-index: 10; }
 
 .event--upcoming-item-left .card-positioner,
 .event--upcoming-item-right .card-positioner {
@@ -2088,7 +2089,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2332,7 +2333,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2715,7 +2716,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
