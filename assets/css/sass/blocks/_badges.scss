@@ -38,6 +38,12 @@
             right: 7.25rem;
             top: 2rem;
         }
+    }
+
+    .module--past-salons &
+    {
+        top: 2.5rem;
+        bottom:initial;        
     }    
 
     .badge {
@@ -53,6 +59,14 @@
             @extend .u-mb-3;
         }
         
+        .module--past-salons &
+        {
+            @extend .u-bg-dark-gray;
+            padding: 1rem 3rem;
+            width: auto;
+            height: auto;
+        }
+
         .module--events-upcoming-list &,
         .module--events-upcoming-inline &
         {

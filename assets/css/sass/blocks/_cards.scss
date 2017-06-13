@@ -85,7 +85,15 @@ TODO clean up the !important
             padding: 7rem 2rem 0;
             background-color: rgba(39,39,39,1)!important;
         }        
-    }    
+    }
+
+    .module--past-salons &
+    {
+        margin: 0 0rem 0 4rem;
+        min-height: 16.5rem;;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+    }        
 }
 .card-positioner {
     .module--hero & {
@@ -147,7 +155,16 @@ TODO clean up the !important
             width: auto!important;
             bottom:initial!important;
         }        
-    }    
+    }
+
+    .module--past-salons &
+    {
+        position: relative;
+        margin-top: -10rem;
+        z-index: 99;
+        width: 100%;
+        padding: 2rem;
+    }
 }
 .card-title {
     @extend .module-title;
@@ -170,6 +187,18 @@ TODO clean up the !important
         }
     }    
 
+    .module--past-salons [class*=u-bg-] &
+    {
+        border-color: rgba(0,0,0,0);
+
+        h2, h3 {
+            font-size: 3rem;
+            a{
+                color: $dark-gray;
+            }
+        }
+    }
+
     .module--events-upcoming-list &
     {
         margin-bottom : 0rem;
@@ -191,7 +220,7 @@ TODO clean up the !important
         h2, h3 {
             font-size: 3rem;
         }
-    }
+    }  
 
     [class*='u-bg-']>& {
         color: white;

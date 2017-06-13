@@ -55,8 +55,18 @@ get_header(); ?>
                 'direction' => 'list'
             );
 
-            include HBSC_PATH . '/partials/events/upcoming-section.php';
+            include HBSC_PATH . 'partials/events/upcoming-section.php';
         ?>     
+
+        <?php
+            // PAST SALONS
+            $pastSalonsSectionConfig = array(
+                'classes' => 'module--events-upcoming-list u-bg-light-gray',
+                'direction' => 'list'
+            );
+
+            include HBSC_PATH . 'partials/events/past-salons-section.php';
+        ?>
 
 	</div>
 <?php get_footer(); ?>

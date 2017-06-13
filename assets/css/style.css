@@ -62,7 +62,7 @@ html {
 .u-color-dark-gray {
   color: #272727 !important; }
 
-.u-bg-dark-gray {
+.u-bg-dark-gray, .module--past-salons .badge-positioner .badge {
   background-color: #272727 !important; }
 
 .u-color-gray {
@@ -1506,6 +1506,9 @@ hr {
       .event--upcoming-item-right .badge-positioner {
         right: 7.25rem;
         top: 2rem; } }
+  .module--past-salons .badge-positioner {
+    top: 2.5rem;
+    bottom: initial; }
   .badge-positioner .badge {
     display: -webkit-box;
     display: -moz-box;
@@ -1543,6 +1546,10 @@ hr {
     width: 9rem;
     color: white;
     text-align: center; }
+    .module--past-salons .badge-positioner .badge {
+      padding: 1rem 3rem;
+      width: auto;
+      height: auto; }
     .module--events-upcoming-list .badge-positioner .badge .h2,
     .module--events-upcoming-list .badge-positioner .badge span .u-caps,
     .module--events-upcoming-inline .badge-positioner .badge .h2,
@@ -1768,6 +1775,11 @@ TODO clean up the !important
         min-height: 26.5rem;
         padding: 7rem 2rem 0;
         background-color: #272727 !important; } }
+  .module--past-salons .card {
+    margin: 0 0rem 0 4rem;
+    min-height: 16.5rem;
+    justify-content: center;
+    padding: 3rem 1.5rem; }
 
 .module--hero .card-positioner {
   width: 100%;
@@ -1835,6 +1847,13 @@ TODO clean up the !important
       width: auto !important;
       bottom: initial !important; } }
 
+.module--past-salons .card-positioner {
+  position: relative;
+  margin-top: -10rem;
+  z-index: 99;
+  width: 100%;
+  padding: 2rem; }
+
 .module--events-upcoming-inline .card-title,
 .module--events-upcoming-list .card-title {
   color: white !important;
@@ -1852,6 +1871,13 @@ TODO clean up the !important
     .module--events-upcoming-inline .card-title,
     .module--events-upcoming-list .card-title {
       border-color: transparent !important; } }
+
+.module--past-salons [class*=u-bg-] .card-title {
+  border-color: transparent; }
+  .module--past-salons [class*=u-bg-] .card-title h2, .module--past-salons [class*=u-bg-] .card-title h3 {
+    font-size: 3rem; }
+    .module--past-salons [class*=u-bg-] .card-title h2 a, .module--past-salons [class*=u-bg-] .card-title h3 a {
+      color: #272727; }
 
 .module--events-upcoming-list .card-title {
   margin-bottom: 0rem; }
@@ -2299,13 +2325,33 @@ figure img {
     .module--calendar .module__body {
       flex-direction: row; } }
 
-.module--events-upcoming-inline .module__body {
+.module--events-upcoming-inline .module__body,
+.module--past-salons .module__body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
   @media screen and (min-width: 768px) {
-    .module--events-upcoming-inline .module__body {
-      flex-direction: row; } }
+    .module--events-upcoming-inline .module__body,
+    .module--past-salons .module__body {
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      box-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      -o-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-pack: justify; } }
 
 .module__sidebar {
   width: 15rem;
@@ -2503,6 +2549,20 @@ caption {
   @media screen and (min-width: 768px) {
     .module--events-upcoming-inline .event--upcoming-item {
       width: 32%; } }
+
+.event--past-salon-item {
+  width: 100%;
+  margin-bottom: 4rem; }
+  @media screen and (min-width: 768px) {
+    .event--past-salon-item {
+      width: 46%; } }
+
+.event--past-salon__content {
+  position: relative; }
+  .event--past-salon__content .image {
+    min-height: 20rem; }
+  .event--past-salon__content .image-positioner {
+    margin-left: 4rem; }
 
 .event--upcoming__content {
   position: relative; }

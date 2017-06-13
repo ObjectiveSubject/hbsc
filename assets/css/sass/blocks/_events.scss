@@ -18,6 +18,32 @@
     }
 }
 
+.event--past-salon-item
+{
+    width: 100%;
+    margin-bottom: 4rem;
+
+    @include media($md)
+    {
+        width: 46%;
+    }    
+}
+
+.event--past-salon__content
+{
+    position: relative;
+
+    .image
+    {
+        min-height: 20rem;
+    }
+
+    .image-positioner
+    {
+        margin-left: 4rem;
+    }
+}
+
 .event--upcoming__content {
     position: relative;
     @extend .u-clear;
