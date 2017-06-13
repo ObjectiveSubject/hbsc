@@ -6,6 +6,12 @@
             color: $red;
         }
     }
+    input[type="text"] {
+        padding: .375rem;
+        &:focus {
+            outline: 0;
+        }
+    }
 }
 .footer-row {
     @include display(flex);

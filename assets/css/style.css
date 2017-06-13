@@ -2681,6 +2681,11 @@ div.zabuto_calendar div.legend span.badge-today {
   .site-footer a:hover {
     color: #e74949; }
 
+.site-footer input[type="text"] {
+  padding: .375rem; }
+  .site-footer input[type="text"]:focus {
+    outline: 0; }
+
 .footer-row {
   display: -webkit-box;
   display: -moz-box;

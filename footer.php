@@ -47,7 +47,7 @@
                         </nav>
                     </div>
                 </div>
-                <div class="footer-row">
+                <div class="footer-row u-flex-items-center">
                     <div class="footer-column">
                         <?php
                         $facebook = get_option( 'hbsc_facebook' );
@@ -77,10 +77,10 @@
                         </ul>
                         <?php endif; ?>
                     </div>
-                    <div class="footer-column">
-                        <span class="u-font-miller">Newsletter</span>
+                    <div class="footer-column u-display-flex u-flex-items-center u-flex-justify-between">
+                        <span class="u-font-miller u-mr-1">Newsletter</span>
                         <form action="###" method="post" class="u-display-inline">
-                            <input type="text">
+                            <input type="text" class="u-mr-1">
                             <button class="button">Sign Up</button>
                         </form>
                     </div>
