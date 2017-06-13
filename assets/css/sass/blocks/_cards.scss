@@ -3,7 +3,8 @@ TODO clean up the !important
 */
 .card-button
 {
-    .module--events-upcoming-list &
+    .module--events-upcoming-list &,
+    .module--events-upcoming-inline &
     {
         display: flex;
         padding:  2rem 3rem;
@@ -21,7 +22,19 @@ TODO clean up the !important
             justify-content: center;
             margin-top: 0rem;
         }
-    }           
+    }
+
+    .module--events-upcoming-inline &
+    {
+        margin-top: 0rem;
+        background-color: rgba(39,39,39,1)!important;
+        @include media($md) {
+            padding: 0rem 2rem 2rem 2rem;
+            background-color: rgba(39,39,39,1)!important;
+            justify-content: center;
+            margin-top: 0rem;
+        }
+    }
 }
 
 .card {
@@ -48,6 +61,13 @@ TODO clean up the !important
         @include media($md) {
             padding: 7rem 2rem 0rem 2rem;
         }
+    }
+
+    .module--events-upcoming-inline &
+    {
+        @include justify-content(center);
+        padding: 6rem 2rem 0;
+        min-height: 26.75rem
     }
 
     .module--events-upcoming-list &

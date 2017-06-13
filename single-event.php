@@ -29,7 +29,7 @@ $postId = null;
 
             // UPCOMING SALONS
             $upcomingEventsSectionConfig = array(
-                'classes' => 'u-bg-white',
+                'classes' => 'module--events-upcoming-inline u-bg-white',
                 'direction' => 'inline'
             );
 

@@ -1258,7 +1258,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1316,7 +1316,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1488,6 +1488,10 @@ hr {
     left: 0;
     bottom: 0;
     z-index: 10; }
+  .module--events-upcoming-inline .badge-positioner {
+    left: calc(50% - 4.5rem);
+    top: 0;
+    margin-top: -3rem; }
   .event--upcoming-item-left .badge-positioner {
     left: 0;
     z-index: 14; }
@@ -1664,7 +1668,8 @@ button {
 /*
 TODO clean up the !important
 */
-.module--events-upcoming-list .card-button {
+.module--events-upcoming-list .card-button,
+.module--events-upcoming-inline .card-button {
   display: flex;
   padding: 2rem 3rem;
   color: white !important;
@@ -1679,11 +1684,23 @@ TODO clean up the !important
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
-  .module--events-upcoming-list .card-button a {
+  .module--events-upcoming-list .card-button a,
+  .module--events-upcoming-inline .card-button a {
     color: white !important;
     border-color: rgba(255, 255, 255, 0.15) !important; }
   @media screen and (min-width: 768px) {
-    .module--events-upcoming-list .card-button {
+    .module--events-upcoming-list .card-button,
+    .module--events-upcoming-inline .card-button {
+      padding: 0rem 2rem 2rem 2rem;
+      background-color: #272727 !important;
+      justify-content: center;
+      margin-top: 0rem; } }
+
+.module--events-upcoming-inline .card-button {
+  margin-top: 0rem;
+  background-color: #272727 !important; }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-inline .card-button {
       padding: 0rem 2rem 2rem 2rem;
       background-color: #272727 !important;
       justify-content: center;
@@ -1719,6 +1736,18 @@ TODO clean up the !important
       .module--events-upcoming-inline .card,
       .module--events-upcoming-list .card {
         padding: 7rem 2rem 0rem 2rem; } }
+  .module--events-upcoming-inline .card {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    padding: 6rem 2rem 0;
+    min-height: 26.75rem; }
   .module--events-upcoming-list .card {
     -webkit-box-pack: center;
     -moz-box-pack: center;
@@ -2098,7 +2127,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2270,6 +2299,14 @@ figure img {
     .module--calendar .module__body {
       flex-direction: row; } }
 
+.module--events-upcoming-inline .module__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-inline .module__body {
+      flex-direction: row; } }
+
 .module__sidebar {
   width: 15rem;
   float: right; }
@@ -2350,7 +2387,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2463,9 +2500,15 @@ caption {
     .event--upcoming-item {
       overflow: initial;
       margin-bottom: 0rem; } }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-inline .event--upcoming-item {
+      width: 32%; } }
 
 .event--upcoming__content {
   position: relative; }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-inline .event--upcoming__content {
+      /*display: flex;*/ } }
   .event--upcoming__content .image-positioner {
     width: 100%;
     z-index: 0;
@@ -2738,7 +2781,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 

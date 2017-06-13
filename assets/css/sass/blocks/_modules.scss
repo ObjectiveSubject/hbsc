@@ -67,6 +67,16 @@
             flex-direction: row;
         }
     }
+
+    .module--events-upcoming-inline & {
+        display: flex;
+        flex-direction: column;        
+        justify-content: space-between;
+        @include media($md)
+        {
+            flex-direction: row;
+        }
+    }    
 }
 .module__sidebar {
     width: rem(240);
