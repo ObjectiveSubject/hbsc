@@ -171,13 +171,12 @@ TODO clean up the !important
         }
     }
 
-    [class*='u-bg-'] & {
+    [class*='u-bg-']>& {
         color: white;
     }
-    .u-bg-white &,
-    .u-bg-off-white &,
-    .u-bg-light-gray &,
-    .u-bg-tan & {
+    .u-bg-white>&,
+    .u-bg-light-gray>&,
+    .u-bg-tan>& {
         color: $dark-gray;
     }
 

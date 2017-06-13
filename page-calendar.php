@@ -21,7 +21,7 @@ get_header();
     ));
 ?>
 <div class="site-content">
-    <section class="module module--calendar u-bg-off-white">
+    <section class="module module--calendar u-bg-light-gray">
         <div class="module__content u-container">
             <header class="module__header">
                 <div class="module-title">
