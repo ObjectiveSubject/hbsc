@@ -1803,7 +1803,7 @@ TODO clean up the !important
   right: 0;
   z-index: 10;
   bottom: 0px;
-  width: 100%;
+  width: calc(100% - 1.6rem);
   margin-right: 1.6rem; }
   @media screen and (min-width: 768px) {
     .event--upcoming-item-right .card-positioner {
@@ -1816,7 +1816,7 @@ TODO clean up the !important
   position: absolute;
   left: 0;
   z-index: 10;
-  width: 100%;
+  width: calc(100% - 1.6rem);
   bottom: 0px;
   margin-left: 1.6rem; }
   @media screen and (min-width: 768px) {
