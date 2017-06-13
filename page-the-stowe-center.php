@@ -30,8 +30,10 @@ get_header(); ?>
                         </div>
                     </header>
                     <aside class="module__sidebar">
-                        CLOSED ON<br>
-                        Easter Sunday, Independence Day, Thanksgiving Day
+                        <div class="sidebar">
+                            <p>CLOSED ON</p>
+                            <p>Easter Sunday, Independence Day, Thanksgiving Day</p>
+                        </div>
                     </aside>
                     <div class="module__body">
                         <h5>Open Today</h5>
