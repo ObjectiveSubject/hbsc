@@ -3,22 +3,25 @@ TODO clean up the !important
 */
 .card-button
 {
-    display: flex;
-    padding:  2rem 3rem;
-    color: white!important;
-    border-color: rgba(255,255,255,.15)!important;
-    margin-top: -8rem;
-    a{
+    .module--events-upcoming-list &
+    {
+        display: flex;
+        padding:  2rem 3rem;
         color: white!important;
         border-color: rgba(255,255,255,.15)!important;
-    }
-    @include justify-content(center);
-    @include media($md) {
-        padding: 0rem 2rem 2rem 2rem;
-        background-color: rgba(39,39,39,1)!important;
-        justify-content: center;
-        margin-top: 0rem;
-    }            
+        margin-top: -8rem;
+        a{
+            color: white!important;
+            border-color: rgba(255,255,255,.15)!important;
+        }
+        @include justify-content(center);
+        @include media($md) {
+            padding: 0rem 2rem 2rem 2rem;
+            background-color: rgba(39,39,39,1)!important;
+            justify-content: center;
+            margin-top: 0rem;
+        }
+    }           
 }
 
 .card {
@@ -31,17 +34,17 @@ TODO clean up the !important
         margin-top: rem(72); // half of badge size
         padding-top: rem(72); // half of badge size
     }
-    .module--carousel &,
-    .module--events-upcoming-inline &,
-    .module--events-upcoming-list & {
+    .module--carousel &
+    {
         width: rem(360);
-        min-height: 26.75rem;/*rem(492);*/
+        min-height: rem(492);
         @extend .u-mt-3;
     }
 
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
-
+        @extend .u-mt-3;
+        min-height : 26.75rem;
         @include media($md) {
             padding: 7rem 2rem 0rem 2rem;
         }
@@ -73,12 +76,11 @@ TODO clean up the !important
             padding-top: 0;
         }
     }
-    .module--carousel &,
-    .event--upcoming-item-right &  {
-        position: absolute;
-        right: 0;
-        z-index: 10;
-        top: 2rem;
+    .module--carousel &
+    {
+        float: right;
+        position: relative;
+        z-index: 10;        
     }
 
     .event--upcoming-item-left &,
