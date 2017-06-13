@@ -1,5 +1,5 @@
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--hero has-background <?php echo $color; ?>" <?php echo ( $image ) ? "style='background-image: url(" . $image . ")'" : ""; ?>>
-    <div class="module__content u-container">
+    <div class="module__content u-container <?php echo $content_position; ?>">
         <div class="card-positioner">
             <div class="card <?php echo $card_color; ?> js-slide-in">
                 <?php if( $display_title ) : ?>

@@ -180,7 +180,7 @@ html {
 .u-overflow-hidden {
   overflow: hidden; }
 
-.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .logo g, .logo g > *, .header-menu .menu-item a, .site-menu-toggle {
+.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .site-menu-toggle {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   transition: all 300ms ease; }
@@ -556,11 +556,11 @@ html {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
-.u-clear:after, .carousel-slide__content:after, .form-group:after {
+.u-clear:after, .carousel-slide__content:after, .form-group:after, .event--upcoming__content:after {
   content: "";
   display: table; }
 
-.u-clear:after, .carousel-slide__content:after, .form-group:after {
+.u-clear:after, .carousel-slide__content:after, .form-group:after, .event--upcoming__content:after {
   clear: both; }
 
 .u-container {
@@ -723,7 +723,9 @@ html {
 .u-ma-3 {
   margin: 3rem; }
 
-.u-mt-3, .module--carousel .card, .preface-text p, .module--entry figure {
+.u-mt-3, .module--carousel .card,
+.module--events-upcoming-inline .card,
+.module--events-upcoming-list .card, .preface-text p, .module--entry figure {
   margin-top: 3rem; }
 
 .u-mr-3, .header-logo-container {
@@ -1491,11 +1493,24 @@ hr {
 
 .badge-positioner {
   position: absolute;
-  pointer-events: none; }
+  pointer-events: none;
+  top: 2rem; }
   .module--carousel .badge-positioner {
     left: 0;
     bottom: 0;
     z-index: 10; }
+  .event--upcoming-item-left .badge-positioner {
+    left: 0;
+    z-index: 14; }
+    @media screen and (min-width: 768px) {
+      .event--upcoming-item-left .badge-positioner {
+        left: 7.25rem; } }
+  .event--upcoming-item-right .badge-positioner {
+    right: 0;
+    z-index: 14; }
+    @media screen and (min-width: 768px) {
+      .event--upcoming-item-right .badge-positioner {
+        right: 7.25rem; } }
   .badge-positioner .badge {
     display: -webkit-box;
     display: -moz-box;
@@ -1533,6 +1548,11 @@ hr {
     width: 9rem;
     color: white;
     text-align: center; }
+    .module--events-upcoming-list .badge-positioner .badge .h2,
+    .module--events-upcoming-list .badge-positioner .badge span .u-caps,
+    .module--events-upcoming-inline .badge-positioner .badge .h2,
+    .module--events-upcoming-inline .badge-positioner .badge span .u-caps {
+      color: white; }
 
 button {
   background: none; }
@@ -1659,6 +1679,34 @@ button {
     color: #272727;
     border-color: #272727; }
 
+/*
+TODO clean up the !important
+*/
+.card-button {
+  display: flex;
+  padding: 2rem 3rem;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  margin-top: -8rem;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  .card-button a {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.15) !important; }
+  @media screen and (min-width: 768px) {
+    .card-button {
+      padding: 0rem 2rem 2rem 2rem;
+      background-color: #272727 !important;
+      justify-content: center;
+      margin-top: 0rem; } }
+
 .card {
   display: -webkit-box;
   display: -moz-box;
@@ -1679,9 +1727,36 @@ button {
     position: relative;
     margin-top: 4.5rem;
     padding-top: 4.5rem; }
-  .module--carousel .card {
+  .module--carousel .card,
+  .module--events-upcoming-inline .card,
+  .module--events-upcoming-list .card {
     width: 22.5rem;
-    min-height: 30.75rem; }
+    min-height: 26.75rem;
+    /*rem(492);*/ }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-inline .card,
+    .module--events-upcoming-list .card {
+      padding: 7rem 2rem 0rem 2rem; } }
+  .module--events-upcoming-list .card {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    background-color: rgba(39, 39, 39, 0.6) !important;
+    width: 100%;
+    min-height: 18.5rem;
+    padding: 2rem 3rem 7rem 3rem; }
+    @media screen and (min-width: 768px) {
+      .module--events-upcoming-list .card {
+        width: 22.5rem;
+        min-height: 26.5rem;
+        padding: 7rem 2rem 0;
+        background-color: #272727 !important; } }
 
 .module--hero .card-positioner {
   width: 100%;
@@ -1691,12 +1766,92 @@ button {
       width: 57.5%;
       padding-top: 0; } }
 
-.module--carousel .card-positioner {
-  float: right;
-  position: relative;
-  z-index: 10; }
+.module--carousel .card-positioner,
+.event--upcoming-item-right .card-positioner {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  top: 2rem; }
 
-.module--carousel .card-content {
+.event--upcoming-item-left .card-positioner,
+.event--upcoming-item-right .card-positioner {
+  display: flex;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  overflow: none; }
+  @media screen and (min-width: 768px) {
+    .event--upcoming-item-left .card-positioner,
+    .event--upcoming-item-right .card-positioner {
+      overflow: initial; } }
+
+.event--upcoming-item-right .card-positioner {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  bottom: 0px;
+  width: 100%;
+  margin-right: 1.6rem; }
+  @media screen and (min-width: 768px) {
+    .event--upcoming-item-right .card-positioner {
+      margin-right: 0;
+      top: 2rem;
+      width: auto !important;
+      bottom: initial !important; } }
+
+.event--upcoming-item-left .card-positioner {
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  bottom: 0px;
+  margin-left: 1.6rem; }
+  @media screen and (min-width: 768px) {
+    .event--upcoming-item-left .card-positioner {
+      margin-left: 0;
+      top: 2rem;
+      width: auto !important;
+      bottom: initial !important; } }
+
+.module--events-upcoming-inline .card-title,
+.module--events-upcoming-list .card-title {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.55) !important; }
+  .module--events-upcoming-inline .card-title .h2,
+  .module--events-upcoming-inline .card-title .h3,
+  .module--events-upcoming-inline .card-title h2,
+  .module--events-upcoming-inline .card-title h3,
+  .module--events-upcoming-list .card-title .h2,
+  .module--events-upcoming-list .card-title .h3,
+  .module--events-upcoming-list .card-title h2,
+  .module--events-upcoming-list .card-title h3 {
+    color: white !important; }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-inline .card-title,
+    .module--events-upcoming-list .card-title {
+      border-color: transparent !important; } }
+
+.module--events-upcoming-list .card-title {
+  margin-bottom: 0rem; }
+  @media screen and (min-width: 768px) {
+    .module--events-upcoming-list .card-title {
+      margin-bottom: 1rem; } }
+
+.module--carousel .card-content,
+.module--events-upcoming-list .card-content {
   flex-grow: 1;
   display: -webkit-box;
   display: -moz-box;
@@ -1721,7 +1876,9 @@ button {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
-  .module--carousel .card-content h2, .module--carousel .card-content h3 {
+  .module--carousel .card-content h2, .module--carousel .card-content h3,
+  .module--events-upcoming-list .card-content h2,
+  .module--events-upcoming-list .card-content h3 {
     font-size: 3rem; }
 
 [class*='u-bg-'] .card-content {
@@ -1732,6 +1889,10 @@ button {
 .u-bg-light-gray .card-content,
 .u-bg-tan .card-content {
   color: #272727; }
+
+.module--events-upcoming-inline .card-content,
+.module--events-upcoming-list .card-content {
+  color: white; }
 
 /* Customization */
 .carousel-slide__content {
@@ -2088,6 +2249,18 @@ figure {
       align-items: center;
       -ms-flex-align: center; } }
 
+.module--video .module__body {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  display: flex; }
+
 .module--entry .module__body {
   width: auto;
   margin-right: 15rem; }
@@ -2302,6 +2475,51 @@ caption {
 
 .table--hover > tbody > tr:hover {
   background-color: gray; }
+
+.event--upcoming-item {
+  margin-bottom: 4rem;
+  overflow: hidden; }
+  @media screen and (min-width: 768px) {
+    .event--upcoming-item {
+      overflow: initial;
+      margin-bottom: 0rem; } }
+
+.event--upcoming__content {
+  position: relative; }
+  .event--upcoming__content .image-positioner {
+    width: 100%;
+    z-index: 0;
+    position: relative; }
+    .event--upcoming-item-right .event--upcoming__content .image-positioner {
+      width: 100%;
+      margin-left: -1.6rem; }
+      @media screen and (min-width: 768px) {
+        .event--upcoming-item-right .event--upcoming__content .image-positioner {
+          padding-right: 18rem;
+          margin-left: 0; } }
+    .event--upcoming-item-left .event--upcoming__content .image-positioner {
+      width: 100%;
+      margin-left: 1.6rem; }
+      @media screen and (min-width: 768px) {
+        .event--upcoming-item-left .event--upcoming__content .image-positioner {
+          padding-left: 18rem;
+          margin-left: 0; } }
+  .event--upcoming__content .image {
+    background-size: cover;
+    background-position: center;
+    min-height: 30.75rem; }
+
+@media screen and (min-width: 768px) {
+  .event--upcoming-item-right {
+    margin-right: 4rem;
+    margin-bottom: 8rem;
+    padding-bottom: 5rem; } }
+
+@media screen and (min-width: 768px) {
+  .event--upcoming-item-left {
+    margin-left: 4rem;
+    margin-bottom: 8rem;
+    padding-bottom: 5rem; } }
 
 .events--calendar-aside div.zabuto_calendar {
   margin-bottom: 2rem; }

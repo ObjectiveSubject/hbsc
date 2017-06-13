@@ -1,4 +1,14 @@
 <?php
+    if( !isset($upcomingEventsSectionConfig) )
+    {
+        $upcomingEventsSectionConfig = array(
+            'classes' => 'module--events-upcoming-inline u-bg-white',
+            'direction' => 'inline'
+        );
+    }
+
+    $upcomingItemCardPos = '';
+
     $upcomingEventsLoop = new WP_Query( array( 
         'post_type'      => 'event',
         'posts_per_page' => 3,
@@ -19,7 +29,7 @@
     if($upcomingEventsLoop->have_posts())
     {
 ?>
-<section class="module module--basic u-bg-white">
+<section class="module module--basic <?php echo $upcomingEventsSectionConfig['classes']; ?>">
     <div class="module__content u-container">
         <header class="module__header">
             <div class="module-title">
@@ -28,11 +38,24 @@
         </header>
         <div class="module__body">
         <?php
+            $cnt = 0;
             while ( $upcomingEventsLoop->have_posts() )
             {
                 $upcomingEventsLoop->the_post();
                 $Event = new Event();
-     
+
+                if( $upcomingEventsSectionConfig['direction'] == 'list' )
+                {
+                    $upcomingItemCardPos = 'event--upcoming-item-left';
+
+                    if( ( $cnt % 2 ) )
+                    {
+                        $upcomingItemCardPos = 'event--upcoming-item-right';
+                    }
+                }
+                
+                $cnt++;
+
                 include HBSC_PATH . 'partials/events/upcoming-item.php';
             }
         ?>

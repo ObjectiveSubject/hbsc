@@ -33,6 +33,10 @@
 }
 .module__body {
     @extend .section__body;
+    .module--video & {
+        @include justify-content(center);
+        display: flex;
+    }
     .module--entry & {
         width: auto;
         margin-right: rem(240);@extend .u-pr-1;

@@ -1,18 +1,68 @@
+/*
+TODO clean up the !important
+*/
+.card-button
+{
+    display: flex;
+    padding:  2rem 3rem;
+    color: white!important;
+    border-color: rgba(255,255,255,.15)!important;
+    margin-top: -8rem;
+    a{
+        color: white!important;
+        border-color: rgba(255,255,255,.15)!important;
+    }
+    @include justify-content(center);
+    @include media($md) {
+        padding: 0rem 2rem 2rem 2rem;
+        background-color: rgba(39,39,39,1)!important;
+        justify-content: center;
+        margin-top: 0rem;
+    }            
+}
+
 .card {
     @include display(flex);
     @include flex-direction(column);
     @extend .u-pa-3;
-    text-align: center;
+    text-align: center; 
     &.has-badge {
         position: relative;
         margin-top: rem(72); // half of badge size
         padding-top: rem(72); // half of badge size
     }
-    .module--carousel & {
+    .module--carousel &,
+    .module--events-upcoming-inline &,
+    .module--events-upcoming-list & {
         width: rem(360);
-        min-height: rem(492);
+        min-height: 26.75rem;/*rem(492);*/
         @extend .u-mt-3;
     }
+
+    .module--events-upcoming-inline &,
+    .module--events-upcoming-list & {
+
+        @include media($md) {
+            padding: 7rem 2rem 0rem 2rem;
+        }
+    }
+
+    .module--events-upcoming-list &
+    {
+        @include justify-content(center);
+        background-color: rgba(39,39,39,0.6)!important;
+        width: 100%;
+        min-height:18.5rem;
+        padding: 2rem 3rem 7rem 3rem;
+
+        @include media($md)
+        {
+            width: 22.5rem;
+            min-height:26.5rem;
+            padding: 7rem 2rem 0;
+            background-color: rgba(39,39,39,1)!important;
+        }        
+    }    
 }
 .card-positioner {
     .module--hero & {
@@ -23,18 +73,95 @@
             padding-top: 0;
         }
     }
-    .module--carousel & {
-        float: right;
-        position: relative;
+    .module--carousel &,
+    .event--upcoming-item-right &  {
+        position: absolute;
+        right: 0;
         z-index: 10;
+        top: 2rem;
     }
+
+    .event--upcoming-item-left &,
+    .event--upcoming-item-right &
+    {
+        display: flex;
+        @include justify-content(flex-end);
+        @include flex-direction(column);
+        overflow: none;
+        
+        @include media($md)
+        {
+            overflow: initial;
+        }
+    }
+
+    .event--upcoming-item-right &
+    {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+        bottom:0px;
+        width: 100%;
+        margin-right: 1.6rem;
+        @include media($md) {
+
+            margin-right: 0;
+            top: 2rem;
+            width: auto!important;
+            bottom:initial!important;
+        }         
+    }
+
+    .event--upcoming-item-left &  {
+        position: absolute;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        bottom:0px;        
+        margin-left: 1.6rem;
+        @include media($md) {
+            margin-left: 0;
+            top: 2rem;
+            width: auto!important;
+            bottom:initial!important;
+        }        
+    }    
 }
 .card-title {
     @extend .module-title;
+    .module--events-upcoming-inline &,
+    .module--events-upcoming-list & {
+
+        color: white!important;
+
+        .h2,
+        .h3,
+        h2,
+        h3
+        {
+            color: white!important;
+        }
+        border-color: rgba(255,255,255,.55)!important;
+        @include media($md)
+        {
+            border-color: rgba(0,0,0,0)!important;
+        }
+    }    
+
+    .module--events-upcoming-list &
+    {
+        margin-bottom : 0rem;
+
+        @include media($md)
+        {
+            margin-bottom : 1rem;
+        }        
+    }
 }
 .card-content {
     @extend .u-my-3;
-    .module--carousel & {
+    .module--carousel &,
+    .module--events-upcoming-list & {
         flex-grow: 1;
         @include display(flex);
         @include flex-direction(column);
@@ -43,6 +170,7 @@
             font-size: 3rem;
         }
     }
+
     [class*='u-bg-'] & {
         color: white;
     }
@@ -52,4 +180,9 @@
     .u-bg-tan & {
         color: $dark-gray;
     }
+
+    .module--events-upcoming-inline &,
+    .module--events-upcoming-list & {
+        color: white;
+    }     
 }

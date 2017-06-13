@@ -16,6 +16,8 @@ while( have_rows('module') ): the_row();
     $button_text = get_sub_field('module_button_text');
     $image = get_sub_field('module_image');
 
+    $videoEmbed = get_sub_field('module_video_embed');
+
     $moduleTypeName = str_replace( '--', '-', $type );
     $moduleTypeFilePath = sprintf( dirname( __FILE__ ) . '/modules/%s.php', $moduleTypeName );
 

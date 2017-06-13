@@ -1,57 +1,62 @@
 <?php
-get_header();
+/**
+ * General page template
+ */
+ $postId = null;
+get_header(); ?>
 
-$Event = null;
-$postId = null;
+	<div class="site-content">
 
-    $eventNextSalonAtStoweLoop = new WP_Query( array( 
-        'post_type'      => 'event',
-        'posts_per_page' => 1,
-        'order'          => 'ASC',
-        'meta_key'		 => 'event_start_date',
-        'meta_query' => array(
-            array(
-                'key' => 'event_start_date',
-                'value' => date('Y-m-d'),
-                'compare' => '>=',
-                'type' => 'DATE'
-            )
-        ),        
-        'tax_query'      => array(
-            'relation' => 'AND',
-            array(
-                'taxonomy' => 'event-type',
-                'field'    => 'slug',
-                'terms'    => array('salon-at-stowe'),
-            )
-        ),
-        'orderby' => 'meta_value'
-    ));
-?>
-    <div class="site-content">
-        <?php 
-            while ( $eventNextSalonAtStoweLoop->have_posts() )
-            {
-                $eventNextSalonAtStoweLoop->the_post();
-            
+		<?php 
+            while ( have_posts() ) :
+                the_post(); 
+
                 if( null !== $post->ID && null === $postId )
                 {
                     $postId = $post->ID;
-                    $Event = new Event();
-                }
-
-                include HBSC_PATH . '/partials/events/details-section.php';
-            }
-
-            // DISCUSSION LEADERS
-            include HBSC_PATH . '/partials/events/discussion-leaders-section.php';
-
-            // ONLINE DISCUSSION
-            include HBSC_PATH . '/partials/events/online-discussion-section.php';
-
-            // UPCOMING SALONS
-            $upcomingEventsDirection = 'inline';
-            include HBSC_PATH . '/partials/events/upcoming-section.php';
+                }                
         ?>
-    </div>
+		
+		    <section class="preface section <?php the_field('preface_background_color'); ?>">
+                <div class="section__content u-container">
+                    <header class="section__header">
+                        <h1 class="section-title">Salons at stowe</h1>
+                    </header>
+                    <div class="section__body">
+                        <div class="preface-text">
+                            <?php the_content(); ?>
+                        </div>
+                    </div>
+                    
+                    <footer class="section__footer">
+
+                    </footer>
+                </div>
+            </section>
+            <!-- Video Module -->
+
+            <!-- Upcoming -->
+
+            <!-- Shows section -->
+
+		<?php endwhile; ?>
+
+		<?php if( have_rows('module') ): ?>
+
+            <?php get_template_part( 'partials/page', 'modules' ); ?>
+
+        <?php endif; ?>
+
+
+        <?php
+            // UPCOMING SALONS
+            $upcomingEventsSectionConfig = array(
+                'classes' => 'module--events-upcoming-list u-bg-light-gray',
+                'direction' => 'list'
+            );
+
+            include HBSC_PATH . '/partials/events/upcoming-section.php';
+        ?>     
+
+	</div>
 <?php get_footer(); ?>

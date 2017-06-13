@@ -1,11 +1,32 @@
 .badge-positioner {
     position: absolute;
     pointer-events: none;
+    top: 2rem;
     .module--carousel & {
         left: 0;
         bottom: 0;
         z-index: 10;
     }
+
+    .event--upcoming-item-left &
+    {
+        left: 0;
+        z-index: 14;
+        @include media($md)
+        {
+            left: 7.25rem;
+        }
+    }
+
+    .event--upcoming-item-right &
+    {
+        right: 0;
+        z-index: 14;
+        @include media($md)
+        {
+            right: 7.25rem;
+        }
+    }    
 
     .badge {
         @include display(flex);
@@ -18,6 +39,17 @@
         text-align: center;
         .module--carousel & {
             @extend .u-mb-3;
+        }
+        
+        .module--events-upcoming-list &,
+        .module--events-upcoming-inline &
+        {
+            .h2,
+            span
+            .u-caps
+            {
+                color: white;
+            }
         }
     }    
 }

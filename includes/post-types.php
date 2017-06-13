@@ -13,31 +13,9 @@ function setup() {
 
 	add_action( 'init', $n( 'register_event' ) );
 	add_action( 'init', $n( 'register_people' ) );
+	//add_action( 'init', $n( 'register_participant' ) );
 	//add_action( 'save_post', 'transition_people_private', 10, 3 );
 }
-
-//  DSL si vous m'entendiez hier soir
-
-function transition_people_private( $postId, $post )
-{
-	$taxonomies = wp_get_post_terms($post->ID, 'role', array(
-            'hide_empty' => true,
-			'fields' => 'slugs'
-    ) );
-			$post->post_status = 'private';
-			wp_update_post( $post );			
-	//var_dump($taxonomies);
-	//discussion-leader
-	switch( true )
-	{
-		case ($post->post_type == 'people'):
-		case ($post->post_status == 'publish'):
-		//case ($old_status  != $new_status):
-		case (!in_array('discussion-leader', $taxonomies)):
-
-		break;
-	}
-} 
 
 /**
  * Register the 'event' post type
@@ -73,5 +51,21 @@ function register_people() {
 		'singular' => 'Person',
 		'plural'   => 'People',
 		'slug'     => 'people'
+	) );
+}
+
+/**
+ * Register the 'participant' post type
+ */
+function register_participant() {
+	register_extended_post_type( 'participant', array(
+		'menu_icon' => 'dashicons-groups',
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'has_archive' => false
+	), array(
+		# Override the base names used for labels:
+		'singular' => 'Participant',
+		'plural'   => 'Participants',
+		'slug'     => 'participants'
 	) );
 }
