@@ -71,7 +71,14 @@
 .module__sidebar {
     width: rem(240);
     float: right;
-    @extend .u-font-size-sm;
+    .sidebar {
+        @extend .u-pa-1;
+        border: 1px solid $table-border-color;
+        @extend .u-font-size-sm;
+        p:first-of-type {
+            margin-top: 0;
+        }
+    }
 }
 .module__footer {
     @extend .section__footer;

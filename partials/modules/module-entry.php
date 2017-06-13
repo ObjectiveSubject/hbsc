@@ -9,7 +9,16 @@
             </div>
         </header>
         <aside class="module__sidebar">
-            <?php echo $sidebar; ?>
+            <?php if( $sidebar ) : ?>
+            <div class="sidebar">
+                <?php echo $sidebar; ?>
+            </div>
+            <?php endif; ?>
+            <?php if( $display_button ) : ?>
+                <a href="<?php echo $button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>">
+                    <?php echo $button_text; ?>
+                </a>
+            <?php endif; ?>
         </aside>
         <div class="module__body">
             <?php echo $content; ?>

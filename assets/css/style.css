@@ -634,7 +634,7 @@ html {
 .u-mb-1, .masthead .hbsc-logo, body.home .masthead--collapsed .hbsc-logo {
   margin-bottom: 1rem; }
 
-.u-ml-1, .slick-dots li + li, .social__item + .social__item {
+.u-ml-1, .button + .button, .slick-dots li + li, .social__item + .social__item {
   margin-left: 1rem; }
 
 .u-mx-1 {
@@ -645,7 +645,7 @@ html {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-.u-pa-1, .ui-button {
+.u-pa-1, .ui-button, .module__sidebar .sidebar {
   padding: 1rem; }
 
 .u-pt-1, .form-field {
@@ -917,7 +917,7 @@ html {
 .u-font-size-xs {
   font-size: .5em; }
 
-.u-font-size-sm, figure figcaption, .module__sidebar {
+.u-font-size-sm, figure figcaption, .module__sidebar .sidebar {
   font-size: .75em; }
 
 .u-font-size-lg {
@@ -2264,6 +2264,10 @@ figure img {
 .module__sidebar {
   width: 15rem;
   float: right; }
+  .module__sidebar .sidebar {
+    border: 1px solid #d8d8d8; }
+    .module__sidebar .sidebar p:first-of-type {
+      margin-top: 0; }
 
 /**
  * Module Elements
@@ -2359,7 +2363,7 @@ body.home .preface {
  * -----------------------------------------------------------*/
 table {
   background-color: transparent;
-  margin: 2rem 0 0; }
+  margin: 2rem 0; }
 
 caption {
   padding-top: 0.5em;

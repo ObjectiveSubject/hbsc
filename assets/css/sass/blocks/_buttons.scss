@@ -26,6 +26,9 @@ button {
         color: $dark-gray;
         border-color: $dark-gray;
     }
+    &+& {
+        @extend .u-ml-1;
+    }
 }
 @each $color-name, $hex in $color_map {
 	.button--#{$color-name} {
