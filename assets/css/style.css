@@ -104,10 +104,10 @@ html {
   display: -ms-flexbox;
   display: flex; }
 
-.u-display-flex-md {
+.u-display-flex-md, .module-row {
   display: block; }
   @media screen and (min-width: 768px) {
-    .u-display-flex-md {
+    .u-display-flex-md, .module-row {
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -651,7 +651,7 @@ html {
 .u-pt-1, .form-field {
   padding-top: 1rem; }
 
-.u-pr-1, .module--entry .module__body, figure figcaption {
+.u-pr-1, figure figcaption, .module--entry .module__body {
   padding-right: 1rem; }
 
 .u-pb-1 {
@@ -719,7 +719,7 @@ html {
 
 .u-mt-3, .module--carousel .card,
 .module--events-upcoming-inline .card,
-.module--events-upcoming-list .card, .preface-text p, .module--entry figure {
+.module--events-upcoming-list .card, .module--entry figure, .preface-text p {
   margin-top: 3rem; }
 
 .u-mr-3, .header-logo-container {
@@ -918,7 +918,7 @@ html {
 .u-font-size-xs {
   font-size: .5em; }
 
-.u-font-size-sm, .module__sidebar, figure figcaption {
+.u-font-size-sm, figure figcaption, .module__sidebar {
   font-size: .75em; }
 
 .u-font-size-lg {
@@ -2118,8 +2118,19 @@ img {
   max-width: 100%;
   /* Adhere to container width. */ }
 
-figure {
-  margin: 1rem 0 0; }
+.module--entry figure {
+  clear: both; }
+  @media screen and (min-width: 768px) {
+    .module--entry figure {
+      margin-left: -6rem;
+      margin-right: -21rem; } }
+
+figure figcaption {
+  width: 20%;
+  float: left; }
+
+figure img {
+  width: 80%; }
 
 .wp-caption {
   max-width: 100%; }
@@ -2257,13 +2268,6 @@ figure {
  * Module Elements
  */
 .module-row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
   box-lines: multiple;
@@ -2796,19 +2800,5 @@ body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo {
   body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo .logotype {
     opacity: 1;
     visibility: visible; }
-
-.module--entry figure {
-  clear: both; }
-  @media screen and (min-width: 768px) {
-    .module--entry figure {
-      margin-left: -6rem;
-      margin-right: -21rem; } }
-
-figure figcaption {
-  width: 20%;
-  float: left; }
-
-figure img {
-  width: 80%; }
 
 /*# sourceMappingURL=style.css.map */

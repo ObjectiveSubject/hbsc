@@ -39,7 +39,8 @@
     }
     .module--entry & {
         width: auto;
-        margin-right: rem(240);@extend .u-pr-1;
+        margin-right: rem(240);
+        @extend .u-pr-1;
         @include media($md) {
             padding-left: 6rem;
             padding-right: 6rem;
@@ -82,7 +83,7 @@
     @extend .section-title;
 }
 .module-row {
-    @include display(flex);
+    @extend .u-display-flex-md;
     @include flex-wrap(wrap);
     width: 100%;
     &+& {

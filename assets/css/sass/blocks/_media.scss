@@ -15,7 +15,23 @@ img {
 }
 
 figure {
- 	margin: $leading 0 0;
+    .module--entry & {
+        clear: both;
+        @extend .u-mt-3;
+        @include media($md) {
+            margin-left: -6rem;
+            margin-right: -21rem;
+        }
+    }
+    figcaption {
+        width: 20%;
+        float: left;
+        @extend .u-pr-1;
+        @extend .u-font-size-sm;
+    }
+    img {
+        width: 80%;
+    }
 }
 
 .wp-caption {

@@ -106,6 +106,7 @@ get_header(); ?>
 
             <?php endif; ?>
             
+            <?php if( have_rows('salons_at_stowe') ): ?>
             <section class="module module--basic">
                 <div class="module__content u-container">
                     <header class="module__header">
@@ -115,14 +116,41 @@ get_header(); ?>
                     </header>
                     <div class="module__body">
                         <div class="module-row">
-                            <div class="module-column">Post 1</div>
-                            <div class="module-column">Post 2</div>
-                            <div class="module-column">Post 3</div>
+                            <?php while( have_rows('salons_at_stowe') ): the_row(); ?>
+                            <?php $event =  get_sub_field('event'); ?>
+                            <div class="module-column">
+                                <div class="topic">
+                                    <div class="topic__header u-clear" style="position: relative;">
+                                        <div class="badge-positioner" style="top: 0;">
+                                            <div class="badge">
+                                                <span class="u-font-size-lg"><?php the_sub_field('engagement'); ?>%</span>
+                                                <span>Engagement</span>
+                                            </div>
+                                        </div>
+                                        <div class="u-ml-5 u-pt-5">
+                                            <a href="#">
+                                                <div class="topic__image" style="width: 100%; height: 0; padding-bottom: 100%; background-size: cover; background-position: center; background-image: url(<?php echo get_the_post_thumbnail_url($event->ID); ?>);"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="topic__body u-pl-5 u-text-center">
+                                        <div class="u-font-size-sm u-mt-2">
+                                            <?php echo $event->event_start_date; ?>
+                                        </div>
+                                        <a href="#" class="u-font-miller-bold u-font-size-lg">
+                                            <?php echo $event->post_title; ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endwhile; ?>
                         </div>
                     </div>
                 </div>
             </section>
+            <?php endif; ?>
             
+            <?php if( have_rows('dogwood_trees_statistics') ): ?>
             <section class="module module--basic">
                 <div class="module__content u-container">
                     <header class="module__header">
@@ -134,19 +162,20 @@ get_header(); ?>
                         <div class="module-row">
                             <div class="module-column">
                                 <div class="module-row">
-                                    <div class="module-column">Stat 1</div>
-                                    <div class="module-column">Stat 2</div>
-                                </div>
-                                <div class="module-row">
-                                    <div class="module-column">Stat 3</div>
-                                    <div class="module-column">Stat 4</div>
+                                    <?php while( have_rows('dogwood_trees_statistics') ): the_row(); ?>
+                                    <div class="module-column u-text-center" style="flex: 1 0 50%">
+                                        <span class="u-display-block u-font-size-max u-color-red"><?php the_sub_field('dogwood_trees_statistic_value'); ?></span>
+                                        <span class="u-font-miller-bold u-font-size-lg"><?php the_sub_field('dogwood_trees_statistic_key'); ?></span>
+                                    </div>
+                                    <?php endwhile; ?>
                                 </div>
                             </div>
-                            <div class="module-column">IMAGE</div>
+                            <div class="module-column" style="background-size: cover; background-position: center; background-image: url(<?php the_field('dogwood_trees_image'); ?>);"></div>
                         </div>
                     </div>
                 </div>
             </section>
+            <?php endif; ?>
 
 		<?php endwhile; ?>
 
