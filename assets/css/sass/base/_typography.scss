@@ -166,6 +166,18 @@ blockquote {
 	p {
 		margin: 0;
 	}
+    .u-bg-red &,
+    .u-bg-dark-gray & {
+        color: white;
+    }
+    .u-bg-blue & {
+        color: $tan;
+    }
+    .u-bg-white &,
+    .u-bg-light-gray &,
+    .u-bg-tan & {
+        color: $dark-gray;
+    }
 }
 
 pre {

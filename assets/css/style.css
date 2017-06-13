@@ -1407,6 +1407,15 @@ blockquote {
   margin: 0; }
   blockquote p {
     margin: 0; }
+  .u-bg-red blockquote, .badge-positioner .badge blockquote,
+  .u-bg-dark-gray blockquote {
+    color: white; }
+  .u-bg-blue blockquote {
+    color: #dddad5; }
+  .u-bg-white blockquote,
+  .u-bg-light-gray blockquote,
+  .u-bg-tan blockquote {
+    color: #272727; }
 
 pre {
   background: #eeeeee;
