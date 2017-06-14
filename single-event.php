@@ -18,14 +18,14 @@ $postId = null;
                     $postId = $post->ID;
                 }
 
-                include HBSC_PATH . '/partials/events/details-section.php';
+                include HBSC_PATH . 'partials/events/details-section.php';
             }
 
             // DISCUSSION LEADERS
-            include HBSC_PATH . '/partials/events/discussion-leaders-section.php';
+            include HBSC_PATH . 'partials/events/discussion-leaders-section.php';
 
             // ONLINE DISCUSSION
-            include HBSC_PATH . '/partials/events/online-discussion-section.php';
+            include HBSC_PATH . 'partials/events/online-discussion-section.php';
 
             // UPCOMING SALONS
             $upcomingEventsSectionConfig = array(
@@ -33,7 +33,7 @@ $postId = null;
                 'direction' => 'inline'
             );
 
-            include HBSC_PATH . '/partials/events/upcoming-section.php';
+            include HBSC_PATH . 'partials/events/upcoming-section.php';
         ?>
     </div>
 <?php get_footer(); ?>

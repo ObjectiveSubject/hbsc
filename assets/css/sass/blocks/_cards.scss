@@ -54,6 +54,18 @@ TODO clean up the !important
         @extend .u-mt-3;
     }
 
+    .card-event-title
+    {
+        margin-bottom: 2rem;
+    }
+
+    .card-date
+    {
+        color: white;
+        margin: 0  0 2rem 0;
+        font-size: 2.2rem;
+    }
+
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
         @extend .u-mt-3;
@@ -93,8 +105,76 @@ TODO clean up the !important
         min-height: 16.5rem;;
         justify-content: center;
         padding: 3rem 1.5rem;
-    }        
+    }
+
+    .card-event-details
+    {
+        @include justify-content(space-around);
+        @include flex-direction(column);
+        flex-wrap: wrap;
+        display: flex;
+        padding: 2rem;
+        border-top: 1px solid rgba(255,255,255,.15);
+        border-bottom: 1px solid rgba(255,255,255,.15);
+        margin: 0 0 3rem 0;
+
+        @include media($md)
+        {
+            @include flex-direction(row);
+        }
+
+        .card-event-item
+        {
+            @include flex-direction(column);
+            display: flex;            
+            margin-bottom: 1rem;
+            
+            &:last-child
+            {
+                margin-bottom: 0rem;
+            }
+
+            @include media($md)
+            {
+                margin-bottom: 0rem;
+            }            
+        }
+
+        .event-item-title
+        {
+            color: $light-gray;
+        }
+
+        .event-item-content
+        {
+            color: white;
+        }        
+    }
 }
+
+.card-event-register
+{
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    margin-right: 0rem;
+    z-index: 15;
+
+    .button
+    {
+        background-color: #e74949!important;
+        border: none;
+        text-transform: uppercase;
+        padding: .5rem 3rem;
+        color: white;
+
+        &:hover
+        {
+            color: $light-gray;
+        }
+    }
+}
+
 .card-positioner {
     .module--hero & {
         width: 100%;
@@ -104,6 +184,25 @@ TODO clean up the !important
             padding-top: 0;
         }
     }
+
+    &.card-positioner-fullwidth
+    {
+        width: 100%;
+        .card-content
+        {
+            p
+            {
+                margin-top: 0;
+            }
+
+            margin-top: 0;
+            @include media($md)
+            {
+                margin-top: 0;
+            }
+        }
+    }
+
     .module--carousel &
     {
         float: right;
@@ -142,7 +241,8 @@ TODO clean up the !important
         }         
     }
 
-    .event--upcoming-item-left &  {
+    .event--upcoming-item-left & 
+    {
         position: absolute;
         left: 0;
         z-index: 10;
@@ -209,6 +309,7 @@ TODO clean up the !important
         }        
     }
 }
+
 .card-content {
     @extend .u-my-3;
     .module--carousel &,
