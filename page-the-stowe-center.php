@@ -30,6 +30,7 @@ get_header(); ?>
                         </div>
                     </header>
                     <aside class="module__sidebar">
+                        <?php if( get_option('hbsc_holiday_open') || get_option('hbsc_holiday_closed') ) : ?>
                         <div class="sidebar">
                             <?php if( get_option('hbsc_holiday_open') ) : ?>
                             <p class="u-caps"><b>Open</b></p>
@@ -40,6 +41,7 @@ get_header(); ?>
                             <p><?php echo get_option('hbsc_holiday_closed'); ?></p>
                             <?php endif; ?>
                         </div>
+                        <?php endif; ?>
                     </aside>
                     <div class="module__body">
                         <?php if( get_option('hbsc_closed_today') ) : ?>
