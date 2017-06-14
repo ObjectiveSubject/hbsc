@@ -69,13 +69,13 @@
     position: absolute;
     right: 0;
     top: 2rem;
-    width: rem(28);
+    width: 1.675rem;
     height: rem(24);
     padding: 0;
     span {
         position: absolute;
         left: 0;
-        width: rem(28);
+        width: 1.675rem;
         height: rem(4);
         background-color: $dark-gray;
         @extend .u-transition-300;
