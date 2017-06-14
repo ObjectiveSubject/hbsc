@@ -9,6 +9,7 @@
 
     if( $leadersPosts->have_posts() )
     {
+        $leadersPosts->the_post()
 ?>
         <section class="module u-bg-light-gray">
             <div class="module__content u-container">
@@ -17,7 +18,7 @@
                         <?php echo get_field('event_title_discussion_leaders'); ?>
                     </div>
                 </header>
-                <div class="module__body">
+                <div class="module__body event--discussion-leaders">
                 <?php
                     while( $leadersPosts->have_posts() )
                     {

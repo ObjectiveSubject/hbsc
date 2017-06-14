@@ -22,21 +22,31 @@
     {
         left: 0;
         z-index: 14;
+        right: initial;
+        bottom: initial;
+        top: 2rem;
+        
         @include media($md)
         {
-            left: 7.25rem;
-            top: 2rem;
+            left: 7.25rem;       
+            right: initial;
+            bottom: initial;
         }
     }
 
     .event--upcoming-item-right &
     {
         right: 0;
+        left: initial;
         z-index: 14;
+        bottom: initial;
+        top: 2rem;
+
         @include media($md)
         {
             right: 7.25rem;
-            top: 2rem;
+            left: initial;
+            bottom: initial;
         }
     }
 

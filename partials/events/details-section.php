@@ -4,13 +4,13 @@
             <div class="card-event-register">
                 <a href="#" class="button module-button">Register</a>
             </div>
-            
+
             <div class="card u-bg-dark-gray js-slide-in">
                 <div class="card-title">
                     SALONS AT STOWE
                 </div>
                 <?php
-                    if( get_field('event_registration_open') == 1 && !isDateOlderThanNow(get_field('event_start_date')) )
+                    if( get_field('event_registration_open') && !isDateOlderThanNow(get_field('event_start_date')) )
                     {
                 ?>
 
@@ -56,7 +56,7 @@
 
                 <div class="card-button">
                 <?php
-                    if( get_field('event_display_discussions') == 1 )
+                    if( $eventDisplayDiscussion == 1 )
                     {
                 ?>                
                         <a href="#join_the_discussion" class="button module-button">Join the discussion</a>

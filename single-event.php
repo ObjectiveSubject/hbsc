@@ -6,6 +6,7 @@ get_header();
 
 $Event = new Event();
 $postId = null;
+$eventDisplayDiscussion = null;
 ?>
     <div class="site-content">
         <?php
@@ -18,7 +19,12 @@ $postId = null;
                     $postId = $post->ID;
                 }
 
-                include HBSC_PATH . 'partials/events/details-section.php';
+                if( null !== get_field('event_display_discussions') && null === $eventDisplayDiscussion )
+                {
+                    $eventDisplayDiscussion = get_field('event_display_discussions');
+                }                
+
+                include HBSC_PATH . 'partials/events/details-section.php';           
             }
 
             // DISCUSSION LEADERS

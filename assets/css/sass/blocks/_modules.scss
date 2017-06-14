@@ -72,7 +72,7 @@
     .module--events-upcoming-inline &,
     .module--past-salons & {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         @include justify-content(center);
 

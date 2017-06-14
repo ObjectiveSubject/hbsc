@@ -2,6 +2,7 @@
 {
     margin-bottom: 4rem;
     overflow: hidden;
+    width: 100%;
 
     @include media($md)
     {        
@@ -66,7 +67,7 @@
             margin-left: -1.6rem;
             @include media($md)
             {
-                padding-right: 18rem;
+                padding-right: 18rem;                
                 margin-left: 0;
             }
         }
@@ -93,20 +94,55 @@
 
 .event--upcoming-item-right
 {
+    padding-right : 0;
+
     @include media($md)
-    {
-        margin-right: 4rem;
+    {        
         margin-bottom: 8rem;
         padding-bottom: 5rem;
+        padding-right: 4rem;
     }
 }
 
 .event--upcoming-item-left
 {
+    padding-left : 0;
+
     @include media($md)
     {
-        margin-left: 4rem;
+        padding-left: 4rem;
         margin-bottom: 8rem;
         padding-bottom: 5rem;
     }
+}
+
+.event--discussion-leaders
+{
+    @include justify-content(center);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include media($md)
+    {
+        @include justify-content(space-around);
+        flex-direction: row;
+    }
+
+    .discussion-leader
+    {
+        width: 100%;
+
+        .image
+        {
+            background-size: cover;
+            background-position: center;
+            padding-bottom: 80%;
+        }
+
+        @include media($md)
+        {
+            width: 40%;    
+        }
+    }   
 }

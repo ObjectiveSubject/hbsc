@@ -16,7 +16,12 @@ get_header(); ?>
                 <header class="module__header">
                     <div class="module-title">
                         <!-- Temporary -->
-                        <?php foreach ($role as $r) { echo $r->name . ' Members'; } ?>
+                        <?php 
+                            if( $role )
+                            {
+                                foreach ($role as $r) { echo $r->name . ' Members'; } 
+                            }
+                        ?>
                     </div>
                     <div class="u-text-center u-mt-3">
                         <div class="h2"><?php the_title(); ?></div>
@@ -55,7 +60,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <footer class="module__footer">
-                    <a href="#" class="button module-button">Salons at Stowe</a>
+                    <a href="/salons-at-stowe/" class="button module-button">Salons at Stowe</a>
                 </footer>
             </div>
         </section>

@@ -25,7 +25,7 @@ get_header();
         <div class="module__content u-container">
             <header class="module__header">
                 <div class="module-title">
-                    Calendar
+                    <?php echo the_title(); ?>
                 </div>
             </header>
             
