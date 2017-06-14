@@ -5,22 +5,35 @@
     text-transform: uppercase;
     pointer-events: initial;
 }
+.site-header__content {
+    @include display(flex);
+    @include justify-content(center);
+    color: $tan;
+    @include media($md) {
+        @include justify-content(space-between);
+    }
+}
 .site-nav {
-    
+    @extend .u-py-1;
+    @extend .u-mr-3;
 }
 .site-menu {
     @include position(relative);
     @include display(inline-block);
+    width: 100%;
     background: $tan;
     pointer-events: auto;
-    &::before {
-        content: '';
-        @include position(absolute);
-        top: 0;
-        bottom: 0;
-        width: 100vw;
-        right: 100%;
-        background: $tan;
+    @include media($md) {
+        width: auto;
+        &::before {
+            content: '';
+            @include position(absolute);
+            top: 0;
+            bottom: 0;
+            width: 100vw;
+            right: 100%;
+            background: $tan;
+        }
     }
 }
 .search-toggle {
@@ -30,13 +43,12 @@
     }
 }
 .header-logo-container {
-    @extend .u-py-1;
-    @extend .u-mr-3;
 }
 .header-logo {
     width: rem(192);
 }
 .site-menu-toggle {
+    @extend .u-display-block-md;
     @include position(absolute);
     bottom: rem(8);
     right: 0;
@@ -52,12 +64,57 @@
         transform: rotate(180deg);
     }
 }
+.site-mobile-menu-toggle {
+    @extend .u-display-none-md;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    width: rem(28);
+    height: rem(24);
+    padding: 0;
+    span {
+        position: absolute;
+        left: 0;
+        width: rem(28);
+        height: rem(4);
+        background-color: $dark-gray;
+        @extend .u-transition-300;
+        &:nth-child(1) {
+            transform-origin: 0 100%;
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: rem(10);
+        }
+        &:nth-child(3) {
+            transform-origin: 0 0;
+            bottom: 0;
+        }
+    }
+    .site-menu.is-expanded & {
+        span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
 // Menu toggle behaviour
 .header-menu {
+    @include display(none);
     .sub-menu {
         &.is-expanded {
             @include display(block);
         }
+    }
+    @include media($md) {
+        @include display(block);
     }
 }
 .site-menu.is-expanded {

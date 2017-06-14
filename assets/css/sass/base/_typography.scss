@@ -27,7 +27,7 @@ textarea {
  h1, .h1 {
     @include display(block);
     @extend .u-font-rama-gothic;
-	font-size: rem(48);
+	font-size: rem(64);
     line-height: .75;
     font-weight: normal;
     margin: 0;
@@ -38,7 +38,7 @@ textarea {
  h2, .h2 {
     @include display(block);
     @extend .u-font-rama-gothic;
-	font-size: rem(36);
+	font-size: rem(56);
     line-height: .75;
     font-weight: normal;
     margin: 0;
@@ -49,7 +49,7 @@ textarea {
  h3, .h3 {
     @include display(block);
     @extend .u-font-rama-slab;
-	font-size: rem(36);
+	font-size: rem(56);
     line-height: .75;
     font-weight: normal;
     margin: 0;

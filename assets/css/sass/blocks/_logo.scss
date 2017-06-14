@@ -27,21 +27,23 @@
         /*transition: transform 300ms 300ms ease,
                       padding-bottom 300ms ease;*/ //reverse effect
     }
-    .masthead--collapsed & {
-        padding-bottom: 0;
-        margin-bottom: 0;
-        transform: translateX(-112.5%); // 112.5% = 192px (100%) + 24px (12.5%),
-        transition: transform 300ms ease,
-                    padding-bottom 300ms 300ms ease,
-                    margin-bottom 300ms 300ms ease;
-        .logotype {
-            opacity: 0;
-            visibility: hidden;
-            transition-delay: 300ms;
-        }
-        body.home & {
-            padding-bottom: 27.3504274%;
-            @extend .u-mb-1;
+    @include media($md) {
+        .masthead--collapsed & {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            transform: translateX(-112.5%); // 112.5% = 192px (100%) + 24px (12.5%),
+            transition: transform 300ms ease,
+                        padding-bottom 300ms 300ms ease,
+                        margin-bottom 300ms 300ms ease;
+            .logotype {
+                opacity: 0;
+                visibility: hidden;
+                transition-delay: 300ms;
+            }
+            body.home & {
+                padding-bottom: 27.3504274%;
+                margin-bottom: 1rem;
+            }
         }
     }
 }

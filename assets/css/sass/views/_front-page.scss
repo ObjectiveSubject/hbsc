@@ -4,10 +4,12 @@ body.home {
     }
     .preface-text {
         @extend .h4;
-        margin-left: rem(320);
         text-align: left;
         p {
             margin-top: 0;
+        }
+        @include media($md) {
+            margin-left: rem(320);
         }
     }
 }

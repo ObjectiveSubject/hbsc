@@ -52,6 +52,7 @@ get_header(); ?>
                             <?php hbsc_opening_hours_today(); ?>
                         </div>
                         <?php endif; ?>
+                        <p>The Stowe Center grounds are open dawn to dusk year round. Stowe House tours step off on the half hour with the last tour of the day at 4:30 PM. Tour times may be affected by group visits.</p>
                         <table>
                             <tbody>
                                 <tr>
