@@ -26,20 +26,30 @@ get_header(); ?>
                 <div class="module__content u-container">
                     <header class="module__header">
                         <div class="module-title">
-                            Hours &amp; Tickets
+                            Hours
                         </div>
                     </header>
                     <aside class="module__sidebar">
                         <div class="sidebar">
-                            <p>CLOSED ON</p>
-                            <p>Easter Sunday, Independence Day, Thanksgiving Day</p>
+                            <?php if( get_option('hbsc_holiday_open') ) : ?>
+                            <p class="u-caps"><b>Open</b></p>
+                            <p><?php echo get_option('hbsc_holiday_open'); ?></p>
+                            <?php endif; ?>
+                            <?php if( get_option('hbsc_holiday_closed') ) : ?>
+                            <p class="u-caps"><b>Closed</b></p>
+                            <p><?php echo get_option('hbsc_holiday_closed'); ?></p>
+                            <?php endif; ?>
                         </div>
                     </aside>
                     <div class="module__body">
+                        <?php if( get_option('hbsc_closed_today') ) : ?>
+                        <h5>Closed Today</h5>
+                        <?php else : ?>
                         <h5>Open Today</h5>
                         <div class="u-font-miller-italic u-font-size-xl">
                             <?php hbsc_opening_hours_today(); ?>
                         </div>
+                        <?php endif; ?>
                         <table>
                             <tbody>
                                 <tr>
@@ -72,110 +82,17 @@ get_header(); ?>
                                 </tr>
                             </tbody>
                         </table>
-                        <?php if( have_rows('tours') ):
-                            while( have_rows('tours') ): the_row(); ?>
-                            <h5><?php the_sub_field('tour_name'); ?></h5>
-                            <p><?php the_sub_field('tour_description'); ?></p>
-                            <?php if( have_rows('tour_ticket_pricing') ): ?>
-                            <table>
-                                <tbody>
-                                    <?php while( have_rows('tour_ticket_pricing') ): the_row(); ?>
-                                    <tr>
-                                        <td><?php the_sub_field('tour_ticket_type'); ?></td>
-                                        <td><?php the_sub_field('tour_ticket_price'); ?></td>
-                                    </tr>
-                                    <?php endwhile; ?>
-                                </tbody>
-                            </table>
-                            <?php endif;
-                            endwhile;
-                        endif; ?>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="module module--basic">
-                <div class="module__content u-container">
-                    <header class="module__header">
-                        <div class="module-title">
-                            Tours
-                        </div>
-                    </header>
-                    <div class="module__body">
-                        <div class="module-row">
-                            <div class="module-column">Accordion</div>
-                            <div class="module-column">Image</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="module module--basic">
-                <div class="module__content u-container">
-                    <header class="module__header">
-                        <div class="module-title">
-                            Directions
-                        </div>
-                    </header>
-                    <div class="module__body">
-                        <h5>Harriet Beecher Stowe Center</h5>
-                        <p>
-                            <?php
-                            echo get_option('hbsc_address') . '<br>';
-                            echo get_option('hbsc_phone') . '<br>';
-                            echo get_option('hbsc_email');
-                            ?>
-                        </p>
-                        <p>MAP</p>
-                        <div class="module-row">
-                            <div class="module-column">
-                                <p>
-                                    <b>From the North</b><br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
-                                </p>
-                                <p>
-                                    <b>From the South</b><br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
-                                </p>
-                            </div>
-                            <div class="module-column">
-                                <p>
-                                    <b>From the East</b><br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
-                                </p>
-                                <p>
-                                    <b>From the West</b><br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum blanditiis mollitia ad.
-                                </p>
-                            </div>
-                        </div>
-                        <h5>Free Parking</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates distinctio nemo quasi quod consequatur nobis ullam dolorem a id minima, vero ad, sint excepturi saepe, omnis odit blanditiis accusamus et.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="module module--basic">
-                <div class="module__content u-container">
-                    <header class="module__header">
-                        <div class="module-title">
-                            Store
-                        </div>
-                    </header>
-                    <div class="module__body">
-                        <div class="module-row">
-                            <div class="module-column">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto repellendus, a tempora dolor adipisci quidem aspernatur quisquam necessitatibus corporis rerum? Recusandae non itaque minima distinctio incidunt, esse eveniet totam numquam.
-                                <p class="u-font-size-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, consectetur.</p>
-                                <a href="#" class="button u-mt-2">Online Store</a>
-                            </div>
-                            <div class="module-column">Image</div>
-                        </div>
                     </div>
                 </div>
             </section>
 
 		<?php endwhile; ?>
+		
+		<?php if( have_rows('module') ): ?>
+
+            <?php get_template_part( 'partials/page', 'modules' ); ?>
+
+        <?php endif; ?>
 
 	</div>
 
