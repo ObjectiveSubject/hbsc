@@ -3,7 +3,9 @@
  * General page template
  */
 $postId = null;
-get_header(); ?>
+get_header();
+$eventStartDate = null;
+?>
 
 	<div class="site-content">
 		<?php 
@@ -13,7 +15,12 @@ get_header(); ?>
                 if( null !== $post->ID && null === $postId )
                 {
                     $postId = $post->ID;
-                }                
+                }
+
+                if( null !== get_field('event_start_date') && null === $eventStartDate )
+                {
+                    $eventStartDate = get_field('event_start_date');
+                }
         ?>
 		    <section class="preface section <?php the_field('preface_background_color'); ?>">
                 <div class="section__content u-container">
@@ -41,10 +48,11 @@ get_header(); ?>
 
         <!-- Upcoming section -->
         <?php
-            // UPCOMING SALONS
+            // UPCOMING SALONS            
             $upcomingEventsSectionConfig = array(
                 'classes' => 'module--events-upcoming-list u-bg-light-gray',
-                'direction' => 'list'
+                'direction' => 'list',
+                'start_date' => $eventStartDate
             );
 
             include HBSC_PATH . 'partials/events/upcoming-section.php';

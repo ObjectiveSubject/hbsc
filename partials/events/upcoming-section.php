@@ -3,7 +3,8 @@
     {
         $upcomingEventsSectionConfig = array(
             'classes' => 'module--events-upcoming-inline u-bg-white',
-            'direction' => 'inline'
+            'direction' => 'inline',
+            'start_date' => date('Y-m-d')
         );
     }
 
@@ -16,8 +17,8 @@
         'meta_key'		 => 'event_start_date',
         'meta_query' => array(
             array(
-                'key' => 'event_end_date',
-                'value' => get_field('event_end_date'),
+                'key' => 'event_start_date',
+                'value' => $upcomingEventsSectionConfig['start_date'],
                 'compare' => '>=',
                 'type' => 'DATE'
             )
@@ -63,5 +64,9 @@
     </div>
 </section>
 <?php
+    }
+    else
+    {
+        echo 'No upcoming events';
     }
 ?>

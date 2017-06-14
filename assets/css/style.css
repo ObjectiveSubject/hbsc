@@ -1258,7 +1258,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1316,7 +1316,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1972,36 +1972,37 @@ TODO clean up the !important
   width: 100%;
   padding: 2rem; }
 
-.module--events-upcoming-inline .card-title,
-.module--events-upcoming-list .card-title {
-  color: white !important;
-  border-color: rgba(255, 255, 255, 0.55) !important; }
-  .module--events-upcoming-inline .card-title .h2,
-  .module--events-upcoming-inline .card-title .h3,
-  .module--events-upcoming-inline .card-title h2,
-  .module--events-upcoming-inline .card-title h3,
-  .module--events-upcoming-list .card-title .h2,
-  .module--events-upcoming-list .card-title .h3,
-  .module--events-upcoming-list .card-title h2,
-  .module--events-upcoming-list .card-title h3 {
-    color: white !important; }
-  @media screen and (min-width: 768px) {
-    .module--events-upcoming-inline .card-title,
-    .module--events-upcoming-list .card-title {
-      border-color: transparent !important; } }
-
-.module--past-salons [class*=u-bg-] .card-title {
-  border-color: transparent; }
-  .module--past-salons [class*=u-bg-] .card-title h2, .module--past-salons [class*=u-bg-] .card-title h3 {
-    font-size: 3rem; }
-    .module--past-salons [class*=u-bg-] .card-title h2 a, .module--past-salons [class*=u-bg-] .card-title h3 a {
-      color: #272727; }
-
-.module--events-upcoming-list .card-title {
-  margin-bottom: 0rem; }
-  @media screen and (min-width: 768px) {
-    .module--events-upcoming-list .card-title {
-      margin-bottom: 1rem; } }
+.card-title {
+  word-wrap: break-word; }
+  .module--events-upcoming-inline .card-title,
+  .module--events-upcoming-list .card-title {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.55) !important; }
+    .module--events-upcoming-inline .card-title .h2,
+    .module--events-upcoming-inline .card-title .h3,
+    .module--events-upcoming-inline .card-title h2,
+    .module--events-upcoming-inline .card-title h3,
+    .module--events-upcoming-list .card-title .h2,
+    .module--events-upcoming-list .card-title .h3,
+    .module--events-upcoming-list .card-title h2,
+    .module--events-upcoming-list .card-title h3 {
+      font-size: 3.5rem;
+      color: white !important; }
+    @media screen and (min-width: 768px) {
+      .module--events-upcoming-inline .card-title,
+      .module--events-upcoming-list .card-title {
+        border-color: transparent !important; } }
+  .module--past-salons [class*=u-bg-] .card-title {
+    border-color: transparent; }
+    .module--past-salons [class*=u-bg-] .card-title h2, .module--past-salons [class*=u-bg-] .card-title h3 {
+      font-size: 3rem; }
+      .module--past-salons [class*=u-bg-] .card-title h2 a, .module--past-salons [class*=u-bg-] .card-title h3 a {
+        color: #272727; }
+  .module--events-upcoming-list .card-title {
+    margin-bottom: 0rem; }
+    @media screen and (min-width: 768px) {
+      .module--events-upcoming-list .card-title {
+        margin-bottom: 1rem; } }
 
 .module--carousel .card-content,
 .module--events-upcoming-list .card-content {
@@ -2057,6 +2058,7 @@ TODO clean up the !important
   .carousel-slide__content .image {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 0;
     padding-bottom: 60%; }
     .carousel-slide__content .image.image--grayscale {
@@ -2272,7 +2274,7 @@ label {
     padding-bottom: 0;
     margin-bottom: 0;
     transform: translateX(-112.5%);
-    transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+    transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
     .masthead--collapsed .hbsc-logo .logotype {
       opacity: 0;
       visibility: hidden;
@@ -2566,11 +2568,12 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  word-wrap: break-word; }
   [class*='u-bg-'] .section-title, [class*='u-bg-'] .module-title, [class*='u-bg-'] .card-title {
     color: #dddad5;
     border-color: rgba(255, 255, 255, 0.15); }
@@ -2693,10 +2696,13 @@ caption {
 
 .event--past-salon__content {
   position: relative; }
-  .event--past-salon__content .image {
-    min-height: 20rem; }
   .event--past-salon__content .image-positioner {
     margin-left: 4rem; }
+    .event--past-salon__content .image-positioner .image {
+      min-height: 20rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
 
 .event--upcoming__content {
   position: relative; }
@@ -3016,7 +3022,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
@@ -3105,7 +3111,7 @@ body.home .preface-text {
       transform-origin: 0 100%;
       top: 0; }
     .site-mobile-menu-toggle span:nth-child(2) {
-      top: 0.63rem; }
+      top: 0.62rem; }
     .site-mobile-menu-toggle span:nth-child(3) {
       transform-origin: 0 0;
       bottom: 0; }

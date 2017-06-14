@@ -88,7 +88,6 @@ get_header();
 </div>
 <?php get_footer(); ?>
 <script>window.$ = jQuery;</script>
-<script type='text/javascript' src='/wp-content/themes/hbsc/assets/js/vendor/zabuto_calendar.js?ver=0.1.0'></script>
 
 <script type="application/javascript">
     var calEvents;

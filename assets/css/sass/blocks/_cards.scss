@@ -294,6 +294,7 @@ TODO clean up the !important
 }
 .card-title {
     @extend .module-title;
+    word-wrap: break-word;    
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
 
@@ -304,6 +305,7 @@ TODO clean up the !important
         h2,
         h3
         {
+            font-size: 3.5rem;
             color: white!important;
         }
         border-color: rgba(255,255,255,.55)!important;

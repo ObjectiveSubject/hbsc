@@ -34,14 +34,16 @@
 {
     position: relative;
 
-    .image
-    {
-        min-height: 20rem;
-    }
-
     .image-positioner
     {
         margin-left: 4rem;
+        .image
+        {
+            min-height: 20rem;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;            
+        }        
     }
 }
 

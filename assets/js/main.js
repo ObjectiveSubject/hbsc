@@ -6212,13 +6212,13 @@ if (typeof jQuery == 'undefined') {
  * @param options
  * @returns {*}
  */
-$.fn.zabuto_calendar = function (options) {
-    var opts = $.extend({}, $.fn.zabuto_calendar_defaults(), options);
-    var languageSettings = $.fn.zabuto_calendar_language(opts.language);
-    opts = $.extend({}, opts, languageSettings);
+jQuery.fn.zabuto_calendar = function (options) {
+    var opts = jQuery.extend({}, jQuery.fn.zabuto_calendar_defaults(), options);
+    var languageSettings = jQuery.fn.zabuto_calendar_language(opts.language);
+    opts = jQuery.extend({}, opts, languageSettings);
 
     this.each(function () {
-        var $calendarElement = $(this);
+        var $calendarElement = jQuery(this);
         $calendarElement.attr('id', "zabuto_calendar_" + Math.floor(Math.random() * 99999).toString(36));
 
         $calendarElement.data('initYear', opts.year);
@@ -6248,12 +6248,12 @@ $.fn.zabuto_calendar = function (options) {
 
             var tableClassHtml = ($calendarElement.data('cellBorder') === true) ? ' table-bordered' : '';
 
-            $tableObj = $('<table class="table' + tableClassHtml + '"></table>');
+            $tableObj = jQuery('<table class="table' + tableClassHtml + '"></table>');
             $tableObj = drawTable($calendarElement, $tableObj, dateInitObj.getFullYear(), dateInitObj.getMonth());
 
             $legendObj = drawLegend($calendarElement);
 
-            var $containerHtml = $('<div class="zabuto_calendar" id="' + $calendarElement.attr('id') + '"></div>');
+            var $containerHtml = jQuery('<div class="zabuto_calendar" id="' + $calendarElement.attr('id') + '"></div>');
             $containerHtml.append($tableObj);
             $containerHtml.append($legendObj);
 
@@ -6278,10 +6278,10 @@ $.fn.zabuto_calendar = function (options) {
         }
 
         function drawLegend($calendarElement) {
-            var $legendObj = $('<div class="legend" id="' + $calendarElement.attr('id') + '_legend"></div>');
+            var $legendObj = jQuery('<div class="legend" id="' + $calendarElement.attr('id') + '_legend"></div>');
             var legend = $calendarElement.data('legendList');
             if (typeof(legend) == 'object' && legend.length > 0) {
-                $(legend).each(function (index, item) {
+                jQuery(legend).each(function (index, item) {
                     if (typeof(item) == 'object') {
                         if ('type' in item) {
                             var itemLabel = '';
@@ -6317,8 +6317,8 @@ $.fn.zabuto_calendar = function (options) {
                                     break;
                                 case 'list':
                                     if ('list' in item && typeof(item.list) == 'object' && item.list.length > 0) {
-                                        var $legendUl = $('<ul class="legend"></u>');
-                                        $(item.list).each(function (listIndex, listClassName) {
+                                        var $legendUl = jQuery('<ul class="legend"></u>');
+                                        jQuery(item.list).each(function (listIndex, listClassName) {
                                             $legendUl.append('<li class="' + listClassName + '"></li>');
                                         });
                                         $legendObj.append($legendUl);
@@ -6339,8 +6339,8 @@ $.fn.zabuto_calendar = function (options) {
 
         function appendMonthHeader($calendarElement, $tableObj, year, month) {
             var navIcons = $calendarElement.data('navIcons');
-            var $prevMonthNavIcon = $('<span><span class="glyphicon glyphicon-chevron-left"></span></span>');
-            var $nextMonthNavIcon = $('<span><span class="glyphicon glyphicon-chevron-right"></span></span>');
+            var $prevMonthNavIcon = jQuery('<span><span class="glyphicon glyphicon-chevron-left"></span></span>');
+            var $nextMonthNavIcon = jQuery('<span><span class="glyphicon glyphicon-chevron-right"></span></span>');
             if (typeof(navIcons) === 'object') {
                 if ('prev' in navIcons) {
                     $prevMonthNavIcon.html(navIcons.prev);
@@ -6355,7 +6355,7 @@ $.fn.zabuto_calendar = function (options) {
                 prevIsValid = checkMonthLimit($calendarElement.data('showPrevious'), true);
             }
 
-            var $prevMonthNav = $('<div class="calendar-month-navigation"></div>');
+            var $prevMonthNav = jQuery('<div class="calendar-month-navigation"></div>');
             $prevMonthNav.attr('id', $calendarElement.attr('id') + '_nav-prev');
             $prevMonthNav.data('navigation', 'prev');
             if (prevIsValid !== false) {
@@ -6380,7 +6380,7 @@ $.fn.zabuto_calendar = function (options) {
                 nextIsValid = checkMonthLimit($calendarElement.data('showNext'), false);
             }
 
-            var $nextMonthNav = $('<div class="calendar-month-navigation"></div>');
+            var $nextMonthNav = jQuery('<div class="calendar-month-navigation"></div>');
             $nextMonthNav.attr('id', $calendarElement.attr('id') + '_nav-next');
             $nextMonthNav.data('navigation', 'next');
             if (nextIsValid !== false) {
@@ -6402,19 +6402,19 @@ $.fn.zabuto_calendar = function (options) {
 
             var monthLabels = $calendarElement.data('monthLabels');
 
-            var $prevMonthCell = $('<th></th>').append($prevMonthNav);
-            var $nextMonthCell = $('<th></th>').append($nextMonthNav);
+            var $prevMonthCell = jQuery('<th></th>').append($prevMonthNav);
+            var $nextMonthCell = jQuery('<th></th>').append($nextMonthNav);
 
-            var $currMonthLabel = $('<span>' + monthLabels[month] + ' ' + year + '</span>');
+            var $currMonthLabel = jQuery('<span>' + monthLabels[month] + ' ' + year + '</span>');
             $currMonthLabel.dblclick(function () {
                 var dateInitObj = $calendarElement.data('initDate');
                 drawTable($calendarElement, $tableObj, dateInitObj.getFullYear(), dateInitObj.getMonth());
             });
 
-            var $currMonthCell = $('<th colspan="5"></th>');
+            var $currMonthCell = jQuery('<th colspan="5"></th>');
             $currMonthCell.append($currMonthLabel);
 
-            var $monthHeaderRow = $('<tr class="calendar-month-header"></tr>');
+            var $monthHeaderRow = jQuery('<tr class="calendar-month-header"></tr>');
             $monthHeaderRow.append($prevMonthCell, $currMonthCell, $nextMonthCell);
 
             $tableObj.append($monthHeaderRow);
@@ -6426,13 +6426,13 @@ $.fn.zabuto_calendar = function (options) {
                 var weekStartsOn = $calendarElement.data('weekStartsOn');
                 var dowLabels = $calendarElement.data('dowLabels');
                 if (weekStartsOn === 0) {
-                    var dowFull = $.extend([], dowLabels);
+                    var dowFull = jQuery.extend([], dowLabels);
                     var sunArray = new Array(dowFull.pop());
                     dowLabels = sunArray.concat(dowFull);
                 }
 
-                var $dowHeaderRow = $('<tr class="calendar-dow-header"></tr>');
-                $(dowLabels).each(function (index, value) {
+                var $dowHeaderRow = jQuery('<tr class="calendar-dow-header"></tr>');
+                jQuery(dowLabels).each(function (index, value) {
                     $dowHeaderRow.append('<th>' + value + '</th>');
                 });
                 $tableObj.append($dowHeaderRow);
@@ -6463,7 +6463,7 @@ $.fn.zabuto_calendar = function (options) {
             }
 
             for (var wk = 0; wk < weeksInMonth; wk++) {
-                var $dowRow = $('<tr class="calendar-dow"></tr>');
+                var $dowRow = jQuery('<tr class="calendar-dow"></tr>');
                 for (var dow = 0; dow < 7; dow++) {
                     if (dow < firstDow || currDayOfMonth > lastDayinMonth) {
                         $dowRow.append('<td></td>');
@@ -6471,7 +6471,7 @@ $.fn.zabuto_calendar = function (options) {
                         var dateId = $calendarElement.attr('id') + '_' + dateAsString(year, month, currDayOfMonth);
                         var dayId = dateId + '_day';
 
-                        var $dayElement = $('<div id="' + dayId + '" class="day" >' + currDayOfMonth + '</div>');
+                        var $dayElement = jQuery('<div id="' + dayId + '" class="day" >' + currDayOfMonth + '</div>');
                         $dayElement.data('day', currDayOfMonth);
 
                         if ($calendarElement.data('showToday') === true) {
@@ -6480,7 +6480,7 @@ $.fn.zabuto_calendar = function (options) {
                             }
                         }
 
-                        var $dowElement = $('<td id="' + dateId + '"></td>');
+                        var $dowElement = jQuery('<td id="' + dateId + '"></td>');
                         $dowElement.append($dayElement);
 
                         $dowElement.data('date', dateAsString(year, month, currDayOfMonth));
@@ -6489,7 +6489,7 @@ $.fn.zabuto_calendar = function (options) {
                         if (typeof($calendarElement.data('actionFunction')) === 'function') {
                             $dowElement.addClass('dow-clickable');
                             $dowElement.click(function () {
-                                $calendarElement.data('selectedDate', $(this).data('date'));
+                                $calendarElement.data('selectedDate', jQuery(this).data('date'));
                             });
                             $dowElement.click($calendarElement.data('actionFunction'));
                         }
@@ -6511,30 +6511,30 @@ $.fn.zabuto_calendar = function (options) {
         /* ----- Modal functions ----- */
 
         function createModal(id, title, body, footer) {
-            var $modalHeaderButton = $('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>');
-            var $modalHeaderTitle = $('<h4 class="modal-title" id="' + id + '_modal_title">' + title + '</h4>');
+            var $modalHeaderButton = jQuery('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>');
+            var $modalHeaderTitle = jQuery('<h4 class="modal-title" id="' + id + '_modal_title">' + title + '</h4>');
 
-            var $modalHeader = $('<div class="modal-header"></div>');
+            var $modalHeader = jQuery('<div class="modal-header"></div>');
             $modalHeader.append($modalHeaderButton);
             $modalHeader.append($modalHeaderTitle);
 
-            var $modalBody = $('<div class="modal-body" id="' + id + '_modal_body">' + body + '</div>');
+            var $modalBody = jQuery('<div class="modal-body" id="' + id + '_modal_body">' + body + '</div>');
 
-            var $modalFooter = $('<div class="modal-footer" id="' + id + '_modal_footer"></div>');
+            var $modalFooter = jQuery('<div class="modal-footer" id="' + id + '_modal_footer"></div>');
             if (typeof(footer) !== 'undefined') {
-                var $modalFooterAddOn = $('<div>' + footer + '</div>');
+                var $modalFooterAddOn = jQuery('<div>' + footer + '</div>');
                 $modalFooter.append($modalFooterAddOn);
             }
 
-            var $modalContent = $('<div class="modal-content"></div>');
+            var $modalContent = jQuery('<div class="modal-content"></div>');
             $modalContent.append($modalHeader);
             $modalContent.append($modalBody);
             $modalContent.append($modalFooter);
 
-            var $modalDialog = $('<div class="modal-dialog"></div>');
+            var $modalDialog = jQuery('<div class="modal-dialog"></div>');
             $modalDialog.append($modalContent);
 
-            var $modalFade = $('<div class="modal fade" id="' + id + '_modal" tabindex="-1" role="dialog" aria-labelledby="' + id + '_modal_title" aria-hidden="true"></div>');
+            var $modalFade = jQuery('<div class="modal fade" id="' + id + '_modal" tabindex="-1" role="dialog" aria-labelledby="' + id + '_modal_title" aria-hidden="true"></div>');
             $modalFade.append($modalDialog);
 
             $modalFade.data('dateId', id);
@@ -6577,14 +6577,14 @@ $.fn.zabuto_calendar = function (options) {
 
             var data = {year: year, month: (month + 1)};
 
-            $.ajax({
+            jQuery.ajax({
                 type: 'GET',
                 url: ajaxSettings.url,
                 data: data,
                 dataType: 'json'
             }).done(function (response) {
                 var events = [];
-                $.each(response, function (k, v) {
+                jQuery.each(response, function (k, v) {
                     events.push(response[k]);
                 });
                 $calendarElement.data('events', events);
@@ -6600,10 +6600,10 @@ $.fn.zabuto_calendar = function (options) {
 
             var events = $calendarElement.data('events');
             if (events !== false) {
-                $(events).each(function (index, value) {
+                jQuery(events).each(function (index, value) {
                     var id = $calendarElement.attr('id') + '_' + value.date;
-                    var $dowElement = $('#' + id);
-                    var $dayElement = $('#' + id + '_day');
+                    var $dowElement = jQuery('#' + id);
+                    var $dayElement = jQuery('#' + id + '_day');
 
                     $dowElement.data('hasEvent', true);
 
@@ -6636,10 +6636,10 @@ $.fn.zabuto_calendar = function (options) {
                             $dowElement.addClass('event-clickable');
 
                             var $modalElement = createModal(id, value.title, value.body, value.footer);
-                            $('body').append($modalElement);
+                            jQuery('body').append($modalElement);
 
-                            $('#' + id).click(function () {
-                                $('#' + id + '_modal').modal();
+                            jQuery('#' + id).click(function () {
+                                jQuery('#' + id + '_modal').modal();
                             });
                         }
                     }
@@ -6744,7 +6744,7 @@ $.fn.zabuto_calendar = function (options) {
  *   action:            function
  *   action_nav:        function
  */
-$.fn.zabuto_calendar_defaults = function () {
+jQuery.fn.zabuto_calendar_defaults = function () {
     var now = new Date();
     var year = now.getFullYear();
     var month = now.getMonth() + 1;
@@ -6774,7 +6774,7 @@ $.fn.zabuto_calendar_defaults = function () {
  * @param lang
  * @returns {{month_labels: Array, dow_labels: Array}}
  */
-$.fn.zabuto_calendar_language = function (lang) {
+jQuery.fn.zabuto_calendar_language = function (lang) {
     if (typeof(lang) == 'undefined' || lang === false) {
         lang = 'en';
     }

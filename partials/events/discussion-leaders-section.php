@@ -9,7 +9,6 @@
 
     if( $leadersPosts->have_posts() )
     {
-        $leadersPosts->the_post()
 ?>
         <section class="module u-bg-light-gray">
             <div class="module__content u-container">

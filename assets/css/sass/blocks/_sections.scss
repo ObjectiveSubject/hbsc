@@ -40,6 +40,8 @@
     color: $dark-gray;
     text-transform: uppercase;
     border-bottom: 1px solid rgba(0,0,0,.15);
+    word-wrap: break-word;
+    
     [class*='u-bg-'] & {
         color: $tan;
         border-color: rgba(255,255,255,.15);

@@ -11,6 +11,7 @@
     .image {
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
         height: 0;
         padding-bottom: 60%;
         @extend .u-transition-300;
