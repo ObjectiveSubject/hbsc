@@ -22,18 +22,6 @@
         </aside>
         <div class="module__body">
             <?php echo $content; ?>
-            <?php if( get_sub_field('display_module_table') && have_rows('module_table_row') ): ?>
-            <table>
-                <tbody>
-                    <?php while( have_rows('module_table_row') ): the_row(); ?>
-                    <tr>
-                        <td><?php the_sub_field('key'); ?></td>
-                        <td><?php the_sub_field('value'); ?></td>
-                    </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-            <?php endif; ?>
         </div>
     </div>
 </section>
