@@ -32,6 +32,10 @@ function display_hbsc_address(){
 ?><textarea cols="60" rows="6" name="hbsc_address"><?php echo get_option('hbsc_address');?></textarea><?php
 }
 
+function display_hbsc_hours_sunday(){
+	?><input class="regular-text" type="text" name="hbsc_hours_sunday" value="<?php echo esc_attr(get_option('hbsc_hours_sunday'));?>"><?php
+}
+
 function display_hbsc_hours_monday(){
 	?><input class="regular-text" type="text" name="hbsc_hours_monday" value="<?php echo esc_attr(get_option('hbsc_hours_monday'));?>"><?php
 }
@@ -54,10 +58,6 @@ function display_hbsc_hours_friday(){
 
 function display_hbsc_hours_saturday(){
 	?><input class="regular-text" type="text" name="hbsc_hours_saturday" value="<?php echo esc_attr(get_option('hbsc_hours_saturday'));?>"><?php
-}
-
-function display_hbsc_hours_sunday(){
-	?><input class="regular-text" type="text" name="hbsc_hours_sunday" value="<?php echo esc_attr(get_option('hbsc_hours_sunday'));?>"><?php
 }
 
 function display_hbsc_facebook(){
@@ -93,6 +93,9 @@ function hbsc_register_settings() {
 	register_setting("hbsc_settings", "hbsc_location");
     add_settings_field("hbsc_location", "Location", "HBSC\Options\display_hbsc_location", "main_settings_section", "contact_settings");
 	
+	register_setting("hbsc_settings", "hbsc_hours_sunday");
+    add_settings_field("hbsc_hours_sunday", "Sunday", "HBSC\Options\display_hbsc_hours_sunday", "main_settings_section", "hours_settings");
+	
 	register_setting("hbsc_settings", "hbsc_hours_monday");
     add_settings_field("hbsc_hours_monday", "Monday", "HBSC\Options\display_hbsc_hours_monday", "main_settings_section", "hours_settings");
 	
@@ -110,9 +113,6 @@ function hbsc_register_settings() {
 	
 	register_setting("hbsc_settings", "hbsc_hours_saturday");
     add_settings_field("hbsc_hours_saturday", "Saturday", "HBSC\Options\display_hbsc_hours_saturday", "main_settings_section", "hours_settings");
-	
-	register_setting("hbsc_settings", "hbsc_hours_sunday");
-    add_settings_field("hbsc_hours_sunday", "Sunday", "HBSC\Options\display_hbsc_hours_sunday", "main_settings_section", "hours_settings");
 	
 	register_setting("hbsc_settings", "hbsc_facebook");
     add_settings_field("hbsc_facebook", "Facebook", "HBSC\Options\display_hbsc_facebook", "main_settings_section", "social_settings");
