@@ -38,19 +38,20 @@
         display: flex;
     }
     .module--entry & {
-        width: auto;
-        margin-right: rem(240);
         @extend .u-pr-1;
-        @include media($md) {
-            padding-left: 6rem;
-            padding-right: 6rem;
-        }
+        margin-right: 0;
         ul, ol {
             @extend .u-pl-2;
             list-style: initial;
             li {
                 @extend .u-mt-1;
             }
+        }
+        @include media($md) {
+            width: auto;
+            margin-right: rem(240);
+            padding-left: 6rem;
+            padding-right: 6rem;
         }
     }
     .module--carousel & {
@@ -83,8 +84,7 @@
     }    
 }
 .module__sidebar {
-    width: rem(240);
-    float: right;
+    @extend .u-mb-2;
     .sidebar {
         @extend .u-pa-1;
         border: 1px solid $table-border-color;
@@ -92,6 +92,10 @@
         p:first-of-type {
             margin-top: 0;
         }
+    }
+    @include media($md) {
+        width: rem(240);
+        float: right;
     }
 }
 .module__footer {

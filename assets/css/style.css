@@ -677,7 +677,7 @@ html {
 .u-mr-2 {
   margin-right: 2rem; }
 
-.u-mb-2 {
+.u-mb-2, .module__sidebar, .section__header, .module__header, .section__footer, .module__footer {
   margin-bottom: 2rem; }
 
 .u-ml-2 {
@@ -770,7 +770,7 @@ html {
 .u-mr-4 {
   margin-right: 4rem; }
 
-.u-mb-4, .module__image, .section__header, .module__header, .section__footer, .module__footer {
+.u-mb-4, .module__image {
   margin-bottom: 4rem; }
 
 .u-ml-4 {
@@ -1258,7 +1258,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1316,7 +1316,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.12rem; } }
+      font-size: 1.13rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1408,7 +1408,7 @@ blockquote {
   blockquote p {
     margin: 0; }
   .u-bg-red blockquote, .badge-positioner .badge blockquote,
-  .u-bg-dark-gray blockquote {
+  .u-bg-dark-gray blockquote, .module--past-salons .badge-positioner .badge blockquote {
     color: white; }
   .u-bg-blue blockquote {
     color: #dddad5; }
@@ -2153,7 +2153,7 @@ label {
   padding-bottom: 0;
   margin-bottom: 0;
   transform: translateX(-112.5%);
-  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+  transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
   .masthead--collapsed .hbsc-logo .logotype {
     opacity: 0;
     visibility: hidden;
@@ -2190,12 +2190,14 @@ img {
       margin-left: -6rem;
       margin-right: -21rem; } }
 
-figure figcaption {
-  width: 20%;
-  float: left; }
+@media screen and (min-width: 768px) {
+  figure figcaption {
+    width: 20%;
+    float: left; } }
 
-figure img {
-  width: 80%; }
+@media screen and (min-width: 768px) {
+  figure img {
+    width: 80%; } }
 
 .wp-caption {
   max-width: 100%; }
@@ -2304,14 +2306,15 @@ figure img {
   display: flex; }
 
 .module--entry .module__body {
-  width: auto;
-  margin-right: 15rem; }
-  @media screen and (min-width: 768px) {
-    .module--entry .module__body {
-      padding-left: 6rem;
-      padding-right: 6rem; } }
+  margin-right: 0; }
   .module--entry .module__body ul, .module--entry .module__body ol {
     list-style: initial; }
+  @media screen and (min-width: 768px) {
+    .module--entry .module__body {
+      width: auto;
+      margin-right: 15rem;
+      padding-left: 6rem;
+      padding-right: 6rem; } }
 
 .module--carousel .module__body {
   max-width: 100%;
@@ -2353,13 +2356,15 @@ figure img {
       justify-content: space-between;
       -ms-flex-pack: justify; } }
 
-.module__sidebar {
-  width: 15rem;
-  float: right; }
-  .module__sidebar .sidebar {
-    border: 1px solid #d8d8d8; }
-    .module__sidebar .sidebar p:first-of-type {
-      margin-top: 0; }
+.module__sidebar .sidebar {
+  border: 1px solid #d8d8d8; }
+  .module__sidebar .sidebar p:first-of-type {
+    margin-top: 0; }
+
+@media screen and (min-width: 768px) {
+  .module__sidebar {
+    width: 15rem;
+    float: right; } }
 
 /**
  * Module Elements
@@ -2424,6 +2429,10 @@ body.home .preface {
   overflow: hidden; }
 
 @media screen and (min-width: 768px) {
+  .section__header, .module__header, .section__footer, .module__footer {
+    margin-bottom: 4rem; } }
+
+@media screen and (min-width: 768px) {
   .preface .section__footer, .preface .module__footer {
     margin-left: 6rem;
     margin-right: 6rem; } }
@@ -2433,7 +2442,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -2841,7 +2850,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.62rem;
+  font-size: 0.63rem;
   text-transform: uppercase;
   pointer-events: initial; }
 

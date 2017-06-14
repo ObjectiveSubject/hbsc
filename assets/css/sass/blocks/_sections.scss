@@ -6,7 +6,10 @@
     
 }
 .section__header {
-    @extend .u-mb-4;
+    @extend .u-mb-2;
+    @include media($md) {
+        margin-bottom: 4rem;
+    }
 }
 .section__body {
     h4, h5, h6 {

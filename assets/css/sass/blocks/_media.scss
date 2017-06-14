@@ -24,13 +24,17 @@ figure {
         }
     }
     figcaption {
-        width: 20%;
-        float: left;
         @extend .u-pr-1;
         @extend .u-font-size-sm;
+        @include media($md) {
+            width: 20%;
+            float: left;
+        }
     }
     img {
-        width: 80%;
+        @include media($md) {
+            width: 80%;
+        }
     }
 }
 
