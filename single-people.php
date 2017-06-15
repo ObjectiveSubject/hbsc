@@ -42,29 +42,40 @@ get_header(); ?>
         
         <?php endwhile; ?>
         
-        <section class="module module--basic">
-            <div class="module__content u-container">
-                <header class="module__header">
-                    <div class="module-title">
-                        Salons lead by <?php the_field('person_first_name'); ?>
-                    </div>
-                </header>
-                <div class="module__body">
-                    <div class="module-row">
-                        <div class="module-column">
-                            Salon 1
-                        </div>
-                        <div class="module-column">
-                            Salon 2
-                        </div>
-                    </div>
-                </div>
-                <footer class="module__footer">
-                    <a href="/salons-at-stowe/" class="button module-button">Salons at Stowe</a>
-                </footer>
-            </div>
-        </section>
+        <?php
+            // PAST SALONS
+            $pastSalonsSectionConfig = array(
+                'classes' => 'module--past-salons u-bg-white',
+                'title'   => 'Salons lead by ' . get_field('person_first_name'),
+                'display_button' => true,
+                'button_text' => 'Salons at Stowe',
+                'button_href' => '/salons-at-stowe/'
+            );
 
+        $pastSalonsLoop = new WP_Query( array( 
+            'post_type'      => 'event',
+            'posts_per_page' => 4,
+            'order'          => 'ASC',
+            'meta_key'		 => 'event_start_date',
+            'meta_query' => array(
+                array(
+                    'key' => 'event_start_date',
+                    'value' => get_field('event_end_date'),
+                    'compare' => '>=',
+                    'type' => 'DATE'
+                ),
+                array(
+                    'key' => 'event_discussion_leaders',
+                    'value' => '"' . $post->ID . '"',
+                    'compare' => 'LIKE'
+                )                
+            ),
+            'orderby'        => 'meta_value',
+            'post__not_in'  => array($post->ID)
+        ));
+
+            include HBSC_PATH . 'partials/events/past-salons-section.php';
+        ?>
 	</div>
 
 <?php get_footer(); ?>
