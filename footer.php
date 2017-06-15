@@ -30,7 +30,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="footer-column">
-                        <nav class="site-nav">
+                        <nav class="footer-nav">
                             <?php
                             $menu_footer = false;
                             if ( has_nav_menu( 'footer' ) ) {
@@ -77,7 +77,7 @@
                         </ul>
                         <?php endif; ?>
                     </div>
-                    <div class="footer-column u-display-flex u-flex-items-center u-flex-justify-between">
+                    <div class="newsletter footer-column">
                         <span class="u-font-miller u-mr-1">Newsletter</span>
                         <form action="###" method="post" class="u-display-inline">
                             <input type="text" class="u-mr-1">
@@ -86,8 +86,8 @@
                     </div>
                 </div>
                 <div class="footer-row">
-                    <div class="footer-column u-font-miller-bold u-caps u-font-size-xs u-color-tan">
-                        <span class="copyright">&copy; <?php echo date('Y'); ?> HBSC</span>
+                    <div class="copyright footer-column">
+                        <span>&copy; <?php echo date('Y'); ?> HBSC</span>
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Use</a>
                     </div>

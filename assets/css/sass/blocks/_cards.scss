@@ -40,8 +40,11 @@ TODO clean up the !important
 .card {
     @include display(flex);
     @include flex-direction(column);
-    @extend .u-pa-3;
-    text-align: center; 
+    @extend .u-pa-2;
+    text-align: center;
+    @include media($md) {
+        padding: 3rem;
+    }
     &.has-badge {
         position: relative;
         margin-top: rem(72); // half of badge size
@@ -204,7 +207,7 @@ TODO clean up the !important
 .card-positioner {
     .module--hero & {
         width: 100%;
-        padding-top: 0;
+        padding-top: 5rem;
         @include media($md) {
             width: 57.5%;
             padding-top: 0;
