@@ -7,7 +7,7 @@
         'meta_query' => array(
             array(
                 'key' => 'event_discussion_leaders',
-                'value' => '"' . $postId . '"',
+                'value' => '"' . $post->ID . '"',
                 'compare' => 'LIKE'
             )
         ),
@@ -32,6 +32,8 @@
                 $Event = new Event();
      
                 include HBSC_PATH . 'partials/people/other-salons-item.php';
+
+                wp_reset_postdata();
             }
         ?>
         </div>

@@ -24,7 +24,7 @@
             )
         ),
         'orderby'        => 'meta_value',
-        'post__not_in'  => array($postId)
+        'post__not_in'  => array($post->ID)
     ));
 
     if($upcomingEventsLoop->have_posts())
@@ -64,9 +64,6 @@
     </div>
 </section>
 <?php
-    }
-    else
-    {
-        echo 'No upcoming events';
+        wp_reset_postdata();
     }
 ?>

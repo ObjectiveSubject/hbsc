@@ -1799,7 +1799,8 @@ TODO clean up the !important
         background-color: #272727 !important; } }
   .module--past-salons .card {
     margin: 0 0rem 0 4rem;
-    min-height: 16.5rem;
+    min-height: inherit;
+    /*min-height: 16.5rem;*/
     justify-content: center;
     padding: 3rem 1.5rem; }
   .card .card-event-details {
@@ -1834,8 +1835,7 @@ TODO clean up the !important
         -webkit-flex-direction: row;
         -moz-flex-direction: row;
         flex-direction: row;
-        -ms-flex-direction: row;
-        padding: 2rem; } }
+        -ms-flex-direction: row; } }
     .card .card-event-details .card-event-item {
       -webkit-box-orient: vertical;
       -moz-box-orient: vertical;
@@ -1850,6 +1850,7 @@ TODO clean up the !important
         margin-bottom: 0rem; }
       @media screen and (min-width: 768px) {
         .card .card-event-details .card-event-item {
+          flex: 1 0 32%;
           margin-bottom: 0rem; } }
     .card .card-event-details .event-item-title {
       color: #f0efed; }
@@ -1897,8 +1898,8 @@ TODO clean up the !important
       padding-top: 0; } }
 
 .card-positioner.card-positioner-fullwidth {
-  width: 70%;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .card-positioner.card-positioner-fullwidth .card-content {
     margin-top: 0; }
     .card-positioner.card-positioner-fullwidth .card-content p {
@@ -1995,7 +1996,7 @@ TODO clean up the !important
   .module--past-salons [class*=u-bg-] .card-title {
     border-color: transparent; }
     .module--past-salons [class*=u-bg-] .card-title h2, .module--past-salons [class*=u-bg-] .card-title h3 {
-      font-size: 3rem; }
+      font-size: 2.25rem; }
       .module--past-salons [class*=u-bg-] .card-title h2 a, .module--past-salons [class*=u-bg-] .card-title h3 a {
         color: #272727; }
   .module--events-upcoming-list .card-title {
@@ -2492,6 +2493,9 @@ img {
     width: 15rem;
     float: right; } }
 
+.module--past-salons .module__footer {
+  margin-top: 0; }
+
 /**
  * Module Elements
  */
@@ -2689,7 +2693,7 @@ caption {
 
 .event--past-salon-item {
   width: 100%;
-  margin-bottom: 4rem; }
+  margin-bottom: 1rem; }
   @media screen and (min-width: 768px) {
     .event--past-salon-item {
       width: 46%; } }
@@ -2781,7 +2785,8 @@ caption {
       padding-bottom: 80%; }
     @media screen and (min-width: 768px) {
       .event--discussion-leaders .discussion-leader {
-        width: 40%; } }
+        width: 40%;
+        margin-bottom: 6rem; } }
 
 .events--calendar-aside div.zabuto_calendar {
   margin-bottom: 2rem; }

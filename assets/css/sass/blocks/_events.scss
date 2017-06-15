@@ -22,7 +22,7 @@
 .event--past-salon-item
 {
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 
     @include media($md)
     {
@@ -144,7 +144,8 @@
 
         @include media($md)
         {
-            width: 40%;    
+            width: 40%;
+            margin-bottom: 6rem;
         }
     }   
 }

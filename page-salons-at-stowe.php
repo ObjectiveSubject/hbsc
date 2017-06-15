@@ -32,10 +32,6 @@ $eventStartDate = null;
                             <?php the_content(); ?>
                         </div>
                     </div>
-                    
-                    <footer class="section__footer">
-
-                    </footer>
                 </div>
             </section>
 		<?php endwhile; ?>
@@ -62,8 +58,9 @@ $eventStartDate = null;
         <?php
             // PAST SALONS
             $pastSalonsSectionConfig = array(
-                'classes' => 'module--events-upcoming-list u-bg-light-gray',
-                'direction' => 'list'
+                'classes' => 'module--past-salons u-bg-white',
+                'title'   => 'PAST SALONS',
+                'display_button' => false
             );
 
             include HBSC_PATH . 'partials/events/past-salons-section.php';

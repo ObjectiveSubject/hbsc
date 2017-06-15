@@ -100,6 +100,11 @@
 }
 .module__footer {
     @extend .section__footer;
+
+    .module--past-salons &
+    {
+        margin-top: 0;
+    }
 }
 /**
  * Module Elements
