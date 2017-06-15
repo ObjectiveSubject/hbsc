@@ -148,14 +148,14 @@ body.home {
         .header-menu {
             @include display(none);
         }
-        .header-logo-container {
+        .site-nav {
             width: 0;
         }
         .site-menu.is-expanded {
             .header-menu {
                 @include display(block);
             }
-            .header-logo-container {
+            .site-nav {
                 width: auto;
             }
             .hbsc-logo {
