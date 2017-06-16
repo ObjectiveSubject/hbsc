@@ -2217,7 +2217,12 @@ TODO clean up the !important
     background: #e74949; }
 
 .dropdown {
-  border-top: 1px solid #d8d8d8; }
+  border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  .dropdown:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  @media screen and (min-width: 768px) {
+    :not(.module-column) > .dropdown {
+      margin: 0 6rem; } }
 
 .dropdown__title {
   position: relative;
@@ -2238,6 +2243,8 @@ TODO clean up the !important
   opacity: 0; }
   .dropdown.is-open .dropdown__content {
     display: block; }
+  .dropdown__content p:first-child {
+    margin-top: 0; }
 
 /* Basic Form Styles
  * ------------------------------------------- */

@@ -1,5 +1,13 @@
 .dropdown {
-    border-top: 1px solid $table-border-color;
+    border-top: 1px solid rgba(0,0,0,.15);
+    &:last-child {
+        border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+    :not(.module-column)>& {
+        @include media($md) {
+            margin: 0 rem(96);
+        }
+    }
 }
 .dropdown__title {
     position: relative;
@@ -29,5 +37,10 @@
     opacity: 0;
     .dropdown.is-open & {
         @include display(block);
+    }
+    p {
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
