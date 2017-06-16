@@ -1,0 +1,33 @@
+.dropdown {
+    border-top: 1px solid $table-border-color;
+}
+.dropdown__title {
+    position: relative;
+    cursor: pointer;
+    @extend .u-transition-300;
+    padding: rem(8) 0;
+    &:hover {
+        color: $red;
+    }
+}
+.dropdown__icon {
+    float: right;
+    &:before {
+        content: '+';
+    }
+    .dropdown.is-open & {
+        &:before {
+            content: '-';
+        }
+    }
+}
+.dropdown__content {
+    @include display(none);
+    @extend .u-px-3;
+    @extend .u-py-1;
+    @extend .u-font-size-sm;
+    opacity: 0;
+    .dropdown.is-open & {
+        @include display(block);
+    }
+}
