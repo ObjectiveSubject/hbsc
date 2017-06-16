@@ -21,7 +21,9 @@
         @include display(flex);
         @include flex-wrap(wrap);
         top: 100%;
-        height: 100%;
+        /*height: 100%;*
+            Does weird spacing on mobile & desktop
+        */
         @include media($md) {
             top: 0;
             @include align-items(center);
@@ -79,7 +81,7 @@
         @include media($md)
         {
             flex-direction: row;
-            @include justify-content(space-between);
+            @include justify-content(space-around);
         }
     }    
 }

@@ -15,6 +15,12 @@ if ( $is_top_page ) {
     $parents = array_reverse( get_post_ancestors( $post->ID ) );
     $id = $parents[0];
 }
+
+$countView = incrementViewsCount($id);
+//$countView = getViewsCount($id)
+$posts = getMostViewsPosts();
+
+echo '<!-- Count View - '.$countView . ' -->';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">

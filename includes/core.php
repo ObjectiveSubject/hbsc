@@ -23,8 +23,27 @@ function setup() {
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'index_rel_link' );
 	remove_action( 'wp_head', 'wp_generator' );
-}
 
+	//add_action('wp_head', $n('incrementViewsCount') );
+}
+function incrementViewsCount($postID)
+{
+    $countKey = 'views_count';    
+    $count    = (int) get_post_meta($postID, $countKey, true);
+    $count++;
+
+    if($count <= 1)
+    {
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, $count);
+    }
+    else
+    {
+        update_post_meta($postID, $countKey, $count);
+    }
+
+    return $count;
+}
 /**
  * Add feature support to theme
  */

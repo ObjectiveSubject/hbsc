@@ -8,7 +8,7 @@
                 </div>
                 <?php endif; ?>
 
-                <?php if( $content ): ?>
+                <?php if( !empty($content) ): ?>
                 <div class="card-content">
                     <?php echo $content ?>
                 </div>
