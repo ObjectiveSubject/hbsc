@@ -56,6 +56,10 @@ get_header(); ?>
                         <table>
                             <tbody>
                                 <tr>
+                                    <td class="u-caps">Sunday</td>
+                                    <td><?php echo get_option('hbsc_hours_sunday'); ?></td>
+                                </tr>
+                                <tr>
                                     <td class="u-caps">Monday</td>
                                     <td><?php echo get_option('hbsc_hours_monday'); ?></td>
                                 </tr>
@@ -78,10 +82,6 @@ get_header(); ?>
                                 <tr>
                                     <td class="u-caps">Saturday</td>
                                     <td><?php echo get_option('hbsc_hours_saturday'); ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="u-caps">Sunday</td>
-                                    <td><?php echo get_option('hbsc_hours_sunday'); ?></td>
                                 </tr>
                             </tbody>
                         </table>
