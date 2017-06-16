@@ -41,10 +41,14 @@ TODO clean up the !important
     @include display(flex);
     @include flex-direction(column);
     @extend .u-pa-2;
-    text-align: center;
-    @include media($md) {
+    text-align: center; 
+    padding: 2rem 1rem;
+    @include media($md)
+    {
         padding: 3rem;
     }
+
+
     &.has-badge {
         position: relative;
         margin-top: rem(72); // half of badge size
@@ -300,6 +304,12 @@ TODO clean up the !important
 .card-title {
     @extend .module-title;
     word-wrap: break-word;    
+
+    .module--events-upcoming-inline &
+    {
+        padding: 1.8rem 0 2rem 0;
+    }
+
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
 
@@ -310,7 +320,7 @@ TODO clean up the !important
         h2,
         h3
         {
-            font-size: 3.5rem;
+            font-size: 3.4rem;
             color: white!important;
         }
         border-color: rgba(255,255,255,.55)!important;
@@ -326,6 +336,7 @@ TODO clean up the !important
 
         h2, h3 {
             font-size: 2.25rem;
+            letter-spacing: -.015rem;
             a{
                 color: $dark-gray;
             }

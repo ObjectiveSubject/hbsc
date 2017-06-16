@@ -28,7 +28,7 @@ textarea {
     @include display(block);
     @extend .u-font-rama-gothic;
 	font-size: rem(64);
-    line-height: .75;
+    line-height: .82;
     font-weight: normal;
     margin: 0;
 	@include media($md) {
@@ -39,7 +39,7 @@ textarea {
     @include display(block);
     @extend .u-font-rama-gothic;
 	font-size: rem(56);
-    line-height: .75;
+    line-height: .82;
     font-weight: normal;
     margin: 0;
 	@include media($md) {
@@ -50,7 +50,7 @@ textarea {
     @include display(block);
     @extend .u-font-rama-slab;
 	font-size: rem(56);
-    line-height: .75;
+    line-height: .82;
     font-weight: normal;
     margin: 0;
 	@include media($md) {

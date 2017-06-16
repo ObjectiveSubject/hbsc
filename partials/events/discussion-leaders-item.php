@@ -1,4 +1,4 @@
-<div class="discussion-leader u-mb-2">
+<div class="discussion-leader u-mb-6">
     <div class="discussion-leader__content">
         <div class="discussion-leader-name u-mb-1">
             <div class="u-text-center">
