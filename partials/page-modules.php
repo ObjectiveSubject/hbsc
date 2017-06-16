@@ -16,6 +16,13 @@ while( have_rows('module') ): the_row();
     $button_text = get_sub_field('module_button_text');
     $image = get_sub_field('module_image');
 
+    $buttonLocation = get_sub_field('module_button_location');
+
+    if(!$buttonLocation)
+    {
+        $buttonLocation = 'footer';
+    }
+
     $videoEmbed = get_sub_field('module_video_embed');
 
     $moduleTypeName = str_replace( '--', '-', $type );

@@ -6,7 +6,7 @@ get_header(); ?>
 
 	<div class="site-content">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post();?>
 		
 		    <section class="preface section <?php the_field('preface_background_color'); ?>">
                 <div class="section__content u-container">
@@ -22,14 +22,17 @@ get_header(); ?>
                     <footer class="section__footer">
                         <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
                             <?php while( have_rows('module') ): the_row();
-                            $title = get_sub_field('module_title');
+                                $title = get_sub_field('module_title');
                             ?>
                             <li class="anchor preface-button">
                                 <a href="#module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="button">
                                     <?php echo $title; ?>
                                 </a>
                             </li>
-                            <?php endwhile; ?>
+                            <?php 
+                                    wp_reset_postdata();
+                                endwhile;
+                            ?>
                         </ul>
                     </footer>
                 </div>
@@ -50,7 +53,10 @@ get_header(); ?>
                 </div>
             </section>
 
-		<?php endwhile; ?>
+		<?php 
+                wp_reset_postdata();
+            endwhile;
+        ?>
 		
 		<?php if( have_rows('module') ): ?>
 

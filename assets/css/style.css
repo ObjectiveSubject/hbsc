@@ -1258,7 +1258,7 @@ select,
 textarea {
   font-family: "Miller Text Rom";
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1316,7 +1316,7 @@ h6, .h6 {
   font-size: 0.88rem; }
   @media screen and (min-width: 768px) {
     h6, .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
 .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
@@ -1756,7 +1756,7 @@ TODO clean up the !important
   .card .card-date {
     color: white;
     margin: 0  0 2rem 0;
-    font-size: 1.63rem; }
+    font-size: 1.62rem; }
     @media screen and (min-width: 768px) {
       .card .card-date {
         font-size: 2rem; } }
@@ -2314,7 +2314,7 @@ label {
     padding-bottom: 0;
     margin-bottom: 0;
     transform: translateX(-112.5%);
-    transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
+    transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
     .masthead--collapsed .hbsc-logo .logotype {
       opacity: 0;
       visibility: hidden;
@@ -2537,6 +2537,13 @@ img {
 .module--past-salons .module__footer {
   margin-top: 0; }
 
+.module--entry .module__footer {
+  width: auto;
+  margin-right: 15rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  text-align: left; }
+
 /**
  * Module Elements
  */
@@ -2613,7 +2620,7 @@ body.home .preface {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2em;
   color: #272727;
   text-transform: uppercase;
@@ -3099,7 +3106,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
@@ -3218,7 +3225,7 @@ body.home .preface-text {
       transform-origin: 0 100%;
       top: 0; }
     .site-mobile-menu-toggle span:nth-child(2) {
-      top: 0.63rem; }
+      top: 0.62rem; }
     .site-mobile-menu-toggle span:nth-child(3) {
       transform-origin: 0 0;
       bottom: 0; }

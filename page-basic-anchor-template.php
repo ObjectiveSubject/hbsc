@@ -21,19 +21,28 @@ get_header(); ?>
                         <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
                             <?php while( have_rows('module') ): the_row();
                             $title = get_sub_field('module_title');
+                            $module_anchor_button_title = get_sub_field('module_anchor_button_title');
+                            $anchorButtonTitle = (!empty($module_anchor_button_title) ? $module_anchor_button_title : $title);
+                            $moduleId = preg_replace('/\W+/', '-', strtolower($title));
                             ?>
                             <li class="anchor preface-button">
-                                <a href="#module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="button">
-                                    <?php echo $title; ?>
+                                <a href="#module-<?php echo $moduleId; ?>" class="button">
+                                    <?php echo $anchorButtonTitle; ?>
                                 </a>
                             </li>
-                            <?php endwhile; ?>
+                            <?php 
+                                    wp_reset_postdata();
+                                endwhile;
+                            ?>
                         </ul>
                     </footer>
                 </div>
             </section>
 
-		<?php endwhile; ?>
+		<?php 
+                wp_reset_postdata();
+            endwhile;
+        ?>
 		
 		<?php if( have_rows('module') ): ?>
 

@@ -1,4 +1,8 @@
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--entry <?php echo ( $image ) ? ' has-image' : ''; ?>">
+<?php
+    $title = get_sub_field('module_title');
+    $moduleId = preg_replace('/\W+/', '-', strtolower($title));
+?>
+<section id="module-<?php echo $moduleId; ?>" class="module module--entry <?php echo ( $image ) ? ' has-image' : ''; ?>">
     <?php if( $image ) : ?>
     <div class="module__image" <?php echo "style='background-image: url(" . $image . ")'"; ?>></div>
     <?php endif; ?>
@@ -14,7 +18,7 @@
                 <?php echo $sidebar; ?>
             </div>
             <?php endif; ?>
-            <?php if( $display_button ) : ?>
+            <?php if( $display_button && $buttonLocation == 'sidebar' ) : ?>
                 <a href="<?php echo $button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>">
                     <?php echo $button_text; ?>
                 </a>
@@ -22,6 +26,11 @@
         </aside>
         <div class="module__body">
             <?php echo $content; ?>
-        </div>
+        </div>        
+        <footer class="module__footer">
+            <?php if( $display_button && $button_link && $button_text && ( $buttonLocation == 'footer' || !$buttonLocation ) ) : ?>
+                <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>
+            <?php endif; ?>
+        </footer>        
     </div>
 </section>
