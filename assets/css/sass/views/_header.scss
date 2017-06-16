@@ -41,8 +41,40 @@
     &:hover {
         color: $red;
     }
+    &:focus {
+        color: $tan;
+    }
 }
-.header-logo-container {
+.site-search {
+    display: none;
+    .search-open & {
+        display: block;
+    }
+    .search-form {
+        @include display(flex);
+        label {
+            flex: 0 100%;
+        }
+        .search-field {
+            width: 100%;
+            @extend .u-py-1;
+            background: transparent;
+            border: none;
+            color: white;
+            &:focus {
+                outline: 0;
+            }
+        }
+        .search-submit {
+            background: transparent;
+            border: none;
+            color: $gray;
+            @extend .u-transition-300;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
 }
 .header-logo {
     width: rem(192);

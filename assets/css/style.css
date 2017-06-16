@@ -174,7 +174,7 @@ html {
 .u-overflow-hidden {
   overflow: hidden; }
 
-.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .dropdown__title, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .site-menu-toggle, .site-mobile-menu-toggle span {
+.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .dropdown__title, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .site-search .search-form .search-submit, .site-menu-toggle, .site-mobile-menu-toggle span {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   transition: all 300ms ease; }
@@ -664,7 +664,7 @@ html {
   padding-left: 1rem;
   padding-right: 1rem; }
 
-.u-py-1, .dropdown__content, .form-field:focus, .section-title, .module-title, .card-title, .site-nav {
+.u-py-1, .dropdown__content, .form-field:focus, .section-title, .module-title, .card-title, .site-nav, .site-search .search-form .search-field {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
@@ -3155,6 +3155,36 @@ body.home .preface-text {
   color: #dddad5; }
   .search-toggle:hover {
     color: #e74949; }
+  .search-toggle:focus {
+    color: #dddad5; }
+
+.site-search {
+  display: none; }
+  .search-open .site-search {
+    display: block; }
+  .site-search .search-form {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .site-search .search-form label {
+      flex: 0 100%; }
+    .site-search .search-form .search-field {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: white; }
+      .site-search .search-form .search-field:focus {
+        outline: 0; }
+    .site-search .search-form .search-submit {
+      background: transparent;
+      border: none;
+      color: #898989; }
+      .site-search .search-form .search-submit:hover {
+        color: #e74949; }
 
 .header-logo {
   width: 12rem; }

@@ -38,9 +38,11 @@ if ( $is_top_page ) {
                         <?php endif; ?>
                     </div>
                     <div class="u-display-block-md">
-                        <input id="site-search" class="site-search u-mr-1 u-display-none" type="text">
-                        <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-field-open" data-focus="#site-search"><span class="icon icon-search"></span></a>
+                        <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-open" data-focus=".search-field"><span class="icon icon-search"></span></a>
                     </div>
+                </div>
+                <div class="site-search">
+                    <?php get_search_form(); ?>
                 </div>
             </div>
         </div>
