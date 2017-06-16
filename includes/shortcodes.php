@@ -14,6 +14,7 @@ function setup() {
 	add_shortcode( 'section-title', $n( 'section_title_func' ) );
 	add_shortcode( 'figure', $n( 'figure_func' ) );
 	add_shortcode( 'button', $n( 'button_func' ) );
+	add_shortcode( 'dropdown', $n( 'dropdown_func' ) );
 	add_shortcode( 'row', $n( 'row_func' ) );
 	add_shortcode( 'column', $n( 'column_func' ) );
 }
@@ -87,6 +88,33 @@ function button_func( $attributes, $content = null ) {
 	$html = '<a href="' . $data['link'] . '" class="button ' . $button_color . '">' .
             do_shortcode( shortcode_unautop( trim( $content ) ) ) .
             '</a>';
+	return $html;
+}
+
+/**
+ * Create a dropdown
+ *
+ * Example: [dropdown title=""]Content[/dropdown]
+ *
+ * @param $attributes array List of attributes from the given shortcode
+ * @param $content mixed The content of the section
+ *
+ * @return mixed HTML output for the shortcode
+ */
+function dropdown_func( $attributes, $content = null ) {
+	$content = preg_replace( '#^<\/p>|^<br \/>|<p>$#', '', $content );
+    $data = shortcode_atts( array(
+		'title' => '',
+	), $attributes );
+	$html = '<div class="dropdown">' .
+            '<div class="dropdown__title js-slide-toggle" data-target=".dropdown__content" data-parent=".dropdown">' .
+            $data['title'] .
+            '<span class="dropdown__icon"></span>' .
+            '</div>' .
+            '<div class="dropdown__content">' .
+            do_shortcode( shortcode_unautop( trim( $content ) ) ) .
+            '</div>' .
+            '</div>';
 	return $html;
 }
 
