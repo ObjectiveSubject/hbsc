@@ -122,7 +122,7 @@
         mastheadHeight = masthead.height();
 
 	$(document).ready(function(){
-		Masthead.modulePaddingTop();
+		//Masthead.modulePaddingTop();
 	});
 
 	$(window).scroll(function(){

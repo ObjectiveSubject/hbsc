@@ -2580,8 +2580,11 @@ img {
       .module--hero .module__content {
         min-height: 45rem; } }
 
-body.home .preface {
-  padding-top: 6.75rem; }
+.preface {
+  padding-top: 2rem; }
+  @media screen and (min-width: 768px) {
+    .preface {
+      padding-top: 11.88rem; } }
 
 [class*='u-bg-'] .preface-text {
   color: #dddad5; }
@@ -3094,7 +3097,10 @@ div.zabuto_calendar div.legend span.badge-today {
     display: flex; } }
 
 body.home .preface {
-  padding-top: 6.75rem; }
+  padding-top: 0; }
+  @media screen and (min-width: 768px) {
+    body.home .preface {
+      padding-top: 6.75rem; } }
 
 body.home .preface-text {
   text-align: left; }
