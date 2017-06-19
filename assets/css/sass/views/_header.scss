@@ -155,14 +155,16 @@
     }
     .menu-item {
         @include display(block);
+        &.current-menu-item {
+            a {
+                color: $red;
+            }
+        }
         .sub-menu .menu-item {
             @include display(none);
         }
         .sub-menu.is-expanded .menu-item {
             @include display(block);
-            &.current-page-item a {
-                color: $red;
-            }
         }
     }
 }
