@@ -85,7 +85,7 @@ function button_func( $attributes, $content = null ) {
             $button_color = '';
         }
 	}
-	$html = '<a href="' . $data['link'] . '" class="button ' . $button_color . '">' .
+	$html = '<a href="' . $data['link'] . '" class="button u-mt-2 ' . $button_color . '">' .
             do_shortcode( shortcode_unautop( trim( $content ) ) ) .
             '</a>';
 	return $html;
