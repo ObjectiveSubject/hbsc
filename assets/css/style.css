@@ -1364,8 +1364,14 @@ a {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   transition: all 300ms ease; }
+  a span {
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease; }
   a:hover, a:focus, a:active {
     color: #e74949; }
+    a:hover span, a:focus span, a:active span {
+      color: #e74949 !important; }
   a:focus {
     outline: 0; }
   a:hover, a:active {
