@@ -1595,6 +1595,10 @@ button {
   .u-bg-red .button:hover, .badge-positioner .badge .button:hover {
     color: #272727;
     border-color: #272727; }
+  @media screen and (min-width: 768px) {
+    .module__sidebar .button {
+      width: 100%;
+      text-align: center; } }
 
 .button--blue {
   color: white !important;

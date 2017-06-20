@@ -29,6 +29,12 @@ button {
     &+& {
         @extend .u-ml-1;
     }
+    .module__sidebar & {
+        @include media($md) {
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
 @each $color-name, $hex in $color_map {
 	.button--#{$color-name} {
