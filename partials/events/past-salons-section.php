@@ -17,9 +17,10 @@
         $pastSalonsLoop = new WP_Query( array( 
             'post_type'      => 'event',
             'posts_per_page' => -1,
-            'order'          => 'ASC',
-            'meta_key'		 => 'event_start_date',
+            'order'          => 'DESC',
+            'meta_key'		 => 'views_count',
             'meta_query' => array(
+                'relation' => 'AND',
                 array(
                     'key' => 'event_start_date',
                     'value' => get_field('event_end_date'),
@@ -27,7 +28,10 @@
                     'type' => 'DATE'
                 )
             ),
-            'orderby'        => 'meta_value',
+            'orderby' => array(
+                'meta_value_num' => 'DESC',
+                'event_start_date' => "DESC"
+            ),
             'post__not_in'  => array($post->ID)
         ));
     }
@@ -60,17 +64,16 @@
         </div>
     </div>
 <?php
-if( $pastSalonsSectionConfig['display_button'] )
-{
+    if( $pastSalonsSectionConfig['display_button'] )
+    {
 ?>    
     <footer class="module__footer">
         <a href="<?php echo $pastSalonsSectionConfig['button_href']; ?>" class="button module-button"><?php echo $pastSalonsSectionConfig['button_text']; ?></a>
     </footer>
 <?php
-}
+    }
 ?>
 </section>
 <?php
-        wp_reset_postdata();
-    }
+}
 ?>

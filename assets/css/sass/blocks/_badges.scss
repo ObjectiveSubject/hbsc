@@ -53,8 +53,18 @@
     .module--past-salons &
     {
         top: 2.5rem;
-        bottom:initial;        
-    }    
+        bottom:initial;
+    }
+
+    .module--post-list &
+    {
+        top: 0;
+        position: relative;
+        z-index: 18;
+        max-width: 16rem;
+        width: 60%;
+        margin: 0 auto;
+    }
 
     .badge {
         @include display(flex);
@@ -69,12 +79,18 @@
             @extend .u-mb-3;
         }
         
-        .module--past-salons &
+        .module--past-salons &,
+        .module--post-list &
         {
             @extend .u-bg-dark-gray;
             padding: 1rem 3rem;
             width: auto;
             height: auto;
+        }
+
+        .module--post-list &
+        {
+            padding: 1rem 2rem;
         }
 
         .module--events-upcoming-list &,

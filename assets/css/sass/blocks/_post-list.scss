@@ -1,0 +1,116 @@
+.post--list-aside
+{
+    /*width: 100%;*/
+    flex: 0 0 100%;
+    margin-bottom: 4rem;
+    .module--post-list &
+    {
+        @include media($md)
+        {
+            /*width: 30%;*/
+            flex: 0 0 30%;
+            margin-bottom: 0;
+        }        
+    }
+}
+
+.post--list
+{
+
+    .module--post-list &
+    {
+        width: 100%;
+        @include display(flex);    
+        @include flex-direction(column);
+        flex-wrap: wrap;
+        @include justify-content(space-between);
+        position: relative;
+
+        @include media($md)
+        {
+            @include flex-direction(row);
+            /*width: 60%;*/
+        }        
+    }    
+}
+
+.post--list-item
+{
+    position: relative;
+    border: transparent;
+    margin-bottom: 4rem;
+    flex: 0 0 44%;
+    overflow: hidden;
+
+    .post--item-title
+    {
+        width: 100%;
+        font-size: 1rem;
+        letter-spacing: .1em;
+        color: #272727;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(0,0,0,.15);
+        word-wrap: break-word;
+        padding: .4rem 0 .8rem 0;
+        text-align: center;
+        margin-bottom: 1.6rem;
+    }
+
+    .post--title
+    {
+        text-align: center;
+
+        a{
+            text-align: center;
+            font-size: 1.6rem;
+            color: $dark-gray;
+            display: block;
+            line-height: 1.1;
+        }
+    }
+
+    .post--taxonomies
+    {
+        display: none;
+    }
+
+    .post--item-content
+    {
+        padding: 3rem 1.6rem 1.6rem 1.6rem;
+        margin-top: -2rem;     
+    }
+
+    .image-positioner
+    {
+        width: 100%;
+        .image
+        {
+            min-height: 10rem;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;            
+        }        
+    }
+}
+
+.post--list-terms
+{
+    padding-left: 8px;
+
+    .post--term-item
+    {
+        color: $gray;
+        margin: rem(6) 0;
+        font-size: 1rem;
+        &.post--term-checked
+        {
+            color: $color-text-main;
+        }
+
+        input[type="checkbox"]
+        {
+            margin: 0 rem(8) 0 0;
+        }
+    }
+}

@@ -61,7 +61,8 @@
         width: 100%;
     }
 
-    .module--calendar & {
+    .module--calendar &,
+    .module--post-list & {
         display: flex;
         flex-direction: column;        
         justify-content: space-between;

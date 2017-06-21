@@ -49,7 +49,7 @@ function getMostViewsPosts( array $args = array())
     $sql = sprintf($query, $postTypesList);
 
     $sql = "SELECT post.id as post_id, meta.meta_key, meta.meta_value FROM wp_posts as post LEFT JOIN wp_postmeta as meta ON post.id = meta.post_id";
-//echo $sql;
+
     $results = $wpdb->get_results( $sql, OBJECT );
 
     return $results;
@@ -78,5 +78,17 @@ function incrementViewsCount($postID)
     }
 
     return $count;
+}
+
+function postUpdateViews( $post_id, $post, $update )
+{
+    $viewsCount = get_post_meta( $post_id, 'views_count', true );
+
+    if( !$viewsCount )
+    {
+        incrementViewsCount($post_id);    
+    }
+
+    return;
 }
 ?>

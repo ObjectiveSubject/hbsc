@@ -34,7 +34,10 @@ $eventStartDate = null;
                     </div>
                 </div>
             </section>
-		<?php endwhile; ?>
+		<?php 
+                wp_reset_postdata();
+            endwhile; 
+        ?>
 
 		<?php if( have_rows('module') ): ?>
 
@@ -65,5 +68,9 @@ $eventStartDate = null;
 
             include HBSC_PATH . 'partials/events/past-salons-section.php';
         ?>
+
+        <div class="comment list">
+            <?php wp_list_comments( array( 'style' => 'div' ) ); ?>
+        </div>        
 	</div>
 <?php get_footer(); ?>

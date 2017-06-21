@@ -7,7 +7,7 @@
                 <?php
                     $dt = \DateTime::createFromFormat( 'Y-m-d', get_field('event_start_date') );
                 ?>
-                <span><?php echo $dt->format('F j, Y'); ?></a></span>
+                <span><?php echo $dt->format('F j, Y'); ?> <?php echo get_field('views_count');?></a></span>
             </div>
         </div>
         <?php endif; ?>
