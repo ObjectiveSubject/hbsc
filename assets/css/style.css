@@ -941,30 +941,30 @@ html {
   text-align: right; }
 
 .u-font-rama-gothic, h1, .h1, h2, .h2 {
-  font-family: RamaGothicE-Heavy;
+  font-family: "RamaGothicE-Heavy", "Helvetica", Arial, sans-serif;
   text-transform: uppercase; }
 
 .u-font-rama-slab, h3, .h3 {
-  font-family: RamaSlabM-Bold;
+  font-family: "RamaSlabM-Bold", "Helvetica", Arial, sans-serif;
   text-transform: uppercase; }
 
 .u-font-miller, h4, .h4, body.home .preface-text, .section-title, .module-title, .card-title, .site-footer a {
-  font-family: "Miller Text Rom";
+  font-family: "Miller Text Rom", Georgia, serif;
   font-style: Normal;
   font-weight: Normal; }
 
 .u-font-miller-italic {
-  font-family: "Miller Text It";
+  font-family: "Miller Text It", Georgia, serif;
   font-style: Italic;
   font-weight: Normal; }
 
 .u-font-miller-bold, h5, .h5, h6, .h6, .button, .header-menu .menu-item a, .copyright, .site-header {
-  font-family: "Miller Text Bd";
+  font-family: "Miller Text Bd", Georgia, serif;
   font-style: Normal;
   font-weight: Normal; }
 
 .u-font-miller-bold-italic {
-  font-family: "Miller Text Bd It";
+  font-family: "Miller Text Bd It", Georgia, serif;
   font-style: Italic;
   font-weight: Normal; }
 
@@ -1256,7 +1256,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Miller Text Rom";
+  font-family: "Miller Text Rom", Georgia, serif;
   color: black;
   font-size: 1.12rem;
   line-height: 1.375;
@@ -2984,7 +2984,7 @@ div.zabuto_calendar div.legend span.badge-today {
           color: #272727; }
     .calendar--event-item .event--content .event--taxonomies,
     .calendar--event-item .event--content .event--details {
-      font-family: "Miller Text Rom";
+      font-family: "Miller Text Rom", Georgia, serif;
       font-style: Normal;
       font-weight: Normal;
       font-size: 1rem; }

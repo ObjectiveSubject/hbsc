@@ -96,13 +96,18 @@ $color-google: #f44336;
     src: url('../fonts/33E42B_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/33E42B_1_0.woff2') format('woff2'),url('../fonts/33E42B_1_0.woff') format('woff'),url('../fonts/33E42B_1_0.ttf') format('truetype');
 }
 
-$rama-gothic: RamaGothicE-Heavy;
-$rama-slab: RamaSlabM-Bold;
+$rama-gothic: "RamaGothicE-Heavy", "Helvetica", Arial, sans-serif;
+$rama-slab: "RamaSlabM-Bold", "Helvetica", Arial, sans-serif;
 
 $font-code: "Menlo", monospace;
 $font-pre: "Menlo", monospace;
 $leading: 1rem;
 $font-line-height-pre: 1.6rem;
+
+$miller-text-roman: "Miller Text Rom", Georgia, serif;
+$miller-text-italic: "Miller Text It", Georgia, serif;
+$miller-text-bold: "Miller Text Bd", Georgia, serif;
+$miller-text-bold-italic: "Miller Text Bd It", Georgia, serif;
 
 
 // Tables

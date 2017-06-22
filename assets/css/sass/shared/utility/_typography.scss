@@ -14,9 +14,36 @@
 .u-text-center { text-align: center; }
 .u-text-right { text-align: right; }
 
-.u-font-rama-gothic { font-family: $rama-gothic; text-transform: uppercase; }
-.u-font-rama-slab { font-family: $rama-slab; text-transform: uppercase; }
-.u-font-miller { font-family: "Miller Text Rom";font-style: Normal;font-weight: Normal; }
-.u-font-miller-italic { font-family: "Miller Text It";font-style: Italic;font-weight: Normal; }
-.u-font-miller-bold { font-family: "Miller Text Bd";font-style: Normal;font-weight: Normal; }
-.u-font-miller-bold-italic { font-family: "Miller Text Bd It";font-style: Italic;font-weight: Normal; }
+.u-font-rama-gothic {
+    font-family: $rama-gothic; 
+    text-transform: uppercase;
+}
+
+.u-font-rama-slab {
+    font-family: $rama-slab; 
+    text-transform: uppercase;
+}
+
+.u-font-miller {
+    font-family: $miller-text-roman;
+    font-style: Normal;
+    font-weight: Normal;
+}
+
+.u-font-miller-italic {
+    font-family: $miller-text-italic;
+    font-style: Italic;
+    font-weight: Normal;
+}
+
+.u-font-miller-bold {
+    font-family:$miller-text-bold;
+    font-style: Normal;
+    font-weight: Normal;
+}
+
+.u-font-miller-bold-italic {
+    font-family: $miller-text-bold-italic;
+    font-style: Italic;
+    font-weight: Normal;
+}
