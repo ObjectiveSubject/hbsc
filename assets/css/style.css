@@ -2921,7 +2921,7 @@ caption {
       margin-bottom: 0; } }
 
 .module--post-list .post--list {
-  width: 100%;
+  flex: 0 0 100%;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -2955,7 +2955,8 @@ caption {
       -webkit-flex-direction: row;
       -moz-flex-direction: row;
       flex-direction: row;
-      -ms-flex-direction: row; } }
+      -ms-flex-direction: row;
+      flex: 0 0 70%; } }
 
 .post--list-item {
   position: relative;
