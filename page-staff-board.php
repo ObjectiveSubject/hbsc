@@ -56,7 +56,10 @@ get_header(); ?>
                             </a>
                             <div class="image--positionner <?php echo $imagePos; ?>" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')[0];?>');"></div>
                         </li>
-                    <?php endwhile; ?>
+                    <?php 
+                        endwhile; 
+                        wp_reset_postdata();
+                    ?>
                     </ul>
                     <?php endif; ?>
                 </div>

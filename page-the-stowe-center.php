@@ -89,7 +89,10 @@ get_header(); ?>
                 </div>
             </section>
 
-		<?php endwhile; ?>
+		<?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
 		
 		<?php if( have_rows('module') ): ?>
 

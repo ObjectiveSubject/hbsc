@@ -62,7 +62,8 @@ html {
 .u-color-dark-gray {
   color: #272727 !important; }
 
-.u-bg-dark-gray, .module--past-salons .badge-positioner .badge {
+.u-bg-dark-gray, .module--past-salons .badge-positioner .badge,
+.module--post-list .badge-positioner .badge {
   background-color: #272727 !important; }
 
 .u-color-gray {
@@ -1414,7 +1415,8 @@ blockquote {
   blockquote p {
     margin: 0; }
   .u-bg-red blockquote, .badge-positioner .badge blockquote,
-  .u-bg-dark-gray blockquote, .module--past-salons .badge-positioner .badge blockquote {
+  .u-bg-dark-gray blockquote, .module--past-salons .badge-positioner .badge blockquote,
+  .module--post-list .badge-positioner .badge blockquote {
     color: white; }
   .u-bg-blue blockquote {
     color: #dddad5; }
@@ -1523,6 +1525,13 @@ hr {
   .module--past-salons .badge-positioner {
     top: 2.5rem;
     bottom: initial; }
+  .module--post-list .badge-positioner {
+    top: 0;
+    position: relative;
+    z-index: 18;
+    max-width: 16rem;
+    width: 60%;
+    margin: 0 auto; }
   .badge-positioner .badge {
     display: -webkit-box;
     display: -moz-box;
@@ -1560,10 +1569,13 @@ hr {
     width: 9rem;
     color: white;
     text-align: center; }
-    .module--past-salons .badge-positioner .badge {
+    .module--past-salons .badge-positioner .badge,
+    .module--post-list .badge-positioner .badge {
       padding: 1rem 3rem;
       width: auto;
       height: auto; }
+    .module--post-list .badge-positioner .badge {
+      padding: 1rem 2rem; }
     .module--events-upcoming-list .badge-positioner .badge .h2,
     .module--events-upcoming-list .badge-positioner .badge span .u-caps,
     .module--events-upcoming-list .badge-positioner .badge span .copyright,
@@ -2498,12 +2510,14 @@ img {
   max-width: 100%;
   width: 100%; }
 
-.module--calendar .module__body {
+.module--calendar .module__body,
+.module--post-list .module__body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
   @media screen and (min-width: 768px) {
-    .module--calendar .module__body {
+    .module--calendar .module__body,
+    .module--post-list .module__body {
       flex-direction: row; } }
 
 .module--events-upcoming-inline .module__body,
@@ -2549,10 +2563,15 @@ img {
 
 .module--entry .module__footer {
   width: auto;
-  margin-right: 15rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
   text-align: left; }
+  @media screen and (min-width: 768px) {
+    .module--entry .module__footer {
+      margin-right: 15rem;
+      padding-left: 6rem;
+      padding-right: 6rem; } }
 
 /**
  * Module Elements
@@ -2848,6 +2867,115 @@ caption {
       .event--discussion-leaders .discussion-leader {
         width: 40%;
         margin-bottom: 6rem; } }
+    .event--discussion-leaders .discussion-leader a {
+      color: #272727; }
+
+.discussion-leader-name a {
+  color: #000000; }
+
+.btn--sortby.btn--sortby-active {
+  color: #e74949;
+  border-color: #e74949; }
+
+.item--sortby {
+  display: none; }
+  .item--sortby.item--sortby-active {
+    display: block; }
+
+.post--list-aside {
+  flex: 0 0 100%;
+  margin-bottom: 4rem; }
+  @media screen and (min-width: 768px) {
+    .module--post-list .post--list-aside {
+      flex: 0 0 30%;
+      margin-bottom: 0; } }
+
+.module--post-list .post--list {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .module--post-list .post--list {
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row; } }
+
+.post--list-item {
+  position: relative;
+  border: transparent;
+  margin-bottom: 4rem;
+  flex: 0 0 44%;
+  overflow: hidden; }
+  .post--list-item .post--item-title {
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: .1em;
+    color: #272727;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    word-wrap: break-word;
+    padding: .4rem 0 .8rem 0;
+    text-align: center;
+    margin-bottom: 1.6rem; }
+  .post--list-item .post--title {
+    text-align: center; }
+    .post--list-item .post--title a {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #272727;
+      display: block;
+      line-height: 1.1; }
+  .post--list-item .post--taxonomies {
+    display: none; }
+  .post--list-item .post--item-content {
+    padding: 3rem 1.6rem 1.6rem 1.6rem;
+    margin-top: -2rem; }
+  .post--list-item .image-positioner {
+    width: 100%; }
+    .post--list-item .image-positioner .image {
+      min-height: 10rem;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
+
+.post--list-terms {
+  padding-left: 8px; }
+  .post--list-terms .post--term-item {
+    color: #898989;
+    margin: 0.38rem 0;
+    font-size: 1rem; }
+    .post--list-terms .post--term-item.post--term-checked {
+      color: black; }
+    .post--list-terms .post--term-item input[type="checkbox"] {
+      margin: 0 0.5rem 0 0; }
 
 .events--calendar-aside div.zabuto_calendar {
   margin-bottom: 2rem; }

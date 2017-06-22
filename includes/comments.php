@@ -11,11 +11,39 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'admin_menu', $n( 'remove_comments_menu' ) );
-	add_action( 'admin_init', $n( 'disable_comments_admin_menu_redirect' ) );
-	add_action( 'admin_init', $n( 'remove_comments_support' ) );
-	add_action( 'wp_before_admin_bar_render', $n( 'remove_admin_bar_comments' ) );
+	add_action( 'admin_init', $n( 'add_post_support' ) );
+	add_action( 'admin_init', $n( 'remove_post_support' ) );
+	//add_filter( 'wp_insert_post_data', $n( 'default_comments_on' ) );
+}
 
+function getCommentsPostTypes()
+{
+	return array(
+		'event'
+	);
+}
+
+function default_comments_on( $data )
+{
+	$CommentsPostTypes = getCommentsPostTypes();
+
+    if( in_array( $data['post_type'], $CommentsPostTypes ) )
+	{
+        $data['comment_status'] = 'open';
+    }
+
+    return $data;
+}
+
+function add_post_support()
+{
+	$CommentsPostTypes = getCommentsPostTypes();
+
+	foreach( $CommentsPostTypes	as $type )
+	{
+		add_post_type_support( $type, 'comments' );
+		add_post_type_support( $type, 'trackbacks' );
+	}
 }
 
 /**
@@ -37,13 +65,19 @@ function disable_comments_admin_menu_redirect() {
 	}
 }
 
+function remove_post_support()
+{
+	remove_post_type_support( 'post', 'comments' );
+	remove_post_type_support( 'post', 'trackbacks' );	
+}
+
 /**
  * Remove comments/trackback support from posts
- */
-function remove_comments_support() {
+ *//*
+function 	() {
 	remove_post_type_support( 'post', 'comments' );
 	remove_post_type_support( 'post', 'trackbacks' );
-}
+}*/
 
 /**
  * Remove comments from the admin bar

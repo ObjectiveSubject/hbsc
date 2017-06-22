@@ -28,8 +28,6 @@ require_once HBSC_INC . 'utils.php';
 // Include lib classes
 include( HBSC_INC . 'libraries/extended-cpts.php' );
 include( HBSC_INC . 'libraries/extended-taxos.php' );
-
-
 include( HBSC_INC . 'models/BaseModel.php' );
 include( HBSC_INC . 'models/Event.php' );
 
@@ -40,3 +38,6 @@ HBSC\Options\setup();
 HBSC\Shortcodes\setup();
 HBSC\PostTypes\setup();
 HBSC\Taxonomies\setup();
+
+// utils.php
+add_action( 'save_post', 'postUpdateViews', 10, 3 );

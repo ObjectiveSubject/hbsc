@@ -36,10 +36,13 @@
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="button js-hover-toggle">View Event</a>
             </div>            
         </div>
-
-        <?php if( !empty(get_field('event_picture')) && 'inline' !== $upcomingEventsSectionConfig['direction'] ): ?>
+<?php 
+    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+    $imgSrc = (isset($img[0]) ? $img[0] : '');
+?>
+        <?php if( !empty($imgSrc) && 'inline' !== $upcomingEventsSectionConfig['direction'] ): ?>
         <div class="image-positioner">
-            <div class="image image--grayscale" <?php echo 'style="background-image: url(\'' . get_field('event_picture') . '\');"'; ?>></div>
+            <div class="image image--grayscale" <?php echo 'style="background-image: url(\'' . $imgSrc . '\');"'; ?>></div>
         </div>
         <?php endif;?>
     </div>

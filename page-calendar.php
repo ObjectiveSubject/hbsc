@@ -80,7 +80,10 @@ get_header();
                             <div class="event--details"><?php echo get_field('event_doors_open') . ', ' . get_field('event_location');?></div>
                         </div>
                     </div>
-<?php endwhile;?>
+<?php 
+    endwhile;
+    wp_reset_postdata();
+?>
                 </div>
             </div>
         </div>

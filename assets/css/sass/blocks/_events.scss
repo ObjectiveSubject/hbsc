@@ -147,5 +147,18 @@
             width: 40%;
             margin-bottom: 6rem;
         }
+
+        a 
+        {
+            color: $dark-gray;
+        }
     }   
+}
+
+.discussion-leader-name
+{
+
+    a{
+        color: #000000;
+    }
 }

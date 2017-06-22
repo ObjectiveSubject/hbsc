@@ -46,7 +46,10 @@ get_header(); ?>
                 </div>
             </section>
             
-            <?php endwhile; ?>
+            <?php 
+                endwhile; 
+                wp_reset_postdata();
+            ?>
 
         <?php endif; ?>
 

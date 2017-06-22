@@ -15,6 +15,8 @@ if ( $is_top_page ) {
     $parents = array_reverse( get_post_ancestors( $post->ID ) );
     $id = $parents[0];
 }
+
+incrementViewsCount($post->ID);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
