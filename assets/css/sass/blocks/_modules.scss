@@ -62,10 +62,12 @@
     }
 
     .module--calendar &,
-    .module--post-list & {
+    .module--post-list &,
+    .module--participant & {
         display: flex;
         flex-direction: column;        
         justify-content: space-between;
+        flex-wrap: wrap;
         @include media($md)
         {
             flex-direction: row;

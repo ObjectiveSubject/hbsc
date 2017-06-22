@@ -15,6 +15,7 @@ function setup() {
 
 	add_action( 'init', $n( 'register_event_type' ) );
 	add_action( 'init', $n( 'register_role' ) );
+	add_action( 'init', $n( 'register_participant' ) );
 
 }
 
@@ -30,4 +31,11 @@ function register_event_type() {
  */
 function register_role() {
 	register_extended_taxonomy( 'role', 'people' );
+}
+
+/**
+ * Register the 'role' taxonomy and assign it to people.
+ */
+function register_participant() {
+	register_extended_taxonomy( 'participant-type', 'participant' );
 }

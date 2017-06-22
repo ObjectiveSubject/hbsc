@@ -2511,13 +2511,16 @@ img {
   width: 100%; }
 
 .module--calendar .module__body,
-.module--post-list .module__body {
+.module--post-list .module__body,
+.module--participant .module__body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
   @media screen and (min-width: 768px) {
     .module--calendar .module__body,
-    .module--post-list .module__body {
+    .module--post-list .module__body,
+    .module--participant .module__body {
       flex-direction: row; } }
 
 .module--events-upcoming-inline .module__body,
@@ -2872,6 +2875,33 @@ caption {
 
 .discussion-leader-name a {
   color: #000000; }
+
+.participant--item {
+  flex: 0 0 30%;
+  margin-bottom: 4rem; }
+  .participant--item .participant--name {
+    margin-bottom: 1rem; }
+  .participant--item .participant--winner {
+    background-color: #daa520;
+    z-index: 18;
+    max-width: 16rem;
+    width: 68%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-top: -1.8rem;
+    color: white;
+    letter-spacing: .1rem;
+    font-weight: bold; }
+  .participant--item .participant--image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 16rem; }
+  .participant--item .participant--text {
+    padding-top: 1.6rem;
+    color: white;
+    text-align: center; }
 
 .btn--sortby.btn--sortby-active {
   color: #e74949;

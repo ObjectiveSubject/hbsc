@@ -35,8 +35,8 @@
                 'relation' => 'AND',
                 array(
                     'key' => 'event_start_date',
-                    'value' => get_field('event_end_date'),
-                    'compare' => '>=',
+                    'value' => date('Y-m-d') . ' 00:00:00',
+                    'compare' => '<=',
                     'type' => 'DATE'
                 )
             ),
@@ -56,8 +56,8 @@
                 'relation' => 'AND',
                 array(
                     'key' => 'event_start_date',
-                    'value' => get_field('event_end_date'),
-                    'compare' => '>=',
+                    'value' => date('Y-m-d') . ' 00:00:00',
+                    'compare' => '<=',
                     'type' => 'DATE'
                 )
             ),
@@ -91,7 +91,6 @@
         </header>
 
         <div class="module__body">
-
 <?php
         foreach( $postsSortbyList as $sortByKey => $orderBy )
         {
@@ -99,11 +98,11 @@
             $pastSalonsLoop = new WP_Query( $postsSortbyList[$sortByKey] );
             $cnt = 0;
 
-            while ( $pastSalonsLoop->have_posts() )
+            while( $pastSalonsLoop->have_posts() )
             {
                 $pastSalonsLoop->the_post();
                 $Event = new Event();
-                
+                $sortByClass = 'item--sortby item--sortby-' . $sortByKey;
                 $cnt++;
 
                 include HBSC_PATH . 'partials/events/past-salons-item.php';

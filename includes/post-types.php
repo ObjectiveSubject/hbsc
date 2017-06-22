@@ -13,8 +13,7 @@ function setup() {
 
 	add_action( 'init', $n( 'register_event' ) );
 	add_action( 'init', $n( 'register_people' ) );
-	//add_action( 'init', $n( 'register_participant' ) );
-	//add_action( 'save_post', 'transition_people_private', 10, 3 );
+	add_action( 'init', $n( 'register_participant' ) );
 }
 
 /**
@@ -55,23 +54,22 @@ function register_people() {
 }
 
 /**
- * Register the 'participant' post type
+ * Register the 'student' post type
  */
 function register_participant() {
 	register_extended_post_type( 'participant', array(
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'has_archive' => false,
-		'taxonomies'        => array('winner','highschool', 'college'),
+		'has_archive' => true,
 		'admin_cols' => array(
 			'participant-type' => array(
-				'taxonomy' => 'participants'
+				'taxonomy' => 'participant-type'
 			),
 		)		
 	), array(
 		# Override the base names used for labels:
 		'singular' => 'Participant',
 		'plural'   => 'Participants',
-		'slug'     => 'participants'
+		'slug'     => 'participant'
 	) );
 }

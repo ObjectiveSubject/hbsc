@@ -1,17 +1,7 @@
 <?php
-if( !isset($sortByKey) )
+if( !isset($sortByClass) )
 {
-    $sortByKey = '';
-}
-
-if( !isset($sortByClass) && $sortByKey != '' )
-{
-    $sortByClass = 'item--sortby item--sortby-' . $sortByKey;
-}
-
-if( !isset($sortByItemActive) )
-{
-    $sortByItemActive = false;
+    $sortByClass = '';
 }
 ?>
 <div class="event--past-salon-item <?php echo $sortByClass; ?> <?php echo ( $sortByItemActive ? 'item--sortby-active' : '' ); ?>">
@@ -23,7 +13,7 @@ if( !isset($sortByItemActive) )
                 <?php
                     $dt = \DateTime::createFromFormat( 'Y-m-d', get_field('event_start_date') );
                 ?>
-                <span><?php echo $dt->format('F j, Y'); ?> <?php echo get_field('views_count');?> | <?php echo $post->comment_count;?></a></span>
+                <span><?php echo $dt->format('F j, Y'); ?></a></span>
             </div>
         </div>
         <?php endif; ?>

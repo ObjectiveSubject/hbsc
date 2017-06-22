@@ -23,12 +23,7 @@ $eventStartDate = null;
                 if( null !== get_field('event_display_discussions') && null === $eventDisplayDiscussion )
                 {
                     $eventDisplayDiscussion = get_field('event_display_discussions');
-                }  
-
-                if( null !== get_field('event_start_date') && null === $eventStartDate )
-                {
-                    $eventStartDate = get_field('event_start_date');
-                }                                
+                }
 
                 include HBSC_PATH . 'partials/events/details-section.php';
 
@@ -43,7 +38,8 @@ $eventStartDate = null;
             $upcomingEventsSectionConfig = array(
                 'classes' => 'module--events-upcoming-inline u-bg-white',
                 'direction' => 'inline',
-                'start_date' => $eventStartDate
+                // Looking for upcoming events, based on today's date
+                'start_date' => date('Y-m-d') . ' 00:00:00'
             );
 
             include HBSC_PATH . 'partials/events/upcoming-section.php';
