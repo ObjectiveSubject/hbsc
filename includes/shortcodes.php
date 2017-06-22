@@ -74,6 +74,7 @@ function button_func( $attributes, $content = null ) {
 		'color' => '',
 	), $attributes );
     $color = $data['color'];
+	$button_color = '';
 	if ( $color ) {
         if ( $color == "red" ) {
             $button_color = "button--red";

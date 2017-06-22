@@ -18,7 +18,8 @@ button {
         color: $dark-gray;
         border-color: rgba(0,0,0,.15);
     }
-    &:hover {
+    &:hover,
+     {
         color: $red;
         border-color: $red;
     }

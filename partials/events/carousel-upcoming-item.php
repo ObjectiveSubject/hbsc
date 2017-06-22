@@ -24,8 +24,12 @@
                 </div>
             </div>
         </div>
+<?php 
+    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+    $imgSrc = (isset($img[0]) ? $img[0] : '');
+?>        
         <div class="image-positioner">
-            <div id="image-<?php echo $post->ID; ?>" class="image image--grayscale" <?php echo 'style="background-image: url(' .  get_field('event_picture') . ')"'; ?>></div>
+            <div id="image-<?php echo $post->ID; ?>" class="image image--grayscale" <?php echo 'style="background-image: url(' .  $imgSrc . ')"'; ?>></div>
         </div>
     </div>
 </li>

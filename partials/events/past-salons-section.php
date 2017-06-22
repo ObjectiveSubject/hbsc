@@ -12,9 +12,21 @@
 
     $pastSalonsItemCardPos = '';
 
-    if( !isset($pastSalonsLoop) )
-    {
-        $pastSalonsLoop = new WP_Query( array( 
+    // For mean time
+    $defaultSortByKey = 'recent';
+
+    $postsSortbyList = array( 
+        'recent' => array( 
+            'post_type'      => 'event',
+            'posts_per_page' => -1,
+            'order'          => 'DESC',
+            'meta_key'		 => 'event_start_date',
+            'post__not_in'  => array($post->ID),
+            'orderby' => array(
+                'event_start_date' => "DESC"
+            )
+        ),
+        'most_viewed' => array( 
             'post_type'      => 'event',
             'posts_per_page' => -1,
             'order'          => 'DESC',
@@ -28,16 +40,35 @@
                     'type' => 'DATE'
                 )
             ),
+            'post__not_in'  => array($post->ID),
             'orderby' => array(
                 'meta_value_num' => 'DESC',
-                'event_start_date' => "DESC"
+                'event_start_date' => "DESC",
+                'comment_count' => 'DESC'
+            )
+        ),
+        'most_discussed' => array( 
+            'post_type'      => 'event',
+            'posts_per_page' => -1,
+            'order'          => 'DESC',
+            'meta_key'		 => 'views_count',
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'event_start_date',
+                    'value' => get_field('event_end_date'),
+                    'compare' => '>=',
+                    'type' => 'DATE'
+                )
             ),
-            'post__not_in'  => array($post->ID)
-        ));
-    }
-
-    if($pastSalonsLoop->have_posts())
-    {
+            'post__not_in'  => array($post->ID),
+            'orderby' => array(
+                'comment_count' => 'DESC',
+                'event_start_date' => "DESC",
+                'meta_value_num' => 'DESC'                        
+            )
+        )
+    );
 ?>
 <section class="module module--basic <?php echo $pastSalonsSectionConfig['classes']; ?>">
 
@@ -46,11 +77,28 @@
             <div class="module-title">
                 <?php echo $pastSalonsSectionConfig['title']; ?>
             </div>
+            <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap u-mt-1 u-text-center">
+                <li class="anchor preface-button">
+                    <a href="#" class="button module-button btn--sortby btn--sortby-active" data-sortby-key="recent">Recent</a>
+                </li>
+                <li class="anchor preface-button">
+                    <a href="#" class="button module-button btn--sortby" data-sortby-key="most_viewed">Most Viewed</a>
+                </li>
+                <li class="anchor preface-button">
+                    <a href="#" class="button module-button btn--sortby" data-sortby-key="most_discussed">Most Discussed</a>
+                </li>
+            </ul>
         </header>
 
         <div class="module__body">
-        <?php
+
+<?php
+        foreach( $postsSortbyList as $sortByKey => $orderBy )
+        {
+            $sortByItemActive = ( $sortByKey == $defaultSortByKey );
+            $pastSalonsLoop = new WP_Query( $postsSortbyList[$sortByKey] );
             $cnt = 0;
+
             while ( $pastSalonsLoop->have_posts() )
             {
                 $pastSalonsLoop->the_post();
@@ -60,7 +108,9 @@
 
                 include HBSC_PATH . 'partials/events/past-salons-item.php';
             }
-        ?>
+            wp_reset_postdata();
+        }
+?>
         </div>
     </div>
 <?php
@@ -74,6 +124,3 @@
     }
 ?>
 </section>
-<?php
-}
-?>

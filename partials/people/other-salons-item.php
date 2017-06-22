@@ -8,7 +8,13 @@
                 </div>
 
                 <div class="image-positioner">
-                    <img src="<?php echo get_field('event_picture'); ?>" />
+<?php 
+    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+    $imgSrc = (isset($img[0]) ? $img[0] : '');
+?>
+<?php if( !empty($imgSrc)) : ?>
+                    <img src="<?php echo $imgSrc; ?>" />
+<?php endif; ?>
                 </div>
 
                 <div class="card-title">

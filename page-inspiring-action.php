@@ -177,7 +177,10 @@ get_header(); ?>
             </section>
             <?php endif; ?>
 
-		<?php endwhile; ?>
+		<?php 
+            endwhile; 
+            wp_reset_postdata();
+        ?>
 
 	</div>
 

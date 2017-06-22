@@ -26,8 +26,8 @@ function setup() {
 function register_event() {
 	register_extended_post_type( 'event', array(
         'menu_icon'   => 'dashicons-calendar-alt',
-        'supports'    => array( 'title', 'editor', 'thumbnail' ),
-        //'has_archive' => true,
+        'supports'    => array( 'title', 'editor', 'thumbnail', 'comments' ),
+        'has_archive' => true,
         'public'      => true,
         'dashboard_glance' => false,
 		'admin_cols' => array(
@@ -45,7 +45,7 @@ function register_people() {
 	register_extended_post_type( 'people', array(
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'has_archive' => false
+		'has_archive' => true
 	), array(
 		# Override the base names used for labels:
 		'singular' => 'Person',
@@ -61,7 +61,13 @@ function register_participant() {
 	register_extended_post_type( 'participant', array(
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'has_archive' => false
+		'has_archive' => false,
+		'taxonomies'        => array('winner','highschool', 'college'),
+		'admin_cols' => array(
+			'participant-type' => array(
+				'taxonomy' => 'participants'
+			),
+		)		
 	), array(
 		# Override the base names used for labels:
 		'singular' => 'Participant',

@@ -1,13 +1,12 @@
 .post--list-aside
 {
-    /*width: 100%;*/
     flex: 0 0 100%;
     margin-bottom: 4rem;
+
     .module--post-list &
     {
         @include media($md)
         {
-            /*width: 30%;*/
             flex: 0 0 30%;
             margin-bottom: 0;
         }        
@@ -16,7 +15,6 @@
 
 .post--list
 {
-
     .module--post-list &
     {
         width: 100%;
@@ -29,7 +27,6 @@
         @include media($md)
         {
             @include flex-direction(row);
-            /*width: 60%;*/
         }        
     }    
 }

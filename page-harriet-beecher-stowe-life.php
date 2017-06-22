@@ -30,8 +30,8 @@ get_header(); ?>
                                 </a>
                             </li>
                             <?php 
-                                    wp_reset_postdata();
                                 endwhile;
+                                wp_reset_postdata();
                             ?>
                         </ul>
                     </footer>
@@ -54,8 +54,8 @@ get_header(); ?>
             </section>
 
 		<?php 
-                wp_reset_postdata();
             endwhile;
+            wp_reset_postdata();
         ?>
 		
 		<?php if( have_rows('module') ): ?>

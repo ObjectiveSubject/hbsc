@@ -61,7 +61,10 @@ get_header();
                     <div>-</div>
                     <div><?php echo $Event->getField('event_doors_open') . ', ' . $Event->getField('event_location');?></div>
                 </div>
-<?php endwhile;?>
+<?php 
+    endwhile;
+        wp_reset_postdata();
+?>
             </div>
         </div>
     </section>

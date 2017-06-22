@@ -17,7 +17,7 @@
         <div class="module__body">
             <?php 
                 preg_match('/src="(.+?)"/', $videoEmbed, $matches);
-                $src = $matches[1];
+                $src = ( isset( $matches[1] ) ? $matches[1] : strip_tags( $videoEmbed ) );
 
                 $videoIframe = sprintf( "<iframe width=\"640\" height=\"360\" src=\"%s\" frameborder=\"0\"></iframe>", $src );
                 echo $videoIframe;

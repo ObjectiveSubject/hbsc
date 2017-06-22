@@ -35,8 +35,8 @@ $eventStartDate = null;
                 </div>
             </section>
 		<?php 
-                wp_reset_postdata();
             endwhile; 
+            wp_reset_postdata();
         ?>
 
 		<?php if( have_rows('module') ): ?>
@@ -67,10 +67,17 @@ $eventStartDate = null;
             );
 
             include HBSC_PATH . 'partials/events/past-salons-section.php';
-        ?>
-
-        <div class="comment list">
-            <?php wp_list_comments( array( 'style' => 'div' ) ); ?>
-        </div>        
+        ?>      
 	</div>
 <?php get_footer(); ?>
+<script>
+    var sortByOptions = {
+        'defaultSortByKey' : 'recent',
+        'sortByKeys'       : ['recent', 'most_viewed', 'most_discussed'],
+    };
+    var sortByPastEvents;
+    jQuery( document ).ready(function()
+    {
+        sortByPastEvents = new SortBy( sortByOptions );
+    });
+</script>

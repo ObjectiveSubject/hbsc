@@ -1,0 +1,18 @@
+.btn--sortby
+{
+    &.btn--sortby-active
+    {
+        color: $red;
+        border-color: $red;
+    }
+}
+
+.item--sortby
+{
+    display: none;
+
+    &.item--sortby-active
+    {
+        display: block;
+    }
+}

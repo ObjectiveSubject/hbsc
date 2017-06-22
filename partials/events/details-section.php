@@ -1,4 +1,8 @@
-<section id="module-<?php echo $post->ID;?>" class="module module--hero has-background" <?php echo 'style="background-image: url(' . get_field('event_picture') . ')"'; ?>>
+<?php 
+    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+    $imgSrc = (isset($img[0]) ? $img[0] : '');
+?>
+<section id="module-<?php echo $post->ID;?>" class="module module--hero has-background" <?php echo 'style="background-image: url(' . $imgSrc . ')"'; ?>>
     <div class="module__content u-container u-flex-justify-center">
         <div class="card-positioner card-positioner-fullwidth">
             <div class="card-event-register">
@@ -13,11 +17,9 @@
                     if( get_field('event_registration_open') && !isDateOlderThanNow(get_field('event_start_date')) )
                     {
                 ?>
-
                 <?php
                     }
                 ?>
-              
                 <p>&nbsp;</p>
                 <div class="card-event-title">
                     <h2><?php echo get_field('event_title'); ?></h2>
