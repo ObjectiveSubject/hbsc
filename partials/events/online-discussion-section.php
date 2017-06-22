@@ -1,6 +1,4 @@
 <?php
-//if( $eventDisplayDiscussion )
-//{
 if( comments_open() || get_comments_number() )
 {
 ?>

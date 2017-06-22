@@ -6,7 +6,6 @@ $postId = null;
 get_header();
 $eventStartDate = null;
 ?>
-
 	<div class="site-content">
 		<?php 
             while ( have_posts() ) :
@@ -71,11 +70,13 @@ $eventStartDate = null;
 	</div>
 <?php get_footer(); ?>
 <script>
+    var sortByPastEvents;
+
     var sortByOptions = {
         'defaultSortByKey' : 'recent',
         'sortByKeys'       : ['recent', 'most_viewed', 'most_discussed'],
-    };
-    var sortByPastEvents;
+    };    
+
     jQuery( document ).ready(function()
     {
         sortByPastEvents = new SortBy( sortByOptions );

@@ -1,4 +1,20 @@
-<div class="event--past-salon-item item--sortby item--sortby-<?php echo $sortByKey; ?> <?php echo ( $sortByItemActive ? 'item--sortby-active' : '' ); ?>">
+<?php
+if( !isset($sortByKey) )
+{
+    $sortByKey = '';
+}
+
+if( !isset($sortByClass) && $sortByKey != '' )
+{
+    $sortByClass = 'item--sortby item--sortby-' . $sortByKey;
+}
+
+if( !isset($sortByItemActive) )
+{
+    $sortByItemActive = false;
+}
+?>
+<div class="event--past-salon-item <?php echo $sortByClass; ?> <?php echo ( $sortByItemActive ? 'item--sortby-active' : '' ); ?>">
     <div class="event--past-salon__content">
         
         <?php if( !empty($Event->getDateMonth()) || !empty($Event->getDateDay()) ): ?>

@@ -43,38 +43,17 @@ get_header(); ?>
         <?php endwhile; ?>
         
         <?php
+            $page = get_page_by_path('salons-at-stowe' );
             // PAST SALONS
             $pastSalonsSectionConfig = array(
                 'classes' => 'module--past-salons u-bg-white',
                 'title'   => 'Salons lead by ' . get_field('person_first_name'),
                 'display_button' => true,
                 'button_text' => 'Salons at Stowe',
-                'button_href' => '/salons-at-stowe/'
+                'button_href' => get_permalink($page->ID)
             );
 
-        $pastSalonsLoop = new WP_Query( array( 
-            'post_type'      => 'event',
-            'posts_per_page' => 4,
-            'order'          => 'ASC',
-            'meta_key'		 => 'event_start_date',
-            'meta_query' => array(
-                array(
-                    'key' => 'event_start_date',
-                    'value' => get_field('event_end_date'),
-                    'compare' => '>=',
-                    'type' => 'DATE'
-                ),
-                array(
-                    'key' => 'event_discussion_leaders',
-                    'value' => '"' . $post->ID . '"',
-                    'compare' => 'LIKE'
-                )                
-            ),
-            'orderby'        => 'meta_value',
-            'post__not_in'  => array($post->ID)
-        ));
-
-            include HBSC_PATH . 'partials/events/past-salons-section.php';
+            include HBSC_PATH . 'partials/people/past-salons-section.php';
         ?>
 	</div>
 

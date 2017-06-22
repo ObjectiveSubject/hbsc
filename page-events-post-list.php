@@ -151,3 +151,16 @@ get_header();
         calEvents.filterEventsOnTerms();
     });
 </script>
+<script>
+    var sortByPastEvents;
+
+    var sortByOptions = {
+        'defaultSortByKey' : 'recent',
+        'sortByKeys'       : ['recent', 'most_viewed', 'most_discussed'],
+    };    
+
+    jQuery( document ).ready(function()
+    {
+        sortByPastEvents = new SortBy( sortByOptions );
+    });
+</script>

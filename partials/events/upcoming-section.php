@@ -23,6 +23,14 @@
                 'type' => 'DATE'
             )
         ),
+        'tax_query'      => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'event-type',
+                'field'    => 'slug',
+                'terms'    => array('salons-at-stowe')
+            )
+        ),
         'orderby'        => 'meta_value',
         'post__not_in'  => array($post->ID)
     ));
