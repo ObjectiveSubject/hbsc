@@ -1,7 +1,7 @@
 .preface {
     padding-top: 2rem;
     @include media($md) {
-        padding-top: rem(190); //masthead height
+        /*padding-top: rem(190);*/ //masthead height
     }
 }
 .preface-text {

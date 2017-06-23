@@ -4,7 +4,7 @@
 .module {
     @extend .section;
     &.has-image {
-        padding-top: 0;
+        padding-top: 0!important;
     }
 }
 .module__image {
@@ -65,8 +65,8 @@
     .module--post-list &,
     .module--participant & {
         display: flex;
-        flex-direction: column;        
-        justify-content: space-between;
+        flex-direction: column;
+        @include justify-content(space-between);
         flex-wrap: wrap;
         @include media($md)
         {

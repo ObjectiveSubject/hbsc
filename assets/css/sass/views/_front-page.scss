@@ -2,7 +2,7 @@ body.home {
     .preface {
         padding-top: 0;
         @include media($md) {
-            padding-top: 6.75rem;
+            padding-top: 6.75rem!important;
         }
     }
     .preface-text {

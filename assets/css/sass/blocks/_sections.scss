@@ -2,6 +2,20 @@
     overflow: hidden;
     @extend .u-py-4;
 }
+
+.site-content
+{
+    section:first-child
+    {
+        padding-top: 4rem;
+
+        @include media($md)
+        {
+            padding-top: 11.88rem;
+        }        
+    }
+}
+
 .section__content {
     
 }
