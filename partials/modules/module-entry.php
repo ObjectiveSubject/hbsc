@@ -27,10 +27,10 @@
         <div class="module__body">
             <?php echo $content; ?>
         </div>        
-        <footer class="module__footer">
-            <?php if( $display_button && $button_link && $button_text && ( $buttonLocation == 'footer' || !$buttonLocation ) ) : ?>
+<?php if( $display_button && $button_link && $button_text && ( $buttonLocation == 'footer' || !$buttonLocation ) ) : ?>        
+        <footer class="module__footer">            
                 <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>
-            <?php endif; ?>
-        </footer>        
+        </footer>
+<?php endif; ?>
     </div>
 </section>

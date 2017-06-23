@@ -29,11 +29,16 @@
     width: 100%;
     margin-bottom: 4rem;
     max-width: 30rem;
-    min-width: 26rem;
+    
+    &.item--sortby-active:last-child
+    {
+        margin-bottom: 0rem;
+    }
 
     @include media($md)
     {
         width: 46%;
+        min-width: 26rem;
     }    
 }
 
@@ -105,11 +110,21 @@
 {
     padding-right : 0;
 
+    &:last-child
+    {
+        margin-bottom: 0rem;
+    }
+
     @include media($md)
     {        
         margin-bottom: 8rem;
         padding-bottom: 5rem;
         padding-right: 4rem;
+
+        &:last-child
+        {
+            margin-bottom: 0rem;
+        }
     }
 }
 
@@ -123,6 +138,11 @@
         margin-bottom: 8rem;
         padding-bottom: 5rem;
     }
+
+    &:last-child
+    {
+        margin-bottom: 0rem;
+    }    
 }
 
 .event--discussion-leaders

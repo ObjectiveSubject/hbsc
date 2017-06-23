@@ -678,7 +678,7 @@ html {
 .u-mr-2 {
   margin-right: 2rem; }
 
-.u-mb-2, .module__sidebar, .section__header, .module__header, .section__footer, .module__footer {
+.u-mb-2, .module__sidebar {
   margin-bottom: 2rem; }
 
 .u-ml-2 {
@@ -719,13 +719,13 @@ html {
   margin: 3rem; }
 
 .u-mt-3, .module--carousel .card, .module--events-upcoming-inline .card,
-.module--events-upcoming-list .card, .module--entry figure, .preface-text p {
+.module--events-upcoming-list .card, .module--entry figure, .module__body, .preface-text p, .section__body {
   margin-top: 3rem; }
 
 .u-mr-3, .site-nav {
   margin-right: 3rem; }
 
-.u-mb-3, .module--carousel .badge-positioner .badge {
+.u-mb-3, .module--carousel .badge-positioner .badge, .section__header, .module__header, .section__footer, .module__footer {
   margin-bottom: 3rem; }
 
 .u-ml-3 {
@@ -794,7 +794,7 @@ html {
 .u-pr-4 {
   padding-right: 4rem; }
 
-.u-pb-4 {
+.u-pb-4, .module {
   padding-bottom: 4rem; }
 
 .u-pl-4 {
@@ -1999,7 +1999,7 @@ TODO clean up the !important
   margin-top: -10rem;
   z-index: 99;
   width: 100%;
-  padding: 2rem; }
+  padding: 2rem 2rem 0rem 2rem; }
 
 .card-title {
   word-wrap: break-word; }
@@ -2440,8 +2440,17 @@ img {
 /**
  * Module Parts
  */
+@media screen and (min-width: 768px) {
+  .module {
+    padding-bottom: 8rem; } }
+
 .module.has-image {
   padding-top: 0 !important; }
+
+@media screen and (min-width: 768px) {
+  .module--entry .module,
+  .module--basic .module {
+    padding-bottom: 8rem; } }
 
 .module__image {
   height: 28rem;
@@ -2569,6 +2578,9 @@ img {
     width: 15rem;
     float: right; } }
 
+.module__content .module__footer {
+  margin-bottom: 0; }
+
 .module--past-salons .module__footer {
   margin-top: 0; }
 
@@ -2649,15 +2661,17 @@ img {
 .section, .module {
   overflow: hidden; }
 
+.site-content .page-content section:first-child {
+  padding-top: 4rem; }
+
 .site-content section:first-child {
   padding-top: 4rem; }
   @media screen and (min-width: 768px) {
     .site-content section:first-child {
       padding-top: 11.88rem; } }
 
-@media screen and (min-width: 768px) {
-  .section__header, .module__header, .section__footer, .module__footer {
-    margin-bottom: 4rem; } }
+.section__content .section__footer, .section__content .module__footer {
+  margin-bottom: 0; }
 
 @media screen and (min-width: 768px) {
   .preface .section__footer, .preface .module__footer {
@@ -2796,11 +2810,13 @@ caption {
 .event--past-salon-item {
   width: 100%;
   margin-bottom: 4rem;
-  max-width: 30rem;
-  min-width: 26rem; }
+  max-width: 30rem; }
+  .event--past-salon-item.item--sortby-active:last-child {
+    margin-bottom: 0rem; }
   @media screen and (min-width: 768px) {
     .event--past-salon-item {
-      width: 46%; } }
+      width: 46%;
+      min-width: 26rem; } }
 
 .event--past-salon__content {
   position: relative; }
@@ -2842,11 +2858,15 @@ caption {
 
 .event--upcoming-item-right {
   padding-right: 0; }
+  .event--upcoming-item-right:last-child {
+    margin-bottom: 0rem; }
   @media screen and (min-width: 768px) {
     .event--upcoming-item-right {
       margin-bottom: 8rem;
       padding-bottom: 5rem;
-      padding-right: 4rem; } }
+      padding-right: 4rem; }
+      .event--upcoming-item-right:last-child {
+        margin-bottom: 0rem; } }
 
 .event--upcoming-item-left {
   padding-left: 0; }
@@ -2855,6 +2875,8 @@ caption {
       padding-left: 4rem;
       margin-bottom: 8rem;
       padding-bottom: 5rem; } }
+  .event--upcoming-item-left:last-child {
+    margin-bottom: 0rem; }
 
 .event--discussion-leaders {
   -webkit-box-pack: justify;
@@ -2891,7 +2913,7 @@ caption {
   color: #000000; }
 
 .participant--item {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   max-width: 30rem;
   margin-left: auto;
   margin-right: auto;

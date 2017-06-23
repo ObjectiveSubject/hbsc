@@ -5,6 +5,14 @@
 
 .site-content
 {
+    .page-content
+    {
+        section:first-child
+        {
+            padding-top: 4rem;
+        }
+    }
+
     section:first-child
     {
         padding-top: 4rem;
@@ -12,7 +20,7 @@
         @include media($md)
         {
             padding-top: 11.88rem;
-        }        
+        }
     }
 }
 
@@ -20,12 +28,10 @@
     
 }
 .section__header {
-    @extend .u-mb-2;
-    @include media($md) {
-        margin-bottom: 4rem;
-    }
+    @extend .u-mb-3;
 }
 .section__body {
+    @extend .u-mt-3;
     h4, h5, h6 {
         @extend .u-mt-4;
     }
@@ -34,6 +40,12 @@
     @extend .section__header;
     @extend .u-text-center;
     @extend .u-mt-4;
+    
+    .section__content &
+    {
+        margin-bottom: 0;
+    }
+
     .preface & {
         @include media($md) {
             margin-left: $leading*6;

@@ -59,14 +59,12 @@ $participantsLoop = new WP_Query( array(
         </header>
         <?php endif; ?>
 
-        <div class="module__body">            
+        <div class="module__body u-pt-2">            
 <?php            
             while( $participantsLoop->have_posts() )
             {
                 $participantsLoop->the_post();
 
-                $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-                $imgSrc = (isset($img[0]) ? $img[0] : '');
                 include HBSC_PATH . 'partials/participant/participant-item.php';
             }
             wp_reset_postdata();

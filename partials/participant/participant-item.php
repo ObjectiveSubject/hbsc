@@ -1,3 +1,7 @@
+<?php
+                $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+                $imgSrc = (isset($img[0]) ? $img[0] : '');
+?>
                 <div class="participant--item">
                     <div class="participant--name u-text-center">
                         <a href="<?php echo the_permalink($post->ID);?>" class="u-display-inline-block">

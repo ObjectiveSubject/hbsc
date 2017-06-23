@@ -77,7 +77,7 @@
             <div class="module-title">
                 <?php echo $pastSalonsSectionConfig['title']; ?>
             </div>
-            <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap u-mt-1 u-text-center">
+            <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap u-mt-2 u-text-center">
                 <li class="anchor preface-button">
                     <a href="#" class="button module-button btn--sortby btn--sortby-active" data-sortby-key="recent">Recent</a>
                 </li>

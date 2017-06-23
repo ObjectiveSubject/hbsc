@@ -3,8 +3,24 @@
  */
 .module {
     @extend .section;
+    @extend .u-pb-4;
+
+    @include media($md)
+    {
+        padding-bottom: 8rem;
+    }
+
     &.has-image {
         padding-top: 0!important;
+    }
+
+    .module--entry &,
+    .module--basic &
+    {
+        @include media($md)
+        {
+            padding-bottom: 8rem;
+        }
     }
 }
 .module__image {
@@ -35,6 +51,7 @@
 }
 .module__body {
     @extend .section__body;
+    @extend .u-mt-3;
     .module--video & {
         @include justify-content(center);
         display: flex;
@@ -105,6 +122,11 @@
 }
 .module__footer {
     @extend .section__footer;
+    
+    .module__content &
+    {
+        margin-bottom: 0;
+    }
 
     .module--past-salons &
     {
