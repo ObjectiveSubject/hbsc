@@ -38,13 +38,44 @@
                 }
             });
 
-            if( hasTerm )
+            // Not great quick ugly fix, should restructure
+            // SortBy -->
+            var sortByKey = jQuery('.btn--sortby-active').data('sortby-key');
+            var sortByKeyClass = null;
+
+            if( sortByKey )
             {
-                $(elm).show();                
+                sortByKeyClass = 'item--sortby-' + sortByKey;
+            }
+
+            if( $(elm).hasClass('item--sortby') )
+            {
+                if( sortByKeyClass && !_.isNull(sortByKeyClass) )
+                {
+                    if( hasTerm && $(elm).hasClass( sortByKeyClass ) )
+                    {
+                        if( !$(elm).hasClass( 'item--sortby-active' ) )
+                        {
+                            $(elm).addClass('item--sortby-active');
+                        }                    
+                    }
+                    else
+                    {
+                        $(elm).removeClass('item--sortby-active');
+                    }                
+                }
             }
             else
             {
-                $(elm).hide();
+                // Calendar
+                if( hasTerm )
+                {
+                    $(elm).show();
+                }
+                else
+                {
+                    $(elm).hide();
+                }
             }
         } );    
     };

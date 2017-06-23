@@ -4,12 +4,14 @@
         this.options = options;
         this.sortByKeys = options.sortByKeys;
         this.defaultSortByKey = options.defaultSortByKey;
+        this.onUpdateSortBy = options.onUpdateSortBy;
         this.init();
     }
 
     SortBy.prototype.init = function()
     {
         this.bindButtons();
+        this.setDefaultSortBy();
     }
 
     SortBy.prototype.setDefaultSortBy = function()
@@ -35,6 +37,7 @@
         jQuery('[data-sortby-key="' + sortByKey + '"]').addClass( 'btn--sortby-active' );       
         jQuery( '.item--sortby-active' ).removeClass( 'item--sortby-active' );
         jQuery( '.item--sortby-' + sortByKey ).addClass( 'item--sortby-active' );
+        this.onUpdateSortBy();
     }    
 
     window.SortBy = SortBy;

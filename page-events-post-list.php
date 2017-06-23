@@ -19,6 +19,34 @@ get_header();
         'orderby'        => 'meta_value',
         'order'          => 'DESC'       
     ));
+
+
+    $defaultSortByKey = 'recent';
+
+    $postsSortbyList = array( 
+        'recent' => array( 
+            'post_type'      => 'event',
+            'posts_per_page' => -1,
+            'order'          => 'DESC',
+            'meta_key'		 => 'event_start_date',
+            'post__not_in'  => array($post->ID),
+            'orderby' => array(
+                'event_start_date' => "DESC"
+            )
+        ),
+        'most_viewed' => array( 
+            'post_type'      => 'event',
+            'posts_per_page' => -1,
+            'order'          => 'DESC',
+            'meta_key'		 => 'views_count',
+            'post__not_in'  => array($post->ID),
+            'orderby' => array(
+                'meta_value_num' => 'DESC',
+                'event_start_date' => "DESC",
+                'comment_count' => 'DESC'
+            )
+        )
+    );    
 ?>
 <div class="site-content">
     <section class="module module--post-list u-bg-white">
@@ -31,7 +59,10 @@ get_header();
             
             <div class="module__body">
                 <aside class="post--list-aside">
-
+                    <div class="post--list-sortby">
+                        <div><a href="#" class="btn--sortby" data-sortby-key="most_viewed">Most popular</a></div>
+                        <div><a href="#" class="btn--sortby" data-sortby-key="recent">Newest</a></div>
+                    </div>
                     <div class="post--list-terms">
                         <?php 
                             foreach($termsType as $term)
@@ -51,37 +82,45 @@ get_header();
 <?php 
     $calendarData = array();
 
-    while ( $loop->have_posts() )
+    foreach( $postsSortbyList as $sortByKey => $orderBy )
     {
-        $loop->the_post();
+        $sortByItemActive = ( $sortByKey == $defaultSortByKey );
+        $pastSalonsLoop = new WP_Query( $postsSortbyList[$sortByKey] );
+        $cnt = 0;
 
-        $dt     = \DateTime::createFromFormat( 'Y-m-d', get_field('event_start_date') );
-        $img    = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-        $imgSrc = (isset($img[0]) ? $img[0] : '');
+        while ( $pastSalonsLoop->have_posts() )
+        {
+            $pastSalonsLoop->the_post();
+            $sortByClass = 'item--sortby item--sortby-' . $sortByKey;
+            $cnt++;
 
-        $postItemData = array(
-            'date'     => \DateTime::createFromFormat( 'Y-m-d', get_field('event_start_date') ),
-            'title'    => get_field('event_title'),
-            'subtitle' => get_field('event_subtitle'),
-            'img'      => $imgSrc
-        );
+            $dt     = \DateTime::createFromFormat( 'Y-m-d', get_field('event_start_date') );
+            $img    = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+            $imgSrc = (isset($img[0]) ? $img[0] : '');
 
-        $taxonomies = wp_get_post_terms($post->ID, 'event-type', array(
-                'hide_empty' => true,
-                'fields' => 'names'
-        ) );
+            $postItemData = array(
+                'date'     => \DateTime::createFromFormat( 'Y-m-d', get_field('event_start_date') ),
+                'title'    => get_field('event_title'),
+                'subtitle' => get_field('event_subtitle'),
+                'img'      => $imgSrc
+            );
 
-        $taxonomiesSlugs = wp_get_post_terms($post->ID, 'event-type', array(
-                'hide_empty' => true,
-                'fields' => 'slugs'
-        ) );        
+            $taxonomies = wp_get_post_terms($post->ID, 'event-type', array(
+                    'hide_empty' => true,
+                    'fields' => 'names'
+            ) );
 
-        $calendarData[] = array(
-            'date'  => get_field('event_start_date'),
-            'badge' => false
-        );
+            $taxonomiesSlugs = wp_get_post_terms($post->ID, 'event-type', array(
+                    'hide_empty' => true,
+                    'fields' => 'slugs'
+            ) );        
+
+            $calendarData[] = array(
+                'date'  => get_field('event_start_date'),
+                'badge' => false
+            );
 ?>
-                    <div class="post--list-item">
+                    <div class="post--list-item <?php echo $sortByClass; ?> <?php echo ( $sortByItemActive ? 'item--sortby-active' : '' ); ?>">
 
                         <div class="badge-positioner">
                             <div class="badge">
@@ -113,7 +152,10 @@ get_header();
                 }
 ?>
                     </div>
-<?php } ?>
+<?php 
+        }
+    } 
+?>
                 </div>
             </div>
         </div>
@@ -152,15 +194,16 @@ get_header();
     });
 </script>
 <script>
-    var sortByPastEvents;
-
-    var sortByOptions = {
-        'defaultSortByKey' : 'recent',
-        'sortByKeys'       : ['recent', 'most_viewed', 'most_discussed'],
-    };    
+    var sortByPastEvents; 
 
     jQuery( document ).ready(function()
     {
+        var sortByOptions = {
+            'defaultSortByKey' : 'most_viewed',
+            'sortByKeys'       : ['recent', 'most_viewed'],
+            'onUpdateSortBy'   : function(){calEvents.filterEventsOnTerms()}
+        };
+
         sortByPastEvents = new SortBy( sortByOptions );
     });
 </script>

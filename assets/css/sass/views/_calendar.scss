@@ -56,6 +56,12 @@ div.zabuto_calendar
 
     border: 1px solid #a6a4a0;
     margin-bottom: 8px;
+    /*display: none;*/
+
+    &.item--sortby-active
+    {
+        display: block;
+    }
 
     &:hover
     {

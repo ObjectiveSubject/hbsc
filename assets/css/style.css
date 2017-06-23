@@ -2441,7 +2441,7 @@ img {
  * Module Parts
  */
 .module.has-image {
-  padding-top: 0; }
+  padding-top: 0 !important; }
 
 .module__image {
   height: 28rem;
@@ -2515,7 +2515,15 @@ img {
 .module--participant .module__body {
   display: flex;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
   justify-content: space-between;
+  -ms-flex-pack: justify;
   flex-wrap: wrap; }
   @media screen and (min-width: 768px) {
     .module--calendar .module__body,
@@ -2616,7 +2624,7 @@ img {
   padding-top: 2rem; }
   @media screen and (min-width: 768px) {
     .preface {
-      padding-top: 11.88rem; } }
+      /*padding-top: rem(190);*/ } }
 
 [class*='u-bg-'] .preface-text {
   color: #dddad5; }
@@ -2640,6 +2648,12 @@ img {
 
 .section, .module {
   overflow: hidden; }
+
+.site-content section:first-child {
+  padding-top: 4rem; }
+  @media screen and (min-width: 768px) {
+    .site-content section:first-child {
+      padding-top: 11.88rem; } }
 
 @media screen and (min-width: 768px) {
   .section__header, .module__header, .section__footer, .module__footer {
@@ -2962,8 +2976,18 @@ caption {
   position: relative;
   border: transparent;
   margin-bottom: 4rem;
-  flex: 0 0 44%;
-  overflow: hidden; }
+  overflow: hidden;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: none; }
+  .post--list-item.item--sortby-active {
+    display: block; }
+  @media screen and (min-width: 768px) {
+    .post--list-item {
+      flex: 0 0 44%;
+      min-width: 18rem; } }
   .post--list-item .post--item-title {
     width: 100%;
     font-size: 1rem;
@@ -3053,7 +3077,10 @@ div.zabuto_calendar div.legend span.badge-today {
   flex-direction: row;
   -ms-flex-direction: row;
   border: 1px solid #a6a4a0;
-  margin-bottom: 8px; }
+  margin-bottom: 8px;
+  /*display: none;*/ }
+  .calendar--event-item.item--sortby-active {
+    display: block; }
   .calendar--event-item:hover {
     background-color: #e74949;
     cursor: pointer; }
@@ -3269,7 +3296,7 @@ body.home .preface {
   padding-top: 0; }
   @media screen and (min-width: 768px) {
     body.home .preface {
-      padding-top: 6.75rem; } }
+      padding-top: 6.75rem !important; } }
 
 body.home .preface-text {
   text-align: left; }

@@ -36,9 +36,24 @@
 {
     position: relative;
     border: transparent;
-    margin-bottom: 4rem;
-    flex: 0 0 44%;
+    margin-bottom: 4rem;    
     overflow: hidden;
+    max-width: 30rem;
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    display: none;
+
+    &.item--sortby-active
+    {
+        display: block;
+    }
+
+    @include media($md)
+    {
+        flex: 0 0 44%;
+        min-width: 18rem;
+    }
 
     .post--item-title
     {

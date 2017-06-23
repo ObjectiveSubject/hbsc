@@ -41,13 +41,44 @@
                 }
             });
 
-            if( hasTerm )
+            // Not great quick ugly fix, should restructure
+            // SortBy -->
+            var sortByKey = jQuery('.btn--sortby-active').data('sortby-key');
+            var sortByKeyClass = null;
+
+            if( sortByKey )
             {
-                $(elm).show();                
+                sortByKeyClass = 'item--sortby-' + sortByKey;
+            }
+
+            if( $(elm).hasClass('item--sortby') )
+            {
+                if( sortByKeyClass && !_.isNull(sortByKeyClass) )
+                {
+                    if( hasTerm && $(elm).hasClass( sortByKeyClass ) )
+                    {
+                        if( !$(elm).hasClass( 'item--sortby-active' ) )
+                        {
+                            $(elm).addClass('item--sortby-active');
+                        }                    
+                    }
+                    else
+                    {
+                        $(elm).removeClass('item--sortby-active');
+                    }                
+                }
             }
             else
             {
-                $(elm).hide();
+                // Calendar
+                if( hasTerm )
+                {
+                    $(elm).show();
+                }
+                else
+                {
+                    $(elm).hide();
+                }
             }
         } );    
     };
@@ -238,12 +269,14 @@
         this.options = options;
         this.sortByKeys = options.sortByKeys;
         this.defaultSortByKey = options.defaultSortByKey;
+        this.onUpdateSortBy = options.onUpdateSortBy;
         this.init();
     }
 
     SortBy.prototype.init = function()
     {
         this.bindButtons();
+        this.setDefaultSortBy();
     }
 
     SortBy.prototype.setDefaultSortBy = function()
@@ -269,6 +302,7 @@
         jQuery('[data-sortby-key="' + sortByKey + '"]').addClass( 'btn--sortby-active' );       
         jQuery( '.item--sortby-active' ).removeClass( 'item--sortby-active' );
         jQuery( '.item--sortby-' + sortByKey ).addClass( 'item--sortby-active' );
+        this.onUpdateSortBy();
     }    
 
     window.SortBy = SortBy;
