@@ -2,6 +2,16 @@
 {
     flex: 0 0 100%;
     margin-bottom: 4rem;
+    
+    @include justify-content(center);
+    @include align-self(center);
+
+    @include media($md)
+    {
+        @include justify-content(flex-start);
+        align-self: flex-start;        
+        max-width: 100%;
+    }
 
     .module--post-list &
     {
@@ -52,7 +62,7 @@
     @include media($md)
     {
         flex: 0 0 44%;
-        min-width: 18rem;
+        min-width: 20rem;
     }
 
     .post--item-title
