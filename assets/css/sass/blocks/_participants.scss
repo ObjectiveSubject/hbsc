@@ -1,7 +1,17 @@
 .participant--item
-{
-    flex: 0 0 30%;
+{    
     margin-bottom: 4rem;
+    max-width: 30rem;
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+
+    @include media($md)
+    {
+        flex: 0 0 30%;
+        min-width: 18rem;
+    }
+
 
     .participant--name
     {

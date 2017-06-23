@@ -9,6 +9,7 @@
 
     CalendarEvents.prototype.getCheckedTerms = function()
     {
+        // Get all checkboxes with checked state
         var list = $('input[name="' + this.checkboxesName + '"]:checked');
         var checkedValues = [];
 

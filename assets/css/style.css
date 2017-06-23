@@ -2784,13 +2784,20 @@ caption {
     .event--upcoming-item {
       overflow: initial;
       margin-bottom: 0rem; } }
-  @media screen and (min-width: 768px) {
-    .module--events-upcoming-inline .event--upcoming-item {
-      width: 32%; } }
+  .module--events-upcoming-inline .event--upcoming-item {
+    margin-bottom: 4rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 30rem; }
+    @media screen and (min-width: 768px) {
+      .module--events-upcoming-inline .event--upcoming-item {
+        max-width: 18rem; } }
 
 .event--past-salon-item {
   width: 100%;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  max-width: 30rem;
+  min-width: 26rem; }
   @media screen and (min-width: 768px) {
     .event--past-salon-item {
       width: 46%; } }
@@ -2850,40 +2857,33 @@ caption {
       padding-bottom: 5rem; } }
 
 .event--discussion-leaders {
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap; }
   @media screen and (min-width: 768px) {
     .event--discussion-leaders {
-      -webkit-box-pack: distribute;
-      -moz-box-pack: distribute;
-      box-pack: distribute;
-      -webkit-justify-content: space-around;
-      -moz-justify-content: space-around;
-      -ms-justify-content: space-around;
-      -o-justify-content: space-around;
-      justify-content: space-around;
-      -ms-flex-pack: distribute;
       flex-direction: row; } }
   .event--discussion-leaders .discussion-leader {
-    width: 100%; }
+    overflow: hidden;
+    width: 100%;
+    max-width: 26rem;
+    margin-bottom: 6rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; }
     .event--discussion-leaders .discussion-leader .image {
       background-size: cover;
       background-position: center;
       padding-bottom: 80%; }
-    @media screen and (min-width: 768px) {
-      .event--discussion-leaders .discussion-leader {
-        width: 40%;
-        margin-bottom: 6rem; } }
     .event--discussion-leaders .discussion-leader a {
       color: #272727; }
 
@@ -2891,8 +2891,15 @@ caption {
   color: #000000; }
 
 .participant--item {
-  flex: 0 0 30%;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .participant--item {
+      flex: 0 0 30%;
+      min-width: 18rem; } }
   .participant--item .participant--name {
     margin-bottom: 1rem; }
   .participant--item .participant--winner {

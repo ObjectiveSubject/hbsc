@@ -166,15 +166,24 @@ get_header();
 
 <script type="application/javascript">
     var calEvents;
+    var sortByPastEvents;
     var dataCalendar = <?php echo json_encode($calendarData); ?>;
 
     jQuery(document).ready(function()
-    {
+    {        
         calEvents = new CalendarEvents({
             'checkboxesName'       : 'posts_categories',
             'selectorItems'        : '.post--list-item',
             'selectorItemTaxonomy' : '.post--taxonomies',
         });
+
+        var sortByOptions = {
+            'defaultSortByKey'       : 'most_viewed',
+            'sortByKeys'             : ['recent', 'most_viewed'],
+            'onUpdateSortByCallback' : function(){calEvents.filterEventsOnTerms()}
+        };
+
+        sortByPastEvents = new SortBy( sortByOptions );        
 
         $('input[name="posts_categories"]').on( 'change', function()
         {
@@ -191,19 +200,5 @@ get_header();
         } );
 
         calEvents.filterEventsOnTerms();
-    });
-</script>
-<script>
-    var sortByPastEvents; 
-
-    jQuery( document ).ready(function()
-    {
-        var sortByOptions = {
-            'defaultSortByKey' : 'most_viewed',
-            'sortByKeys'       : ['recent', 'most_viewed'],
-            'onUpdateSortBy'   : function(){calEvents.filterEventsOnTerms()}
-        };
-
-        sortByPastEvents = new SortBy( sortByOptions );
     });
 </script>

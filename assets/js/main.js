@@ -12,6 +12,7 @@
 
     CalendarEvents.prototype.getCheckedTerms = function()
     {
+        // Get all checkboxes with checked state
         var list = $('input[name="' + this.checkboxesName + '"]:checked');
         var checkedValues = [];
 
@@ -269,7 +270,7 @@
         this.options = options;
         this.sortByKeys = options.sortByKeys;
         this.defaultSortByKey = options.defaultSortByKey;
-        this.onUpdateSortBy = options.onUpdateSortBy;
+        this.onUpdateSortByCallback = options.onUpdateSortByCallback;
         this.init();
     }
 
@@ -302,7 +303,13 @@
         jQuery('[data-sortby-key="' + sortByKey + '"]').addClass( 'btn--sortby-active' );       
         jQuery( '.item--sortby-active' ).removeClass( 'item--sortby-active' );
         jQuery( '.item--sortby-' + sortByKey ).addClass( 'item--sortby-active' );
-        this.onUpdateSortBy();
+
+        console.log('typeof this.onUpdateSortByCallback', typeof this.onUpdateSortByCallback);
+        if( typeof this.onUpdateSortByCallback == 'function' )
+        {
+            console.log('onUpdateSortByCallback');
+            this.onUpdateSortByCallback();
+        }        
     }    
 
     window.SortBy = SortBy;

@@ -12,9 +12,14 @@
 
     .module--events-upcoming-inline &
     {
+        margin-bottom: 4rem;
+        overflow: hidden;
+        width: 100%;        
+        max-width: 30rem;
+
         @include media($md)
         {
-            width: 32%;
+            max-width: 18rem;
         }
     }
 }
@@ -23,6 +28,8 @@
 {
     width: 100%;
     margin-bottom: 4rem;
+    max-width: 30rem;
+    min-width: 26rem;
 
     @include media($md)
     {
@@ -120,21 +127,18 @@
 
 .event--discussion-leaders
 {
-    @include justify-content(center);
+    @include justify-content(space-between);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 
     @include media($md)
     {
-        @include justify-content(space-around);
         flex-direction: row;
-    }
+    }    
 
     .discussion-leader
     {
-        width: 100%;
-
         .image
         {
             background-size: cover;
@@ -142,11 +146,13 @@
             padding-bottom: 80%;
         }
 
-        @include media($md)
-        {
-            width: 40%;
-            margin-bottom: 6rem;
-        }
+        overflow: hidden;
+        width: 100%;        
+        max-width: 26rem;
+        margin-bottom: 6rem;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
 
         a 
         {

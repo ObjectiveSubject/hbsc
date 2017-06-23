@@ -146,7 +146,7 @@ get_header();
             {
                 $(this).parent().removeClass('calendar--term-checked');
             }
-            console.log($(this).prop('checked'));
+
             calEvents.filterEventsOnTerms();
         } );
 
