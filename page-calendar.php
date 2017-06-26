@@ -40,7 +40,7 @@ get_header();
                                 $termChecked = in_array( $term->slug, $termsList );
                     ?>
                                 <label class="calendar--term-item <?php echo $termChecked ? 'calendar--term-checked' : ''; ?>">
-                                    <input type="checkbox" name="events_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <?php echo $term->name;?>
+                                    <input type="checkbox" name="events_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <span><?php echo $term->name;?></span>
                                 </label>
                     <?php
                             }

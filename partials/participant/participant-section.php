@@ -30,7 +30,6 @@ if( !isset($button_text) )
     $button_text = '';
 }
 
-//$participantsSectionConfig
 $participantsList = get_sub_field('participant_list');
 
 if(!$participantsList)

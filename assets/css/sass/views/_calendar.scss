@@ -159,12 +159,23 @@ div.zabuto_calendar
 
     .calendar--term-item
     {
-        color: $gray;
+        color: gray;
         margin: rem(6) 0;
         font-size: 1rem;
+        span
+        {
+            color: gray;
+            font-size: .9rem;
+            transition: color .275s;
+        }        
+
         &.calendar--term-checked
         {
-            color: $color-text-main;
+            span
+            {
+                transition: color .275s;
+                color: $color-text-main;
+            }            
         }
 
         input[type="checkbox"]

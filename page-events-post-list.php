@@ -60,8 +60,8 @@ get_header();
             <div class="module__body">
                 <aside class="post--list-aside">
                     <div class="post--list-sortby">
-                        <div><a href="#" class="btn--sortby" data-sortby-key="most_viewed">Most popular</a></div>
-                        <div><a href="#" class="btn--sortby" data-sortby-key="recent">Newest</a></div>
+                        <a href="#" class="btn--sortby" data-sortby-key="most_viewed">Most popular</a>
+                        <a href="#" class="btn--sortby" data-sortby-key="recent">Newest</a>
                     </div>
                     <div class="post--list-terms">
                         <?php 
@@ -70,7 +70,7 @@ get_header();
                                 $termChecked = in_array( $term->slug, $termsList );
                     ?>
                                 <label class="post--term-item <?php echo $termChecked ? 'post--term-checked' : ''; ?>">
-                                    <input type="checkbox" name="posts_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <?php echo $term->name;?>
+                                    <input type="checkbox" name="posts_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <span><?php echo $term->name;?></span>
                                 </label>
                     <?php
                             }

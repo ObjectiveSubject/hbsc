@@ -35,6 +35,21 @@ TODO clean up the !important
             margin-top: 0rem;
         }
     }
+
+    .u-bg-blue &
+    {
+        a
+        {
+            color: $tan;
+            border-color: $tan;
+
+            &:hover,
+            {
+                color: $red;
+                border-color: $red;
+            }            
+        }
+    }
 }
 
 .card {
@@ -48,6 +63,21 @@ TODO clean up the !important
         padding: 3rem;
     }
 
+    .module--carousel.module--mediacollection &
+    {
+        margin-top: -14rem;
+        margin-bottom: 0;
+        min-height: 18rem;
+        width: 100%;
+
+        @include media($md)
+        {
+            margin-top:0;
+            margin-bottom: 0;
+            min-height: 28.75rem;
+            width: 22.5rem;
+        }
+    }
 
     &.has-badge {
         position: relative;
@@ -245,6 +275,19 @@ TODO clean up the !important
         z-index: 10;        
     }
 
+    .module--mediacollection &
+    {
+        float: none;
+        order: 2;        
+        width: calc(100% - 9rem);
+
+        @include media($md)
+        {
+            width: inherit;
+            padding-right: 4.5rem;
+        }
+    }
+
     .event--upcoming-item-left &,
     .event--upcoming-item-right &
     {
@@ -369,6 +412,9 @@ TODO clean up the !important
 
     [class*='u-bg-']>& {
         color: white;
+        h2, h3 {
+            color: white;
+        }        
     }
     .u-bg-white>&,
     .u-bg-light-gray>&,

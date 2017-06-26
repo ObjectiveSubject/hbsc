@@ -23,6 +23,18 @@
     }
 }
 
+.post--list-sortby
+{
+    margin-bottom: 1.6rem;
+
+    a
+    {
+        display: block;
+        margin-bottom: .2rem;
+        font-size: .9rem;
+    }
+}
+
 .post--list
 {
     .module--post-list &
@@ -119,16 +131,26 @@
 
 .post--list-terms
 {
-    padding-left: 8px;
-
     .post--term-item
     {
         color: $gray;
         margin: rem(6) 0;
         font-size: 1rem;
+
+        span
+        {
+            color: gray;
+            font-size: .9rem;
+            transition: color .275s;
+        }        
+       
         &.post--term-checked
         {
-            color: $color-text-main;
+            span
+            {
+                transition: color .275s;
+                color: $color-text-main;
+            } 
         }
 
         input[type="checkbox"]

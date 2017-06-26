@@ -1,4 +1,9 @@
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--carousel <?php echo $color; ?>">
+
+<?php
+$moduleCarouselClass = 'module--carousel ' . $color;
+$moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselClass . ' module--mediacollection' ) : $moduleCarouselClass );
+?>
+<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module <?php echo $moduleCarouselClass; ?>">
     <div class="module__content u-container">
         <?php if( $display_title ) : ?>
         <header class="module__header">

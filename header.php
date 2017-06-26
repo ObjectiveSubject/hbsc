@@ -7,7 +7,7 @@ $body_class = '';
 if ( is_single() || is_page() ) {
     $body_class = get_post_type() . '-' . $post->post_name;
 }
-    
+   
 $is_top_page = ( 0 === $post->post_parent );
 if ( $is_top_page ) {
     $id = $post->ID;

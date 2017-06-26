@@ -27,10 +27,10 @@
         margin: 0 auto;
         padding: 1rem 2rem;
         text-align: center;
-        margin-top: -1.8rem;
-        color: white;
+        margin-top: -1.8rem;        
         letter-spacing: .1rem;
         font-weight: bold;
+        color: white;
     }
 
     .participant--image
@@ -49,7 +49,11 @@
     .participant--text
     {
         padding-top: 1.6rem;
-        color: white;
         text-align: center;
+
+        .u-bg-blue &
+        {
+            color: white;
+        }        
     }
 }

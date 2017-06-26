@@ -1,14 +1,8 @@
 <?php
-    $leadersIds = get_field('event_discussion_leaders', false, false);
+    $leadersPosts = get_field('event_discussion_leaders');
 
-    $leadersPosts = new WP_Query(array(
-        'post_type'      	=> 'people',
-        'posts_per_page'	=> -1,
-        'post__in'			=> $leadersIds
-    ));
-
-    if( $leadersPosts->have_posts() )
-    {
+    if( is_array($leadersPosts) && count( $leadersPosts ) > 0 )
+    {        
 ?>
         <section class="module u-bg-light-gray">
             <div class="module__content u-container">
@@ -19,10 +13,10 @@
                 </header>
                 <div class="module__body event--discussion-leaders">
                 <?php
-                    while( $leadersPosts->have_posts() )
+                    foreach( $leadersPosts as $post )
                     {
-                        $leadersPosts->the_post();
-
+                        //$leadersPosts->the_post();
+                        setup_postdata($post);
                         include HBSC_PATH . 'partials/events/discussion-leaders-item.php';
                     }
                 ?>

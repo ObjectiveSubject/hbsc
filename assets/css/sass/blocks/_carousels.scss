@@ -2,11 +2,42 @@
 .carousel-slide__content {
     position: relative;
     @extend .u-clear;
+
+    .module--mediacollection &
+    {
+        display: flex;        
+        align-items: center;
+        flex-direction: column;
+        padding-left:2rem;
+        padding-right:2rem;
+
+        @include media($md)
+        {
+            flex-direction: row;
+            padding-left:0;
+            padding-right:0;            
+        }
+    }
+
     .image-positioner {
         max-width: rem(792);
         width: 100%;
         padding-left: rem(72); // half of badge size
         z-index: 0;
+
+        .module--mediacollection &
+        {
+            order: 1;
+            z-index: 0;
+            padding-left: 0;
+            padding-right: 0;
+
+            @include media($md)
+            {
+                padding-left: 4.5rem;
+                padding-right: 0;
+            }
+        }        
     }
     .image {
         background-size: cover;
@@ -15,8 +46,16 @@
         height: 0;
         padding-bottom: 60%;
         @extend .u-transition-300;
-        &.image--grayscale {
-            @include filter(grayscale(100%));
+        @include filter(grayscale(100%));
+
+        .module--carousel.module--mediacollection &
+        {
+            padding-bottom: 0;
+            min-height: 24.75rem;
+
+            &.image--grayscale {
+                @include filter(grayscale(0%));
+            }            
         }
     }
 }

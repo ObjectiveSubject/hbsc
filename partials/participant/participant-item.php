@@ -23,4 +23,11 @@
                         <div class="entry--title"><?php echo get_field('participant_entry_title'); ?></div>
                         <div class="school--name"><?php echo get_field('participant_academic_institution'); ?></div>
                     </div>
+
+<?php 
+                if( is_single() )
+                {
+                    the_content();
+                }
+?>
                 </div>

@@ -1746,6 +1746,13 @@ TODO clean up the !important
       justify-content: center;
       margin-top: 0rem; } }
 
+.u-bg-blue .card-button a {
+  color: #dddad5;
+  border-color: #dddad5; }
+  .u-bg-blue .card-button a:hover {
+    color: #e74949;
+    border-color: #e74949; }
+
 .card {
   display: -webkit-box;
   display: -moz-box;
@@ -1766,6 +1773,17 @@ TODO clean up the !important
   @media screen and (min-width: 768px) {
     .card {
       padding: 3rem; } }
+  .module--carousel.module--mediacollection .card {
+    margin-top: -14rem;
+    margin-bottom: 0;
+    min-height: 18rem;
+    width: 100%; }
+    @media screen and (min-width: 768px) {
+      .module--carousel.module--mediacollection .card {
+        margin-top: 0;
+        margin-bottom: 0;
+        min-height: 28.75rem;
+        width: 22.5rem; } }
   .card.has-badge {
     position: relative;
     margin-top: 4.5rem;
@@ -1942,6 +1960,15 @@ TODO clean up the !important
   position: relative;
   z-index: 10; }
 
+.module--mediacollection .card-positioner {
+  float: none;
+  order: 2;
+  width: calc(100% - 9rem); }
+  @media screen and (min-width: 768px) {
+    .module--mediacollection .card-positioner {
+      width: inherit;
+      padding-right: 4.5rem; } }
+
 .event--upcoming-item-left .card-positioner,
 .event--upcoming-item-right .card-positioner {
   display: flex;
@@ -2070,6 +2097,8 @@ TODO clean up the !important
 
 [class*='u-bg-'] > .card-content {
   color: white; }
+  [class*='u-bg-'] > .card-content h2, [class*='u-bg-'] > .card-content h3 {
+    color: white; }
 
 .u-bg-white > .card-content,
 .u-bg-light-gray > .card-content,
@@ -2083,20 +2112,45 @@ TODO clean up the !important
 /* Customization */
 .carousel-slide__content {
   position: relative; }
+  .module--mediacollection .carousel-slide__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem; }
+    @media screen and (min-width: 768px) {
+      .module--mediacollection .carousel-slide__content {
+        flex-direction: row;
+        padding-left: 0;
+        padding-right: 0; } }
   .carousel-slide__content .image-positioner {
     max-width: 49.5rem;
     width: 100%;
     padding-left: 4.5rem;
     z-index: 0; }
+    .module--mediacollection .carousel-slide__content .image-positioner {
+      order: 1;
+      z-index: 0;
+      padding-left: 0;
+      padding-right: 0; }
+      @media screen and (min-width: 768px) {
+        .module--mediacollection .carousel-slide__content .image-positioner {
+          padding-left: 4.5rem;
+          padding-right: 0; } }
   .carousel-slide__content .image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 0;
-    padding-bottom: 60%; }
-    .carousel-slide__content .image.image--grayscale {
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%); }
+    padding-bottom: 60%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .module--carousel.module--mediacollection .carousel-slide__content .image {
+      padding-bottom: 0;
+      min-height: 24.75rem; }
+      .module--carousel.module--mediacollection .carousel-slide__content .image.image--grayscale {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%); }
 
 .slick-controls {
   position: absolute;
@@ -2943,9 +2997,9 @@ caption {
     padding: 1rem 2rem;
     text-align: center;
     margin-top: -1.8rem;
-    color: white;
     letter-spacing: .1rem;
-    font-weight: bold; }
+    font-weight: bold;
+    color: white; }
   .participant--item .participant--image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -2956,8 +3010,9 @@ caption {
         min-height: 16rem; } }
   .participant--item .participant--text {
     padding-top: 1.6rem;
-    color: white;
     text-align: center; }
+    .u-bg-blue .participant--item .participant--text {
+      color: white; }
 
 .btn--sortby.btn--sortby-active {
   color: #e74949;
@@ -3001,6 +3056,13 @@ caption {
     .module--post-list .post--list-aside {
       flex: 0 0 30%;
       margin-bottom: 0; } }
+
+.post--list-sortby {
+  margin-bottom: 1.6rem; }
+  .post--list-sortby a {
+    display: block;
+    margin-bottom: .2rem;
+    font-size: .9rem; }
 
 .module--post-list .post--list {
   flex: 0 0 100%;
@@ -3089,16 +3151,19 @@ caption {
       background-position: center;
       background-repeat: no-repeat; }
 
-.post--list-terms {
-  padding-left: 8px; }
-  .post--list-terms .post--term-item {
-    color: #898989;
-    margin: 0.38rem 0;
-    font-size: 1rem; }
-    .post--list-terms .post--term-item.post--term-checked {
-      color: black; }
-    .post--list-terms .post--term-item input[type="checkbox"] {
-      margin: 0 0.5rem 0 0; }
+.post--list-terms .post--term-item {
+  color: #898989;
+  margin: 0.38rem 0;
+  font-size: 1rem; }
+  .post--list-terms .post--term-item span {
+    color: gray;
+    font-size: .9rem;
+    transition: color .275s; }
+  .post--list-terms .post--term-item.post--term-checked span {
+    transition: color .275s;
+    color: black; }
+  .post--list-terms .post--term-item input[type="checkbox"] {
+    margin: 0 0.5rem 0 0; }
 
 .events--calendar-aside div.zabuto_calendar {
   margin-bottom: 2rem; }
@@ -3250,10 +3315,15 @@ div.zabuto_calendar div.legend span.badge-today {
 .events--calendar-terms {
   padding-left: 8px; }
   .events--calendar-terms .calendar--term-item {
-    color: #898989;
+    color: gray;
     margin: 0.38rem 0;
     font-size: 1rem; }
-    .events--calendar-terms .calendar--term-item.calendar--term-checked {
+    .events--calendar-terms .calendar--term-item span {
+      color: gray;
+      font-size: .9rem;
+      transition: color .275s; }
+    .events--calendar-terms .calendar--term-item.calendar--term-checked span {
+      transition: color .275s;
       color: black; }
     .events--calendar-terms .calendar--term-item input[type="checkbox"] {
       margin: 0 0.5rem 0 0; }
