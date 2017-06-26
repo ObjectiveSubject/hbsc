@@ -1,6 +1,11 @@
 .section {
     overflow: hidden;
     @extend .u-py-4;
+
+    .section .page &
+    {
+        padding: 0;
+    }
 }
 
 .site-content
@@ -33,7 +38,7 @@
 .section__body {
     @extend .u-mt-3;
     h4, h5, h6 {
-        @extend .u-mt-4;
+        @extend .u-mt-3;
     }
 }
 .section__footer {

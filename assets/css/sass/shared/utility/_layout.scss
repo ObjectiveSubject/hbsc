@@ -16,9 +16,9 @@
     position: relative;
 	max-width: $max-width;
 	margin: 0 auto;
-	padding: 0 $leading;
+	padding: 0 1.5rem;
     @include media($md) {
-        padding: 0 $container_padding;
+        padding: 0 1.5rem;
     }
 }
 

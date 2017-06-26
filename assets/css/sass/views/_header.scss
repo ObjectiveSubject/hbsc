@@ -16,6 +16,12 @@
 .site-nav {
     @extend .u-py-1;
     @extend .u-mr-3;
+    padding-bottom: 0.4rem;
+
+    @include media($md)
+    {
+        padding-bottom: 1rem;
+    }
 }
 .site-menu {
     @include position(relative);
@@ -82,10 +88,13 @@
 .site-menu-toggle {
     @extend .u-display-block-md;
     @include position(absolute);
-    bottom: rem(8);
+    bottom: 0;
     right: 0;
     color: shade( $tan, 25% );
     @extend .u-transition-300;
+
+    padding: .5rem 1rem 1.5rem 1rem;
+
     &:hover {
         color: $red;
     }
@@ -94,6 +103,7 @@
     }
     .site-menu.is-expanded & {
         transform: rotate(180deg);
+        padding: 1.5rem 1rem 0.5rem 1rem;
     }
 }
 .site-mobile-menu-toggle {

@@ -5,22 +5,31 @@
     @extend .section;
     @extend .u-pb-4;
 
-    @include media($md)
+    /*@include media($md)
     {
         padding-bottom: 8rem;
-    }
+    }*/
 
     &.has-image {
         padding-top: 0!important;
     }
 
-    .module--entry &,
-    .module--basic &
+    &.module--events-upcoming-list,
+    &.module--events-upcoming-inline,
+    &.module--participant,
+    &.module--entry,
+    &.module--basic
     {
         @include media($md)
         {
             padding-bottom: 8rem;
         }
+    }
+
+    &.module--events-upcoming-inline,
+    &.module--participant
+    {
+        /*margin-bottom: -4rem;*/
     }
 }
 .module__image {
@@ -55,6 +64,7 @@
     .module--video & {
         @include justify-content(center);
         display: flex;
+        margin-top: 0;
     }
     .module--entry & {
         @extend .u-pr-1;
@@ -73,6 +83,15 @@
             padding-right: 6rem;
         }
     }
+
+    &.event--discussion-leaders
+    {
+        @include media($md)
+        {
+            margin-bottom: -4rem;
+        }        
+    }
+
     .module--carousel & {
         max-width: 100%;
         width: 100%;
@@ -128,7 +147,8 @@
         margin-bottom: 0;
     }
 
-    .module--past-salons &
+    .module--past-salons &,
+    .module--participant &
     {
         margin-top: 0;
     }

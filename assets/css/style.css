@@ -19,6 +19,7 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+/*rem(64);*/
 @font-face {
   font-family: 'RamaGothicE-Heavy';
   src: url("../fonts/33E42B_0_0.eot");
@@ -562,10 +563,10 @@ html {
   position: relative;
   max-width: 70.5rem;
   margin: 0 auto;
-  padding: 0 1rem; }
+  padding: 0 1.5rem; }
   @media screen and (min-width: 768px) {
     .u-container {
-      padding: 0 4rem; } }
+      padding: 0 1.5rem; } }
 
 .u-mt-nudge {
   margin-top: 0.5rem; }
@@ -719,7 +720,7 @@ html {
   margin: 3rem; }
 
 .u-mt-3, .module--carousel .card, .module--events-upcoming-inline .card,
-.module--events-upcoming-list .card, .module--entry figure, .module__body, .preface-text p, .section__body {
+.module--events-upcoming-list .card, .module--entry figure, .module__body, .preface-text p, .section__body, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6 {
   margin-top: 3rem; }
 
 .u-mr-3, .site-nav {
@@ -765,7 +766,7 @@ html {
 .u-ma-4 {
   margin: 4rem; }
 
-.u-mt-4, .chart, .module-row + .module-row, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6, .section__footer, .module__footer {
+.u-mt-4, .chart, .module-row + .module-row, .section__footer, .module__footer {
   margin-top: 4rem; }
 
 .u-mr-4 {
@@ -2440,17 +2441,18 @@ img {
 /**
  * Module Parts
  */
-@media screen and (min-width: 768px) {
-  .module {
-    padding-bottom: 8rem; } }
-
-.module.has-image {
-  padding-top: 0 !important; }
-
-@media screen and (min-width: 768px) {
-  .module--entry .module,
-  .module--basic .module {
-    padding-bottom: 8rem; } }
+.module {
+  /*@include media($md)
+    {
+        padding-bottom: 8rem;
+    }*/ }
+  .module.has-image {
+    padding-top: 0 !important; }
+  @media screen and (min-width: 768px) {
+    .module.module--events-upcoming-list, .module.module--events-upcoming-inline, .module.module--participant, .module.module--entry, .module.module--basic {
+      padding-bottom: 8rem; } }
+  .module.module--events-upcoming-inline, .module.module--participant {
+    /*margin-bottom: -4rem;*/ }
 
 .module__image {
   height: 28rem;
@@ -2502,7 +2504,8 @@ img {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  display: flex; }
+  display: flex;
+  margin-top: 0; }
 
 .module--entry .module__body {
   margin-right: 0; }
@@ -2514,6 +2517,10 @@ img {
       margin-right: 15rem;
       padding-left: 6rem;
       padding-right: 6rem; } }
+
+@media screen and (min-width: 768px) {
+  .module__body.event--discussion-leaders {
+    margin-bottom: -4rem; } }
 
 .module--carousel .module__body {
   max-width: 100%;
@@ -2581,7 +2588,8 @@ img {
 .module__content .module__footer {
   margin-bottom: 0; }
 
-.module--past-salons .module__footer {
+.module--past-salons .module__footer,
+.module--participant .module__footer {
   margin-top: 0; }
 
 .module--entry .module__footer {
@@ -2660,6 +2668,8 @@ img {
 
 .section, .module {
   overflow: hidden; }
+  .section .page .section, .module .page .section, .section .page .module, .module .page .module {
+    padding: 0; }
 
 .site-content .page-content section:first-child {
   padding-top: 4rem; }
@@ -2914,7 +2924,7 @@ caption {
 
 .participant--item {
   margin-bottom: 6rem;
-  max-width: 30rem;
+  max-width: 26rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
@@ -2940,7 +2950,10 @@ caption {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 16rem; }
+    min-height: 22rem; }
+    @media screen and (min-width: 768px) {
+      .participant--item .participant--image {
+        min-height: 16rem; } }
   .participant--item .participant--text {
     padding-top: 1.6rem;
     color: white;
@@ -3397,6 +3410,12 @@ body.home .preface-text {
       justify-content: space-between;
       -ms-flex-pack: justify; } }
 
+.site-nav {
+  padding-bottom: 0.4rem; }
+  @media screen and (min-width: 768px) {
+    .site-nav {
+      padding-bottom: 1rem; } }
+
 .site-menu {
   position: relative;
   display: inline-block;
@@ -3455,15 +3474,17 @@ body.home .preface-text {
 
 .site-menu-toggle {
   position: absolute;
-  bottom: 0.5rem;
+  bottom: 0;
   right: 0;
-  color: #a6a4a0; }
+  color: #a6a4a0;
+  padding: .5rem 1rem 1.5rem 1rem; }
   .site-menu-toggle:hover {
     color: #e74949; }
   .site-menu-toggle:focus {
     outline: 0; }
   .site-menu.is-expanded .site-menu-toggle {
-    transform: rotate(180deg); }
+    transform: rotate(180deg);
+    padding: 1.5rem 1rem 0.5rem 1rem; }
 
 .site-mobile-menu-toggle {
   position: absolute;
