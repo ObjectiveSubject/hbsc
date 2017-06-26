@@ -63,6 +63,29 @@ TODO clean up the !important
         padding: 3rem;
     }
 
+    &[class*='u-bg-']>& {
+        color: white;
+        h2,
+        h3,
+        *
+        {
+            color: white;
+        }
+    }
+
+    &.u-bg-white>&,
+    &.u-bg-light-gray>&,
+    &.u-bg-tan>& {
+        color: $dark-gray;
+
+        h2,
+        h3,
+        *
+        {
+            color: $dark-gray;
+        }        
+    }
+
     .module--carousel.module--mediacollection &
     {
         margin-top: -14rem;
@@ -279,7 +302,7 @@ TODO clean up the !important
     {
         float: none;
         order: 2;        
-        width: calc(100% - 9rem);
+        width: 80%;/*calc(100% - 9rem)*/;
 
         @include media($md)
         {
@@ -412,15 +435,34 @@ TODO clean up the !important
 
     [class*='u-bg-']>& {
         color: white;
-        h2, h3 {
+        
+        *,
+        h2,
+        h3
+        {
             color: white;
         }        
     }
-    .u-bg-white>&,
-    .u-bg-light-gray>&,
-    .u-bg-tan>& {
+    .card.u-bg-white>&,
+    .card.u-bg-light-gray>&,
+    .card.u-bg-tan>& {
         color: $dark-gray;
+        h2,
+        h3,
+        *
+        {
+            color: $dark-gray;
+        }
     }
+/*
+    &.u-bg-blue &,
+    .u-bg-dark-gray &
+    {
+        h2,
+        h3 {
+            color: white;
+        }
+    }*/
 
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {

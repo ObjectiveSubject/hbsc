@@ -1773,6 +1773,26 @@ TODO clean up the !important
   @media screen and (min-width: 768px) {
     .card {
       padding: 3rem; } }
+  .card[class*='u-bg-'] > .card {
+    color: white; }
+    .card[class*='u-bg-'] > .card h2,
+    .card[class*='u-bg-'] > .card h3,
+    .card[class*='u-bg-'] > .card * {
+      color: white; }
+  .card.u-bg-white > .card,
+  .card.u-bg-light-gray > .card,
+  .card.u-bg-tan > .card {
+    color: #272727; }
+    .card.u-bg-white > .card h2,
+    .card.u-bg-white > .card h3,
+    .card.u-bg-white > .card *,
+    .card.u-bg-light-gray > .card h2,
+    .card.u-bg-light-gray > .card h3,
+    .card.u-bg-light-gray > .card *,
+    .card.u-bg-tan > .card h2,
+    .card.u-bg-tan > .card h3,
+    .card.u-bg-tan > .card * {
+      color: #272727; }
   .module--carousel.module--mediacollection .card {
     margin-top: -14rem;
     margin-bottom: 0;
@@ -1963,7 +1983,8 @@ TODO clean up the !important
 .module--mediacollection .card-positioner {
   float: none;
   order: 2;
-  width: calc(100% - 9rem); }
+  width: 80%;
+  /*calc(100% - 9rem)*/ }
   @media screen and (min-width: 768px) {
     .module--mediacollection .card-positioner {
       width: inherit;
@@ -2064,50 +2085,69 @@ TODO clean up the !important
       .module--events-upcoming-list .card-title {
         margin-bottom: 1rem; } }
 
-.module--carousel .card-content,
-.module--events-upcoming-list .card-content {
-  flex-grow: 1;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
-  .module--carousel .card-content h2, .module--carousel .card-content h3,
-  .module--events-upcoming-list .card-content h2,
-  .module--events-upcoming-list .card-content h3 {
-    font-size: 3rem; }
-
-[class*='u-bg-'] > .card-content {
-  color: white; }
-  [class*='u-bg-'] > .card-content h2, [class*='u-bg-'] > .card-content h3 {
+.card-content {
+  /*
+    &.u-bg-blue &,
+    .u-bg-dark-gray &
+    {
+        h2,
+        h3 {
+            color: white;
+        }
+    }*/ }
+  .module--carousel .card-content,
+  .module--events-upcoming-list .card-content {
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
+    .module--carousel .card-content h2, .module--carousel .card-content h3,
+    .module--events-upcoming-list .card-content h2,
+    .module--events-upcoming-list .card-content h3 {
+      font-size: 3rem; }
+  [class*='u-bg-'] > .card-content {
     color: white; }
-
-.u-bg-white > .card-content,
-.u-bg-light-gray > .card-content,
-.u-bg-tan > .card-content {
-  color: #272727; }
-
-.module--events-upcoming-inline .card-content,
-.module--events-upcoming-list .card-content {
-  color: white; }
+    [class*='u-bg-'] > .card-content *,
+    [class*='u-bg-'] > .card-content h2,
+    [class*='u-bg-'] > .card-content h3 {
+      color: white; }
+  .card.u-bg-white > .card-content,
+  .card.u-bg-light-gray > .card-content,
+  .card.u-bg-tan > .card-content {
+    color: #272727; }
+    .card.u-bg-white > .card-content h2,
+    .card.u-bg-white > .card-content h3,
+    .card.u-bg-white > .card-content *,
+    .card.u-bg-light-gray > .card-content h2,
+    .card.u-bg-light-gray > .card-content h3,
+    .card.u-bg-light-gray > .card-content *,
+    .card.u-bg-tan > .card-content h2,
+    .card.u-bg-tan > .card-content h3,
+    .card.u-bg-tan > .card-content * {
+      color: #272727; }
+  .module--events-upcoming-inline .card-content,
+  .module--events-upcoming-list .card-content {
+    color: white; }
 
 /* Customization */
 .carousel-slide__content {
@@ -2116,8 +2156,8 @@ TODO clean up the !important
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-left: 2rem;
-    padding-right: 2rem; }
+    padding-left: 1rem;
+    padding-right: 1rem; }
     @media screen and (min-width: 768px) {
       .module--mediacollection .carousel-slide__content {
         flex-direction: row;
@@ -2157,19 +2197,29 @@ TODO clean up the !important
   top: 50%;
   font-size: 2rem; }
   .slick-controls.slick-prev {
-    left: 0;
+    left: 4rem;
+    visibility: hidden;
+    margin-top: -2rem;
     -webkit-transform: translate3d(-100%, -50%, 0);
     -moz-transform: translate3d(-100%, -50%, 0);
     -ms-transform: translate3d(-100%, -50%, 0);
     -o-transform: translate3d(-100%, -50%, 0);
     transform: translate3d(-100%, -50%, 0); }
+    @media screen and (min-width: 768px) {
+      .slick-controls.slick-prev {
+        visibility: visible; } }
   .slick-controls.slick-next {
-    right: 0;
+    right: 4rem;
+    visibility: hidden;
+    margin-top: -2rem;
     -webkit-transform: translate3d(100%, -50%, 0);
     -moz-transform: translate3d(100%, -50%, 0);
     -ms-transform: translate3d(100%, -50%, 0);
     -o-transform: translate3d(100%, -50%, 0);
     transform: translate3d(100%, -50%, 0); }
+    @media screen and (min-width: 768px) {
+      .slick-controls.slick-next {
+        visibility: visible; } }
 
 .slick-slide:focus {
   outline: 0; }
@@ -3062,7 +3112,7 @@ caption {
   .post--list-sortby a {
     display: block;
     margin-bottom: .2rem;
-    font-size: .9rem; }
+    font-size: 1rem; }
 
 .module--post-list .post--list {
   flex: 0 0 100%;

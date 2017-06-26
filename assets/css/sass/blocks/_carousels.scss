@@ -8,8 +8,8 @@
         display: flex;        
         align-items: center;
         flex-direction: column;
-        padding-left:2rem;
-        padding-right:2rem;
+        padding-left:1rem;
+        padding-right:1rem;
 
         @include media($md)
         {
@@ -66,12 +66,24 @@
     font-size: rem(32);
     @extend .u-transition-300;
     &.slick-prev {
-        left: 0;
+        left: 4rem;
+        visibility: hidden;
+        margin-top: -2rem;
         @include transform(translate3d(-100%, -50%, 0));
+        @include media($md)
+        {
+            visibility: visible;
+        }
     }
     &.slick-next {
-        right: 0;
+        right: 4rem;
+        visibility: hidden;
+        margin-top: -2rem;
         @include transform(translate3d(100%, -50%, 0));
+        @include media($md)
+        {
+            visibility: visible;
+        }        
     }
 }
 .slick-slide {
