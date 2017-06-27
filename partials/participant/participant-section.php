@@ -1,5 +1,4 @@
 <?php
-
 if( !isset($color) )
 {
     $color = 'u-bg-white';    
@@ -30,15 +29,9 @@ if( !isset($button_text) )
     $button_text = '';
 }
 
-
-if(!$participantsList)
+if( !isset($participantsSectionConfig) )
 {
-    $participantsList = array( $post->ID );
-}
-
-if( !isset($participantsSctionConfig) )
-{
-    $participantsSctionConfig = array(
+    $participantsSectionConfig = array(
         'posts_per_page' => 3,
         'title' => get_field('participant_first_name') . ' ' . get_field('participant_last_name' ),
         'color' => 'u-bg-white',
@@ -46,27 +39,27 @@ if( !isset($participantsSctionConfig) )
         'button_link' => '',
         'display_title' => true,
         'display_button' => false,
-        'participants_list' => get_sub_field('participant_list')
+        'post__in' => get_sub_field('participant_list')
     );
 }
 
 $participantsLoop = new WP_Query( array( 
     'post_type'      => 'participant',
-    'posts_per_page' => $participantsSctionConfig['posts_per_page'],
+    'posts_per_page' => $participantsSectionConfig['posts_per_page'],
     'order'          => 'DESC',
     'meta_key'		 => 'participant_winner',
-    //'post__in'       => $participantsList,
+    'post__in'       => $participantsSectionConfig['post__in'],
     'orderby'        => array(
         'meta_value_num' => 'DESC'
     )
 ));
 ?>
-<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($participantsSctionConfig['title'])); ?>" class="module module--participant <?php echo $participantsSctionConfig['color']; ?>">
+<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($participantsSectionConfig['title'])); ?>" class="module module--participant <?php echo $participantsSectionConfig['color']; ?>">
     <div class="module__content u-container">
-        <?php if( $participantsSctionConfig['display_title'] && !empty($participantsSctionConfig['title']) ) : ?>
+        <?php if( $participantsSectionConfig['display_title'] && !empty($participantsSectionConfig['title']) ) : ?>
         <header class="module__header">
             <div class="module-title">
-                <?php echo $participantsSctionConfig['title']; ?>
+                <?php echo $participantsSectionConfig['title']; ?>
             </div>
         </header>
         <?php endif; ?>
@@ -83,9 +76,9 @@ $participantsLoop = new WP_Query( array(
 ?>
         </div>
 
-        <?php if( $participantsSctionConfig['display_button'] && $participantsSctionConfig['button_link'] && $participantsSctionConfig['button_text'] ) : ?>
+        <?php if( $participantsSectionConfig['display_button'] && $participantsSectionConfig['button_link'] && $participantsSectionConfig['button_text'] ) : ?>
         <footer class="module__footer">
-            <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $participantsSctionConfig['button_text']; ?></a>
+            <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $participantsSectionConfig['button_text']; ?></a>
         </footer>
         <?php endif; ?>
     </div>

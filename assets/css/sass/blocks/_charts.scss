@@ -3,10 +3,27 @@
     @extend .u-flex-justify-center;
     @extend .u-px-4;
     @extend .u-mt-4;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include media($md)
+    {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
 .chart-data {
     max-width: 20%;
     @extend .u-px-1;
+    padding-left: .5rem;
+    padding-right: .5rem; 
+
+    @include media($md)
+    {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 .chart-data__key {
     text-align: center;

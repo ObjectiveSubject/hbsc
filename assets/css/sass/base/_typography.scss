@@ -167,9 +167,15 @@ address {
 
 blockquote {
 	@extend em;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-transform: none;
     margin: 0;
+
+	@include media($md)
+	{
+		font-size: 2rem;
+	}
+
 	p {
 		margin: 0;
 	}

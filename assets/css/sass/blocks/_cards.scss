@@ -302,7 +302,7 @@ TODO clean up the !important
     {
         float: none;
         order: 2;        
-        width: 80%;/*calc(100% - 9rem)*/;
+        width: 80%;
 
         @include media($md)
         {
@@ -444,7 +444,7 @@ TODO clean up the !important
         list-style-type: disc;
         margin: 1rem 0;
         padding-left: 2rem;
-        
+
         li
         {
             text-align: left;
@@ -472,15 +472,6 @@ TODO clean up the !important
             color: $dark-gray;
         }
     }
-/*
-    &.u-bg-blue &,
-    .u-bg-dark-gray &
-    {
-        h2,
-        h3 {
-            color: white;
-        }
-    }*/
 
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
