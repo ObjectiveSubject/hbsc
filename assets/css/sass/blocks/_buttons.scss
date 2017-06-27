@@ -8,6 +8,7 @@ button {
     color: $dark-gray;
     padding: rem(8) rem(32);
     border: 1px solid rgba(0,0,0,.15);
+    
     [class*='u-bg-'] & {
         color: $tan;
         border-color: $tan;
@@ -18,18 +19,22 @@ button {
         color: $dark-gray;
         border-color: rgba(0,0,0,.15);
     }
+
     &:hover,
      {
         color: $red;
         border-color: $red;
     }
+
     .u-bg-red &:hover {
         color: $dark-gray;
         border-color: $dark-gray;
     }
+
     &+& {
         @extend .u-ml-1;
     }
+    
     .module__sidebar & {
         @include media($md) {
             width: 100%;

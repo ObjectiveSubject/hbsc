@@ -54,6 +54,16 @@
         .u-bg-blue &
         {
             color: white;
-        }        
+        }
+
+        .topic
+        {
+            font-style: italic;
+        }
+
+        .entry--title
+        {
+            font-size: 2rem;
+        }
     }
 }
