@@ -28,6 +28,10 @@
     @include media($md) {
         flex: 1 0 50%;
         text-align: left;
+        &.footer-social
+        {
+            flex: 1 0 30%;
+        }
     }
 }
 .footer-nav {
@@ -67,6 +71,18 @@
     @extend .u-flex-justify-between;
     @include media($md) {
         @include display(flex);
+        flex: 1 0 auto;
+        @include justify-content(flex-end);
+    }
+
+    @include media($md)
+    {
+        .newsletter--label
+        {
+            display: flex;
+            flex: 0 0 30%;
+            align-self: center;
+        }
     }
 }
 .copyright {

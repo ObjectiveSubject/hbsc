@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="footer-row u-flex-items-center">
-                    <div class="footer-column">
+                    <div class="footer-social footer-column">
                         <?php
                         $facebook = get_option( 'hbsc_facebook' );
                         $instagram = get_option( 'hbsc_instagram' );
