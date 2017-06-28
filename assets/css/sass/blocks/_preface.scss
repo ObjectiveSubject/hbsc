@@ -6,7 +6,7 @@
 }
 .preface-text {
     p {
-        @extend .u-mt-3;
+        @extend .u-mt-2;
     }
     [class*='u-bg-'] & {
         color: $tan;

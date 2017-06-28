@@ -673,7 +673,7 @@ html {
 .u-ma-2 {
   margin: 2rem; }
 
-.u-mt-2, .footer-nav {
+.u-mt-2, .preface-text p, .footer-nav {
   margin-top: 2rem; }
 
 .u-mr-2 {
@@ -720,7 +720,7 @@ html {
   margin: 3rem; }
 
 .u-mt-3, .module--carousel .card, .module--events-upcoming-inline .card,
-.module--events-upcoming-list .card, .module--entry figure, .module__body, .preface-text p, .section__body, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6 {
+.module--events-upcoming-list .card, .module--entry figure, .module__body, .section__body, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6 {
   margin-top: 3rem; }
 
 .u-mr-3, .site-nav {
@@ -1270,7 +1270,7 @@ textarea {
 h1, .h1 {
   display: block;
   font-size: 4rem;
-  line-height: .82;
+  line-height: 1;
   font-weight: normal;
   margin: 0; }
   @media screen and (min-width: 768px) {

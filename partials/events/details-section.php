@@ -3,7 +3,7 @@
     $imgSrc = (isset($img[0]) ? $img[0] : '');
 ?>
 <section id="module-<?php echo $post->ID;?>" class="module module--hero has-background" <?php echo 'style="background-image: url(' . $imgSrc . ')"'; ?>>
-    <div class="module__content u-container u-flex-justify-center">
+    <div class="module__content u-container u-flex-justify-center" style="max-width:50.5rem;">
         <div class="card-positioner card-positioner-fullwidth">
             <div class="card-event-register">
                 <a href="#" class="button module-button">Register</a>
@@ -61,11 +61,11 @@
                     if( $eventDisplayDiscussion == 1 )
                     {
                 ?>                
-                        <a href="#join_the_discussion" class="button module-button">Join the discussion</a>
+                        <a href="#join_the_discussion" class="button module-button u-mb-1">Join the discussion</a>
                 <?php
                     }
                 ?>
-                    <a href="" class="button module-button">Share</a>
+                    <a href="" class="button module-button u-mb-1">Share</a>
                 </div>
 
             </div>

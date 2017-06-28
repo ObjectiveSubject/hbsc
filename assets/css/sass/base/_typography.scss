@@ -28,7 +28,7 @@ textarea {
     @include display(block);
     @extend .u-font-rama-gothic;
 	font-size: rem(64);
-    line-height: .82;
+    line-height: 1;
     font-weight: normal;
     margin: 0;
 	@include media($md) {
