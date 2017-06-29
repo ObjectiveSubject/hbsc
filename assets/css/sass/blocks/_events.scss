@@ -4,7 +4,7 @@
     {
         .image
         {
-            @include filter(grayscale(100%));
+            @include filter(grayscale(100%));           
         }
 
         .card-button

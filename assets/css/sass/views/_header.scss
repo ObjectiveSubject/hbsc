@@ -29,8 +29,10 @@
     width: 100%;
     background: $tan;
     pointer-events: auto;
+    min-height: 100px;
     @include media($md) {
         width: auto;
+        /*min-height: auto;*/
         &::before {
             content: '';
             @include position(absolute);
@@ -110,7 +112,7 @@
     @extend .u-display-none-md;
     position: absolute;
     right: 0;
-    top: 2rem;
+    top: 2.6rem;
     width: 1.675rem;
     height: rem(24);
     padding: 0;
@@ -150,6 +152,7 @@
 // Menu toggle behaviour
 .header-menu {
     @include display(none);
+
     .sub-menu {
         &.is-expanded {
             @include display(block);
@@ -203,7 +206,7 @@ body.home {
                 width: auto;
             }
             .hbsc-logo {
-                @include transform(translateX(0));
+                /*@include transform(translateX(0));*/
                 .logotype {
                     opacity: 1;
                     visibility: visible;

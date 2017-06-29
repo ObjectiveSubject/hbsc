@@ -633,7 +633,7 @@ html {
 .u-mr-1 {
   margin-right: 1rem; }
 
-.u-mb-1, .masthead .hbsc-logo {
+.u-mb-1, .masthead .hbsc-logo2 {
   margin-bottom: 1rem; }
 
 .u-ml-1, .button + .button, .slick-dots li + li, .social__item + .social__item {
@@ -1517,14 +1517,14 @@ hr {
         bottom: initial; } }
   .event--upcoming-item-right .badge-positioner {
     right: 0;
-    left: initial;
+    left: auto;
     z-index: 14;
     bottom: initial;
     top: 2rem; }
     @media screen and (min-width: 768px) {
       .event--upcoming-item-right .badge-positioner {
         right: 7.25rem;
-        left: initial;
+        left: auto;
         bottom: initial; } }
   .module--past-salons .badge-positioner {
     top: 2.5rem;
@@ -2452,27 +2452,62 @@ label {
 .logo:hover .pen > * {
   fill: #fbaf17; }
 
-.hbsc-logo svg {
-  width: 100%; }
+.header-logo {
+  padding-bottom: 78px; }
+  .header-logo svg {
+    width: 100%;
+    position: relative; }
+  .masthead .header-logo .hbsc-logo {
+    width: 192px;
+    height: 54px;
+    position: absolute;
+    top: 22px; }
+  @media screen and (min-width: 768px) {
+    .masthead--collapsed .header-logo {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      transition: padding-bottom 400ms 400ms ease;
+      transition-delay: 300ms;
+      /*body.home & {
+                padding-bottom: 27.3504274%;
+                margin-bottom: 1rem;
+            }*/ }
+      .masthead--collapsed .header-logo .hbsc-logo {
+        transform: translateX(-112.5%);
+        transition: transform 300ms ease; }
+      .masthead--collapsed .header-logo .logotype {
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 300ms; } }
 
-.masthead .hbsc-logo {
+.hbsc-logo2 svg {
   width: 100%;
-  height: 0;
-  padding-bottom: 27.3504274%;
+  position: relative; }
+
+.masthead .hbsc-logo2 {
+  width: 192px;
+  /*100%;*/
+  height: 54px;
+  /*height: 0;*/
+  /*padding-bottom: 27.3504274%;*/
   /*transition: transform 300ms 300ms ease,
                       padding-bottom 300ms ease;*/ }
+  .masthead .hbsc-logo2 .logotype {
+    height: 54px; }
 
 @media screen and (min-width: 768px) {
-  .masthead--collapsed .hbsc-logo {
+  .masthead--collapsed .hbsc-logo2 {
     padding-bottom: 0;
     margin-bottom: 0;
+    height: 0px;
     transform: translateX(-112.5%);
     transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
-    .masthead--collapsed .hbsc-logo .logotype {
+    .masthead--collapsed .hbsc-logo2 .logotype {
       opacity: 0;
       visibility: hidden;
+      /*height: 0;*/
       transition-delay: 300ms; }
-    body.home .masthead--collapsed .hbsc-logo {
+    body.home .masthead--collapsed .hbsc-logo2 {
       padding-bottom: 27.3504274%;
       margin-bottom: 1rem; } }
 
@@ -2830,7 +2865,7 @@ img {
 .section-title, .module-title, .card-title {
   width: 100%;
   font-size: 1.12rem;
-  letter-spacing: .2em;
+  letter-spacing: .2rem;
   color: #272727;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -3437,6 +3472,7 @@ div.zabuto_calendar div.legend span.badge-today {
     -moz-flex-direction: column;
     flex-direction: column;
     -ms-flex-direction: column;
+    flex: 1 1 80%;
     padding: 1rem; }
     .calendar--event-item .event--content .event--title {
       line-height: 1;
@@ -3661,10 +3697,12 @@ body.home .preface-text {
   display: inline-block;
   width: 100%;
   background: #dddad5;
-  pointer-events: auto; }
+  pointer-events: auto;
+  min-height: 100px; }
   @media screen and (min-width: 768px) {
     .site-menu {
-      width: auto; }
+      width: auto;
+      /*min-height: auto;*/ }
       .site-menu::before {
         content: '';
         position: absolute;
@@ -3729,7 +3767,7 @@ body.home .preface-text {
 .site-mobile-menu-toggle {
   position: absolute;
   right: 0;
-  top: 2rem;
+  top: 2.6rem;
   width: 1.675rem;
   height: 1.5rem;
   padding: 0; }
@@ -3794,11 +3832,7 @@ body.home .masthead--collapsed .site-menu.is-expanded .site-nav {
   width: auto; }
 
 body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0); }
+  /*@include transform(translateX(0));*/ }
   body.home .masthead--collapsed .site-menu.is-expanded .hbsc-logo .logotype {
     opacity: 1;
     visibility: visible; }

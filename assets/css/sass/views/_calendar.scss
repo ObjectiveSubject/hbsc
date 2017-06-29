@@ -104,6 +104,7 @@ div.zabuto_calendar
         @include display(flex);
         @include justify-content(center);
         @include flex-direction(column);
+        flex: 1 1 80%;
         padding: 1rem;
 
         .event--title

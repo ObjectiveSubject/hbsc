@@ -15,15 +15,72 @@
         }
     }
 }
-.hbsc-logo {
+
+
+.header-logo
+{
     svg {
         width: 100%;
+        position: relative;
+    }
+    
+    padding-bottom: 78px;
+
+    .masthead & 
+    {
+        .hbsc-logo
+        {
+            width: 192px;
+            height: 54px;
+            position: absolute;
+            top:22px;
+        }
+    }
+
+    @include media($md) {
+        .masthead--collapsed & {
+            padding-bottom: 0;
+            margin-bottom: 0;
+             // 112.5% = 192px (100%) + 24px (12.5%),
+            transition: padding-bottom 400ms 400ms ease;
+            transition-delay: 300ms;
+
+            .hbsc-logo
+            {
+                transform: translateX(-112.5%);
+                transition: transform 300ms ease;
+            }                        
+            .logotype {
+                opacity: 0;
+                visibility: hidden;  
+                transition-delay: 300ms;         
+            }
+            /*body.home & {
+                padding-bottom: 27.3504274%;
+                margin-bottom: 1rem;
+            }*/
+        }
+    }    
+}
+
+.hbsc-logo2 {
+
+    svg {
+        width: 100%;
+        position: relative;
     }
     .masthead & {
-        width: 100%;
-        height: 0;
-        padding-bottom: 27.3504274%; // width/height ratio
+        width: 192px;/*100%;*/
+        height: 54px;
+
+        /*height: 0;*/
+        /*padding-bottom: 27.3504274%;*/
+         // width/height ratio
         @extend .u-mb-1;
+        .logotype
+        {
+            height: 54px;
+        }
         /*transition: transform 300ms 300ms ease,
                       padding-bottom 300ms ease;*/ //reverse effect
     }
@@ -31,6 +88,7 @@
         .masthead--collapsed & {
             padding-bottom: 0;
             margin-bottom: 0;
+            height: 0px;
             transform: translateX(-112.5%); // 112.5% = 192px (100%) + 24px (12.5%),
             transition: transform 300ms ease,
                         padding-bottom 300ms 300ms ease,
@@ -38,6 +96,7 @@
             .logotype {
                 opacity: 0;
                 visibility: hidden;
+                /*height: 0;*/
                 transition-delay: 300ms;
             }
             body.home & {

@@ -20,6 +20,7 @@ incrementViewsCount($post->ID);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
+<base href="/" />
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>

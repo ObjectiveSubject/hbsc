@@ -37,7 +37,7 @@
     .event--upcoming-item-right &
     {
         right: 0;
-        left: initial;
+        left: auto;
         z-index: 14;
         bottom: initial;
         top: 2rem;
@@ -45,7 +45,7 @@
         @include media($md)
         {
             right: 7.25rem;
-            left: initial;
+            left: auto;
             bottom: initial;
         }
     }
