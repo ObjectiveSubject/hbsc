@@ -82,7 +82,6 @@ while ( have_posts() )
     </section>
 <?php 
 }
-
 wp_reset_postdata();
 
 if( have_rows('module') )

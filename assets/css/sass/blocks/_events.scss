@@ -1,5 +1,40 @@
 .event--upcoming-item
 {
+    &.event--hover
+    {
+        .image
+        {
+            @include filter(grayscale(100%));
+        }
+
+        .card-button
+        {
+            a
+            {
+                color: white!important;
+                border-color: white!important;
+            }
+        }
+    }
+
+    .image
+    {
+        @include filter(grayscale(0%));
+    }
+
+    .card-button
+    {
+        a
+        {
+            color: $red!important;
+            border-color: $red!important;
+            cursor: pointer;
+        }
+    }     
+}
+
+.event--upcoming-item
+{
     margin-bottom: 4rem;
     overflow: hidden;
     width: 100%;

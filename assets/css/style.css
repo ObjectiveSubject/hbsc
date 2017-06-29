@@ -2936,6 +2936,23 @@ caption {
 .table--hover > tbody > tr:hover {
   background-color: gray; }
 
+.event--upcoming-item.event--hover .image {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+
+.event--upcoming-item.event--hover .card-button a {
+  color: white !important;
+  border-color: white !important; }
+
+.event--upcoming-item .image {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%); }
+
+.event--upcoming-item .card-button a {
+  color: #e74949 !important;
+  border-color: #e74949 !important;
+  cursor: pointer; }
+
 .event--upcoming-item {
   margin-bottom: 4rem;
   overflow: hidden;
