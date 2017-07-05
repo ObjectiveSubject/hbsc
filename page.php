@@ -11,20 +11,19 @@ get_header(); ?>
 		
 		    <?php get_template_part('partials/page', 'preface'); ?>
 
-<?php
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
-?>
-
-		<?php endwhile; ?>
-		
 		<?php if( have_rows('module') ): ?>
 
             <?php get_template_part( 'partials/page', 'modules' ); ?>
 
         <?php endif; ?>
+<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				//comments_template();
+			}
+?>
+
+		<?php endwhile; ?>
 
 	</div>
 

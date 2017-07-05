@@ -8,18 +8,30 @@
             margin: 0 rem(96);
         }
     }
+
+    .module--faq &
+    {
+        h5
+        {
+            margin : 0;
+        }
+    }
 }
 .dropdown__title {
     position: relative;
     cursor: pointer;
     @extend .u-transition-300;
-    padding: rem(8) 0;
+    padding: rem(8) rem(28) rem(8) 0;
     &:hover {
         color: $red;
     }
 }
 .dropdown__icon {
-    float: right;
+    position: absolute;
+    top: 50%;
+    margin-top: rem(-12);
+    right: rem(6);
+
     &:before {
         content: '+';
     }
@@ -29,11 +41,12 @@
         }
     }
 }
+
 .dropdown__content {
     @include display(none);
     @extend .u-px-3;
     @extend .u-py-1;
-    @extend .u-font-size-sm;
+    /*@extend .u-font-size-sm;*/
     opacity: 0;
     .dropdown.is-open & {
         @include display(block);

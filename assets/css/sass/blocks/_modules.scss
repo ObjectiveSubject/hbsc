@@ -71,7 +71,6 @@
         margin-right: 0;
         ul, ol {
             @extend .u-pl-2;
-            list-style: initial;
             li {
                 @extend .u-mt-1;
             }

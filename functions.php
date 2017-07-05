@@ -41,3 +41,17 @@ HBSC\Taxonomies\setup();
 
 // utils.php
 add_action( 'save_post', 'postUpdateViews', 10, 3 );
+
+
+add_filter( 'if_menu_conditions', 'menu_conditions_filter' );
+
+function menu_conditions_filter( $conditions ) {
+  $conditions[] = array(
+    'name'    =>  'If it is Custom Post Type archive', // name of the condition
+    'condition' =>  function($item) {          // callback - must return TRUE or FALSE
+      return is_post_type_archive();
+    }
+  );
+
+  return $conditions;
+}

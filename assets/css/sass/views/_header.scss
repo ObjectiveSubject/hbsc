@@ -5,6 +5,24 @@
     text-transform: uppercase;
     pointer-events: initial;
 }
+
+.open--hours
+{
+    .site-header &
+    {        
+        width: 100%;
+        text-align: center;
+        position: relative;
+
+        @include media($md)
+        {
+            position: absolute;
+            top: 0;
+            left: 0;            
+        }
+    }
+}
+
 .site-header__content {
     @include display(flex);
     @include justify-content(center);
@@ -17,6 +35,12 @@
     @extend .u-py-1;
     @extend .u-mr-3;
     padding-bottom: 0.4rem;
+    
+    ul
+    {
+        margin: 0;
+        list-style: none;
+    }
 
     @include media($md)
     {
@@ -26,13 +50,14 @@
 .site-menu {
     @include position(relative);
     @include display(inline-block);
+    min-width: 20rem;
     width: 100%;
     background: $tan;
     pointer-events: auto;
     min-height: 100px;
     @include media($md) {
-        width: auto;
-        /*min-height: auto;*/
+        width : auto;
+        
         &::before {
             content: '';
             @include position(absolute);
@@ -152,7 +177,9 @@
 // Menu toggle behaviour
 .header-menu {
     @include display(none);
-
+    height: 0%;
+    transition: height 300ms ease;
+    transition-delay: 600ms;
     .sub-menu {
         &.is-expanded {
             @include display(block);
@@ -160,11 +187,35 @@
     }
     @include media($md) {
         @include display(block);
+        transition: height 300ms ease;
+        transition-delay: 600ms;  
+-webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */            
+        height: 0%;      
     }
 }
 .site-menu.is-expanded {
     .header-menu {
         @include display(block);
+        height: 100%;
+        transition: height 300ms ease;
+        transition-delay: 100ms;
+-webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+     -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */            
     }
     .menu-item {
         @include display(block);
@@ -181,6 +232,9 @@
         }
     }
 }
+
+/*
+
 body.home {
     .menu-item {
         @include display(block);
@@ -206,7 +260,9 @@ body.home {
                 width: auto;
             }
             .hbsc-logo {
-                /*@include transform(translateX(0));*/
+                @include transform(translateX(0));
+            transition: transform 300ms ease;
+            transition-delay: 200ms;                
                 .logotype {
                     opacity: 1;
                     visibility: visible;
@@ -215,3 +271,4 @@ body.home {
         }
     }
 }
+*/

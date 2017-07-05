@@ -387,7 +387,7 @@ TODO clean up the !important
         h3
         {
             font-size: 2.4rem;
-
+            letter-spacing: 0;
             @include media($md)
             {
                 font-size: 3.4rem;

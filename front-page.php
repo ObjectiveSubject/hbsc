@@ -63,7 +63,7 @@ get_header(); ?>
                     <div class="module-title">Harriet Beecher Stowe</div>
                 </header>
                 <div class="module__body">
-                    <ul class="u-text-center">
+                    <ul class="u-text-center u-list-nostyle">
                         <li>
                             <a href="#" class="u-display-inline-block"><span class="h2">Harriet Beecher</span><span class="h3">Stowe's Life</span></a>
                         </li>

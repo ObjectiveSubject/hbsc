@@ -33,7 +33,7 @@ incrementViewsCount($post->ID);
             <div class="u-container">
                 <div class="site-header__content">
                     <address class="u-display-block-md"><?php echo get_option('hbsc_address'); ?></address>
-                    <div>
+                    <div class="open--hours">
                         <?php if( get_option('hbsc_closed_today') ) : ?>
                         Closed Today
                         <?php else : ?>
@@ -50,7 +50,7 @@ incrementViewsCount($post->ID);
             </div>
         </div>
             <div class="u-container">
-                <div id="site-menu" class="site-menu">
+                <div id="site-menu" class="site-menu <?php echo (is_front_page() ? 'is-expanded' : '');?>">
                     <nav class="site-nav">
                         <div class="header-logo">
                             <a id="hbsc-logo" class="hbsc-logo u-display-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">

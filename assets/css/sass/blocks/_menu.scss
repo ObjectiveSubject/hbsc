@@ -1,7 +1,8 @@
-.menu-item {
-    .header-menu & {
+.menu-item {    
+    .header-menu & {        
         @include display(none);
         border-top: 1px solid shade( $tan, 10%);
+        margin-top: 0;
         a {
             @include display(block);
             @extend .u-font-miller-bold;
@@ -22,6 +23,7 @@
         }
     }
     .sub-menu & {
+        margin-top: 0;
         a {
             color: shade( $tan, 25% );
             &:hover {

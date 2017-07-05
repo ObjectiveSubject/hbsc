@@ -1,3 +1,14 @@
+.comments--thread
+{
+    width : 100%;
+
+    @include media($md)
+    {
+        width : 70%;
+        margin : 0 auto;
+    }    
+}
+
 .event--upcoming-item
 {
     &.event--hover

@@ -17,7 +17,7 @@ get_header(); ?>
             
             <?php while( have_rows('faq_module') ): the_row(); ?>
 
-            <section class="module module--basic u-bg-tan">
+            <section class="module module--basic module--faq u-bg-light-gray">
                 <div class="module__content u-container">
                     <header class="module__header">
                         <div class="module-title">
@@ -31,7 +31,7 @@ get_header(); ?>
                             
                             <div class="dropdown">
                                 <div class="dropdown__title js-slide-toggle" data-target=".dropdown__content" data-parent=".dropdown">
-                                    <?php the_sub_field('question'); ?>
+                                    <h5><?php the_sub_field('question'); ?></h5>
                                     <span class="dropdown__icon"></span>
                                 </div>
                                 <div class="dropdown__content">

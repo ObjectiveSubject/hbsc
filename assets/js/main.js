@@ -128,11 +128,8 @@
                 };
 
                 $this.slick(settings);
-
-            });
-            
+            });   
         }
-
     };
 
     $(document).ready(function(){

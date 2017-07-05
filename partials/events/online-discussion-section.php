@@ -12,9 +12,18 @@ if( comments_open() || get_comments_number() )
             </header>
             <div class="module__body">
 <?php
+            if( !empty( get_field('event_discussion_title') ) )
+            {
+?>
+                <h5><?php echo get_field('event_discussion_title'); ?></h5>
+<?php
+            }
+
 			if( comments_open() || get_comments_number() )
             {
-				comments_template();
+?>                
+				<div class="comments--thread"><?php comments_template(); ?></div>
+<?php
 			}
 ?>
             </div>
