@@ -7,11 +7,13 @@
     <div class="module__image" <?php echo "style='background-image: url(" . $image . ")'"; ?>></div>
     <?php endif; ?>
     <div class="module__content u-container">
+        <?php if( $display_title ) : ?>
         <header class="module__header">
             <div class="module-title">
                 <?php echo $title; ?>
             </div>
         </header>
+        <?php endif; ?>
         <aside class="module__sidebar">
             <?php if( $sidebar ) : ?>
             <div class="sidebar">

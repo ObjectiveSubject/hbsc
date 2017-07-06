@@ -40,6 +40,7 @@ div.zabuto_calendar .table tr.calendar-month-header th span {
     display: inline-block;
     padding-bottom: 0;
     text-transform: uppercase;
+
 }
 
 div.zabuto_calendar .table tr.calendar-dow-header th {
@@ -198,10 +199,17 @@ div.zabuto_calendar .table tr.calendar-month-header th
 div.zabuto_calendar .table tr.calendar-month-header th span
 {
     padding-bottom: 0;
+    font-weight: normal;
 }
 
 div.zabuto_calendar .table tr.calendar-month-header th span .fa
 {
     font-size: 1.8rem;
     color: #898989;
+    transition: all .3s ease;
+}
+
+div.zabuto_calendar .table tr.calendar-month-header th span .fa:hover
+{
+    color: #e74949;
 }
