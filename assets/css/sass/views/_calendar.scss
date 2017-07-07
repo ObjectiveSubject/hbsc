@@ -13,7 +13,7 @@ div.zabuto_calendar
         text-shadow: none;
         border: 0px solid;
         border-radius: 18px;
-        padding: 2px 6px 2px;
+        padding: 3px 9px;
 
         .events--calendar-aside &
         {
@@ -56,7 +56,7 @@ div.zabuto_calendar
 
     border: 1px solid #a6a4a0;
     margin-bottom: 8px;
-    /*display: none;*/
+    transition: all .3s ease;
 
     &.item--sortby-active
     {
@@ -66,6 +66,7 @@ div.zabuto_calendar
     &:hover
     {
         background-color: $red;
+        border-color: $red;
         cursor: pointer;
     }
 
@@ -79,16 +80,19 @@ div.zabuto_calendar
         height: 9rem;
         min-width: 6rem;
         padding: 1.8rem;
-
+        transition: color .3s ease;
         @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
         {
             color: white;
+            transition: color .3s ease;
         }
 
         .h2
         {
+            transition: color .3s ease;
             @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
             {            
+                transition: color .3s ease;
                 color: white!important;
             }
         }        
@@ -120,16 +124,17 @@ div.zabuto_calendar
                 text-decoration: none;
                 color: $color-text-main;
                 line-height: 1;
-
+                transition: color .3s ease;
                 @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
                 {
+                    transition: color .3s ease;
                     color: white;
                 }
 
                 &:hover
                 {
-                    text-decoration: underline;
-                    color: $dark-gray
+                    /*text-decoration: underline;
+                    color: $dark-gray*/
                 }
             }
         }
@@ -141,8 +146,10 @@ div.zabuto_calendar
             font-style: Normal;
             font-weight: Normal;
             font-size: 1rem;
+            transition: color .3s ease;
             @at-root #{selector-replace(&, '.calendar--event-item', '.calendar--event-item:hover')}
             {
+                transition: color .3s ease;
                 color: white;
             }            
         }

@@ -3418,7 +3418,7 @@ div.zabuto_calendar div.legend span.badge-today {
   text-shadow: none;
   border: 0px solid;
   border-radius: 18px;
-  padding: 2px 6px 2px; }
+  padding: 3px 9px; }
   .events--calendar-aside div.zabuto_calendar .badge-today, .events--calendar-aside
   div.zabuto_calendar div.legend span.badge-today {
     background-color: #e74949; }
@@ -3454,11 +3454,12 @@ div.zabuto_calendar div.legend span.badge-today {
   -ms-flex-direction: row;
   border: 1px solid #a6a4a0;
   margin-bottom: 8px;
-  /*display: none;*/ }
+  transition: all .3s ease; }
   .calendar--event-item.item--sortby-active {
     display: block; }
   .calendar--event-item:hover {
     background-color: #e74949;
+    border-color: #e74949;
     cursor: pointer; }
   .calendar--event-item .event--date {
     display: -webkit-box;
@@ -3496,11 +3497,16 @@ div.zabuto_calendar div.legend span.badge-today {
     align-self: center;
     height: 9rem;
     min-width: 6rem;
-    padding: 1.8rem; }
+    padding: 1.8rem;
+    transition: color .3s ease; }
     .calendar--event-item:hover .event--date {
-      color: white; }
-    .calendar--event-item:hover .event--date .h2 {
-      color: white !important; }
+      color: white;
+      transition: color .3s ease; }
+    .calendar--event-item .event--date .h2 {
+      transition: color .3s ease; }
+      .calendar--event-item:hover .event--date .h2 {
+        transition: color .3s ease;
+        color: white !important; }
     @media screen and (min-width: 768px) {
       .calendar--event-item .event--date {
         min-width: 9rem; } }
@@ -3539,19 +3545,23 @@ div.zabuto_calendar div.legend span.badge-today {
         font-size: 2rem;
         text-decoration: none;
         color: black;
-        line-height: 1; }
+        line-height: 1;
+        transition: color .3s ease; }
         .calendar--event-item:hover .event--content .event--title a {
+          transition: color .3s ease;
           color: white; }
         .calendar--event-item .event--content .event--title a:hover {
-          text-decoration: underline;
-          color: #272727; }
+          /*text-decoration: underline;
+                    color: $dark-gray*/ }
     .calendar--event-item .event--content .event--taxonomies,
     .calendar--event-item .event--content .event--details {
       font-family: "Miller Text Rom", Georgia, serif;
       font-style: Normal;
       font-weight: Normal;
-      font-size: 1rem; }
+      font-size: 1rem;
+      transition: color .3s ease; }
       .calendar--event-item:hover .event--content .event--taxonomies, .calendar--event-item:hover .event--content .event--details {
+        transition: color .3s ease;
         color: white; }
     .calendar--event-item .event--content .event--taxonomies {
       font-weight: bold; }
@@ -3703,6 +3713,15 @@ div.zabuto_calendar div.legend span.badge-today {
     display: flex;
     flex: 0 0 30%;
     align-self: center; } }
+
+.site-footer a.icon-facebook:hover {
+  color: #3B5998; }
+
+.site-footer a.icon-twitter:hover {
+  color: #00aced; }
+
+.site-footer a.icon-youtuve:hover {
+  color: #CD201F; }
 
 body.home .preface {
   padding-top: 0; }
