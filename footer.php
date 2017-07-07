@@ -31,19 +31,32 @@
                     </div>
                     <div class="footer-column">
                         <nav class="footer-nav">
+                            <div class="footer-nav-menu-col">
                             <?php
-                            $menu_footer = false;
-                            if ( has_nav_menu( 'footer' ) ) {
-                                $menu_footer = wp_nav_menu(array(
-                                    'theme_location' => 'footer',
-                                    'container'		 => false,
-                                    'menu_class'	 => 'footer-menu',
-                                    'menu_id'		 => 'footer-menu',
-                                    'echo'			 => false
-                                ));
-                                echo $menu_footer;
-                            }
+                                $footerNavList = getHeaderMenuItemsFirstLevel();
+                                $halfIdx = ceil(count($footerNavList) * 0.5);
+                                $footerNavListFirst =  array_slice( $footerNavList, 0, $halfIdx );
+                                $footerNavListSecond =  array_slice( $footerNavList, $halfIdx );
+
+                                foreach( $footerNavListFirst as $key => $footerNavItem )
+                                {
                             ?>
+                                    <a href="<?php echo $footerNavItem->url; ?>" title="<?php echo $footerNavItem->post_title; ?>"><?php echo $footerNavItem->post_title; ?></a>
+                            <?php
+                                }
+                            ?>
+                            </div>
+                            <div class="footer-nav-menu-col">
+
+                            <?php
+                                foreach( $footerNavListSecond as $key =>  $footerNavItem )
+                                {
+                            ?>
+                                <a href="<?php echo $footerNavItem->url; ?>" title="<?php echo $footerNavItem->post_title; ?>"><?php echo $footerNavItem->post_title; ?></a>
+                            <?php
+                                }
+                            ?>
+                            </div>
                         </nav>
                     </div>
                 </div>

@@ -91,4 +91,39 @@ function postUpdateViews( $post_id, $post, $update )
 
     return;
 }
+
+function getHeaderMenuItemsFirstLevel()
+{
+    $footerNavList = array();
+    $lastParentId = null;
+    $lastParentChild = false;
+
+    $menuLocations = get_nav_menu_locations();
+    $menuID = $menuLocations['header'];
+    $primaryNav = wp_get_nav_menu_items($menuID); 
+
+    foreach( $primaryNav as $navItem )
+    {
+        if( $navItem->menu_item_parent == 0 )
+        {
+            $footerNavList[] = $navItem;
+            $lastParentId = $navItem->ID;
+            $lastParentChild = false;
+        }
+
+        if( $navItem->menu_item_parent == $lastParentId && $lastParentChild == false )
+        {
+            $lastParentChild = true;
+            $lastIndex = count($footerNavList) - 1;
+            $lastIndex = ( $lastIndex < 0 ? 0 : $lastIndex );
+
+            if( empty( $footerNavList[$lastIndex]->url ) || $footerNavList[$lastIndex]->url == '#' )
+            {
+                $footerNavList[$lastIndex]->url = $navItem->url;
+            }
+        }
+    }
+
+    return $footerNavList;
+}
 ?>
