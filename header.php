@@ -49,7 +49,7 @@ incrementViewsCount($post->ID);
                 </div>
             </div>
         </div>
-            <div class="u-container">
+
                 <div id="site-menu" class="site-menu <?php echo (is_front_page() ? 'is-expanded' : '');?>">
                     <nav class="site-nav">
                         <div class="header-logo">
@@ -72,14 +72,14 @@ incrementViewsCount($post->ID);
                         }
                         ?>
                     </nav>
-                    <button id="site-menu-toggle" class="site-menu-toggle ui-button icon icon-chevron-down class-toggle" data-target="#site-menu" data-class="is-expanded"></button>
-                    <button id="site-mobile-menu-toggle" class="site-mobile-menu-toggle ui-button class-toggle" data-target="#site-menu" data-class="is-expanded">
+                    <button id="site-menu-toggle" class="site-menu-toggle ui-button icon icon-chevron-down"></button>
+                    <button id="site-mobile-menu-toggle" class="site-mobile-menu-toggle ui-button">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
                 </div>
-            </div>
+            
 	</header>
 	
 	<div id="page">

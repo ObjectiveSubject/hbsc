@@ -1,8 +1,12 @@
-.menu-item {    
-    .header-menu & {        
-        @include display(none);
-        border-top: 1px solid shade( $tan, 10%);
-        margin-top: 0;
+.menu-item {
+    .header-menu & {
+        /*@include display(none);*/
+        border-top: 1px solid rgba(199, 196, 192, 0);
+        height: 0;
+        overflow: hidden;
+        margin-top: -1px;
+        transition: height .3s cubic-bezier(1, 0, 0, 1), border-top .3s cubic-bezier(1, 0, 0, 1);
+        /*margin-top: -3.38rem;*/
         a {
             @include display(block);
             @extend .u-font-miller-bold;
@@ -17,18 +21,22 @@
         }
         &.current_page_item {
             @include display(block);
+            border-top: 1px solid rgba(199, 196, 192, 1);
+            height: auto;
         }
         &.current-menu-parent {
             @include display(block);
+            height: auto;
+            border-top: 1px solid rgba(199, 196, 192, 1);
         }
     }
     .sub-menu & {
         margin-top: 0;
         a {
-            color: shade( $tan, 25% );
+            color: shade( $tan, 25%);
             &:hover {
                 color: $red;
             }
-        }  
+        }
     }
 }

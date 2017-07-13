@@ -728,7 +728,7 @@ html {
 .module--events-upcoming-list .card, .module--entry figure, .module__body, .section__body, .section__body h4, .module__body h4, .section__body h5, .module__body h5, .section__body h6, .module__body h6 {
   margin-top: 3rem; }
 
-.u-mr-3, .site-nav {
+.u-mr-3 {
   margin-right: 3rem; }
 
 .u-mb-3, .module--carousel .badge-positioner .badge, .section__header, .module__header, .section__footer, .module__footer {
@@ -2486,9 +2486,10 @@ label {
   fill: #fbaf17; }
 
 .header-logo {
-  padding-bottom: 4.88rem;
-  transition: padding-bottom 400ms 400ms ease;
-  transition-delay: 000ms; }
+  padding-bottom: 1rem;
+  /*padding-bottom: rem(78);
+    transition: padding-bottom 400ms 400ms ease;
+    transition-delay: 000ms;*/ }
   .header-logo svg {
     width: 100%;
     position: relative; }
@@ -2504,8 +2505,9 @@ label {
   .masthead .header-logo .hbsc-logo {
     width: 12rem;
     height: 3.38rem;
-    position: absolute;
-    top: 1.38rem;
+    position: relative;
+    /*position: absolute;*/
+    /*top: rem(22);*/
     transform: translateX(0%);
     /*transition: transform 100ms ease,
             top 300ms ease;*/
@@ -2515,30 +2517,37 @@ label {
     transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95) 200ms;
     /* easeInOutQuad */ }
   @media screen and (min-width: 768px) {
+    body.home .masthead .header-logo .hbsc-logo {
+      transform: translateX(0); }
+    body.home .masthead--collapsed .site-menu .header-logo .hbsc-logo {
+      transform: translateX(16%); }
+    body.home .masthead--collapsed .site-menu.is-expanded .header-logo .hbsc-logo {
+      transform: translateX(-112.5%); }
     .masthead--collapsed .header-logo {
       padding-bottom: 0;
       margin-bottom: 0;
       transition: padding-bottom 400ms 400ms ease;
       transition-delay: 400ms; }
       .masthead--collapsed .header-logo .header-logo {
-        padding-bottom: 0;
-        transition: padding-bottom 400ms 400ms ease;
-        transition-delay: 400ms; }
+        /*padding-bottom: 0;
+                transition: padding-bottom 400ms 400ms ease;
+                transition-delay: 400ms;*/ }
       .masthead--collapsed .header-logo .header-menu {
         height: 0%;
         transition: height 300ms ease;
-        transition-delay: 600ms;
+        transition-delay: 200ms;
         -webkit-transition: all 400ms cubic-bezier(0.86, 0, 0.07, 1);
         -moz-transition: all 400ms cubic-bezier(0.86, 0, 0.07, 1);
         -o-transition: all 400ms cubic-bezier(0.86, 0, 0.07, 1);
         transition: all 400ms cubic-bezier(0.86, 0, 0.07, 1);
+        margin-top: -3.38rem;
         /* easeInOutQuint */ }
       .masthead--collapsed .header-logo .hbsc-logo {
         transform: translateX(-112.5%);
         transition: transform 100ms ease, top 300ms ease;
         transition-delay: 200ms;
-        position: absolute;
-        top: 1.12rem;
+        /*position: absolute;
+                top: rem(18);*/
         -webkit-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
         -moz-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
         -o-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
@@ -2652,9 +2661,13 @@ img {
     z-index: 1; }
 
 .header-menu .menu-item {
-  display: none;
-  border-top: 1px solid #c7c4c0;
-  margin-top: 0; }
+  /*@include display(none);*/
+  border-top: 1px solid rgba(199, 196, 192, 0);
+  height: 0;
+  overflow: hidden;
+  margin-top: -1px;
+  transition: height 0.3s cubic-bezier(1, 0, 0, 1), border-top 0.3s cubic-bezier(1, 0, 0, 1);
+  /*margin-top: -3.38rem;*/ }
   .header-menu .menu-item a {
     display: block;
     font-size: 0.88rem;
@@ -2664,9 +2677,13 @@ img {
     .header-menu .menu-item a:focus {
       color: #272727; }
   .header-menu .menu-item.current_page_item {
-    display: block; }
+    display: block;
+    border-top: 1px solid #c7c4c0;
+    height: auto; }
   .header-menu .menu-item.current-menu-parent {
-    display: block; }
+    display: block;
+    height: auto;
+    border-top: 1px solid #c7c4c0; }
 
 .sub-menu .menu-item {
   margin-top: 0; }
@@ -3814,33 +3831,51 @@ body.home .preface-text {
       -ms-flex-pack: justify; } }
 
 .site-nav {
-  padding-bottom: 0.4rem; }
+  padding-bottom: 0.4rem;
+  padding-right: 6rem;
+  position: relative;
+  z-index: 10; }
   .site-nav ul {
     margin: 0;
     list-style: none; }
   @media screen and (min-width: 768px) {
     .site-nav {
-      padding-bottom: 1rem; } }
+      padding-right: 3rem;
+      /*padding-bottom: 1rem;*/ } }
+  body.home .site-nav {
+    min-height: 100px; }
 
 .site-menu {
   position: relative;
-  display: inline-block;
-  min-width: 20rem;
-  width: 100%;
+  /*@include display(inline-block);*/
+  /*min-width: 20rem;
+    width: 100%;*/
   background: #dddad5;
   pointer-events: auto;
-  min-height: 100px; }
+  /*min-height: 100px;*/
+  padding: 0 0 0 2rem;
+  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+  transform: translateX(0%); }
   @media screen and (min-width: 768px) {
     .site-menu {
-      width: auto; }
+      width: auto;
+      padding-left: 9rem;
+      display: inline-block; }
       .site-menu::before {
         content: '';
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 100vw;
-        right: 100%;
+        left: 0;
+        width: 14vw;
+        z-index: 0;
+        /*width: 100vw;
+            right: 100%;*/
         background: #dddad5; } }
+  body.home .masthead--collapsed .site-menu {
+    transform: translateX(-40%);
+    padding-left: 0rem;
+    transform: all 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.95); }
 
 .search-toggle {
   color: #dddad5; }
@@ -3885,22 +3920,24 @@ body.home .preface-text {
   bottom: 0;
   right: 0;
   color: #a6a4a0;
-  padding: .5rem 1rem 1.5rem 1rem; }
+  padding: 1.25rem 1rem;
+  z-index: 50; }
   .site-menu-toggle:hover {
     color: #e74949; }
   .site-menu-toggle:focus {
     outline: 0; }
   .site-menu.is-expanded .site-menu-toggle {
     transform: rotate(180deg);
-    padding: 1.5rem 1rem 0.5rem 1rem; }
+    padding: 1.25rem 1rem; }
 
 .site-mobile-menu-toggle {
   position: absolute;
-  right: 0;
+  right: 2rem;
   top: 2.6rem;
   width: 1.675rem;
   height: 1.5rem;
-  padding: 0; }
+  padding: 0;
+  z-index: 50; }
   .site-mobile-menu-toggle span {
     position: absolute;
     left: 0;
@@ -3925,7 +3962,7 @@ body.home .preface-text {
 .header-menu {
   display: none;
   height: 0%;
-  transition: height 300ms ease;
+  transition: height 300ms ease, margin-top 300ms ease;
   transition-delay: 600ms; }
   .header-menu .sub-menu.is-expanded {
     display: block; }
@@ -3945,6 +3982,15 @@ body.home .preface-text {
       transition-timing-function: cubic-bezier(1, 0, 0, 1);
       /* easeInOutExpo */
       height: 0%; } }
+  .masthead--collapsed .header-menu {
+    margin-top: -3.38rem;
+    transition: height 300ms ease, margin-top 300ms ease;
+    transition-delay: 600ms; }
+
+body.home .masthead--collapsed .site-menu.is-expanded {
+  transform: translateX(0%);
+  padding-left: 9rem;
+  transform: all 0.3s cubic-bezier(1, 0, 0, 1); }
 
 .site-menu.is-expanded .header-menu {
   display: block;
@@ -3963,13 +4009,33 @@ body.home .preface-text {
   /* easeInOutExpo */ }
 
 .site-menu.is-expanded .menu-item {
-  display: block; }
-  .site-menu.is-expanded .menu-item.current-menu-item a {
-    color: #e74949; }
+  display: block;
+  height: 2rem;
+  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+  border-top: 1px solid #c7c4c0;
+  margin-top: -1px; }
+  .site-menu.is-expanded .menu-item.sub-menu-item-expanded {
+    height: auto; }
+  .site-menu.is-expanded .menu-item.current-menu-item {
+    height: auto; }
+    .site-menu.is-expanded .menu-item.current-menu-item a {
+      color: #e74949; }
+  .site-menu.is-expanded .menu-item.current-menu-parent.sub-menu-item-expanded {
+    height: auto; }
+  .site-menu.is-expanded .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item {
+    height: 2rem;
+    border-top: 1px solid #c7c4c0; }
   .site-menu.is-expanded .menu-item .sub-menu .menu-item {
-    display: none; }
+    /*@include display(none);*/
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+    border-top: 1px solid rgba(199, 196, 192, 0);
+    margin-top: -1px; }
   .site-menu.is-expanded .menu-item .sub-menu.is-expanded .menu-item {
-    display: block; }
+    display: block;
+    height: 2rem;
+    border-top: 1px solid #c7c4c0; }
 
 /*
 

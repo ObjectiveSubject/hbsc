@@ -6,19 +6,15 @@
     pointer-events: initial;
 }
 
-.open--hours
-{
-    .site-header &
-    {        
+.open--hours {
+    .site-header & {
         width: 100%;
         text-align: center;
         position: relative;
-
-        @include media($md)
-        {
+        @include media($md) {
             position: absolute;
             top: 0;
-            left: 0;            
+            left: 0;
         }
     }
 }
@@ -31,44 +27,61 @@
         @include justify-content(space-between);
     }
 }
+
 .site-nav {
     @extend .u-py-1;
-    @extend .u-mr-3;
     padding-bottom: 0.4rem;
-    
-    ul
-    {
+    padding-right: 6rem;
+    position: relative;
+    z-index: 10;
+    ul {
         margin: 0;
         list-style: none;
     }
-
-    @include media($md)
-    {
-        padding-bottom: 1rem;
+    @include media($md) {
+        padding-right: 3rem;
+        /*padding-bottom: 1rem;*/
+    }
+    body.home & {
+        min-height: 100px;
     }
 }
+
 .site-menu {
     @include position(relative);
-    @include display(inline-block);
-    min-width: 20rem;
-    width: 100%;
+    /*@include display(inline-block);*/
+    /*min-width: 20rem;
+    width: 100%;*/
     background: $tan;
     pointer-events: auto;
-    min-height: 100px;
+    /*min-height: 100px;*/
+    padding: 0 0 0 2rem;
+    transition: all .3s cubic-bezier(1, 0, 0, 1);
+    transform: translateX(0%);
     @include media($md) {
-        width : auto;
-        
+        width: auto;
+        padding-left: 9rem;
+        display: inline-block;
         &::before {
             content: '';
             @include position(absolute);
             top: 0;
             bottom: 0;
-            width: 100vw;
-            right: 100%;
+            left: 0;
+            width: 14vw;
+            z-index: 0;
+            /*width: 100vw;
+            right: 100%;*/
             background: $tan;
         }
     }
+    body.home .masthead--collapsed & {
+        transform: translateX(-40%);
+        padding-left: 0rem;
+        transform: all .3s cubic-bezier(.46, .03, .52, .95);
+    }
 }
+
 .search-toggle {
     color: $tan;
     &:hover {
@@ -78,6 +91,7 @@
         color: $tan;
     }
 }
+
 .site-search {
     display: none;
     .search-open & {
@@ -109,19 +123,20 @@
         }
     }
 }
+
 .header-logo {
     width: rem(192);
 }
+
 .site-menu-toggle {
     @extend .u-display-block-md;
     @include position(absolute);
     bottom: 0;
     right: 0;
-    color: shade( $tan, 25% );
+    color: shade( $tan, 25%);
     @extend .u-transition-300;
-
-    padding: .5rem 1rem 1.5rem 1rem;
-
+    padding: 1.25rem 1rem;
+    z-index: 50;
     &:hover {
         color: $red;
     }
@@ -130,17 +145,19 @@
     }
     .site-menu.is-expanded & {
         transform: rotate(180deg);
-        padding: 1.5rem 1rem 0.5rem 1rem;
+        padding: 1.25rem 1rem;
     }
 }
+
 .site-mobile-menu-toggle {
     @extend .u-display-none-md;
     position: absolute;
-    right: 0;
+    right: 2rem;
     top: 2.6rem;
     width: 1.675rem;
     height: rem(24);
     padding: 0;
+    z-index: 50;
     span {
         position: absolute;
         left: 0;
@@ -174,11 +191,12 @@
         }
     }
 }
+
 // Menu toggle behaviour
 .header-menu {
     @include display(none);
     height: 0%;
-    transition: height 300ms ease;
+    transition: height 300ms ease, margin-top 300ms ease;
     transition-delay: 600ms;
     .sub-menu {
         &.is-expanded {
@@ -188,50 +206,88 @@
     @include media($md) {
         @include display(block);
         transition: height 300ms ease;
-        transition-delay: 600ms;  
--webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
-
--webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-   -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-     -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */            
-        height: 0%;      
+        transition-delay: 600ms;
+        -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        /* easeInOutExpo */
+        -webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        /* easeInOutExpo */
+        height: 0%;
+    }
+    .masthead--collapsed & {
+        margin-top: -3.38rem;
+        transition: height 300ms ease, margin-top 300ms ease;
+        transition-delay: 600ms;
     }
 }
+
 .site-menu.is-expanded {
+    body.home .masthead--collapsed & {
+        transform: translateX(0%);
+        padding-left: 9rem;
+        transform: all .3s cubic-bezier(1, 0, 0, 1);
+    }
     .header-menu {
         @include display(block);
         height: 100%;
         transition: height 300ms ease;
         transition-delay: 100ms;
--webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
-
--webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-   -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-     -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */            
+        -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        /* easeInOutExpo */
+        -webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        /* easeInOutExpo */
     }
     .menu-item {
         @include display(block);
+        height: 2rem;
+        transition: all .3s cubic-bezier(1, 0, 0, 1);
+        border-top: 1px solid rgba(199, 196, 192, 1);
+        margin-top: -1px;
+        &.sub-menu-item-expanded {
+            height: auto;
+        }
         &.current-menu-item {
+            height: auto;
             a {
                 color: $red;
             }
         }
+        &.current-menu-parent {
+            &.sub-menu-item-expanded {
+                height: auto;
+            }
+            .sub-menu.is-expanded .menu-item {
+                height: 2rem;
+                border-top: 1px solid rgba(199, 196, 192, 1);
+            }
+        }
         .sub-menu .menu-item {
-            @include display(none);
+            /*@include display(none);*/
+            height: 0;
+            overflow: hidden;
+            transition: all .3s cubic-bezier(1, 0, 0, 1);
+            border-top: 1px solid rgba(199, 196, 192, 0);
+            margin-top: -1px;
         }
         .sub-menu.is-expanded .menu-item {
             @include display(block);
+            height: 2rem;
+            border-top: 1px solid rgba(199, 196, 192, 1);
         }
     }
 }
+
 
 /*
 
