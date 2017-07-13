@@ -15,4 +15,20 @@ body.home {
             margin-left: rem(320);
         }
     }
+
+    .card-content
+    { 
+        @include media($md)
+        {
+            padding: 0 4rem;
+
+            .h2,
+            h2,
+            h3,
+            .h3
+            {
+                font-size: 5.5rem;
+            }
+        }
+    }
 }

@@ -1602,7 +1602,9 @@ button {
   color: #272727;
   padding: 0.5rem 2rem;
   border: 1px solid rgba(0, 0, 0, 0.15); }
-  [class*='u-bg-'] .button {
+  [class*='u-bg-'] .button,
+  .u-bg-red .button, .badge-positioner .badge .button,
+  .u-bg-blue .button {
     color: #dddad5;
     border-color: #dddad5; }
   .u-bg-white .button,
@@ -1610,6 +1612,15 @@ button {
   .u-bg-tan .button {
     color: #272727;
     border-color: rgba(0, 0, 0, 0.15); }
+  .card.u-bg-red .button, .badge-positioner .card.badge .button,
+  .card.u-bg-blue .button {
+    color: #dddad5;
+    border-color: #dddad5; }
+  .card.u-bg-white .button,
+  .card.u-bg-light-gray .button,
+  .card.u-bg-tan .button {
+    color: #272727;
+    border-color: #272727; }
   .button:hover {
     color: #e74949;
     border-color: #e74949; }
@@ -2059,6 +2070,16 @@ TODO clean up the !important
 
 .card-title {
   word-wrap: break-word; }
+  .card.u-bg-red .card-title, .badge-positioner .card.badge .card-title,
+  .card.u-bg-blue .card-title {
+    color: #dddad5;
+    border-color: #dddad5;
+    border-color: rgba(221, 218, 213, 0.4); }
+  .card.u-bg-white .card-title,
+  .card.u-bg-light-gray .card-title,
+  .card.u-bg-tan .card-title {
+    color: #272727;
+    border-color: rgba(0, 0, 0, 0.15); }
   .module--events-upcoming-inline .card-title {
     padding: 1.8rem 0 2rem 0; }
   .module--events-upcoming-inline .card-title,
@@ -3736,6 +3757,15 @@ body.home .preface-text {
   @media screen and (min-width: 768px) {
     body.home .preface-text {
       margin-left: 20rem; } }
+
+@media screen and (min-width: 768px) {
+  body.home .card-content {
+    padding: 0 4rem; }
+    body.home .card-content .h2,
+    body.home .card-content h2,
+    body.home .card-content h3,
+    body.home .card-content .h3 {
+      font-size: 5.5rem; } }
 
 .site-header {
   padding: 0.38rem 0;

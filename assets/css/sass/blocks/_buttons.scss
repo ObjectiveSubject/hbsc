@@ -9,7 +9,9 @@ button {
     padding: rem(8) rem(32);
     border: 1px solid rgba(0,0,0,.15);
     
-    [class*='u-bg-'] & {
+    [class*='u-bg-'] &,
+    .u-bg-red &,
+    .u-bg-blue & {
         color: $tan;
         border-color: $tan;
     }
@@ -18,6 +20,20 @@ button {
     .u-bg-tan & {
         color: $dark-gray;
         border-color: rgba(0,0,0,.15);
+    }
+
+    .card.u-bg-red &,
+    .card.u-bg-blue & {
+        color: $tan;
+        border-color: $tan;
+    }
+
+    .card.u-bg-white &,
+    .card.u-bg-light-gray &,
+    .card.u-bg-tan & 
+    {
+        color: $dark-gray;
+        border-color: $dark-gray;
     }
 
     &:hover,

@@ -51,7 +51,6 @@
             while ( $upcomingEventsLoop->have_posts() )
             {
                 $upcomingEventsLoop->the_post();
-
                 $Event = new Event();
 
                 if( $upcomingEventsSectionConfig['direction'] == 'list' )

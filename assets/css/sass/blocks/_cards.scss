@@ -371,6 +371,21 @@ TODO clean up the !important
     @extend .module-title;
     word-wrap: break-word;    
 
+    .card.u-bg-red &,
+    .card.u-bg-blue & {
+        color: $tan;
+        border-color: $tan;
+        border-color: rgba(221, 218, 213, 0.4);
+    }
+
+    .card.u-bg-white &,
+    .card.u-bg-light-gray &,
+    .card.u-bg-tan & 
+    {
+        color: $dark-gray;
+        border-color: rgba(0,0,0,.15);
+    }
+
     .module--events-upcoming-inline &
     {
         padding: 1.8rem 0 2rem 0;
@@ -471,7 +486,7 @@ TODO clean up the !important
         {
             color: $dark-gray;
         }
-    }
+    }  
 
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
