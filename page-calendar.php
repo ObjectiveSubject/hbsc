@@ -31,26 +31,30 @@ get_header();
             
             <div class="module__body">
                 <aside class="events--calendar-aside">
-                    <div id="events-calendar"></div>
+                    <div class="events--aside-calendar-terms u-bg-light-gray">
+                        <div id="events-calendar"></div>
 
-                    <div class="events--calendar-terms">
-                        <?php 
-                            foreach($termsType as $term)
-                            {
-                                $termChecked = in_array( $term->slug, $termsList );
-                    ?>
-                                <label class="calendar--term-item <?php echo $termChecked ? 'calendar--term-checked' : ''; ?>">
-                                    <input type="checkbox" name="events_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <span><?php echo $term->name;?></span>
-                                </label>
-                    <?php
-                            }
-                        ?>
+                        <div class="events--calendar-terms">
+                            <?php 
+                                foreach($termsType as $term)
+                                {
+                                    $termChecked = in_array( $term->slug, $termsList );
+                            ?>
+                                    <label class="calendar--term-item <?php echo $termChecked ? 'calendar--term-checked' : ''; ?>">
+                                        <input type="checkbox" name="events_categories" value="<?php echo $term->name; ?>" <?php echo $termChecked ? 'checked="checked"' : ''; ?>>  <span><?php echo $term->name;?></span>
+                                    </label>
+                            <?php
+                                }
+                            ?>
+                        </div>
                     </div>
                 </aside>
 
                 <div class="calendar--events-list">
 <?php 
     $calendarData = array();
+    $lastYear = null;
+    $lastMonth = null;
 
     while ( $loop->have_posts() ) : $loop->the_post();
         $Event = new Event();
@@ -68,8 +72,21 @@ get_header();
             'date'  => get_field('event_start_date'),
             'badge' => false
         );
+
+        $evtStartDtSplit = explode('-',get_field('event_start_date'));
+        $evtClass = '';
+
+        if( $lastMonth != $evtStartDtSplit[1] )
+        {            
+            if( $lastMonth != null )
+            {
+                $evtClass = 'event--firstofmonth';
+            }
+
+            $lastMonth = $evtStartDtSplit[1];
+        }
 ?>
-                    <div  class="calendar--event-item" id="calendar-event<?php echo $post->ID; ?>" data-event-date="<?php echo get_field('event_start_date'); ?>">
+                    <div  class="calendar--event-item <?php echo $evtClass;?>" id="calendar-event<?php echo $post->ID; ?>" data-event-date="<?php echo get_field('event_start_date'); ?>">
                         <div class="event--date">
                             <span class="u-caps"><?php echo $Event->getDateMonth();?></span>
                             <span class="h2 u-font-miller"><?php echo $Event->getDateDay();?></span>
@@ -93,6 +110,7 @@ get_header();
 <script>window.$ = jQuery;</script>
 
 <script type="application/javascript">
+    var currentMonthYear;
     var calEvents;
     var dataCalendar    = <?php echo json_encode($calendarData); ?>;
     var calendarOptions = {
@@ -149,6 +167,48 @@ get_header();
 
             calEvents.filterEventsOnTerms();
         } );
+
+        $(window).on( 'scroll', handleOnScroll);
+
+        function handleOnScroll()
+        {
+            var scrollTop = $(window).scrollTop();
+            calendarAsidePosition( scrollTop );
+            eventsScroll( scrollTop );
+        }
+
+        function eventsScroll( scrollTop )
+        {
+            var events = $('.calendar--event-item' );
+
+            $('.calendar--event-item' ).each(function(i, elm)
+            {
+                var positionTop = $( elm ).offset().top - scrollTop;
+
+                if(positionTop > 270 && positionTop < 325)
+                {
+                    var date = $(elm).data('event-date');
+                    var dtSplit = date.split('-');
+                    calendarOptions.year = dtSplit[0];
+                    calendarOptions.month = dtSplit[1];
+                    jQuery('.zabuto_calendar').parent().remove();
+                    jQuery('.events--aside-calendar-terms').prepend('<div id="events-calendar"></div>');
+                    jQuery("#events-calendar").zabuto_calendar(calendarOptions);
+                }
+            });            
+        }
+
+        function calendarAsidePosition( scrollTop )
+        {
+            if (scrollTop > 300)
+            {
+                $('.events--calendar-aside').addClass('calendar--aside-scrolled');
+            } else {
+                $('.events--calendar-aside').removeClass('calendar--aside-scrolled');
+            }
+        }
+
+        $('.calendar--event-item:eq(1)' ).offset().top - $(window).scrollTop()
 
         calEvents.filterEventsOnTerms();
     });

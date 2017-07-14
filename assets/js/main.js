@@ -193,7 +193,7 @@
      * ------------------- */
     Masthead.logoOffset = function() {
         var scrollTop = $(window).scrollTop();
-        if (scrollTop > 75) {
+        if (scrollTop > 275) {
             masthead.addClass('masthead--collapsed');
         } else {
             masthead.removeClass('masthead--collapsed');

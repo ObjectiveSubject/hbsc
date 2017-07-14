@@ -33,16 +33,16 @@ incrementViewsCount($post->ID);
             <div class="u-container">
                 <div class="site-header__content">
                     <address class="u-display-block-md"><?php echo get_option('hbsc_address'); ?></address>
+                    <div class="u-display-block-md" style="z-index:50;">
+                        <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-open" data-focus=".search-field"><span class="icon icon-search"></span></a>
+                    </div>
                     <div class="open--hours">
                         <?php if( get_option('hbsc_closed_today') ) : ?>
                         Closed Today
                         <?php else : ?>
                         Open Today: <?php hbsc_opening_hours_today(); ?>
                         <?php endif; ?>
-                    </div>
-                    <div class="u-display-block-md">
-                        <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-open" data-focus=".search-field"><span class="icon icon-search"></span></a>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="site-search">
                     <?php get_search_form(); ?>

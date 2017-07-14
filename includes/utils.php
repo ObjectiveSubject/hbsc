@@ -126,4 +126,24 @@ function getHeaderMenuItemsFirstLevel()
 
     return $footerNavList;
 }
+
+function shortText($text, $maxLen=150)
+{
+    $text = str_replace('  ', ' ', $text);
+    $textList = explode(' ', $text);
+
+    $shortText = '';
+
+    foreach( $textList as $chunk )
+    {
+            $newLen = mb_strlen($chunk) + mb_strlen($shortText);
+
+            if( $newLen <= $maxLen )
+            {
+                    $shortText .= ' ' . $chunk;
+            }
+    }
+
+    return trim($shortText) . '[...]';
+}
 ?>

@@ -23,64 +23,23 @@
     }
     padding-bottom: 1rem;
     transition: all .25s cubic-bezier(1, 0, 0, 1) 150ms;
-    /*padding-bottom: rem(78);
-    transition: padding-bottom 400ms 400ms ease;
-    transition-delay: 000ms;*/
-    .header-menu {
-        /*height: 100%;
-        transition: height 300ms ease;
-        transition-delay: 0ms;
-        -webkit-transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        -moz-transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        -o-transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);*/
-        /* easeInOutQuint */
-    }
+    .header-menu {}
     .masthead & {
         .hbsc-logo {
             width: rem(192);
             height: rem(54);
             position: relative;
-            /*position: absolute;*/
-            /*top: rem(22);*/
             transform: translateX(0%);
-            /*transition: transform 100ms ease,
-            top 300ms ease;*/
             transition: all .2s cubic-bezier(1, 0, 0, 1) .1s;
-            /* easeInOutQuad */
         }
     }
     @include media($md) {
-        /*
-        body.home .masthead & {
-            .hbsc-logo {
-                transform: translateX(0);
-            }
-        }
-        body.home .masthead--collapsed .site-menu & {
-            .hbsc-logo {
-                transform: translateX(16%);
-            }
-        }
-        body.home .masthead--collapsed .site-menu.is-expanded & {
-            .hbsc-logo {
-                transform: translateX(-112.5%);
-            }
-        }*/
         .masthead--collapsed & {
             padding-bottom: 0;
             margin-bottom: 0;
             transition: all .25s cubic-bezier(1, 0, 0, 1) 150ms;
             .header-menu {
-                /*height: 0%;*/
-                /*transition: height 300ms ease;
-                transition-delay: 200ms;
-                -webkit-transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-                -moz-transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-                -o-transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-                transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);*/
                 margin-top: -3.38rem;
-                /* easeInOutQuint */
             }
             .hbsc-logo {
                 transform: translateX(-112.5%);
@@ -100,39 +59,6 @@
                 opacity: 0;
                 visibility: hidden;
                 transition-delay: 400ms;
-            }
-        }
-    }
-}
-
-.hbsc-logo2 {
-    svg {
-        width: 100%;
-        position: relative;
-    }
-    .masthead & {
-        width: rem(192);
-        height: rem(54);
-        @extend .u-mb-1;
-        .logotype {
-            height: rem(54);
-        }
-    }
-    @include media($md) {
-        .masthead--collapsed & {
-            padding-bottom: 0;
-            margin-bottom: 0;
-            height: 0px;
-            transform: translateX(-112.5%);
-            transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease;
-            .logotype {
-                opacity: 0;
-                visibility: hidden;
-                transition-delay: 300ms;
-            }
-            body.home & {
-                padding-bottom: 27.3504274%;
-                margin-bottom: 1rem;
             }
         }
     }

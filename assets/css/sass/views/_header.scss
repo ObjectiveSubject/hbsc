@@ -41,23 +41,7 @@
     @include media($md) {
         padding-right: 3rem;
     }
-    /*
-    body.home & {
-        min-height: 100px;
-    }*/
 }
-
-
-/*
-body.home .masterhead .site-menu {
-    width: 24rem;
-    transition: width .4s cubic-bezier(.12, .94, .37, 1);
-}
-
-body.home .masterhead--collapsed.masterhead .site-menu {
-    width: 12rem;
-    transition: width .4s cubic-bezier(.12, .94, .37, 1);
-}*/
 
 .site-menu {
     @include position(relative);
@@ -108,12 +92,6 @@ body.home .masterhead--collapsed.masterhead .site-menu {
             }
         }
     }
-    /*
-    body.home .masthead--collapsed & {
-        transform: translateX(-40%);
-        padding-left: 0rem;
-        transform: all .3s cubic-bezier(.46, .03, .52, .95);
-    }*/
 }
 
 .search-toggle {
@@ -127,9 +105,13 @@ body.home .masterhead--collapsed.masterhead .site-menu {
 }
 
 .site-search {
-    display: none;
+    /*display: none;*/
+    height: rem(0);
+    overflow: hidden;
+    transition: height .25s cubic-bezier(1, 0, 0, 1) 150ms;
     .search-open & {
         display: block;
+        height: rem(58);
     }
     .search-form {
         @include display(flex);
@@ -228,10 +210,6 @@ body.home .masterhead--collapsed.masterhead .site-menu {
 
 // Menu toggle behaviour
 .header-menu {
-    /*@include display(none);
-    height: 0%;*/
-    /*transition: height 300ms ease, margin-top 300ms ease;
-    transition-delay: 600ms;*/
     .sub-menu {
         &.is-expanded {
             @include display(block);
@@ -240,40 +218,18 @@ body.home .masterhead--collapsed.masterhead .site-menu {
     @include media($md) {
         @include display(block);
         transition: all .25s cubic-bezier(1, 0, 0, 1) 150ms;
-        /*transition: height 300ms ease;
-        transition-delay: 600ms;
-        -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);*/
-        /* easeInOutExpo */
-        /*-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);*/
-        /* easeInOutExpo */
-        /*height: 0%;*/
         .masthead .site-menu.is-expanded & {
             transition: all .3s cubic-bezier(1, 0, 0, 1);
-            /*transition: height 300ms ease, margin-top 300ms ease;
-            transition-delay: 600ms;*/
         }
         .masthead.masthead--collapsed .site-menu.is-expanded &,
         .masthead.masthead--collapsed .site-menu & {
             margin-top: -3.38rem;
             transition: all .25s cubic-bezier(1, 0, 0, 1) 150ms;
-            /*transition: height 300ms ease, margin-top 300ms ease;
-            transition-delay: 600ms;*/
         }
     }
 }
 
 .site-menu.is-expanded {
-    /*body.home .masthead--collapsed & {
-        transform: translateX(0%);
-        padding-left: 9rem;
-        transform: all .3s cubic-bezier(1, 0, 0, 1);
-    }*/
     .header-menu {
         @include display(block);
         height: 100%;
@@ -282,17 +238,6 @@ body.home .masterhead--collapsed.masterhead .site-menu {
             transition: all .2s cubic-bezier(1, 0, 0, 1) .3s;
             margin-top: 0;
         }
-        /*transition: height 300ms ease;
-        transition-delay: 100ms;
-        -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);*/
-        /* easeInOutExpo */
     }
     .menu-item {
         @include display(block);

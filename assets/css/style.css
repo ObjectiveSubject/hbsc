@@ -638,7 +638,7 @@ html {
 .u-mr-1 {
   margin-right: 1rem; }
 
-.u-mb-1, .masthead .hbsc-logo2 {
+.u-mb-1 {
   margin-bottom: 1rem; }
 
 .u-ml-1, .button + .button, .slick-dots li + li, .social__item + .social__item {
@@ -2487,107 +2487,40 @@ label {
 
 .header-logo {
   padding-bottom: 1rem;
-  transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms;
-  /*padding-bottom: rem(78);
-    transition: padding-bottom 400ms 400ms ease;
-    transition-delay: 000ms;*/ }
+  transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms; }
   .header-logo svg {
     width: 100%;
     position: relative; }
-  .header-logo .header-menu {
-    /*height: 100%;
-        transition: height 300ms ease;
-        transition-delay: 0ms;
-        -webkit-transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        -moz-transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        -o-transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        transition: all 300ms cubic-bezier(0.860, 0.000, 0.070, 1.000);*/
-    /* easeInOutQuint */ }
   .masthead .header-logo .hbsc-logo {
     width: 12rem;
     height: 3.38rem;
     position: relative;
-    /*position: absolute;*/
-    /*top: rem(22);*/
     transform: translateX(0%);
-    /*transition: transform 100ms ease,
-            top 300ms ease;*/
-    transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0.1s;
-    /* easeInOutQuad */ }
+    transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0.1s; }
   @media screen and (min-width: 768px) {
-    .header-logo {
-      /*
-        body.home .masthead & {
-            .hbsc-logo {
-                transform: translateX(0);
-            }
-        }
-        body.home .masthead--collapsed .site-menu & {
-            .hbsc-logo {
-                transform: translateX(16%);
-            }
-        }
-        body.home .masthead--collapsed .site-menu.is-expanded & {
-            .hbsc-logo {
-                transform: translateX(-112.5%);
-            }
-        }*/ }
-      .masthead--collapsed .header-logo {
-        padding-bottom: 0;
-        margin-bottom: 0;
-        transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms; }
-        .masthead--collapsed .header-logo .header-menu {
-          /*height: 0%;*/
-          /*transition: height 300ms ease;
-                transition-delay: 200ms;
-                -webkit-transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-                -moz-transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-                -o-transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
-                transition: all 400ms cubic-bezier(0.860, 0.000, 0.070, 1.000);*/
-          margin-top: -3.38rem;
-          /* easeInOutQuint */ }
-        .masthead--collapsed .header-logo .hbsc-logo {
-          transform: translateX(-112.5%);
-          transition: transform 100ms ease, top 300ms ease;
-          transition-delay: 200ms;
-          -webkit-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          -moz-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          -o-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          -webkit-transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          -moz-transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          -o-transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
-          animation-delay: 200ms; }
-        .masthead--collapsed .header-logo .logotype {
-          opacity: 0;
-          visibility: hidden;
-          transition-delay: 400ms; } }
-
-.hbsc-logo2 svg {
-  width: 100%;
-  position: relative; }
-
-.masthead .hbsc-logo2 {
-  width: 12rem;
-  height: 3.38rem; }
-  .masthead .hbsc-logo2 .logotype {
-    height: 3.38rem; }
-
-@media screen and (min-width: 768px) {
-  .masthead--collapsed .hbsc-logo2 {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    height: 0px;
-    transform: translateX(-112.5%);
-    transition: transform 300ms ease, padding-bottom 300ms 300ms ease, margin-bottom 300ms 300ms ease; }
-    .masthead--collapsed .hbsc-logo2 .logotype {
-      opacity: 0;
-      visibility: hidden;
-      transition-delay: 300ms; }
-    body.home .masthead--collapsed .hbsc-logo2 {
-      padding-bottom: 27.3504274%;
-      margin-bottom: 1rem; } }
+    .masthead--collapsed .header-logo {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms; }
+      .masthead--collapsed .header-logo .header-menu {
+        margin-top: -3.38rem; }
+      .masthead--collapsed .header-logo .hbsc-logo {
+        transform: translateX(-112.5%);
+        transition: transform 100ms ease, top 300ms ease;
+        transition-delay: 200ms;
+        -webkit-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        -moz-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        -o-transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        -webkit-transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        -moz-transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        -o-transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.95);
+        animation-delay: 200ms; }
+      .masthead--collapsed .header-logo .logotype {
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 400ms; } }
 
 .masthead {
   background: #dddad5; }
@@ -3469,6 +3402,22 @@ div.zabuto_calendar div.legend span.badge-today {
     .module--calendar .events--calendar-aside {
       width: 30%;
       margin-bottom: 0; } }
+  @media screen and (min-width: 768px) {
+    .events--calendar-aside.calendar--aside-scrolled .events--aside-calendar-terms {
+      position: fixed;
+      transform: translateY(-7rem); } }
+  .events--calendar-aside .events--aside-calendar-terms {
+    width: 100%;
+    max-width: 26rem;
+    margin: 0 auto; }
+    @media screen and (min-width: 768px) {
+      .events--calendar-aside .events--aside-calendar-terms {
+        margin: 0;
+        position: fixed;
+        transform: translateY(0rem);
+        transition: transform 0.25s cubic-bezier(1, 0, 0, 1) 150ms;
+        width: 18rem;
+        max-width: 30%; } }
 
 .calendar--events-list {
   width: 100%; }
@@ -3492,8 +3441,10 @@ div.zabuto_calendar div.legend span.badge-today {
   flex-direction: row;
   -ms-flex-direction: row;
   border: 1px solid #a6a4a0;
-  margin-bottom: 8px;
-  transition: all .3s ease; }
+  transition: all .3s ease;
+  margin-top: -1px; }
+  .calendar--event-item.event--firstofmonth {
+    margin-top: 8px; }
   .calendar--event-item.item--sortby-active {
     display: block; }
   .calendar--event-item:hover {
@@ -3835,11 +3786,7 @@ body.home .preface-text {
   padding-bottom: 0.4rem;
   padding-right: 6rem;
   position: relative;
-  z-index: 10;
-  /*
-    body.home & {
-        min-height: 100px;
-    }*/ }
+  z-index: 10; }
   .site-nav ul {
     margin: 0;
     list-style: none; }
@@ -3847,16 +3794,6 @@ body.home .preface-text {
     .site-nav {
       padding-right: 3rem; } }
 
-/*
-body.home .masterhead .site-menu {
-    width: 24rem;
-    transition: width .4s cubic-bezier(.12, .94, .37, 1);
-}
-
-body.home .masterhead--collapsed.masterhead .site-menu {
-    width: 12rem;
-    transition: width .4s cubic-bezier(.12, .94, .37, 1);
-}*/
 .site-menu {
   position: relative;
   background: #dddad5;
@@ -3864,13 +3801,7 @@ body.home .masterhead--collapsed.masterhead .site-menu {
   padding: 0 0 0 2rem;
   transition: all 0.4s cubic-bezier(0.12, 0.94, 0.37, 1);
   transform: translateX(0%);
-  min-height: 104px;
-  /*
-    body.home .masthead--collapsed & {
-        transform: translateX(-40%);
-        padding-left: 0rem;
-        transform: all .3s cubic-bezier(.46, .03, .52, .95);
-    }*/ }
+  min-height: 104px; }
   @media screen and (min-width: 768px) {
     .site-menu {
       width: auto;
@@ -3910,9 +3841,13 @@ body.home .masterhead--collapsed.masterhead .site-menu {
     color: #dddad5; }
 
 .site-search {
-  display: none; }
+  /*display: none;*/
+  height: 0rem;
+  overflow: hidden;
+  transition: height 0.25s cubic-bezier(1, 0, 0, 1) 150ms; }
   .search-open .site-search {
-    display: block; }
+    display: block;
+    height: 3.62rem; }
   .site-search .search-form {
     display: -webkit-box;
     display: -moz-box;
@@ -3984,93 +3919,59 @@ body.home .masterhead--collapsed.masterhead .site-menu {
   .site-menu.is-expanded .site-mobile-menu-toggle span:nth-child(3) {
     transform: rotate(-45deg); }
 
-.header-menu {
-  /*@include display(none);
-    height: 0%;*/
-  /*transition: height 300ms ease, margin-top 300ms ease;
-    transition-delay: 600ms;*/ }
-  .header-menu .sub-menu.is-expanded {
-    display: block; }
-  @media screen and (min-width: 768px) {
-    .header-menu {
-      display: block;
-      transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms;
-      /*transition: height 300ms ease;
-        transition-delay: 600ms;
-        -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);*/
-      /* easeInOutExpo */
-      /*-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);*/
-      /* easeInOutExpo */
-      /*height: 0%;*/ }
-      .masthead .site-menu.is-expanded .header-menu {
-        transition: all 0.3s cubic-bezier(1, 0, 0, 1);
-        /*transition: height 300ms ease, margin-top 300ms ease;
-            transition-delay: 600ms;*/ }
-      .masthead.masthead--collapsed .site-menu.is-expanded .header-menu,
-      .masthead.masthead--collapsed .site-menu .header-menu {
-        margin-top: -3.38rem;
-        transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms;
-        /*transition: height 300ms ease, margin-top 300ms ease;
-            transition-delay: 600ms;*/ } }
+.header-menu .sub-menu.is-expanded {
+  display: block; }
 
-.site-menu.is-expanded {
-  /*body.home .masthead--collapsed & {
-        transform: translateX(0%);
-        padding-left: 9rem;
-        transform: all .3s cubic-bezier(1, 0, 0, 1);
-    }*/ }
-  .site-menu.is-expanded .header-menu {
+@media screen and (min-width: 768px) {
+  .header-menu {
     display: block;
-    height: 100%;
-    transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0.1s;
-    /*transition: height 300ms ease;
-        transition-delay: 100ms;
-        -webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);*/
-    /* easeInOutExpo */ }
-    .masterhead.masterhead--collapsed .site-menu.is-expanded .header-menu {
-      transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0.3s;
-      margin-top: 0; }
-  .site-menu.is-expanded .menu-item {
+    transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms; }
+    .masthead .site-menu.is-expanded .header-menu {
+      transition: all 0.3s cubic-bezier(1, 0, 0, 1); }
+    .masthead.masthead--collapsed .site-menu.is-expanded .header-menu,
+    .masthead.masthead--collapsed .site-menu .header-menu {
+      margin-top: -3.38rem;
+      transition: all 0.25s cubic-bezier(1, 0, 0, 1) 150ms; } }
+
+.site-menu.is-expanded .header-menu {
+  display: block;
+  height: 100%;
+  transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0.1s; }
+  .masterhead.masterhead--collapsed .site-menu.is-expanded .header-menu {
+    transition: all 0.2s cubic-bezier(1, 0, 0, 1) 0.3s;
+    margin-top: 0; }
+
+.site-menu.is-expanded .menu-item {
+  display: block;
+  height: 2rem;
+  transition: height 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) 0.1s, opacity 0.1s linear;
+  border-top: 1px solid #c7c4c0;
+  margin-top: -1px;
+  opacity: 1; }
+  .site-menu.is-expanded .menu-item.sub-menu-item-expanded {
+    height: auto; }
+  .site-menu.is-expanded .menu-item.current-menu-item {
+    height: auto; }
+    .site-menu.is-expanded .menu-item.current-menu-item a {
+      color: #e74949; }
+  .site-menu.is-expanded .menu-item.current-menu-parent.sub-menu-item-expanded {
+    height: auto; }
+  .site-menu.is-expanded .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item {
+    height: 2rem;
+    border-top: 1px solid #c7c4c0; }
+  .site-menu.is-expanded .menu-item .sub-menu .menu-item {
+    /*@include display(none);*/
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+    border-top: 1px solid rgba(199, 196, 192, 0);
+    margin-top: -1px; }
+  .site-menu.is-expanded .menu-item .sub-menu.is-expanded .menu-item {
     display: block;
     height: 2rem;
-    transition: height 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) 0.1s, opacity 0.1s linear;
-    border-top: 1px solid #c7c4c0;
-    margin-top: -1px;
-    opacity: 1; }
-    .site-menu.is-expanded .menu-item.sub-menu-item-expanded {
-      height: auto; }
-    .site-menu.is-expanded .menu-item.current-menu-item {
-      height: auto; }
-      .site-menu.is-expanded .menu-item.current-menu-item a {
-        color: #e74949; }
-    .site-menu.is-expanded .menu-item.current-menu-parent.sub-menu-item-expanded {
-      height: auto; }
-    .site-menu.is-expanded .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item {
-      height: 2rem;
-      border-top: 1px solid #c7c4c0; }
-    .site-menu.is-expanded .menu-item .sub-menu .menu-item {
-      /*@include display(none);*/
-      height: 0;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(1, 0, 0, 1);
-      border-top: 1px solid rgba(199, 196, 192, 0);
-      margin-top: -1px; }
-    .site-menu.is-expanded .menu-item .sub-menu.is-expanded .menu-item {
-      display: block;
-      height: 2rem;
-      border-top: 1px solid #c7c4c0; }
+    border-top: 1px solid #c7c4c0; }
+
+.nav-links {
+  margin-top: 3rem; }
 
 /*# sourceMappingURL=style.css.map */
