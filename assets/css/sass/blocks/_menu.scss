@@ -1,12 +1,11 @@
 .menu-item {
     .header-menu & {
-        /*@include display(none);*/
         border-top: 1px solid rgba(199, 196, 192, 0);
-        height: 0;
+        height: 0rem;
         overflow: hidden;
         margin-top: -1px;
-        transition: height .3s cubic-bezier(1, 0, 0, 1), border-top .3s cubic-bezier(1, 0, 0, 1);
-        /*margin-top: -3.38rem;*/
+        transition: height .4s cubic-bezier(.12, .94, .37, 1), opacity .2s linear;
+        opacity: 0;
         a {
             @include display(block);
             @extend .u-font-miller-bold;
@@ -23,11 +22,13 @@
             @include display(block);
             border-top: 1px solid rgba(199, 196, 192, 1);
             height: auto;
+            opacity: 1;
         }
         &.current-menu-parent {
             @include display(block);
             height: auto;
             border-top: 1px solid rgba(199, 196, 192, 1);
+            opacity: 1;
         }
     }
     .sub-menu & {
