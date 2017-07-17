@@ -4,7 +4,7 @@ if( !isset($sortByClass) )
     $sortByClass = '';
 }
 ?>
-<div class="event--past-salon-item <?php echo $sortByClass; ?> <?php echo ( $sortByItemActive ? 'item--sortby-active' : '' ); ?>">
+<div class="event--past-salon-item <?php echo $sortByClass; ?> <?php echo ( $sortByItemActive ? 'item--sortby-active' : '' ); ?> event--hover js-hover-toggle" data-class="event--hover" data-target="#past-<?php echo ltrim(preg_replace('/\W+/', '-', strtolower(get_field('event_title').get_field('event_subtitle'))), '-') . $post->ID; ?>" id="past-<?php echo ltrim(preg_replace('/\W+/', '-', strtolower(get_field('event_title').get_field('event_subtitle'))), '-') . $post->ID; ?>">
     <div class="event--past-salon__content">
         
         <?php if( !empty($Event->getDateMonth()) || !empty($Event->getDateDay()) ): ?>

@@ -1,4 +1,4 @@
-<div class="event--upcoming-item <?php echo $upcomingItemCardPos; ?> event--hover"  id="<?php echo ltrim(preg_replace('/\W+/', '-', strtolower(get_field('event_title'))), '-') . $post->ID; ?>">
+<div class="event--upcoming-item <?php echo $upcomingItemCardPos; ?> event--hover js-hover-toggle" data-class="event--hover" id="<?php echo ltrim(preg_replace('/\W+/', '-', strtolower(get_field('event_title'))), '-') . $post->ID; ?>" data-target="#<?php echo ltrim(preg_replace('/\W+/', '-', strtolower(get_field('event_title'))), '-') . $post->ID; ?>">
     <div class="event--upcoming__content">
         
         <?php if( !empty($Event->getDateMonth()) || !empty($Event->getDateDay()) ): ?>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="card-button">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="button js-hover-toggle" data-class="event--hover" data-target="#<?php echo ltrim(preg_replace('/\W+/', '-', strtolower(get_field('event_title'))), '-') . $post->ID; ?>">View Event</a>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="button">View Event</a>
             </div>            
         </div>
 <?php 

@@ -1,148 +1,126 @@
-.comments--thread
-{
-    width : 100%;
-
-    @include media($md)
-    {
-        width : 70%;
-        margin : 0 auto;
-    }    
+.comments--thread {
+    width: 100%;
+    @include media($md) {
+        width: 70%;
+        margin: 0 auto;
+    }
 }
 
-.event--upcoming-item
-{
-    &.event--hover
-    {
-        .image
-        {
-            @include filter(grayscale(100%));           
+.event--upcoming-item {
+    &.event--hover {
+        .image {
+            @include filter(grayscale(100%));
         }
-
-        .card-button
-        {
-            a
-            {
+        .card-button {
+            a {
                 color: white!important;
                 border-color: white!important;
             }
         }
     }
-
-    .image
-    {
+    .image {
         @include filter(grayscale(0%));
     }
-
-    .card-button
-    {
-        a
-        {
+    .card-button {
+        a {
             color: $red!important;
             border-color: $red!important;
             cursor: pointer;
         }
-    }     
+    }
 }
 
-.event--upcoming-item
-{
+.event--upcoming-item {
     margin-bottom: 4rem;
     overflow: hidden;
     width: 100%;
-
-    @include media($md)
-    {        
+    @include media($md) {
         overflow: initial;
-        margin-bottom: 0rem;        
+        margin-bottom: 0rem;
     }
-
-    .module--events-upcoming-inline &
-    {
+    .module--events-upcoming-inline & {
         margin-bottom: 4rem;
         overflow: hidden;
-        width: 100%;        
+        width: 100%;
         max-width: 30rem;
-
-        @include media($md)
-        {
+        @include media($md) {
             max-width: 18rem;
         }
     }
 }
 
-.event--past-salon-item
-{
+.event--past-salon-item {
     width: 100%;
     margin-bottom: 4rem;
     max-width: 30rem;
-    
-    &.item--sortby-active:last-child
-    {
+    &.item--sortby-active:last-child {
         margin-bottom: 0rem;
     }
-
-    @include media($md)
-    {
+    @include media($md) {
         width: 46%;
         min-width: 26rem;
-    }    
+    }
+    &.event--hover {
+        .image-positioner {
+            .image {
+                @include filter(grayscale(100%));
+            }
+        }
+    }
 }
 
-.event--past-salon__content
-{
-    position: relative;
+.event--past-salon-item.event--hover .image {
+    @include filter(grayscale(100%));
+    transition: all .3s ease;
+}
 
-    .image-positioner
-    {
+.event--past-salon__content {
+    position: relative;
+    .image-positioner {
         margin-left: 4rem;
-        .image
-        {
+        .image {
             min-height: 20rem;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;            
-        }        
+            background-repeat: no-repeat;
+            @include filter(grayscale(0%));
+        }
+        .event--hover & {
+            .image {
+                @include filter(grayscale(100%));
+            }
+        }
     }
 }
 
 .event--upcoming__content {
     position: relative;
     @extend .u-clear;
-
-    .module--events-upcoming-inline &
-    {
-        @include media($md)
-        {            
+    .module--events-upcoming-inline & {
+        @include media($md) {
             /*display: flex;*/
         }
     }
-
     .image-positioner {
         width: 100%;
         z-index: 0;
         position: relative;
-        .event--upcoming-item-right &
-        {
-            width : 100%;
+        .event--upcoming-item-right & {
+            width: 100%;
             margin-left: -1.6rem;
-            @include media($md)
-            {
-                padding-right: 18rem;                
+            @include media($md) {
+                padding-right: 18rem;
                 margin-left: 0;
             }
         }
-
-        .event--upcoming-item-left &
-        {
-            width : 100%;
+        .event--upcoming-item-left & {
+            width: 100%;
             margin-left: 1.6rem;
-            @include media($md)
-            {
+            @include media($md) {
                 padding-left: 18rem;
                 margin-left: 0;
             }
-        }        
-
+        }
     }
     .image {
         background-size: cover;
@@ -152,85 +130,62 @@
     }
 }
 
-.event--upcoming-item-right
-{
-    padding-right : 0;
-
-    &:last-child
-    {
+.event--upcoming-item-right {
+    padding-right: 0;
+    &:last-child {
         margin-bottom: 0rem;
     }
-
-    @include media($md)
-    {        
+    @include media($md) {
         margin-bottom: 8rem;
         padding-bottom: 5rem;
         padding-right: 4rem;
-
-        &:last-child
-        {
+        &:last-child {
             margin-bottom: 0rem;
         }
     }
 }
 
-.event--upcoming-item-left
-{
-    padding-left : 0;
-
-    @include media($md)
-    {
+.event--upcoming-item-left {
+    padding-left: 0;
+    @include media($md) {
         padding-left: 4rem;
         margin-bottom: 8rem;
         padding-bottom: 5rem;
     }
-
-    &:last-child
-    {
+    &:last-child {
         margin-bottom: 0rem;
-    }    
+    }
 }
 
-.event--discussion-leaders
-{
+.event--discussion-leaders {
     @include justify-content(space-between);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-
-    @include media($md)
-    {
+    @include media($md) {
         flex-direction: row;
-    }    
-
-    .discussion-leader
-    {
-        .image
-        {
+    }
+    .discussion-leader {
+        .image {
             background-size: cover;
             background-position: center;
             padding-bottom: 80%;
         }
-
         overflow: hidden;
-        width: 100%;        
+        width: 100%;
         max-width: 26rem;
         margin-bottom: 6rem;
         position: relative;
         margin-left: auto;
         margin-right: auto;
-
-        a 
-        {
+        a {
             color: $dark-gray;
         }
-    }   
+    }
 }
 
-.discussion-leader-name
-{
-
-    a{
+.discussion-leader-name {
+    a {
         color: #000000;
     }
 }

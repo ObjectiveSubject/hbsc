@@ -3127,6 +3127,14 @@ caption {
     .event--past-salon-item {
       width: 46%;
       min-width: 26rem; } }
+  .event--past-salon-item.event--hover .image-positioner .image {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+
+.event--past-salon-item.event--hover .image {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all .3s ease; }
 
 .event--past-salon__content {
   position: relative; }
@@ -3136,7 +3144,12 @@ caption {
       min-height: 20rem;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }
+    .event--hover .event--past-salon__content .image-positioner .image {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%); }
 
 .event--upcoming__content {
   position: relative; }
