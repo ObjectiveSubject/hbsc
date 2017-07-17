@@ -1,53 +1,46 @@
 /*
 TODO clean up the !important
 */
-.card-button
-{
+
+.card-button {
     .module--events-upcoming-list &,
-    .module--events-upcoming-inline &
-    {
+    .module--events-upcoming-inline & {
         display: flex;
-        padding:  2rem 3rem;
+        padding: 2rem 3rem;
         color: white!important;
-        border-color: rgba(255,255,255,.15)!important;
+        border-color: rgba(255, 255, 255, .15)!important;
         margin-top: -8rem;
-        a{
+        a {
             color: white!important;
-            border-color: rgba(255,255,255,.15)!important;
+            border-color: rgba(255, 255, 255, .15)!important;
         }
         @include justify-content(center);
         @include media($md) {
             padding: 0rem 2rem 2rem 2rem;
-            background-color: rgba(39,39,39,1)!important;
+            background-color: rgba(39, 39, 39, 1)!important;
             justify-content: center;
             margin-top: 0rem;
         }
     }
-
-    .module--events-upcoming-inline &
-    {
+    .module--events-upcoming-inline & {
         margin-top: 0rem;
-        background-color: rgba(39,39,39,1)!important;
+        background-color: rgba(39, 39, 39, 1)!important;
         @include media($md) {
             padding: 0rem 2rem 2rem 2rem;
-            background-color: rgba(39,39,39,1)!important;
+            background-color: rgba(39, 39, 39, 1)!important;
             justify-content: center;
             margin-top: 0rem;
         }
     }
-
-    .u-bg-blue &
-    {
-        a
-        {
+    .u-bg-blue & {
+        a {
             color: $tan;
             border-color: $tan;
-
             &:hover,
             {
                 color: $red;
                 border-color: $red;
-            }            
+            }
         }
     }
 }
@@ -56,179 +49,135 @@ TODO clean up the !important
     @include display(flex);
     @include flex-direction(column);
     @extend .u-pa-2;
-    text-align: center; 
+    text-align: center;
     padding: 2rem 1rem;
-    @include media($md)
-    {
+    @include media($md) {
         padding: 3rem;
     }
-
     &[class*='u-bg-']>& {
         color: white;
         h2,
         h3,
-        *
-        {
+        * {
             color: white;
         }
     }
-
     &.u-bg-white>&,
     &.u-bg-light-gray>&,
     &.u-bg-tan>& {
         color: $dark-gray;
-
         h2,
         h3,
-        *
-        {
+        * {
             color: $dark-gray;
-        }        
+        }
     }
-
-    .module--carousel.module--mediacollection &
-    {
+    .module--carousel.module--mediacollection & {
         margin-top: -14rem;
         margin-bottom: 0;
         min-height: 18rem;
         width: 100%;
-
-        @include media($md)
-        {
-            margin-top:0;
+        @include media($md) {
+            margin-top: 0;
             margin-bottom: 0;
             min-height: 28.75rem;
             width: 22.5rem;
         }
     }
-
     &.has-badge {
         position: relative;
         margin-top: rem(72); // half of badge size
         padding-top: rem(72); // half of badge size
     }
-    .module--carousel &
-    {
+    .module--carousel & {
         width: rem(360);
         min-height: rem(492);
         @extend .u-mt-3;
     }
-
-    .card-event-title
-    {
+    .card-event-title {
         margin-bottom: 2rem;
-        margin-top:inherit;
+        margin-top: inherit;
     }
-
-    .card-date
-    {
+    .card-date {
         color: white;
-        margin: 0  0 2rem 0;
+        margin: 0 0 2rem 0;
         font-size: rem(26);
-
-        @include media($md)
-        {
+        @include media($md) {
             font-size: rem(32);
         }
     }
-
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
         @extend .u-mt-3;
-        min-height : 26.75rem;
+        min-height: 26.75rem;
         @include media($md) {
             padding: 7rem 2rem 0rem 2rem;
         }
     }
-
-    .module--events-upcoming-inline &
-    {
+    .module--events-upcoming-inline & {
         @include justify-content(center);
         padding: 7rem 2rem 0;
         min-height: initial;
-
-        @include media($md)
-        {
+        @include media($md) {
             padding: 6rem 2rem 0;
             min-height: 26.75rem;
         }
     }
-
-    .module--events-upcoming-list &
-    {
+    .module--events-upcoming-list & {
         @include justify-content(center);
-        background-color: rgba(39,39,39,0.6)!important;
+        background-color: rgba(39, 39, 39, 0.6)!important;
         width: 100%;
-        min-height:18.5rem;
+        min-height: 18.5rem;
         padding: 2rem 3rem 7rem 3rem;
-
-        @include media($md)
-        {
+        @include media($md) {
             width: 22.5rem;
-            min-height:26.5rem;
+            min-height: 26.5rem;
             padding: 7rem 2rem 0;
-            background-color: rgba(39,39,39,1)!important;
-        }        
+            background-color: rgba(39, 39, 39, 1)!important;
+        }
     }
-
-    .module--past-salons &
-    {
+    .module--past-salons & {
         margin: 0 0rem 0 4rem;
         min-height: inherit;
         /*min-height: 16.5rem;*/
         justify-content: center;
         padding: 3rem 1.5rem;
     }
-
-    .card-event-details
-    {
+    .card-event-details {
         @include justify-content(space-around);
         @include flex-direction(column);
         flex-wrap: wrap;
         display: flex;
         padding: 2rem;
-        border-top: 1px solid rgba(255,255,255,.15);
-        border-bottom: 1px solid rgba(255,255,255,.15);
+        border-top: 1px solid rgba(255, 255, 255, .15);
+        border-bottom: 1px solid rgba(255, 255, 255, .15);
         margin: 0 0 3rem 0;
         padding: 2rem 1rem;
-
-        @include media($md)
-        {
+        @include media($md) {
             @include flex-direction(row);
         }
-
-        .card-event-item
-        {
+        .card-event-item {
             @include flex-direction(column);
-            display: flex;            
+            display: flex;
             margin-bottom: 1rem;
-            
-            &:last-child
-            {
+            &:last-child {
                 margin-bottom: 0rem;
             }
-
-            @include media($md)
-            {
+            @include media($md) {
                 flex: 1 0 32%;
                 margin-bottom: 0rem;
-            }            
+            }
         }
-
-        .event-item-title
-        {
+        .event-item-title {
             color: $light-gray;
         }
-
-        .event-item-content
-        {
+        .event-item-content {
             color: white;
-        }        
+        }
     }
 }
 
-.card-event-register
-{
+.card-event-register {
     position: absolute;
     top: 1rem;
     right: 0rem;
@@ -237,25 +186,24 @@ TODO clean up the !important
     position: relative;
     display: flex;
     @include justify-content(center);
-
-    @include media($md)
-    {
+    @include media($md) {
         position: absolute;
         top: 2rem;
         right: -3rem;
-        margin-right: 0rem;        
+        margin-right: 0rem;
     }
-
-    .button
-    {
+    &.item--scrolled {
+        position: fixed;
+        top: 1.5rem;
+        right: calc((100% - 50.5rem)* .5);
+    }
+    .button {
         background-color: #e74949!important;
         border: none;
         text-transform: uppercase;
         padding: .5rem 3rem;
         color: white;
-
-        &:hover
-        {
+        &:hover {
             color: $light-gray;
         }
     }
@@ -270,96 +218,72 @@ TODO clean up the !important
             padding-top: 0;
         }
     }
-
-    &.card-positioner-fullwidth
-    {
+    &.card-positioner-fullwidth {
         position: relative;
         width: 100%;
-
-        .card-content
-        {
-            p
-            {
+        .card-content {
+            p {
                 margin-top: 0;
             }
-
             margin-top: 0;
-            @include media($md)
-            {
+            @include media($md) {
                 margin-top: 0;
             }
         }
     }
-
-    .module--carousel &
-    {
+    .module--carousel & {
         float: right;
         position: relative;
-        z-index: 10;        
+        z-index: 10;
     }
-
-    .module--mediacollection &
-    {
+    .module--mediacollection & {
         float: none;
-        order: 2;        
+        order: 2;
         width: 80%;
-
-        @include media($md)
-        {
+        @include media($md) {
             width: inherit;
             padding-right: 4.5rem;
         }
     }
-
     .event--upcoming-item-left &,
-    .event--upcoming-item-right &
-    {
+    .event--upcoming-item-right & {
         display: flex;
         @include justify-content(flex-end);
         @include flex-direction(column);
         overflow: none;
-        
-        @include media($md)
-        {
+        @include media($md) {
             overflow: initial;
         }
     }
-
-    .event--upcoming-item-right &
-    {
+    .event--upcoming-item-right & {
         position: absolute;
         right: 0;
         z-index: 10;
-        bottom:0px;
+        bottom: 0px;
         width: calc(100% - 1.6rem);
         margin-right: 1.6rem;
         @include media($md) {
-
             margin-right: 0;
             top: 2rem;
             width: auto!important;
-            bottom:initial!important;
+            bottom: initial!important;
         }
     }
-
-    .event--upcoming-item-left & 
-    {
+    .event--upcoming-item-left & {
         position: absolute;
         left: 0;
         z-index: 10;
         width: calc(100% - 1.6rem);
-        bottom:0px;        
+        bottom: 0px;
         margin-left: 1.6rem;
         @include media($md) {
             margin-left: 0;
             top: 2rem;
             width: auto!important;
-            bottom:initial!important;
-        }        
+            bottom: initial!important;
+        }
     }
-
-    .module--past-salons &
-    {
+    .module--past-salons & {
         position: relative;
         margin-top: -10rem;
         z-index: 99;
@@ -367,77 +291,60 @@ TODO clean up the !important
         padding: 2rem 2rem 0rem 2rem;
     }
 }
+
 .card-title {
     @extend .module-title;
-    word-wrap: break-word;    
-
+    word-wrap: break-word;
     .card.u-bg-red &,
     .card.u-bg-blue & {
         color: $tan;
         border-color: $tan;
         border-color: rgba(221, 218, 213, 0.4);
     }
-
     .card.u-bg-white &,
     .card.u-bg-light-gray &,
-    .card.u-bg-tan & 
-    {
+    .card.u-bg-tan & {
         color: $dark-gray;
-        border-color: rgba(0,0,0,.15);
+        border-color: rgba(0, 0, 0, .15);
     }
-
-    .module--events-upcoming-inline &
-    {
+    .module--events-upcoming-inline & {
         padding: 1.8rem 0 2rem 0;
     }
-
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
-
         color: white!important;
-
         .h2,
         .h3,
         h2,
-        h3
-        {
+        h3 {
             font-size: 2.4rem;
             letter-spacing: 0;
-            @include media($md)
-            {
+            @include media($md) {
                 font-size: 3.4rem;
             }
-            
             color: white!important;
         }
-        border-color: rgba(255,255,255,.55)!important;
-        @include media($md)
-        {
-            border-color: rgba(0,0,0,0)!important;
+        border-color: rgba(255, 255, 255, .55)!important;
+        @include media($md) {
+            border-color: rgba(0, 0, 0, 0)!important;
         }
-    }    
-
-    .module--past-salons [class*=u-bg-] &
-    {
-        border-color: rgba(0,0,0,0);
-
-        h2, h3 {
+    }
+    .module--past-salons [class*=u-bg-] & {
+        border-color: rgba(0, 0, 0, 0);
+        h2,
+        h3 {
             font-size: 2.25rem;
             letter-spacing: -.015rem;
-            a{
+            a {
                 color: $dark-gray;
             }
         }
     }
-
-    .module--events-upcoming-list &
-    {
-        margin-bottom : 0rem;
-
-        @include media($md)
-        {
-            margin-bottom : 1rem;
-        }        
+    .module--events-upcoming-list & {
+        margin-bottom: 0rem;
+        @include media($md) {
+            margin-bottom: 1rem;
+        }
     }
 }
 
@@ -449,32 +356,26 @@ TODO clean up the !important
         @include display(flex);
         @include flex-direction(column);
         @include justify-content(center);
-        h2, h3 {
+        h2,
+        h3 {
             font-size: 3rem;
         }
-    }  
-
-    ul
-    {
+    }
+    ul {
         list-style-type: disc;
         margin: 1rem 0;
         padding-left: 2rem;
-
-        li
-        {
+        li {
             text-align: left;
         }
     }
-
     [class*='u-bg-']>& {
         color: white;
-        
         *,
         h2,
-        h3
-        {
+        h3 {
             color: white;
-        }        
+        }
     }
     .card.u-bg-white>&,
     .card.u-bg-light-gray>&,
@@ -482,14 +383,12 @@ TODO clean up the !important
         color: $dark-gray;
         h2,
         h3,
-        *
-        {
+        * {
             color: $dark-gray;
         }
-    }  
-
+    }
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
         color: white;
-    }     
+    }
 }

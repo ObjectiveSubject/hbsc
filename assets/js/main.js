@@ -1,43 +1,36 @@
 /*! Harriet Beecher Stowe Center - v1.0.0
  * http://github.com/ObjectiveSubject/
  * Copyright (c) 2017; * Licensed GPLv2+ */
-(function(window, $){
-    var CalendarEvents = function(options)
-    {
+(function(window, $) {
+    var CalendarEvents = function(options) {
         this.options = options;
         this.selectorItems = options.selectorItems;
         this.checkboxesName = options.checkboxesName;
         this.selectorItemTaxonomy = options.selectorItemTaxonomy;
     };
 
-    CalendarEvents.prototype.getCheckedTerms = function()
-    {
+    CalendarEvents.prototype.getCheckedTerms = function() {
         // Get all checkboxes with checked state
         var list = $('input[name="' + this.checkboxesName + '"]:checked');
         var checkedValues = [];
 
-        _.forEach( list, function( elm, idx )
-        {
-            checkedValues.push( $( elm ).val() );
-        } );
+        _.forEach(list, function(elm, idx) {
+            checkedValues.push($(elm).val());
+        });
 
-        return checkedValues;  
+        return checkedValues;
     };
 
-    CalendarEvents.prototype.filterEventsOnTerms = function()
-    {
+    CalendarEvents.prototype.filterEventsOnTerms = function() {
         var _this = this;
         var terms = this.getCheckedTerms();
 
         var list = $(this.selectorItems);
 
-        _.forEach( list, function( elm, idx )
-        {
+        _.forEach(list, function(elm, idx) {
             var hasTerm = false;
-            _.forEach(terms, function(term, i)
-            {
-                if( $(elm).find(_this.selectorItemTaxonomy).text().indexOf(term) !== -1 )
-                {
+            _.forEach(terms, function(term, i) {
+                if ($(elm).find(_this.selectorItemTaxonomy).text().indexOf(term) !== -1) {
                     hasTerm = true;
                 }
             });
@@ -47,57 +40,43 @@
             var sortByKey = jQuery('.btn--sortby-active').data('sortby-key');
             var sortByKeyClass = null;
 
-            if( sortByKey )
-            {
+            if (sortByKey) {
                 sortByKeyClass = 'item--sortby-' + sortByKey;
             }
 
-            if( $(elm).hasClass('item--sortby') )
-            {
-                if( sortByKeyClass && !_.isNull(sortByKeyClass) )
-                {
-                    if( hasTerm && $(elm).hasClass( sortByKeyClass ) )
-                    {
-                        if( !$(elm).hasClass( 'item--sortby-active' ) )
-                        {
+            if ($(elm).hasClass('item--sortby')) {
+                if (sortByKeyClass && !_.isNull(sortByKeyClass)) {
+                    if (hasTerm && $(elm).hasClass(sortByKeyClass)) {
+                        if (!$(elm).hasClass('item--sortby-active')) {
                             $(elm).addClass('item--sortby-active');
-                        }                    
-                    }
-                    else
-                    {
+                        }
+                    } else {
                         $(elm).removeClass('item--sortby-active');
-                    }                
+                    }
                 }
-            }
-            else
-            {
+            } else {
                 // Calendar
-                if( hasTerm )
-                {
+                if (hasTerm) {
                     $(elm).show();
-                }
-                else
-                {
+                } else {
                     $(elm).hide();
                 }
             }
-        } );    
+        });
     };
 
-    CalendarEvents.prototype.scrollToEvent = function( dateStr )
-    {
+    CalendarEvents.prototype.scrollToEvent = function(dateStr) {
         var target = $('[data-event-date="' + dateStr + '"]:first');
 
-        if( target )
-        {
+        if (target) {
             var targetOffset = target.offset();
             var targetHeight = target.height();
-            var scrollTop    = ( target.offset().top - target.height() );
-            scrollTop        = scrollTop < 0 ? 0 : scrollTop;
+            var scrollTop = (target.offset().top - target.height());
+            scrollTop = scrollTop < 0 ? 0 : scrollTop;
 
             $('html, body').animate({
                 scrollTop: scrollTop
-            }, 1000 );
+            }, 1000);
         }
     };
 
@@ -152,20 +131,41 @@
 
     $(document).ready(function() {
         //Masthead.modulePaddingTop();
+        if (document.querySelectorAll('.current_page_item').length === 0) {
+            jQuery('body').addClass('menu--no-current-page-item');
+        }
     });
 
     $(window).scroll(function() {
         Masthead.logoOffset();
     });
 
-    $('.menu-item.menu-item-has-children').on('click', function() {
+    $('.menu-item.menu-item-has-children').on('click', function(e) {
+        //e.preventDefault();
         var idx = $(this).index();
+        var elm = $(this);
+        var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
+        var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
+        jQuery('.sub-menu.is-expanded').removeClass('is-expanded');
+        $(elm).toggleClass('sub-menu-item-expanded');
 
-        if (!$(this).hasClass('sub-menu-item-expanded')) {
-            $(this).addClass('sub-menu-item-expanded');
-        }
+        window.setTimeout(function() {
+            if (!wasSubmenuExpanded && $(elm).hasClass('sub-menu-item-expanded')) {
+                $(elm).find('.sub-menu').addClass('is-expanded');
+            }
 
-        jQuery('.menu-item.menu-item-has-children .sub-menu').removeClass('is-expanded');
+            if (!$(elm).hasClass('sub-menu-item-expanded')) {
+                $(elm).find('.sub-menu').removeClass('is-expanded');
+            }
+        }, 150);
+
+        window.setTimeout(function() {
+            jQuery('.menu-item.menu-item-has-children').each(function(i, _elm) {
+                if (i != idx) {
+                    $(_elm).removeClass('sub-menu-item-expanded');
+                }
+            });
+        }, 500);
     });
 
     $('#site-menu-toggle, #site-mobile-menu-toggle').on('click', function(evt) {
@@ -193,10 +193,34 @@
      * ------------------- */
     Masthead.logoOffset = function() {
         var scrollTop = $(window).scrollTop();
-        if (scrollTop > 275) {
-            masthead.addClass('masthead--collapsed');
+
+        if ($('body').hasClass('home')) {
+            if (scrollTop > 500) {
+                masthead.addClass('masthead--collapsed');
+                $('#site-menu').removeClass('is-expanded');
+            } else {
+                masthead.removeClass('masthead--collapsed');
+                if (!$('#site-menu').hasClass('is-expanded')) {
+                    $('#site-menu').addClass('is-expanded');
+                }
+            }
         } else {
-            masthead.removeClass('masthead--collapsed');
+            if (scrollTop > 275) {
+                masthead.addClass('masthead--collapsed');
+            } else {
+                masthead.removeClass('masthead--collapsed');
+            }
+        }
+
+        if (document.querySelectorAll('.card-event-register').length > 0) {
+            var dist = (jQuery('.card-positioner').offset().top - jQuery(window).scrollTop()) + 8;
+            if (0 > dist) {
+                if (!jQuery('.card-event-register').hasClass('item--scrolled')) {
+                    jQuery('.card-event-register').addClass('item--scrolled');
+                }
+            } else {
+                jQuery('.card-event-register').removeClass('item--scrolled');
+            }
         }
         return this;
     };

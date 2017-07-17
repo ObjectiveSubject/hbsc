@@ -1,43 +1,42 @@
 /**
  * Module Parts
  */
+
 .module {
     @extend .section;
     @extend .u-pb-4;
-
     /*@include media($md)
     {
         padding-bottom: 8rem;
     }*/
-
     &.has-image {
         padding-top: 0!important;
     }
-
     &.module--events-upcoming-list,
     &.module--events-upcoming-inline,
     &.module--participant,
     &.module--entry,
-    &.module--basic
-    {
-        @include media($md)
-        {
+    &.module--basic {
+        @include media($md) {
             padding-bottom: 4rem;
         }
     }
-
     &.module--events-upcoming-inline,
-    &.module--participant
-    {
+    &.module--participant {
         /*margin-bottom: -4rem;*/
     }
 }
+
 .module__image {
-    height: rem(448);
     background-size: cover;
     background-position: center;
     @extend .u-mb-4;
+    height: 18rem;
+    @include media($md) {
+        height: rem(448);
+    }
 }
+
 .module__content {
     .module--entry & {
         @include display(block);
@@ -55,9 +54,11 @@
         }
     }
 }
+
 .module__header {
     @extend .section__header;
 }
+
 .module__body {
     @extend .section__body;
     @extend .u-mt-3;
@@ -69,7 +70,8 @@
     .module--entry & {
         @extend .u-pr-1;
         margin-right: 0;
-        ul, ol {
+        ul,
+        ol {
             @extend .u-pl-2;
             li {
                 @extend .u-mt-1;
@@ -82,20 +84,15 @@
             padding-right: 6rem;
         }
     }
-
-    &.event--discussion-leaders
-    {
-        @include media($md)
-        {
+    &.event--discussion-leaders {
+        @include media($md) {
             margin-bottom: -4rem;
-        }        
+        }
     }
-
     .module--carousel & {
         max-width: 100%;
         width: 100%;
     }
-
     .module--calendar &,
     .module--post-list &,
     .module--participant & {
@@ -103,26 +100,23 @@
         flex-direction: column;
         @include justify-content(space-between);
         flex-wrap: wrap;
-        @include media($md)
-        {
+        @include media($md) {
             flex-direction: row;
         }
     }
-
     .module--events-upcoming-inline &,
     .module--past-salons & {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         @include justify-content(center);
-
-        @include media($md)
-        {
+        @include media($md) {
             flex-direction: row;
             @include justify-content(space-around);
         }
-    }    
+    }
 }
+
 .module__sidebar {
     @extend .u-mb-2;
     .sidebar {
@@ -138,42 +132,39 @@
         float: right;
     }
 }
+
 .module__footer {
     @extend .section__footer;
-    
-    .module__content &
-    {
+    .module__content & {
         margin-bottom: 0;
     }
-
     .module--past-salons &,
-    .module--participant &
-    {
+    .module--participant & {
         margin-top: 0;
     }
-
-    .module--entry &
-    {
+    .module--entry & {
         width: auto;
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
         text-align: left;
-
-        @include media($md)
-        {
+        @include media($md) {
             margin-right: 15rem;
             padding-left: 6rem;
-            padding-right: 6rem;            
+            padding-right: 6rem;
         }
     }
 }
+
+
 /**
  * Module Elements
  */
+
 .module-title {
     @extend .section-title;
 }
+
 .module-row {
     @extend .u-display-flex-md;
     @include flex-wrap(wrap);
@@ -182,14 +173,18 @@
         @extend .u-mt-4;
     }
 }
+
 .module-column {
     flex: 1 0 25%;
     padding: 0 rem(8);
     margin: 1rem 0;
 }
+
+
 /**
  * Module Types
  */
+
 .module--hero {
     background-position: top;
     background-size: contain;
@@ -203,6 +198,6 @@
         min-height: rem(360);
         @include media($md) {
             min-height: rem(720);
-        }  
-    }  
+        }
+    }
 }

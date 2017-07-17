@@ -21,8 +21,8 @@
 							}
 
 							the_posts_pagination( array(
-								'prev_text'          => 'Previous page',
-								'next_text'          => 'Next page',
+								'prev_text'          => 'Previous&nbsp;',
+								'next_text'          => '&nbsp;Next',
 								'before_page_number' => '<span class="meta-nav screen-reader-text">' . 'Page' . ' </span>',
 							) );
 						}

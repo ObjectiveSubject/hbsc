@@ -1,3 +1,12 @@
 .nav-links {
     margin-top: 3rem;
 }
+
+.map--container {
+    width: 100%;
+    margin-bottom: 4rem;
+    height: 18rem;
+    @include media($md) {
+        height: 28rem;
+    }
+}
