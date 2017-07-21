@@ -1,24 +1,25 @@
-.participant--item
-{    
+.participant--item {
     margin-bottom: 6rem;
     max-width: 26rem;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-
-    @include media($md)
-    {
+    .single-participant & {
+        max-width: 100%;
+        flex: 1;
+        .participant--image {
+            max-width: 26rem;
+            margin: 0 auto;
+        }
+    }
+    @include media($md) {
         flex: 0 0 30%;
         min-width: 18rem;
     }
-
-    .participant--name
-    {
+    .participant--name {
         margin-bottom: 1rem;
     }
-
-    .participant--winner
-    {
+    .participant--winner {
         background-color: #daa520;
         z-index: 18;
         max-width: 16rem;
@@ -26,113 +27,78 @@
         margin: 0 auto;
         padding: 1rem 2rem;
         text-align: center;
-        margin-top: -1.8rem;        
+        margin-top: -1.8rem;
         letter-spacing: .1rem;
         font-weight: bold;
         color: white;
     }
-
-    .participant--image
-    {
+    .participant--image {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         min-height: 22rem;
-
-        @include media($md)
-        {
-            min-height: 16rem;            
-        }        
+        @include media($md) {
+            min-height: 16rem;
+        }
     }
-
-    .participant--text
-    {
+    .participant--text {
         padding-top: 1.6rem;
         text-align: center;
-
-        .u-bg-blue &
-        {
+        .u-bg-blue & {
             color: white;
         }
-
-        .topic
-        {
+        .topic {
             font-style: italic;
         }
-
-        .entry--title
-        {
+        .entry--title {
             font-size: 2rem;
         }
     }
 }
 
-.submissions--steps
-{
+.submissions--steps {
     margin-left: .8rem;
     margin-right: 1rem;
-
-    .submissions--step
-    {   
+    .submissions--step {
         font-size: 1rem;
         padding-bottom: 4rem;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;  
+        flex-wrap: wrap;
         border-left: 1px solid #d8d8d8;
-
-        &:last-child
-        {
+        &:last-child {
             border-left: none;
             padding-bottom: 0;
         }
     }
-
-    .submissions--step.step--inactive
-    {
-        .submissions--step-text
-        {
+    .submissions--step.step--inactive {
+        .submissions--step-text {
             color: #d8d8d8;
         }
-
-        .submissions--step-marker       
-        {
+        .submissions--step-marker {
             .step--marker,
-            .step--marker-inner
-            {
+            .step--marker-inner {
                 background-color: #d8d8d8;
             }
         }
     }
-
-    .submissions--step.step--active
-    {
-        .submissions--step-text
-        {
+    .submissions--step.step--active {
+        .submissions--step-text {
             color: $red;
         }
-
-        .submissions--step-marker       
-        {
-            .step--marker
-            {
+        .submissions--step-marker {
+            .step--marker {
                 background-color: white;
             }
-
-            .step--marker-inner
-            {
+            .step--marker-inner {
                 background-color: $red;
-            }            
+            }
         }
-    }    
-
-    .submissions--step-marker
-    {
+    }
+    .submissions--step-marker {
         display: flex;
         flex: 0 0 2.4rem;
-
-        .step--marker
-        {
+        .step--marker {
             width: 28px;
             height: 28px;
             background-color: white;
@@ -143,18 +109,14 @@
             justify-content: center;
             align-items: center;
         }
-
-        .step--marker-inner
-        {
+        .step--marker-inner {
             width: 20px;
             height: 20px;
             border-radius: 28px;
             display: block;
-        }        
+        }
     }
-
-    .submissions--step-text
-    {
+    .submissions--step-text {
         display: flex;
         flex: 1 1 75%;
         flex-direction: column;
