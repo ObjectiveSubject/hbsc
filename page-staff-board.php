@@ -35,11 +35,10 @@ get_header(); ?>
                     if ( $people->have_posts() ) :                         
                         $cnt = 0;
                     ?>
-                      <ul class="staff-member--list">
+                      <ul class="staff-member--list u-list-nostyle">
                       <?php 
                         while ( $people->have_posts() ) : $people->the_post();                            
                             $mod = $cnt % 2;
-
                             $imagePos = 'image--positionner-left';
 
                             if($cnt % 2)

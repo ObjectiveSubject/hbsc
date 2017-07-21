@@ -50,7 +50,7 @@
     padding: 0 0 0 2rem;
     transition: all .4s cubic-bezier(.12, .94, .37, 1);
     transform: translateX(0%);
-    min-height: 104px;
+    min-height: rem(92);
     @include media($md) {
         width: auto;
         padding-left: 9rem;
