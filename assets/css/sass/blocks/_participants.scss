@@ -20,6 +20,7 @@
     .participant--winner
     {
         background-color: #daa520;
+        position: relative;
         z-index: 18;
         max-width: 16rem;
         width: 68%;
@@ -38,7 +39,11 @@
         background-size: cover;
         background-position: center;
         min-height: 22rem;
-
+        filter: grayscale(100%);
+        @extend .u-transition-300;
+        &:hover {
+            filter: grayscale(0%);
+        }
         @include media($md)
         {
             min-height: 16rem;            

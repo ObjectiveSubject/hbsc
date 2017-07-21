@@ -9,7 +9,7 @@
                             <span class="h2"><?php echo get_field('participant_last_name'); ?></span>
                         </a>
                     </div>
-                    <div class="participant--image" style="background-image:url('<?php echo $imgSrc;?>');"></div>
+                    <div class="participant--image fx-grayscale" style="background-image:url('<?php echo $imgSrc;?>');"></div>
 <?php
                 if( get_field('participant_winner') == 1 )
                 {
