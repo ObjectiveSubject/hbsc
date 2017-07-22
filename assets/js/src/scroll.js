@@ -3,7 +3,7 @@
  * All effects on window scroll
  */
 
-(function ($, window) {
+(function($, window) {
 
     window.ScrollEffects = {};
 
@@ -11,23 +11,24 @@
      * Borrowed from CSS-Tricks
      * https://css-tricks.com/snippets/jquery/smooth-scrolling/
      * ------------------- */
-    ScrollEffects.smoothScroll = function () {
+    ScrollEffects.smoothScroll = function() {
         $('a[href*="#"]')
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(e) {
-            if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-                location.hostname == this.hostname
-            ) {
+            .not('[href="#"]')
+            .not('[href="#0"]')
+            .click(function(e) {
+                /*if (
+                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                    location.hostname == this.hostname
+                ) {*/
                 var target = $(this.hash);
-                console.log(this.hash);
+                e.preventDefault();
+                //console.log(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     e.preventDefault();
                     $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function () {
+                        scrollTop: target.offset().top - 40
+                    }, 1000, function() {
                         var $target = $(target);
                         $target.focus();
                         if ($target.is(":focus")) {
@@ -38,16 +39,16 @@
                         }
                     });
                 }
-            }
-        });
+                //}
+            });
     };
 
     /* Make elements below fold invisible
      * ------------------- */
-    ScrollEffects.addClasses = function () {
+    ScrollEffects.addClasses = function() {
         var $element = $('.js-slide-in'),
             viewHeight = $(window).height();
-        $element.each(function () {
+        $element.each(function() {
             var elementTop = $(this).offset().top;
             if (elementTop >= viewHeight) {
                 $(this).css('transform', 'translateY(50%)').css('opacity', '0');
@@ -58,11 +59,11 @@
 
     /* Elements appear & slide in when fully above fold
      * ------------------- */
-    ScrollEffects.slideIn = function () {
+    ScrollEffects.slideIn = function() {
         var $element = $('.js-slide-in'),
             viewTop = $(window).scrollTop(),
             viewBottom = viewTop + $(window).height();
-        $element.each(function () {
+        $element.each(function() {
             var elementTop = $(this).offset().top;
             var elementBottom = elementTop + $(this).height();
             if ((elementBottom <= viewBottom) && (elementTop >= viewTop)) {
@@ -71,12 +72,12 @@
         });
     };
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         ScrollEffects.smoothScroll();
         ScrollEffects.addClasses();
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         ScrollEffects.slideIn();
     });
 

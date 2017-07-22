@@ -134,27 +134,38 @@
         if (document.querySelectorAll('.current_page_item').length === 0) {
             jQuery('body').addClass('menu--no-current-page-item');
         }
+
+        // Force section breadcrumb highlight
+
+        forceSectionBreadcrumb();
     });
+
+    function forceSectionBreadcrumb() {
+        //single - event
+    }
 
     $(window).scroll(function() {
         Masthead.logoOffset();
     });
 
     $('.menu-item.menu-item-has-children').on('click', function(e) {
-        //e.preventDefault();
+
         var idx = $(this).index();
         var elm = $(this);
         var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
         var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
         jQuery('.sub-menu.is-expanded').removeClass('is-expanded');
-        $(elm).toggleClass('sub-menu-item-expanded');
+
+        if (!wasExpanded) {
+            $(elm).addClass('sub-menu-item-expanded');
+        }
 
         window.setTimeout(function() {
-            if (!wasSubmenuExpanded && $(elm).hasClass('sub-menu-item-expanded')) {
+            if (!wasSubmenuExpanded && !wasExpanded) {
                 $(elm).find('.sub-menu').addClass('is-expanded');
             }
 
-            if (!$(elm).hasClass('sub-menu-item-expanded')) {
+            if (wasExpanded) {
                 $(elm).find('.sub-menu').removeClass('is-expanded');
             }
         }, 150);
@@ -165,7 +176,11 @@
                     $(_elm).removeClass('sub-menu-item-expanded');
                 }
             });
-        }, 500);
+
+            if (wasExpanded) {
+                $(elm).removeClass('sub-menu-item-expanded');
+            }
+        }, 400);
     });
 
     $('#site-menu-toggle, #site-mobile-menu-toggle').on('click', function(evt) {
@@ -182,7 +197,7 @@
             }
         } else {
             $('#site-menu').removeClass('is-expanded');
-            jQuery('.sub-menu-item-expanded').removeClass('sub-menu-item-expanded');
+            jQuery('.sub-menu-item-expanded').find('.is-expanded').removeClass('is-expanded');
             window.setTimeout(function() {
                 jQuery('.sub-menu-item-expanded').removeClass('sub-menu-item-expanded');
             }, 400);
@@ -236,7 +251,7 @@
 
 
 })(jQuery, this);
-(function ($, window) {
+(function($, window) {
 
     window.ScrollEffects = {};
 
@@ -244,23 +259,24 @@
      * Borrowed from CSS-Tricks
      * https://css-tricks.com/snippets/jquery/smooth-scrolling/
      * ------------------- */
-    ScrollEffects.smoothScroll = function () {
+    ScrollEffects.smoothScroll = function() {
         $('a[href*="#"]')
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(e) {
-            if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-                location.hostname == this.hostname
-            ) {
+            .not('[href="#"]')
+            .not('[href="#0"]')
+            .click(function(e) {
+                /*if (
+                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                    location.hostname == this.hostname
+                ) {*/
                 var target = $(this.hash);
-                console.log(this.hash);
+                e.preventDefault();
+                //console.log(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     e.preventDefault();
                     $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function () {
+                        scrollTop: target.offset().top - 40
+                    }, 1000, function() {
                         var $target = $(target);
                         $target.focus();
                         if ($target.is(":focus")) {
@@ -271,16 +287,16 @@
                         }
                     });
                 }
-            }
-        });
+                //}
+            });
     };
 
     /* Make elements below fold invisible
      * ------------------- */
-    ScrollEffects.addClasses = function () {
+    ScrollEffects.addClasses = function() {
         var $element = $('.js-slide-in'),
             viewHeight = $(window).height();
-        $element.each(function () {
+        $element.each(function() {
             var elementTop = $(this).offset().top;
             if (elementTop >= viewHeight) {
                 $(this).css('transform', 'translateY(50%)').css('opacity', '0');
@@ -291,11 +307,11 @@
 
     /* Elements appear & slide in when fully above fold
      * ------------------- */
-    ScrollEffects.slideIn = function () {
+    ScrollEffects.slideIn = function() {
         var $element = $('.js-slide-in'),
             viewTop = $(window).scrollTop(),
             viewBottom = viewTop + $(window).height();
-        $element.each(function () {
+        $element.each(function() {
             var elementTop = $(this).offset().top;
             var elementBottom = elementTop + $(this).height();
             if ((elementBottom <= viewBottom) && (elementTop >= viewTop)) {
@@ -304,17 +320,16 @@
         });
     };
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         ScrollEffects.smoothScroll();
         ScrollEffects.addClasses();
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         ScrollEffects.slideIn();
     });
 
 })(jQuery, this);
-
 (function(window, jQuery, _){
     var SortBy = function(options)
     {

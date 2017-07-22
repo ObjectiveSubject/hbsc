@@ -50,10 +50,15 @@
             height: auto;
             opacity: 1;
         }*/
-        &.sub-menu.is-expanded .menu-item,
-        &.current_page_item {
+        &.sub-menu.is-expanded .menu-item {
             @include display(block);
             height: 2rem;
+            border-top: 1px solid rgba(199, 196, 192, 1);
+            opacity: 1;
+        }
+        &.current_page_item {
+            @include display(block);
+            height: auto;
             border-top: 1px solid rgba(199, 196, 192, 1);
             opacity: 1;
         }

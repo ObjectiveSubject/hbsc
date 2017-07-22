@@ -33,6 +33,7 @@
     padding-bottom: 0.4rem;
     padding-right: 6rem;
     position: relative;
+    display: inline-block;
     z-index: 10;
     ul {
         margin: 0;
@@ -51,8 +52,9 @@
     transition: all .4s cubic-bezier(.12, .94, .37, 1);
     transform: translateX(0%);
     min-height: rem(92);
+    overflow: hidden;
     @include media($md) {
-        width: auto;
+        /*max-width: rem(384);*/
         padding-left: 9rem;
         display: inline-block;
         &::before {
@@ -67,31 +69,44 @@
         }
     }
     body.home .masthead &,
-    body.menu--no-current-page-item .masthead & {
+    body.menu--no-current-page-item .masthead &,
+    body .masthead & {
         @include media($md) {
-            width: 26rem;
+            /*min-width: 26rem;*/
+            max-width: 26rem;
             transition: width .4s cubic-bezier(.12, .94, .37, 1);
         }
     }
     body.home .masthead--collapsed.masthead &,
     body.menu--no-current-page-item .masthead--collapsed.masthead & {
         @include media($md) {
-            width: 12rem;
+            max-width: 12rem;
             transition: width .4s cubic-bezier(.12, .94, .37, 1);
         }
     }
     body.home .masthead--collapsed.masthead .site-menu.is-expanded &,
     body.menu--no-current-page-item .masthead--collapsed.masthead .site-menu.is-expanded & {
         @include media($md) {
-            width: 12rem;
+            /*width: 12rem;*/
+            max-width: 100%;
             transition: width .4s cubic-bezier(.12, .94, .37, 1);
         }
     }
     &.is-expanded {
+        body.home .masthead &,
+        body.menu--no-current-page-item .masthead &,
+        body .masthead & {
+            @include media($md) {
+                /*min-width: 26rem;*/
+                max-width: 32rem;
+                transition: width .4s cubic-bezier(.12, .94, .37, 1);
+            }
+        }
         body.home .masthead--collapsed.masthead &,
         body.menu--no-current-page-item .masthead--collapsed.masthead & {
             @include media($md) {
-                width: 26rem;
+                /*width: 26rem;*/
+                max-width: 100%;
                 transition: width .4s cubic-bezier(.12, .94, .37, 1);
             }
         }
@@ -270,6 +285,9 @@
         }
         &.current-menu-item {
             height: auto;
+            .masthead & {
+                height: auto;
+            }
             a {
                 color: $red;
             }
@@ -310,6 +328,7 @@
     @include display(block);
     height: 2rem;
     border-top: 1px solid rgba(199, 196, 192, 1);
+    width: 100%;
 }
 
 .site-menu .menu-item.current-menu-parent.sub-menu-item-expanded .sub-menu.is-expanded .menu-item.current-menu-item a {

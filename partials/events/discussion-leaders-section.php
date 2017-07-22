@@ -15,7 +15,7 @@
                 <?php
                     foreach( $leadersPosts as $post )
                     {
-                        //$leadersPosts->the_post();
+                        $leadersPosts->the_post();
                         setup_postdata($post);
                         include HBSC_PATH . 'partials/events/discussion-leaders-item.php';
                     }

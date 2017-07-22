@@ -15,7 +15,7 @@ if( comments_open() || get_comments_number() )
             if( !empty( get_field('event_discussion_title') ) )
             {
 ?>
-                <h5><?php echo get_field('event_discussion_title'); ?></h5>
+                <h5 class="u-text-center u-mb-4"><?php echo get_field('event_discussion_title'); ?></h5>
 <?php
             }
 

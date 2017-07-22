@@ -14,27 +14,38 @@
         if (document.querySelectorAll('.current_page_item').length === 0) {
             jQuery('body').addClass('menu--no-current-page-item');
         }
+
+        // Force section breadcrumb highlight
+
+        forceSectionBreadcrumb();
     });
+
+    function forceSectionBreadcrumb() {
+        //single - event
+    }
 
     $(window).scroll(function() {
         Masthead.logoOffset();
     });
 
     $('.menu-item.menu-item-has-children').on('click', function(e) {
-        //e.preventDefault();
+
         var idx = $(this).index();
         var elm = $(this);
         var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
         var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
         jQuery('.sub-menu.is-expanded').removeClass('is-expanded');
-        $(elm).toggleClass('sub-menu-item-expanded');
+
+        if (!wasExpanded) {
+            $(elm).addClass('sub-menu-item-expanded');
+        }
 
         window.setTimeout(function() {
-            if (!wasSubmenuExpanded && $(elm).hasClass('sub-menu-item-expanded')) {
+            if (!wasSubmenuExpanded && !wasExpanded) {
                 $(elm).find('.sub-menu').addClass('is-expanded');
             }
 
-            if (!$(elm).hasClass('sub-menu-item-expanded')) {
+            if (wasExpanded) {
                 $(elm).find('.sub-menu').removeClass('is-expanded');
             }
         }, 150);
@@ -45,7 +56,11 @@
                     $(_elm).removeClass('sub-menu-item-expanded');
                 }
             });
-        }, 500);
+
+            if (wasExpanded) {
+                $(elm).removeClass('sub-menu-item-expanded');
+            }
+        }, 400);
     });
 
     $('#site-menu-toggle, #site-mobile-menu-toggle').on('click', function(evt) {
@@ -62,7 +77,7 @@
             }
         } else {
             $('#site-menu').removeClass('is-expanded');
-            jQuery('.sub-menu-item-expanded').removeClass('sub-menu-item-expanded');
+            jQuery('.sub-menu-item-expanded').find('.is-expanded').removeClass('is-expanded');
             window.setTimeout(function() {
                 jQuery('.sub-menu-item-expanded').removeClass('sub-menu-item-expanded');
             }, 400);

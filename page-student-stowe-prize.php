@@ -34,41 +34,30 @@ while ( have_posts() )
 
             <aside class="module__sidebar">
                 <div class="submissions--steps">
-                    <div class="submissions--step step--inactive">
+<?php
+    $steps = get_field('prize_nomination_steps');
+
+    if( $steps && is_array($steps) && !empty($steps) )
+    {
+
+        foreach( $steps as $step )
+        {
+?>
+                    <div class="submissions--step <?php echo $step['prize_nomination_step_state']; ?>">
                         <div class="submissions--step-marker">
                             <span class="step--marker">
                                 <span class="step--marker-inner"></span>
                             </span>
                         </div>
                         <div class="submissions--step-text">
-                            <strong>JANUARY 15, 2016</strong>
-                            Submissions for 2016 are now closed.
+                            <strong><?php echo $step['prize_nomination_step_date']; ?></strong>
+                            <?php echo $step['prize_nomination_step_content']; ?>
                         </div>
                     </div>
-
-                    <div class="submissions--step step--active">
-                        <div class="submissions--step-marker">
-                            <span class="step--marker">
-                                <span class="step--marker-inner"></span>
-                            </span>                        
-                        </div>
-                        <div class="submissions--step-text">
-                            <strong>MARCH 2016</strong>
-                            Notification to winners
-                        </div>
-                    </div>
-
-                    <div class="submissions--step">
-                        <div class="submissions--step-marker">
-                            <span class="step--marker">
-                                <span class="step--marker-inner"></span>
-                            </span>                        
-                        </div>
-                        <div class="submissions--step-text">
-                            <strong>JUNE 2016</strong>
-                            Student Stowe Prize Award Event and Public Program
-                        </div>
-                    </div>
+<?php
+        }
+    }
+?>
                 </div>
             </aside>
 

@@ -21,7 +21,7 @@
             </div>
             <?php endif; ?>
             <?php if( $display_button && $buttonLocation == 'sidebar' ) : ?>
-                <a href="<?php echo $button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>">
+                <a href="<?php echo $button_link; ?>" id="<?php echo $button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>">
                     <?php echo $button_text; ?>
                 </a>
             <?php endif; ?>
