@@ -50,7 +50,7 @@
             viewHeight = $(window).height();
         $element.each(function() {
             var elementTop = $(this).offset().top;
-            if (elementTop >= viewHeight) {
+            if (elementTop >= (viewHeight * 0.5)) {
                 $(this).css('transform', 'translateY(50%)').css('opacity', '0');
                 $(this).addClass('u-transition-500');
             }

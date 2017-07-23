@@ -60,23 +60,29 @@ get_header(); ?>
         <section class="module module--basic u-bg-tan">
             <div class="module__content u-container">
                 <header class="module__header">
-                    <div class="module-title">Harriet Beecher Stowe</div>
+                    <div class="module-title"><?php echo get_field('life_title');?></div>
                 </header>
                 <div class="module__body">
                     <ul class="u-text-center u-list-nostyle">
-                        <li>
-                            <a href="#" class="u-display-inline-block"><span class="h2">Harriet Beecher</span><span class="h3">Stowe's Life</span></a>
+<?php
+    $lifeLinks = get_field('life_links');
+    $btnUrl = ( empty(get_field('life_link_button_url')) ? '#' : get_field('life_link_button_url') );
+    $cnt = 0;    
+    foreach($lifeLinks as $lifeLink)
+    {
+        $linkUrl = ( empty($lifeLink['life_link_url']) ? '#' : $lifeLink['life_link_url'] );
+?>                        
+                        <li <?php echo $cnt > 0 ? 'class="u-mt-4"' : '';?>>
+                            <a href="<?php echo $linkUrl;?>" class="u-display-inline-block"><span class="h2"><?php echo $lifeLink['life_link_title']; ?></span><span class="h3"><?php echo $lifeLink['life_link_subtitle']; ?></span></a>
                         </li>
-                        <li class="u-mt-4">
-                            <a href="#" class="u-display-inline-block"><span class="h2">Uncle Tom's</span><span class="h3">Cabin</span></a>
-                        </li>
-                        <li class="u-mt-4">
-                            <a href="#" class="u-display-inline-block"><span class="h2">Family</span></a>
-                        </li>
+<?php
+        $cnt++;
+    }
+?>
                     </ul>
                 </div>
                 <footer class="module__footer">
-                    <a href="#" class="button">Learn More</a>
+                    <a href="<?php echo get_field('life_link_button_url'); ?>" class="button"><?php echo get_field('life_link_button_text'); ?></a>
                 </footer>
             </div>
         </section>

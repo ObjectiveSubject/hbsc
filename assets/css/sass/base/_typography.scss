@@ -1,12 +1,11 @@
-
 /* Typography
  * ------------------------------------------ */
 
 html {
-	font-size: 100%;
-	@include media($xl) {
-		font-size: 18px;
-	}
+    font-size: 100%;
+    @include media($xl) {
+        font-size: 18px;
+    }
 }
 
 body,
@@ -15,99 +14,122 @@ input,
 select,
 textarea {
     font-family: "Miller Text Rom", Georgia, serif;
-	color: $color-text-main;
-	font-size: rem(18);
-	line-height: 1.375;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    color: $color-text-main;
+    font-size: rem(18);
+    line-height: 1.375;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* Headings
  * ------------------------------------------ */
- h1, .h1 {
+
+h1,
+.h1 {
     @include display(block);
     @extend .u-font-rama-gothic;
-	font-size: rem(64);
+    font-size: rem(64);
     line-height: 1;
     font-weight: normal;
     margin: 0;
-	@include media($md) {
+    @include media($md) {
         font-size: rem(96);
-	}
- }
- h2, .h2 {
+    }
+}
+
+h2,
+.h2 {
     @include display(block);
     @extend .u-font-rama-gothic;
-	font-size: rem(56);
+    font-size: rem(56);
     line-height: .82;
     font-weight: normal;
     margin: 0;
-	@include media($md) {
+    @include media($md) {
         font-size: rem(72);
-	}
- }
- h3, .h3 {
+    }
+}
+
+h3,
+.h3 {
     @include display(block);
     @extend .u-font-rama-slab;
-	font-size: rem(56);
+    font-size: rem(56);
     line-height: .82;
     font-weight: normal;
     margin: 0;
-	@include media($md) {
+    @include media($md) {
         font-size: rem(72);
-	}
- }
- h4, .h4 {
+    }
+}
+
+h4,
+.h4 {
     @include display(block);
     @extend .u-font-miller;
-	font-size: rem(24);
+    font-size: rem(24);
     margin: 0;
-	@include media($md) {
+    @include media($md) {
         font-size: rem(32);
-	}
- }
- h5, .h5 {
-    @include display(block);
-    @extend .u-font-miller-bold;
-	font-size: rem(16);
-    margin: 0;
-	@include media($md) {
-        font-size: rem(24);
-	}
- }
- h6, .h6 {
-    @include display(block);
-    @extend .u-font-miller-bold;
-	font-size: rem(14);
-	@include media($md) {
-        font-size: rem(18);
-	}
- }
+    }
+}
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h5,
+.h5 {
+    @include display(block);
+    @extend .u-font-miller-bold;
+    font-size: rem(16);
+    margin: 0;
+    @include media($md) {
+        font-size: rem(24);
+    }
+}
+
+h6,
+.h6 {
+    @include display(block);
+    @extend .u-font-miller-bold;
+    font-size: rem(14);
+    @include media($md) {
+        font-size: rem(18);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    word-wrap: break-word;
     [class*='u-bg-'] & {
         color: $tan;
     }
     .u-bg-white &,
-	.u-bg-light-gray &,
+    .u-bg-light-gray &,
     .u-bg-tan & {
         color: $dark-gray;
     }
 }
 
- /* Links
+
+/* Links
   * ------------------------------------------- */
 
- a {
+a {
     color: $gray;
- 	text-decoration: none;
- 	@include transition(all 300ms ease);
-     
-     span {
-         @include transition(all 300ms ease);
-     }
-     
+    text-decoration: none;
+    @include transition(all 300ms ease);
+    span {
+        @include transition(all 300ms ease);
+    }
     &:hover,
     &:focus,
     &:active {
@@ -116,47 +138,51 @@ h1, h2, h3, h4, h5, h6,
             color: $red !important;
         }
     }
-
- 	&:focus {
- 		outline: 0;
- 	}
- 	&:hover,
- 	&:active {
- 		outline: 0;
- 	}
- }
+    &:focus {
+        outline: 0;
+    }
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+}
 
 
 /* Copy
  * ------------------------------------------ */
 
 p {
-	margin-top: $leading;
+    margin-top: $leading;
     margin-bottom: 0;
 }
 
-ul, ol {
-	/*list-style: none;*/
-	margin: 1rem 0 2rem 0;
-	padding: 0;
+ul,
+ol {
+    /*list-style: none;*/
+    margin: 1rem 0 2rem 0;
+    padding: 0;
 }
 
 dt {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+    margin: 0 1.5em 1.5em;
 }
 
-b, strong {
-	font-family: "Miller Text Bd";
+b,
+strong {
+    font-family: "Miller Text Bd";
     font-style: normal;
     font-weight: normal;
 }
 
-dfn, cite, em, i {
-	font-family: "Miller Text It";
+dfn,
+cite,
+em,
+i {
+    font-family: "Miller Text It";
     font-style: italic;
     font-weight: normal;
 }
@@ -166,19 +192,16 @@ address {
 }
 
 blockquote {
-	@extend em;
+    @extend em;
     font-size: 1.6rem;
     text-transform: none;
     margin: 0;
-
-	@include media($md)
-	{
-		font-size: 2rem;
-	}
-
-	p {
-		margin: 0;
-	}
+    @include media($md) {
+        font-size: 2rem;
+    }
+    p {
+        margin: 0;
+    }
     .u-bg-red &,
     .u-bg-dark-gray & {
         color: white;
@@ -194,72 +217,79 @@ blockquote {
 }
 
 pre {
-	background: $color-background-pre;
-	font-family: $font-pre;
-	font-size: rem(14);
-	line-height: $font-line-height-pre;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1em;
+    background: $color-background-pre;
+    font-family: $font-pre;
+    font-size: rem(14);
+    line-height: $font-line-height-pre;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em;
 }
 
-code, kbd, tt, var {
-	font-family: $font-code;
-	font-family: 400;
-	background: $color-background-pre;
-	color: $color-code;
-	p & {
-		padding: 0.25em;
-		font-size: rem(14);
-	}
+code,
+kbd,
+tt,
+var {
+    font-family: $font-code;
+    font-family: 400;
+    background: $color-background-pre;
+    color: $color-code;
+    p & {
+        padding: 0.25em;
+        font-size: rem(14);
+    }
 }
 
-abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
 }
 
-mark, ins {
-	background: #fff9c0;
-	text-decoration: none;
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
 }
 
 hr {
-	background-color: $color-background-hr;
-	border: 0;
-	height: 1px;
-	margin: $leading 0 0;
-	width: 100%;
+    background-color: $color-background-hr;
+    border: 0;
+    height: 1px;
+    margin: $leading 0 0;
+    width: 100%;
 }
+
 
 /* Text meant only for screen readers.
  * ------------------------------------------------- */
-.screen-reader-text {
-   clip: rect(1px, 1px, 1px, 1px);
-   position: absolute !important;
-   height: 1px;
-   width: 1px;
-   overflow: hidden;
 
-   &:hover,
-   &:active,
-   &:focus {
-	   background-color: #f1f1f1;
-	   border-radius: 3px;
-	   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	   clip: auto !important;
-	   color: #21759b;
-	   display: block;
-	   font-size: rem(0.875);
-	   font-weight: 700;
-	   height: auto;
-	   left: 5px;
-	   line-height: normal;
-	   padding: 15px 23px 14px;
-	   text-decoration: none;
-	   top: 5px;
-	   width: auto;
-	   z-index: 100000; /* Above WP toolbar. */
-   }
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        clip: auto !important;
+        color: #21759b;
+        display: block;
+        font-size: rem(0.875);
+        font-weight: 700;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000;
+        /* Above WP toolbar. */
+    }
 }

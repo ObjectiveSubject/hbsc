@@ -1,56 +1,47 @@
 .section {
     overflow: hidden;
     @extend .u-py-4;
-
-    .section .page &
-    {
+    .section .page & {
         padding: 0;
     }
 }
 
-.site-content
-{
-    .page-content
-    {
-        section:first-child
-        {
+.site-content {
+    .page-content {
+        section:first-child {
             padding-top: 4rem;
         }
     }
-
-    section:first-child
-    {
+    section:first-child {
         padding-top: 4rem;
-
-        @include media($md)
-        {
-            padding-top: 11.88rem;
+        @include media($md) {
+            padding-top: 13rem;
         }
     }
 }
 
-.section__content {
-    
-}
+.section__content {}
+
 .section__header {
     @extend .u-mb-3;
 }
+
 .section__body {
     @extend .u-mt-3;
-    h4, h5, h6 {
+    h4,
+    h5,
+    h6 {
         @extend .u-mt-3;
     }
 }
+
 .section__footer {
     @extend .section__header;
     @extend .u-text-center;
     @extend .u-mt-4;
-    
-    .section__content &
-    {
+    .section__content & {
         margin-bottom: 0;
     }
-
     .preface & {
         @include media($md) {
             margin-left: $leading*6;
@@ -58,9 +49,12 @@
         }
     }
 }
+
+
 /**
  * Section Elements
  */
+
 .section-title {
     width: 100%;
     @extend .u-py-1;
@@ -70,17 +64,16 @@
     letter-spacing: .2rem;
     color: $dark-gray;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
     word-wrap: break-word;
-    
     [class*='u-bg-'] & {
         color: $tan;
-        border-color: rgba(255,255,255,.15);
+        border-color: rgba(255, 255, 255, .15);
     }
     .u-bg-white &,
     .u-bg-light-gray &,
     .u-bg-tan & {
         color: $dark-gray;
-        border-color: rgba(0,0,0,.15);
+        border-color: rgba(0, 0, 0, .15);
     }
 }

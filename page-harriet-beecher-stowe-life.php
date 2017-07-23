@@ -43,9 +43,9 @@ get_header(); ?>
                     <div class="card-positioner">
                         <div class="card u-bg-red js-slide-in">
                             <div class="card-content">
-                                <blockquote>"There is more done with pens than with swords."</blockquote>
+                                <blockquote><?php echo get_field('life_quote'); ?></blockquote>
                                 <div class="h6 u-caps u-mt-3">
-                                    <span class="u-font-size-sm">Harriet Beecher Stowe</span>
+                                    <span class="u-font-size-sm"><?php echo get_field('life_quote_author'); ?></span>
                                 </div>
                             </div>
                         </div>

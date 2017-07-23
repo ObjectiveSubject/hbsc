@@ -14,6 +14,8 @@ function setup() {
 	add_action( 'init', $n( 'register_event' ) );
 	add_action( 'init', $n( 'register_people' ) );
 	add_action( 'init', $n( 'register_participant' ) );
+
+	//add_filter('people_post_type_link', $n( 'people_post_type_link' ), 1, 3);	
 }
 
 /**
@@ -23,44 +25,66 @@ function setup() {
  * on registering post types with the extended-cpts library.
  */
 function register_event() {
+	global $wp_rewrite;
 	register_extended_post_type( 'event', array(
         'menu_icon'   => 'dashicons-calendar-alt',
         'supports'    => array( 'title', 'editor', 'thumbnail', 'comments' ),
-        'has_archive' => true,
+        'has_archive' => false,
         'public'      => true,
         'dashboard_glance' => false,
+		'rewrite' => false,		
 		'admin_cols' => array(
 			'event-type' => array(
 				'taxonomy' => 'event-type'
 			),
 		),
     ) );
+
+	add_rewrite_rule('^programs-learning/salons-at-stowe/(.*)/?$', 'index.php?event=$matches[1]', 'top');
+	$wp_rewrite->add_rewrite_tag("%event%", '[^/]+', "event=");
+	$wp_rewrite->add_permastruct('event', 'programs-learning/salons-at-stowe/%event%', false);
+}
+
+function people_post_type_link( $link, $post = 0 ){
+	file_put_contents('link.txt', $link);
+	return str_replace('%postname%', $post->slug, $link);
 }
 
 /**
  * Register the 'people' post type
  */
 function register_people() {
+	global $wp_rewrite;
+
 	register_extended_post_type( 'people', array(
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'has_archive' => true
+		'has_archive' => false,		
+		'rewrite' => false
+		
 	), array(
 		# Override the base names used for labels:
 		'singular' => 'Person',
 		'plural'   => 'People',
 		'slug'     => 'people'
 	) );
+	
+	add_rewrite_rule('^about/staff-board/(.*)/?$', 'index.php?people=$matches[1]', 'top');
+	$wp_rewrite->add_rewrite_tag("%people%", '[^/]+', "people=");
+	$wp_rewrite->add_permastruct('people', 'about/staff-board/%people%', false);
 }
 
 /**
  * Register the 'student' post type
  */
 function register_participant() {
+	global $wp_rewrite;
+
 	register_extended_post_type( 'participant', array(
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
-		'has_archive' => true,
+		'has_archive' => false,
+		'rewrite' => false,
 		'admin_cols' => array(
 			'participant-type' => array(
 				'taxonomy' => 'participant-type'
@@ -72,4 +96,8 @@ function register_participant() {
 		'plural'   => 'Participants',
 		'slug'     => 'participant'
 	) );
+
+	add_rewrite_rule('^stowe-prize/student-stowe-prize/(.*)/?$', 'index.php?participant=$matches[1]', 'top');
+	$wp_rewrite->add_rewrite_tag("%participant%", '[^/]+', "participant=");
+	$wp_rewrite->add_permastruct('participant', 'stowe-prize/student-stowe-prize/%participant%', false);	
 }

@@ -132,7 +132,7 @@
     $(document).ready(function() {
         //Masthead.modulePaddingTop();
         if (document.querySelectorAll('.current_page_item').length === 0) {
-            jQuery('body').addClass('menu--no-current-page-item');
+            //jQuery('body').addClass('menu--no-current-page-item');
         }
 
         // Force section breadcrumb highlight
@@ -141,7 +141,32 @@
     });
 
     function forceSectionBreadcrumb() {
-        //single - event
+        var pathname = window.location.pathname;
+
+        jQuery('.header-menu .sub-menu a').each(function(i, elm) {
+            var url = jQuery(elm).attr('href').replace(window.location.origin, '');
+            console.log(jQuery(elm).attr('href').replace(window.location.origin, ''), pathname, pathname.indexOf(url));
+
+            if (pathname.indexOf(url) !== -1) {
+
+                var mainItem = jQuery(elm).parents('.menu-item-has-children');
+
+                if (!jQuery(elm).parent().hasClass('current-menu-item')) {
+                    //jQuery(elm).parent().addClass('current-menu-item');
+                }
+
+                if (!jQuery(elm).parent().hasClass('current_page_item')) {
+                    //jQuery(elm).parent().addClass('current_page_item');
+                }
+
+                if (!jQuery(mainItem).hasClass('current-menu-parent')) {
+                    jQuery(mainItem).addClass('current-menu-parent');
+                }
+                if (!jQuery(mainItem).hasClass('current-menu-ancestor')) {
+                    jQuery(mainItem).addClass('current-menu-ancestor');
+                }
+            }
+        });
     }
 
     $(window).scroll(function() {
@@ -228,8 +253,9 @@
         }
 
         if (document.querySelectorAll('.card-event-register').length > 0) {
-            var dist = (jQuery('.card-positioner').offset().top - jQuery(window).scrollTop()) + 8;
-            if (0 > dist) {
+            var dist = (jQuery('.card').offset().top - jQuery(window).scrollTop());
+            var distBtn = (jQuery('.card-event-register').offset().top - jQuery(window).scrollTop());
+            if (0 > dist || 0 > distBtn) {
                 if (!jQuery('.card-event-register').hasClass('item--scrolled')) {
                     jQuery('.card-event-register').addClass('item--scrolled');
                 }
@@ -298,7 +324,7 @@
             viewHeight = $(window).height();
         $element.each(function() {
             var elementTop = $(this).offset().top;
-            if (elementTop >= viewHeight) {
+            if (elementTop >= (viewHeight * 0.5)) {
                 $(this).css('transform', 'translateY(50%)').css('opacity', '0');
                 $(this).addClass('u-transition-500');
             }

@@ -30,6 +30,7 @@ div.zabuto_calendar {
             @include media($md) {
                 position: fixed;
                 transform: translateY(-7rem);
+                z-index: 20;
             }
         }
     }

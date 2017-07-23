@@ -194,8 +194,17 @@ TODO clean up the !important
     }
     &.item--scrolled {
         position: fixed;
-        top: 1.5rem;
-        right: calc((100% - 53.5rem) * .5);
+        top: 0rem;
+        width: 100%;
+        max-width: calc(100% - 3rem);
+        right: inherit;
+        @include media($md) {
+            position: fixed;
+            top: 1.5rem;
+            right: calc((100% - 53.5rem) * .5);
+            width: auto;
+            max-width: inherit;
+        }
     }
     .button {
         background-color: #e74949!important;
@@ -348,6 +357,17 @@ TODO clean up the !important
     }
 }
 
+.single-event {
+    .card.u-bg-dark-gray {
+        .h2,
+        .h3,
+        h2,
+        h3 {
+            color: white!important;
+        }
+    }
+}
+
 .card-content {
     @extend .u-my-3;
     .module--carousel &,
@@ -385,6 +405,14 @@ TODO clean up the !important
         h3,
         * {
             color: $dark-gray;
+        }
+    }
+    .card.u-bg-dark-gray & {
+        a {
+            color: $red;
+            &:hover {
+                color: $light-gray;
+            }
         }
     }
     .module--events-upcoming-inline &,

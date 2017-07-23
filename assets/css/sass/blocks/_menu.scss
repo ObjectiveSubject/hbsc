@@ -24,7 +24,8 @@
         .sub-menu,
         .submenu.is-expanded {
             .menu-item.item--active,
-            .menu-item.current-menu-item {
+            .menu-item.current-menu-item,
+            .menu-item.current_page_item {
                 @include display(block);
                 border-top: 1px solid rgba(199, 196, 192, 1);
                 height: auto;
@@ -102,9 +103,9 @@
     opacity: 1;
 }
 
-.masthead .site-menu .header-menu .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item,
-.masthead .site-menu .header-menu .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item.current_page_item,
-.masthead .site-menu .header-menu .menu-item.current-menu-parent .sub-menu .menu-item.current_page_item {
+.masthead .site-menu .header-menu .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item //.masthead .site-menu .header-menu .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item.current_page_item,
+//.masthead .site-menu .header-menu .menu-item.current-menu-parent .sub-menu .menu-item.current_page_item 
+{
     @include display(block);
     border-top: 1px solid rgba(199, 196, 192, 1);
     height: 2rem;
