@@ -50,7 +50,7 @@
             viewHeight = $(window).height();
         $element.each(function() {
             var elementTop = $(this).offset().top;
-            if (elementTop >= (viewHeight * 0.5)) {
+            if (elementTop >= viewHeight) {
                 $(this).css('transform', 'translateY(50%)').css('opacity', '0');
                 $(this).addClass('u-transition-500');
             }
@@ -66,7 +66,8 @@
         $element.each(function() {
             var elementTop = $(this).offset().top;
             var elementBottom = elementTop + $(this).height();
-            if ((elementBottom <= viewBottom) && (elementTop >= viewTop)) {
+            if ((elementBottom - (elementBottom * 0.20) <= viewBottom) && (elementTop + (elementBottom * 0.20) >= viewTop)) {
+                //if (elementTop < (viewBottom * 0.15)) {
                 $(this).css('transform', 'translateY(0)').css('opacity', '1');
             }
         });

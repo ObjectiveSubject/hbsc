@@ -69,8 +69,16 @@
     }
 }
 
-.event--past-salon-item.event--hover .image {
+.event--past-salon-item.event--hover .image,
+.gray--hover .image,
+.gray--hover .item--image {
     @include filter(grayscale(100%));
+    transition: all .3s ease;
+}
+
+.image,
+.gray--hover .image {
+    @include filter(grayscale(0%));
     transition: all .3s ease;
 }
 

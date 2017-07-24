@@ -3275,9 +3275,17 @@ caption {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%); }
 
-.event--past-salon-item.event--hover .image {
+.event--past-salon-item.event--hover .image,
+.gray--hover .image,
+.gray--hover .item--image {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  transition: all .3s ease; }
+
+.image,
+.gray--hover .image {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
   transition: all .3s ease; }
 
 .event--past-salon__content {
@@ -3967,6 +3975,9 @@ div.zabuto_calendar div.legend span.badge-today {
     flex: 0 0 30%;
     align-self: center; } }
 
+.copyright {
+  font-size: .8rem; }
+
 .site-footer a.icon-facebook:hover {
   color: #3B5998; }
 
@@ -4066,7 +4077,9 @@ body.home .preface-text {
   transition: all 0.4s cubic-bezier(0.12, 0.94, 0.37, 1);
   transform: translateX(0%);
   min-height: 5.75rem;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05); }
   @media screen and (min-width: 768px) {
     .site-menu {
       /*max-width: rem(384);*/

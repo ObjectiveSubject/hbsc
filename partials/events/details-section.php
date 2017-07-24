@@ -9,7 +9,7 @@
                 <a href="#" class="button module-button">Register</a>
             </div>
 
-            <div class="card u-bg-dark-gray js-slide-in">
+            <div class="card u-bg-dark-gray">
                 <div class="card-title">
                     SALONS AT STOWE
                 </div>

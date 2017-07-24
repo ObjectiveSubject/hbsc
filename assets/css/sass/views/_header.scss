@@ -53,6 +53,8 @@
     transform: translateX(0%);
     min-height: rem(92);
     overflow: hidden;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     @include media($md) {
         /*max-width: rem(384);*/
         padding-left: 9rem;

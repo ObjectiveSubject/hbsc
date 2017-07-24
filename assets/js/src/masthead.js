@@ -32,11 +32,13 @@
                 var mainItem = jQuery(elm).parents('.menu-item-has-children');
 
                 if (!jQuery(elm).parent().hasClass('current-menu-item')) {
-                    //jQuery(elm).parent().addClass('current-menu-item');
+                    jQuery(elm).parent().addClass('current-menu-item');
+                    jQuery(elm).css('color', '#e74949');
                 }
 
                 if (!jQuery(elm).parent().hasClass('current_page_item')) {
-                    //jQuery(elm).parent().addClass('current_page_item');
+                    jQuery(elm).parent().addClass('current_page_item');
+                    jQuery(elm).css('color', '#e74949');
                 }
 
                 if (!jQuery(mainItem).hasClass('current-menu-parent')) {
