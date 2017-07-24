@@ -37,7 +37,9 @@ incrementViewsCount($post->ID);
                         <a href="#" class="search-toggle class-toggle" data-target="#masthead" data-class="search-open" data-focus=".search-field"><span class="icon icon-search"></span></a>
                     </div>
                     <div class="open--hours">
-                        <?php if( get_option('hbsc_closed_today') ) : ?>
+                        <?php
+                        $today = get_option('hbsc_hours_'.strtolower(date('l')));
+                        if( get_option('hbsc_closed_today') || empty($today) ) : ?>
                         Closed Today
                         <?php else : ?>
                         Open Today: <?php hbsc_opening_hours_today(); ?>

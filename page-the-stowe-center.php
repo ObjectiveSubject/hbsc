@@ -44,7 +44,9 @@ get_header(); ?>
                         <?php endif; ?>
                     </aside>
                     <div class="module__body">
-                        <?php if( get_option('hbsc_closed_today') ) : ?>
+                        <?php
+                        $today = get_option('hbsc_hours_'.strtolower(date('l')));
+                        if( get_option('hbsc_closed_today') || empty($today) ) : ?>
                         <h5>Closed Today</h5>
                         <?php else : ?>
                         <h5>Open Today</h5>
@@ -57,31 +59,31 @@ get_header(); ?>
                             <tbody>
                                 <tr>
                                     <td class="u-caps">Sunday</td>
-                                    <td><?php echo get_option('hbsc_hours_sunday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_sunday')) ) ? get_option('hbsc_hours_sunday') : 'CLOSED'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Monday</td>
-                                    <td><?php echo get_option('hbsc_hours_monday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_monday')) ) ? get_option('hbsc_hours_monday') : 'CLOSED'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Tuesday</td>
-                                    <td><?php echo get_option('hbsc_hours_tuesday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_tuesday')) ) ? get_option('hbsc_hours_tuesday') : 'CLOSED'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Wednesday</td>
-                                    <td><?php echo get_option('hbsc_hours_wednesday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_wednesday')) ) ? get_option('hbsc_hours_wednesday') : 'CLOSED'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Thursday</td>
-                                    <td><?php echo get_option('hbsc_hours_thursday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_thursday')) ) ? get_option('hbsc_hours_thursday') : 'CLOSED'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Friday</td>
-                                    <td><?php echo get_option('hbsc_hours_friday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_friday')) ) ? get_option('hbsc_hours_friday') : 'CLOSED'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="u-caps">Saturday</td>
-                                    <td><?php echo get_option('hbsc_hours_saturday'); ?></td>
+                                    <td><?php echo ( !empty(get_option('hbsc_hours_saturday')) ) ? get_option('hbsc_hours_saturday') : 'CLOSED'; ?></td>
                                 </tr>
                             </tbody>
                         </table>
