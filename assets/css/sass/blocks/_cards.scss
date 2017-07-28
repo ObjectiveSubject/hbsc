@@ -73,15 +73,17 @@ TODO clean up the !important
         }
     }
     .module--carousel.module--mediacollection & {
-        margin-top: -14rem;
+        margin-top: 0;
         margin-bottom: 0;
-        min-height: 18rem;
+        min-height: 2rem;
         width: 100%;
+        padding: 1rem;
         @include media($md) {
             margin-top: 0;
             margin-bottom: 0;
             min-height: 28.75rem;
             width: 22.5rem;
+            padding: 2rem 1rem;
         }
     }
     &.has-badge {
@@ -248,10 +250,20 @@ TODO clean up the !important
     .module--mediacollection & {
         float: none;
         order: 2;
-        width: 80%;
+        position: absolute;
+        left: auto;
+        right: auto;
+        bottom: 0;
+        width: calc(100% - 2rem);
+        justify-content: center;
         @include media($md) {
             width: inherit;
             padding-right: 4.5rem;
+            position: relative;
+            width: 80%;
+            left: auto;
+            right: auto;
+            bottom: initial;
         }
     }
     .event--upcoming-item-left &,
@@ -418,5 +430,9 @@ TODO clean up the !important
     .module--events-upcoming-inline &,
     .module--events-upcoming-list & {
         color: white;
+    }
+    .module--mediacollection & {
+        margin: 0 0 2rem 0;
+        @include media($md) {}
     }
 }

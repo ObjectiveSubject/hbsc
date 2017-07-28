@@ -11,15 +11,22 @@
         <?php if( have_rows('module') && get_field('display_module_anchors') ) : ?>
         <footer class="section__footer">
             <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
-                <?php while( have_rows('module') ): the_row();
-                $title = get_sub_field('module_title');
+                <?php 
+                    while( have_rows('module') ): the_row();
+                        $title = get_sub_field('module_title');
+
+                        if( !empty(trim($title) ) )
+                        {
                 ?>
                 <li class="anchor preface-button">
                     <a href="#module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="button">
-                        <?php echo $title; ?>
+                        <span><?php echo $title; ?></span>
                     </a>
                 </li>
-                <?php endwhile; ?>
+                <?php 
+                        }
+                    endwhile; 
+                ?>
             </ul>
         </footer>
         <?php endif; ?>

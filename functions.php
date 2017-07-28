@@ -3,7 +3,8 @@
 /**
  * Functions and definitions
  */
-
+update_option( 'siteurl', 'http://hbsc.local/' );
+update_option( 'home', 'http://hbsc.local/' );
 // Useful global constants
 define( 'HBSC_VERSION',      '0.1.0' );
 define( 'HBSC_URL',          get_stylesheet_directory_uri() );

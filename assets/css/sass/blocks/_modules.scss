@@ -115,6 +115,56 @@
             @include justify-content(space-around);
         }
     }
+    .module--basic & {
+        ul,
+        ol {
+            @extend .u-pl-2;
+            li {
+                @extend .u-mt-1;
+            }
+        }
+    }
+    .module--posts & {
+        h5 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            @include media($md) {
+                margin-top: 0rem;
+            }
+            a {
+                color: inherit;
+            }
+        }
+        .post--image {
+            display: block;
+            height: 14rem;
+            width: 25rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        .post--content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            flex-wrap: wrap;
+            @include media($md) {
+                margin-left: 2rem;
+            }
+            header {
+                margin-bottom: 0.6rem;
+            }
+        }
+        .type-post {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            @include media($md) {
+                flex-direction: row;
+            }
+        }
+    }
 }
 
 .module__sidebar {

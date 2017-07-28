@@ -2,7 +2,7 @@
 /**
  * General page template
  */
-
+/* Template Name:  FAQ */
 get_header(); ?>
 
 	<div class="site-content">

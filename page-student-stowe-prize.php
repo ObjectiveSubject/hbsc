@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php 
+/* Template Name: Student Stowe Prize */
+get_header(); ?>
 <div class="site-content">
 <?php
 while ( have_posts() )

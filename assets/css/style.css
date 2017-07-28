@@ -633,7 +633,8 @@ html {
   margin: 1rem; }
 
 .u-mt-1, .slick-dots, .chart-data__key, .form-group, .module--entry .module__body ul li,
-.module--entry .module__body ol li {
+.module--entry .module__body ol li, .module--basic .module__body ul li,
+.module--basic .module__body ol li {
   margin-top: 1rem; }
 
 .u-mr-1 {
@@ -712,7 +713,8 @@ html {
   padding-bottom: 2rem; }
 
 .u-pl-2, .module--entry .module__body ul,
-.module--entry .module__body ol {
+.module--entry .module__body ol, .module--basic .module__body ul,
+.module--basic .module__body ol {
   padding-left: 2rem; }
 
 .u-px-2 {
@@ -1912,16 +1914,18 @@ TODO clean up the !important
     .card.u-bg-tan > .card * {
       color: #272727; }
   .module--carousel.module--mediacollection .card {
-    margin-top: -14rem;
+    margin-top: 0;
     margin-bottom: 0;
-    min-height: 18rem;
-    width: 100%; }
+    min-height: 2rem;
+    width: 100%;
+    padding: 1rem; }
     @media screen and (min-width: 768px) {
       .module--carousel.module--mediacollection .card {
         margin-top: 0;
         margin-bottom: 0;
         min-height: 28.75rem;
-        width: 22.5rem; } }
+        width: 22.5rem;
+        padding: 2rem 1rem; } }
   .card.has-badge {
     position: relative;
     margin-top: 4.5rem;
@@ -2114,11 +2118,21 @@ TODO clean up the !important
 .module--mediacollection .card-positioner {
   float: none;
   order: 2;
-  width: 80%; }
+  position: absolute;
+  left: auto;
+  right: auto;
+  bottom: 0;
+  width: calc(100% - 2rem);
+  justify-content: center; }
   @media screen and (min-width: 768px) {
     .module--mediacollection .card-positioner {
       width: inherit;
-      padding-right: 4.5rem; } }
+      padding-right: 4.5rem;
+      position: relative;
+      width: 80%;
+      left: auto;
+      right: auto;
+      bottom: initial; } }
 
 .event--upcoming-item-left .card-positioner,
 .event--upcoming-item-right .card-positioner {
@@ -2335,6 +2349,9 @@ TODO clean up the !important
 .module--events-upcoming-inline .card-content,
 .module--events-upcoming-list .card-content {
   color: white; }
+
+.module--mediacollection .card-content {
+  margin: 0 0 2rem 0; }
 
 /* Customization */
 .carousel-slide__content {
@@ -2989,6 +3006,43 @@ img {
       justify-content: space-around;
       -ms-flex-pack: distribute; } }
 
+.module--posts .module__body h5 {
+  margin-top: 1rem;
+  font-size: 1.2rem; }
+  @media screen and (min-width: 768px) {
+    .module--posts .module__body h5 {
+      margin-top: 0rem; } }
+  .module--posts .module__body h5 a {
+    color: inherit; }
+
+.module--posts .module__body .post--image {
+  display: block;
+  height: 14rem;
+  width: 25rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; }
+
+.module--posts .module__body .post--content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 768px) {
+    .module--posts .module__body .post--content {
+      margin-left: 2rem; } }
+  .module--posts .module__body .post--content header {
+    margin-bottom: 0.6rem; }
+
+.module--posts .module__body .type-post {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 768px) {
+    .module--posts .module__body .type-post {
+      flex-direction: row; } }
+
 .module__sidebar .sidebar {
   border: 1px solid #d8d8d8; }
   .module__sidebar .sidebar p:first-of-type {
@@ -3084,7 +3138,12 @@ img {
   .preface-button .button {
     display: block;
     padding-left: 0;
-    padding-right: 0; }
+    padding-right: 0;
+    height: 100%;
+    display: flex; }
+    .preface-button .button span {
+      margin: auto;
+      line-height: initial; }
 
 .section, .module {
   overflow: hidden; }

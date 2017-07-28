@@ -1,7 +1,5 @@
 <?php
-/**
- * General page template
- */
+ /* Template Name: Salons at Stowe */
 $postId = null;
 get_header();
 $eventStartDate = null;

@@ -1,7 +1,5 @@
 <?php
-/**
- * General page template
- */
+/* Template Name: Staff & Board */
 
 $roles = get_terms( 'role' );
 
