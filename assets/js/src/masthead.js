@@ -101,6 +101,10 @@
             var submenu = jQuery('.site-menu.is-expanded .menu-item.current-menu-parent.menu-item-has-children.sub-menu-item-expanded .sub-menu');
             if (!$(submenu).hasClass('is-expanded')) {
                 $(submenu).addClass('is-expanded')
+                window.setTimeout(function() {
+                    $(submenu).css('height', 'auto' );
+                    $(submenu).css('min-height',$(submenu).height() );
+                }, 400);                
             }
         } else {
             $('#site-menu').removeClass('is-expanded');

@@ -9,7 +9,7 @@ get_header();
     $termsList = get_terms( 'event-type', array(
         'hide_empty' => false,
         'fields'     => 'slugs'
-    ) );        
+    ) );
 
     $loop = new WP_Query( array( 
         'post_type'      => 'event',

@@ -34,6 +34,24 @@
         position: relative;
     }
     padding-bottom: 1rem;
+
+    &.menu--body
+    {
+        padding-top: 0;
+        body.home &
+        {
+            padding-top: 0;
+
+            .side-nav
+            {
+                @include media($md)
+                {
+                    padding-top: 0;
+                }                
+            }
+        }
+    }
+
     /*transition: all .25s cubic-bezier(1, 0, 0, 1) 150ms;*/
     transition: all .4s cubic-bezier(.12, .94, .37, 1) 150ms;
     .header-menu {}

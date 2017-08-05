@@ -2,17 +2,22 @@ body.home {
     .preface {
         padding-top: 0;
         @include media($md) {
-            padding-top: 6.75rem!important;
+            padding-top: 3rem!important;
+            padding-bottom: 1.5rem;
         }
     }
     .preface-text {
         @extend .h4;
-        text-align: left;
+        text-align: left;        
         p {
             margin-top: 0;
         }
         @include media($md) {
-            margin-left: rem(320);
+            margin: 0;
+            display: flex;
+            flex: 1;
+            padding-left: 2rem;
+            padding-top: 0;
         }
     }
 
