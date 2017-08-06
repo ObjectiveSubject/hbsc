@@ -62,7 +62,17 @@
 .module__body {
     @extend .section__body;
     @extend .u-mt-3;
-
+    body.home &
+    {
+        @include media($md)
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;            
+            justify-content: center;
+            align-items: center; 
+        }       
+    }
     .module--video & {
         @include justify-content(center);
         display: flex;

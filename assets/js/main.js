@@ -154,6 +154,11 @@
                 if (!jQuery(elm).parent().hasClass('current-menu-item')) {
                     jQuery(elm).parent().addClass('current-menu-item');
                     jQuery(elm).css('color', '#e74949');
+                    jQuery(elm).on('click', function(evt)
+                    {
+                        console.log(evt,jQuery(elm) );
+                        evt.preventDefault();  
+                    })
                 }
 
                 if (!jQuery(elm).parent().hasClass('current_page_item')) {
@@ -177,13 +182,15 @@
 
     $('.menu-item.menu-item-has-children').on('click', function(e) {
 
+        e.preventDefault();
+        e.stopPropagation();
         var idx = $(this).index();
         var elm = $(this);
         var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
         var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
         jQuery('.sub-menu.is-expanded').removeClass('is-expanded');
 
-        if (!wasExpanded) {
+        if (!wasExpanded) {            
             $(elm).addClass('sub-menu-item-expanded');
         }
 
@@ -233,6 +240,11 @@
                 jQuery('.sub-menu-item-expanded').removeClass('sub-menu-item-expanded');
             }, 400);
         }
+    });
+
+
+    jQuery(document).ready(function(){
+        
     });
 
     /* Logo Offset on Scroll
