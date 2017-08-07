@@ -116,7 +116,6 @@
     body.home .masthead--collapsed.masthead &,
     body.menu--no-current-page-item .masthead--collapsed.masthead & {
         @include media($md) {
-            display: flex;
             max-width: 12rem;
             transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1);            
             transform: translateX(0%);
@@ -397,12 +396,11 @@ body.home .masthead .site-menu
 {
     @include media($md) 
     {
-        display:flex;
+        display:inline-block;
         transform: translateX(-100%);
     }
 }
 
-body.home .masthead.masterhead--collapsed .site-menu.is-expanded,
 body.home .masthead .site-menu.menu--body
 {
     @include media($md)

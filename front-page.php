@@ -11,7 +11,7 @@ get_header(); ?>
         <section class="preface section <?php the_field('preface_background_color'); ?>">
             <div class="section__content u-container">
                 <div class="section__body">
-                    <div id="site-menu" class="site-menu menu--body <?php echo (is_front_page() ? 'is-expanded' : '');?>">
+                    <div id="site-menu-body" class="site-menu menu--body <?php echo (is_front_page() ? 'is-expanded' : '');?>">
                         <nav class="site-nav">
                             <div class="header-logo">
                                 <a id="hbsc-logo" class="hbsc-logo u-display-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -33,12 +33,6 @@ get_header(); ?>
                             }
                             ?>
                         </nav>
-                        <button id="site-menu-toggle" class="site-menu-toggle ui-button icon icon-chevron-down"></button>
-                        <button id="site-mobile-menu-toggle" class="site-mobile-menu-toggle ui-button">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
                     </div>
                     <div class="preface-text">
                         <?php the_content(); ?>
