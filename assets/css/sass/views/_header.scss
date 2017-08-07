@@ -131,13 +131,15 @@
             transition: width .4s cubic-bezier(.12, .94, .37, 1);
         }
     }
+
     &.is-expanded {
+         max-width: 100%;
         body.home .masthead &
         {
-            @include media($md) {
+            /*@include media($md) {
                 width: 12rem;
                 height: 5.75rem
-            }
+            }*/
         }
         body.menu--no-current-page-item .masthead &,
         body .masthead & {
@@ -282,8 +284,7 @@
 }
 
 .item--active {
-    height: auto;
-    transform: scaleY(1);
+    height: 2rem;
     border-top: 1px solid rgba(199, 196, 192, 1);
     transition: all .3s cubic-bezier(1, 0, 0, 1);
 }
@@ -291,15 +292,8 @@
 // Menu toggle behaviour
 .header-menu {
     .sub-menu {
-        @include display(block);
-        transform: scaleY(0);
-        height: auto;
-        transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-        transform-origin: 0% 0%;
         &.is-expanded {
-           transform: scaleY(1);
-            transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-            transform-origin: 0% 0%;            
+            @include display(block);
         }
     }
     @include media($md) {
@@ -329,24 +323,16 @@
     }
     .menu-item {
         @include display(block);
-        height: auto;
-        transform: scaleY(1);
-        transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
+        height: 2rem;
+        transition: height 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
         border-top: 1px solid #c7c4c0;
         margin-top: -1px;
         opacity: 1;
-        transform-origin: 50% 50%;
         &.sub-menu-item-expanded {
             height: auto;
-            transform: scaleY(1);
-            transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-            transform-origin: 50% 50%;
         }
         &.current-menu-item {
             height: auto;
-            transform: scaleY(1);
-            transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-            transform-origin: 50% 50%;
             .masthead & {
                 height: auto;
             }
@@ -354,67 +340,41 @@
                 color: $red;
             }
         }
+        &.current-menu-parent {
+            &.sub-menu-item-expanded {
+                height: auto;
+            }
+            .sub-menu.is-expanded .menu-item {
+                height: 2rem;
+                border-top: 1px solid rgba(199, 196, 192, 1);
+            }
+        }
         .sub-menu .menu-item {
             /*@include display(none);*/
-            height: auto;
-            transform: scaleY(0);
+            height: 0;
             overflow: hidden;
             transition: all .3s cubic-bezier(1, 0, 0, 1);
             border-top: 1px solid rgba(199, 196, 192, 0);
             margin-top: -1px;
-            transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;            
-            transform-origin: 50% 50%;
-        }        
-        &.current-menu-parent {
-            &.sub-menu-item-expanded {
-                height: auto;
-                transform: scaleY(1);
-                transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;            
-                transform-origin: 0% 0%;
-            }
-            .sub-menu.is-expanded .menu-item {
-                /*height: 2rem;*/
-                height: auto;
-                transform: scaleY(1);
-                border-top: 1px solid rgba(199, 196, 192, 1);
-                transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;            
-                transform-origin: 50% 50%;
-            }
-
-            .sub-menu .menu-item
-            {
-                transform: scaleY(1);
-                transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-                transform-origin: 50% 50%;                
-            }
+            transition: all .4s cubic-bezier(.12, .94, .37, 1);
         }
         .sub-menu.is-expanded .menu-item {
             @include display(block);
-            /*height: 2rem;*/
-            height: auto;
-            transform: scaleY(1);
-            transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s;
+            height: 2rem;
             border-top: 1px solid rgba(199, 196, 192, 1);
-            transform-origin: 50% 50%;
         }
     }
 }
 
 .masterhead .sub-menu .menu-item {
     @include display(block);
-    height: auto;
-    transform: scaleY(0);
-    transition: transform .4s cubic-bezier(.12, .94, .37, 1);
+    height: 0rem;
     border-top: 1px solid rgba(199, 196, 192, 1);
-    transform-origin: 50% 50%;
 }
 
 .masterhead--collapsed .sub-menu.is-expanded .menu-item {
     @include display(block);
-    height: auto;
-    transform: scaleY(1);
-    transition: transform .4s cubic-bezier(.12, .94, .37, 1);
-    transform-origin: 50% 50%;
+    height: 2rem;
     border-top: 1px solid rgba(199, 196, 192, 1);
     width: 100%;
 }
@@ -460,46 +420,14 @@ body.home .masterhead .site-menu
     }
 }
 
-.sub-menu
+body.home .masterhead .site-menu.menu--body .logotype
 {
-    height: auto;
-    transform: scaleY(1);
-    transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-    transform-origin: 0% 0%;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.header-menu .menu-item.current-menu-parent .sub-menu
+body.home .masterhead .site-menu.menu--body .logotype
 {
-    transform: scaleY(1);
-    transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-    transform-origin: 0% 0%;
-}
-
-.header-menu .menu-item .sub-menu .menu-item
-{
-    transform: scaleY(0);
-    transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-    transform-origin: 50% 50%;
-} 
-
-.header-menu .menu-item.current-menu-parent .sub-menu.is-expanded .menu-item
-.header-menu .menu-item.current-menu-parent .sub-menu .menu-item.current-menu-item
-{
-    transform: scaleY(1);
-    transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-    transform-origin: 50% 50%;
-}
-
-.site-menu .menu-item
-{
-    height: 
-}
-//sub-menu.is-expanded
-.site-menu.is-expanded .menu-item
-{
-    height: auto;
-    min-height: 2rem;   
-    transform: scaleY(1);
-    transition: transform 0.28s cubic-bezier(0.12, 0.94, 0.37, 1) .1s, opacity .1s linear;
-    transform-origin: 50% 50%;     
+    opacity: 1;
+    visibility: visible;
 }

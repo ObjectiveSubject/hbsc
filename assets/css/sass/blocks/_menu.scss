@@ -63,7 +63,7 @@
             transform-origin: 50% 50%;
             opacity: 1;
         }
-        &.current_page_item {
+        &.current_page_item { 
             @include display(block);
             height: 2rem;
             transform: scaleY(1);

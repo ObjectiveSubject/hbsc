@@ -154,11 +154,6 @@
                 if (!jQuery(elm).parent().hasClass('current-menu-item')) {
                     jQuery(elm).parent().addClass('current-menu-item');
                     jQuery(elm).css('color', '#e74949');
-                    jQuery(elm).on('click', function(evt)
-                    {
-                        console.log(evt,jQuery(elm) );
-                        evt.preventDefault();  
-                    })
                 }
 
                 if (!jQuery(elm).parent().hasClass('current_page_item')) {
@@ -180,41 +175,72 @@
         Masthead.logoOffset();
     });
 
-    $('.menu-item.menu-item-has-children').on('click', function(e) {
 
-        e.preventDefault();
-        e.stopPropagation();
-        var idx = $(this).index();
+    var headerMenu = ( jQuery('.header-menu').length > 1 ? jQuery('.header-menu:eq('+ 1 +')') : jQuery('.header-menu:eq(0)') );
+    jQuery(headerMenu).find('.menu-item.menu-item-has-children').on('click', function(e) {
+
+        /*jQuery('.site-menu.is-expanded .menu-item' ).each(function(i, elm)
+        {
+            jQuery(elm).css('height')
+            jQuery(elm).
+        });*/
+
+
+        var idx = $(this).index() - 1;
         var elm = $(this);
         var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
         var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
-        jQuery('.sub-menu.is-expanded').removeClass('is-expanded');
+        //jQuery('.sub-menu.is-expanded').toggleClass('is-expanded');
 
-        if (!wasExpanded) {            
-            $(elm).addClass('sub-menu-item-expanded');
+        if (!wasExpanded) {
+            $(elm).addClass('sub-menu-item-expanded');     
+            window.setTimeout(function() {
+                    $(elm).find('.sub-menu').addClass('is-expanded');
+            }, 150);            
+        }
+        else
+        {
+            $(elm).find('.sub-menu').removeClass('is-expanded');
+            window.setTimeout(function() {
+                    if( !$(elm).hasClass('current_page_parent') )
+                    {
+                        $(elm).removeClass('sub-menu-item-expanded');   
+                    }                    
+            }, 375);
         }
 
-        window.setTimeout(function() {
-            if (!wasSubmenuExpanded && !wasExpanded) {
-                $(elm).find('.sub-menu').addClass('is-expanded');
-            }
-
-            if (wasExpanded) {
+        /*
+        if( !wasExpanded )
+        {
+            window.setTimeout(function() {
+                if (!wasSubmenuExpanded && !wasExpanded) {
+                    $(elm).find('.sub-menu').addClass('is-expanded');
+                    $(elm).addClass('sub-menu-item-expanded');
+                }
+            }, 150);            
+        }
+        else
+        {
+            window.setTimeout(function() {
                 $(elm).find('.sub-menu').removeClass('is-expanded');
-            }
-        }, 150);
+            }, 150);            
+        }*/
 
-        window.setTimeout(function() {
-            jQuery('.menu-item.menu-item-has-children').each(function(i, _elm) {
+       /* window.setTimeout(function() {
+            console.log('index',jQuery('header-menu > .menu-item.menu-item-has-children'));
+            $(headerMenu).find('.menu-item.menu-item-has-children').each(function(i, _elm) {
                 if (i != idx) {
-                    $(_elm).removeClass('sub-menu-item-expanded');
+                    console.log('index - 2',i, idx, $(this).index(),$(_elm).index());
+                    $(elm).find('.sub-menu').removeClass('is-expanded');
+                    $(elm).removeClass('sub-menu-item-expanded');
+                    //$(_elm).removeClass('sub-menu-item-expanded');
+                }
+                else
+                {
+                    console.log('Here');
                 }
             });
-
-            if (wasExpanded) {
-                $(elm).removeClass('sub-menu-item-expanded');
-            }
-        }, 400);
+        }, 400);*/
     });
 
     $('#site-menu-toggle, #site-mobile-menu-toggle').on('click', function(evt) {
@@ -228,10 +254,6 @@
             var submenu = jQuery('.site-menu.is-expanded .menu-item.current-menu-parent.menu-item-has-children.sub-menu-item-expanded .sub-menu');
             if (!$(submenu).hasClass('is-expanded')) {
                 $(submenu).addClass('is-expanded')
-                window.setTimeout(function() {
-                    $(submenu).css('height', 'auto' );
-                    $(submenu).css('min-height',$(submenu).height() );
-                }, 400);                
             }
         } else {
             $('#site-menu').removeClass('is-expanded');
@@ -240,11 +262,6 @@
                 jQuery('.sub-menu-item-expanded').removeClass('sub-menu-item-expanded');
             }, 400);
         }
-    });
-
-
-    jQuery(document).ready(function(){
-        
     });
 
     /* Logo Offset on Scroll
