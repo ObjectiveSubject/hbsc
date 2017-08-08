@@ -188,6 +188,11 @@
             var elm = $(this);
             var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
             var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
+            
+            //jQuery(nav).find('.sub-menu.is-expanded .menu-item').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});            
+            //jQuery(nav).find('.sub-menu.is-expanded').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
+            //jQuery(nav).find('.menu-item.menu-item-has-children.sub-menu-item-expanded').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
+
             jQuery(nav).find('.sub-menu.is-expanded').removeClass('is-expanded');
 
             if (!wasExpanded) {
@@ -201,6 +206,8 @@
 
                 if (wasExpanded) {
                     $(elm).find('.sub-menu').removeClass('is-expanded');
+                        //$(elm).find('.menu-item').height(0);
+                        //$(elm).find('.sub-menu').height(0);                    
                 }
             }, 150);
 
@@ -208,6 +215,8 @@
                 jQuery(nav).find('.menu-item.menu-item-has-children').each(function(i, _elm) {
                     if (i != idx) {
                         $(_elm).removeClass('sub-menu-item-expanded');
+                        //$(_elm).find('.menu-item').height(0);
+                        //$(_elm).find('.sub-menu').height(0);
                     }
                 });
 

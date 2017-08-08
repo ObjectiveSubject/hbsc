@@ -31,4 +31,12 @@
         </footer>
         <?php endif; ?>
     </div>
+    <?php 
+        if(!empty(get_the_post_thumbnail_url()))
+        {
+    ?>
+    <div class="module__image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>)"></div>
+    <?php
+        }
+    ?>
 </section>

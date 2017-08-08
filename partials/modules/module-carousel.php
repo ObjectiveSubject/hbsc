@@ -4,8 +4,6 @@ $moduleCarouselClass = 'module--carousel ' . $color;
 $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselClass . ' module--mediacollection' ) : $moduleCarouselClass );
 $button_link = get_sub_field('module_button_link');
 $button_text = get_sub_field('module_button_text');
-
-echo '<!-- ' . $type . ' * ' . $button_link . ' ' , $button_text . ' --><br/>';
 ?>
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module <?php echo $moduleCarouselClass; ?>">
     <div class="module__content u-container">

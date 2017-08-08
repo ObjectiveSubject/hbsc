@@ -117,7 +117,7 @@
     body.menu--no-current-page-item .masthead--collapsed.masthead & {
         @include media($md) {
             max-width: 12rem;
-            transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1);            
+            transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1),height .4s cubic-bezier(.12, .94, .37, 1);            
             transform: translateX(0%);
         }
     }
@@ -145,7 +145,7 @@
             @include media($md) {
                 /*min-width: 26rem;*/
                 max-width: 32rem;
-                transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1);            
+                transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1),height .4s cubic-bezier(.12, .94, .37, 1);            
                 transform: translateX(0%);
             }
         }
