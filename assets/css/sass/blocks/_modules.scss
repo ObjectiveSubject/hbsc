@@ -95,6 +95,14 @@
             padding-right: 6rem;
         }
     }
+    .module--gallery & {
+        @extend .u-pr-1;
+        margin-right: 0;
+        @include media($md) {
+            width: auto;
+            margin-right: rem(240);
+        }
+    }
     &.event--discussion-leaders {
         @include media($md) {
             margin-bottom: -4rem;
@@ -212,6 +220,11 @@
     @include media($md) {
         width: rem(240);
         float: right;
+    }
+    .module--gallery & {
+        @include media($md) {
+            padding-top: 3.5rem;
+        }
     }
 }
 
