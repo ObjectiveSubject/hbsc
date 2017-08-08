@@ -1,3 +1,10 @@
+.image-gallery-presentation {
+    margin: 2rem 0;
+    @include media($md) {
+        margin: 4rem 0;
+        padding: 0 4rem;
+    }
+}
 .image-gallery {
     @extend .u-clear;
     li {
@@ -32,9 +39,9 @@ body.lb-disable-scrolling {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: black;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
+  background-color: #272727;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
   display: none;
 }
 
@@ -53,10 +60,6 @@ body.lb-disable-scrolling {
   height: auto;
   max-width: inherit;
   max-height: none;
-  border-radius: 3px;
-
-  /* Image border */
-  border: 4px solid white;
 }
 
 .lightbox a img {
@@ -189,12 +192,10 @@ body.lb-disable-scrolling {
   float: left;
   text-align: left;
   line-height: 1.1em;
-}
-
-.lb-data .lb-caption {
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 1em;
+  @extend .u-mt-1;
+  @include media($md) {
+    width: 60%;
+  }
 }
 
 .lb-data .lb-caption a {
@@ -207,6 +208,12 @@ body.lb-disable-scrolling {
   padding-bottom: 1em;
   font-size: 12px;
   color: #999999;
+}
+
+.lb-data .lb-closeContainer {
+    position: fixed;
+    top: 24px;
+    right: 32px;
 }
 
 .lb-data .lb-close {

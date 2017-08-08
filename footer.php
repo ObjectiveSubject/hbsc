@@ -112,6 +112,13 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script>
+    lightbox.option({
+      'showImageNumberLabel': false,
+      'disableScrolling': true,
+      'maxHeight': 540,
+    })
+</script>
 
 <span class="media-size"></span>
 
