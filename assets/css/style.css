@@ -1275,7 +1275,7 @@ select,
 textarea {
   font-family: "Miller Text Rom", Georgia, serif;
   color: black;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1347,7 +1347,7 @@ h6,
   @media screen and (min-width: 768px) {
     h6,
     .h6 {
-      font-size: 1.12rem; } }
+      font-size: 1.13rem; } }
 
 h1,
 h2,
@@ -1935,7 +1935,7 @@ TODO clean up the !important
   .card .card-date {
     color: white;
     margin: 0 0 2rem 0;
-    font-size: 1.62rem; }
+    font-size: 1.63rem; }
     @media screen and (min-width: 768px) {
       .card .card-date {
         font-size: 2rem; } }
@@ -3113,7 +3113,7 @@ img {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   letter-spacing: .2rem;
   color: #272727;
   text-transform: uppercase;
@@ -4012,7 +4012,7 @@ body.home .preface-text {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.62rem;
+  font-size: 0.63rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
@@ -4140,7 +4140,7 @@ body.home .preface-text {
   transition: height 0.25s cubic-bezier(1, 0, 0, 1) 150ms; }
   .search-open .site-search {
     display: block;
-    height: 3.62rem; }
+    height: 3.63rem; }
   .site-search .search-form {
     display: -webkit-box;
     display: -moz-box;
@@ -4207,7 +4207,7 @@ body.home .preface-text {
       transform-origin: 0 100%;
       top: 0; }
     .site-mobile-menu-toggle span:nth-child(2) {
-      top: 0.62rem; }
+      top: 0.63rem; }
     .site-mobile-menu-toggle span:nth-child(3) {
       transform-origin: 0 0;
       bottom: 0; }
