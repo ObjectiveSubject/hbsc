@@ -6,7 +6,7 @@
             'title'   => 'PAST SALONS',
             'display_button' => false,
             'button_text' => '',
-            'button_href' => ''            
+            'button_href' => get_permalink( get_page_by_path( 'salons-at-stowe' ) )
         );
     }
 
@@ -36,6 +36,9 @@
         ),
         'orderby'        => 'meta_value'
     ));
+
+if( $pastSalonsLoop->have_posts() )
+{
 ?>
 <section class="module module--basic <?php echo $pastSalonsSectionConfig['classes']; ?>">
 
@@ -72,5 +75,6 @@
     </footer>
 <?php
     }
+}
 ?>
 </section>

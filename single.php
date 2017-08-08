@@ -2,29 +2,34 @@
 /**
  * General page template
  */
-get_header(); ?>
+get_header(); 
 
-	<div class="site-content">
+?>
+<div class="site-content">
+	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+		$title = $post->post_title;
+	?>
+		<section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module module--basic <?php echo (get_the_post_thumbnail_url() ? 'has-image' : ''); ?>">
+			<?php if( get_the_post_thumbnail_url() ) : ?>
+			<div class="module__image" <?php echo "style='background-image: url(" . get_the_post_thumbnail_url() . ")'"; ?>></div>
+			<?php endif; ?>
+			<div class="module__content u-container">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+				<header class="module__header">
+					<div class="module-title">
+						<?php echo $title; ?>
+					</div>
+				</header>
 
-			<article <?php post_class(); ?>>
-
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-
-				<div class="entry-content">
+				<div class="module__body">
 					<?php the_content(); ?>
 				</div>
-<?php
-			if ( comments_open() || get_comments_number() )
-			{
-				//comments_template();
-			}
-?>
-			</article>
-
-		<?php endwhile; ?>
-
-	</div>
-
+			</div>
+		</section>
+	<?php 
+		endwhile;
+		wp_reset_postdata();
+	?>
+</div>
 <?php get_footer(); ?>

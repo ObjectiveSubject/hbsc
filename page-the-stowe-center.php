@@ -1,7 +1,5 @@
 <?php
-/**
- * General page template
- */
+/* Template Name: The Stowe Center */
 get_header(); ?>
 
 	<div class="site-content">

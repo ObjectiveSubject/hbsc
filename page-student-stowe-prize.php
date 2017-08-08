@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php 
+/* Template Name: Student Stowe Prize */
+get_header(); ?>
 <div class="site-content">
 <?php
 while ( have_posts() )
@@ -28,7 +30,7 @@ while ( have_posts() )
         <div class="module__content u-container">
             <header class="module__header">
                 <div class="module-title">
-                    PRIZES
+                    <?php echo get_field('prize_nomination_title'); ?>
                 </div>
             </header>
 
@@ -62,10 +64,7 @@ while ( have_posts() )
             </aside>
 
             <div class="module__body">
-                <h5>High School Students</h5>
-                <p>The winning student will be featured at a program and award ceremony in Hartford, Connecticut, receive $1,000.00, and have their work published on the Stowe Center website.</p>
-                <h5>College Students</h5>
-                <p>The winning student will be featured at a program and award ceremony in Hartford, Connecticut, receive $1,000.00, and have their work published on the Stowe Center website.</p>
+                <?php echo get_field('prize_nomination_content'); ?>
             </div>
         </div>
     </section>

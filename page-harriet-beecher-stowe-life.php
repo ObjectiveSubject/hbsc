@@ -1,7 +1,5 @@
 <?php
-/**
- * General page template
- */
+/* Template Name: Life */
 get_header(); ?>
 
 	<div class="site-content">
@@ -21,15 +19,19 @@ get_header(); ?>
                     
                     <footer class="section__footer">
                         <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
-                            <?php while( have_rows('module') ): the_row();
+                            <?php while( have_rows('module') ): the_row();                            
                                 $title = get_sub_field('module_title');
+
+                                if( !empty(trim($title) ) )
+                                {                                
                             ?>
                             <li class="anchor preface-button">
                                 <a href="#module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="button">
-                                    <?php echo $title; ?>
+                                    <span><?php echo $title; ?></span>
                                 </a>
                             </li>
-                            <?php 
+                            <?php
+                                } 
                                 endwhile;
                                 wp_reset_postdata();
                             ?>

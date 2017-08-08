@@ -2,6 +2,7 @@
 /**
  * General page template
  */
+/* Template Name: Stowe Center Impact & Issues */
 get_header(); ?>
 
 	<div class="site-content">
@@ -77,22 +78,6 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
                         <?php endif; ?>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="module module--basic">
-                <div class="module__content u-container">
-                    <header class="module__header">
-                        <div class="module-title">
-                            2017 Stowe Prize Winners
-                        </div>
-                    </header>
-                    <div class="module__body">
-                        <div class="module-row">
-                            <div class="module-column u-text-center">NINA SACHS</div>
-                            <div class="module-column u-text-center">MARTESE JOHNSON</div>
-                        </div>
                     </div>
                 </div>
             </section>

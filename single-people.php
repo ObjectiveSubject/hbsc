@@ -50,7 +50,7 @@ get_header(); ?>
                 'title'   => 'Salons lead by ' . get_field('person_first_name'),
                 'display_button' => true,
                 'button_text' => 'Salons at Stowe',
-                'button_href' => get_permalink($page->ID)
+                'button_href' => '/programs-learning/salons-at-stowe/'
             );
 
             include HBSC_PATH . 'partials/people/past-salons-section.php';

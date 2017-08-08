@@ -2,6 +2,8 @@
 <?php
 $moduleCarouselClass = 'module--carousel ' . $color;
 $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselClass . ' module--mediacollection' ) : $moduleCarouselClass );
+$button_link = get_sub_field('module_button_link');
+$button_text = get_sub_field('module_button_text');
 ?>
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($title)); ?>" class="module <?php echo $moduleCarouselClass; ?>">
     <div class="module__content u-container">
@@ -12,7 +14,7 @@ $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselC
         <?php endif; ?>
         <?php if(have_rows('carousel_slides')) : ?>
         <div class="module__body">
-            <ul class="carousel js-carousel">
+            <ul class="carousel js-carousel u-list-nostyle">
                 <?php while( have_rows('carousel_slides') ): the_row();
                 
                     $content = get_sub_field('slide_content');
@@ -27,7 +29,7 @@ $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselC
                 <li class="carousel-slide">
                     <div class="carousel-slide__content">
                         
-                        <?php if( $badgeLargeText || $badgeSmallText ): ?>
+                        <?php if(( $badgeLargeText || $badgeSmallText ) && $type != 'module--mediacollection' ): ?>
                         <div class="badge-positioner">
                             <div class="badge">
                                 <?php if( $badgeSmallText): ?>
@@ -41,6 +43,7 @@ $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselC
                         </div>
                         <?php endif; ?>
 
+                        <?php if( !empty($content) || ($slideButtonLink && $slideButtonText) ): ?>
                         <div class="card-positioner">
                             <div class="card <?php echo $color; ?>">
                                 <?php if( $content ): ?>
@@ -49,13 +52,14 @@ $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselC
                                 </div>
                                 <?php endif; ?>
 
-                                <?php if( $display_button && $slideButtonLink && $slideButtonText ) : ?>
+                                <?php if( $slideButtonLink && $slideButtonText ) : ?>
                                 <div class="card-button">
                                     <a href="<?php echo $slideButtonLink; ?>" class="button js-hover-toggle" data-target="#<?php echo preg_replace('/\W+/', '-', strtolower($content)); ?>" data-class="image--grayscale"><?php echo $slideButtonText; ?></a>
                                 </div>
                                 <?php endif; ?>
                             </div>
                         </div>
+                        <?php endif; ?>
 
                         <div class="image-positioner">
                             <div id="<?php echo preg_replace('/\W+/', '-', strtolower($content)); ?>" class="image image--grayscale" <?php echo "style='background-image: url(" . $image . "')"; ?>></div>
@@ -67,7 +71,7 @@ $moduleCarouselClass = ( $type == 'module--mediacollection' ? ( $moduleCarouselC
             </ul>
         </div>
         <?php endif; ?>
-        <?php if( $button_link && $button_text ) : ?>
+        <?php if( $button_link && $button_text && $display_button ) : ?>
         <footer class="module__footer">
             <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>
         </footer>
