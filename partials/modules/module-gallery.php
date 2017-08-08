@@ -25,13 +25,15 @@
                 <ul class="image-gallery">
                     <?php foreach( $images as $image ): ?>
                         <li class="u-span-4">
-                            <a href="#" style="background-image: url(<?php echo $image['url']; ?>);"></a>
+                            <a href="<?php echo $image['url']; ?>" style="background-image: url(<?php echo $image['url']; ?>);" data-lightbox="hbsc-gallery"></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
+                <?php if( count($images) > 12 ) : ?>
                 <div class="u-text-center">
                     <a href="#" class="button module-button">Load more</a>
                 </div>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     </div>
