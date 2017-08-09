@@ -730,6 +730,8 @@
                     $(htTarget).removeClass(htClass);
                 } else {
                     $(htTarget).css('background-image', 'url('+htImage+')');
+                    $('.js-hover-toggle').fadeTo( 0, 0 )
+                    $(this).fadeTo( 0, 100 )
                 }
             },
             mouseleave: function() {
@@ -740,6 +742,7 @@
                     $(htTarget).addClass(htClass);
                 } else {
                     $(htTarget).css('background-image', 'none');
+                    $('.js-hover-toggle').fadeTo( 0, 100 )
                 }
             }
         }, ".js-hover-toggle");
