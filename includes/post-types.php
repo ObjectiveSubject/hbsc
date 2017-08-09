@@ -60,7 +60,8 @@ function register_people() {
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title', 'editor', 'thumbnail'),
 		'has_archive' => false,		
-		'rewrite' => false
+		'rewrite' => false,
+        'hierarchical' => false,
 		
 	), array(
 		# Override the base names used for labels:
