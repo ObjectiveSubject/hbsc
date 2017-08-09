@@ -62,7 +62,6 @@ function register_people() {
 		'has_archive' => false,		
 		'rewrite' => false,
         'hierarchical' => false,
-		
 	), array(
 		# Override the base names used for labels:
 		'singular' => 'Person',
