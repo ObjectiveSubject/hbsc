@@ -79,38 +79,41 @@ get_header(); ?>
             include HBSC_PATH . '/partials/events/carousel-upcoming-section.php';
         ?>
         
-        <!-- Links to Life section -->
-        <section class="module module--basic u-bg-tan">
+        <?php if( get_field('life_links') ) : ?>
+        <section class="module module--basic u-bg-tan life-links-section">
             <div class="module__content u-container">
+                <?php if( get_field('life_title') ) : ?>
                 <header class="module__header">
                     <div class="module-title"><?php echo get_field('life_title');?></div>
                 </header>
+                <?php endif; ?>
                 <div class="module__body">
-                    <ul class="u-text-center u-list-nostyle">
-<?php
-    $lifeLinks = get_field('life_links');
-    $btnUrl = ( empty(get_field('life_link_button_url')) ? '#' : get_field('life_link_button_url') );
-    $cnt = 0;    
-    foreach($lifeLinks as $lifeLink)
-    {
-        $linkUrl = ( empty($lifeLink['life_link_url']) ? '#' : $lifeLink['life_link_url'] );
-?>                        
-                        <li <?php echo $cnt > 0 ? 'class="u-mt-4"' : '';?>>
-                            <a href="<?php echo $linkUrl;?>" class="u-display-inline-block"><span class="h2"><?php echo $lifeLink['life_link_title']; ?></span><span class="h3"><?php echo $lifeLink['life_link_subtitle']; ?></span></a>
+                    <ul class="u-text-center u-list-nostyle life-link-target">
+                    <?php
+                        $lifeLinks = get_field('life_links');  
+                        foreach($lifeLinks as $lifeLink)
+                        {
+                            $linkUrl = ( empty($lifeLink['life_link_url']) ? '#' : $lifeLink['life_link_url'] );
+                    ?>                        
+                        <li>
+                            <a href="<?php echo $linkUrl;?>" class="js-hover-toggle u-display-inline-block" data-target=".life-link-target" data-image="<?php echo $lifeLink['life_link_image']; ?>">
+                                <span class="h2"><?php echo $lifeLink['life_link_title']; ?></span>
+                                <span class="h3"><?php echo $lifeLink['life_link_subtitle']; ?></span>
+                            </a>
                         </li>
-<?php
-        $cnt++;
-    }
-?>
+                    <?php
+                        }
+                    ?>
                     </ul>
                 </div>
+                <?php if( get_field('life_link_button_url') && get_field('life_link_button_text') ) : ?>
                 <footer class="module__footer">
                     <a href="<?php echo get_field('life_link_button_url'); ?>" class="button"><?php echo get_field('life_link_button_text'); ?></a>
                 </footer>
+                <?php endif; ?>
             </div>
         </section>
-        
-        <?php endwhile; ?>
+        <?php endif; endwhile; ?>
 		
 		<?php if( have_rows('module') ): ?>
 

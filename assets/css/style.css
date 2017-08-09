@@ -176,7 +176,7 @@ html {
 .u-overflow-hidden {
   overflow: hidden; }
 
-.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .dropdown__title, .image-gallery li a, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .participant--item .participant--image, .site-search .search-form .search-submit, .site-menu-toggle, .site-mobile-menu-toggle span {
+.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .dropdown__title, .image-gallery li a, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .participant--item .participant--image, body.home .life-links-section .module__body ul, .site-search .search-form .search-submit, .site-menu-toggle, .site-mobile-menu-toggle span {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   transition: all 300ms ease; }
@@ -4330,6 +4330,13 @@ body.home .preface-text {
     body.home .card-content h3,
     body.home .card-content .h3 {
       font-size: 5.5rem; } }
+
+body.home .life-links-section .module__body ul {
+  width: 60%;
+  padding-left: 0;
+  padding-bottom: 1rem;
+  background-size: cover;
+  background-position: center; }
 
 .site-header {
   padding: 0.38rem 0;

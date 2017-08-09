@@ -20,7 +20,6 @@ body.home {
             padding-top: 0;
         }
     }
-
     .card-content
     { 
         @include media($md)
@@ -33,6 +32,18 @@ body.home {
             .h3
             {
                 font-size: 5.5rem;
+            }
+        }
+    }
+    .life-links-section {
+        .module__body {
+            ul {
+                width: 60%;
+                padding-left: 0;
+                padding-bottom: 1rem;
+                background-size: cover;
+                background-position: center;
+                @extend .u-transition-300;
             }
         }
     }

@@ -724,13 +724,23 @@
         $('body').on({
             mouseenter: function() {
                 var htClass = $(this).data('class'),
+                    htImage = $(this).data('image'),
 				    htTarget = $(this).data('target');
-                $(htTarget).removeClass(htClass);
+                if ( htImage ==  null ) {
+                    $(htTarget).removeClass(htClass);
+                } else {
+                    $(htTarget).css('background-image', 'url('+htImage+')');
+                }
             },
             mouseleave: function() {
                 var htClass = $(this).data('class'),
+                    htImage = $(this).data('image'),
 				    htTarget = $(this).data('target');
-                $(htTarget).addClass(htClass);
+                if ( htImage ==  null ) {
+                    $(htTarget).addClass(htClass);
+                } else {
+                    $(htTarget).css('background-image', 'none');
+                }
             }
         }, ".js-hover-toggle");
 
