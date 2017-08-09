@@ -38,12 +38,13 @@ body.home {
     .life-links-section {
         .module__body {
             ul {
-                width: 60%;
                 padding-left: 0;
                 padding-bottom: 1rem;
                 background-size: cover;
                 background-position: center;
-                @extend .u-transition-300;
+                @include media($md) {
+                    width: 60%;
+                }
             }
         }
     }
