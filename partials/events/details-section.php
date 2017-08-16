@@ -15,7 +15,7 @@
             </div>
             <div class="modal-content">
                 <div class="modal_item">
-                    <a href="#">
+                    <a href="mailto:?subject=<?php the_title(); ?>&body=<?php the_permalink(); ?>">
                         <span class="icon icon-mail"></span>
                         Email
                     </a>
@@ -36,7 +36,7 @@
             <div class="modal-content">
                 <div class="modal_item">
                     <span class="u-font-miller-bold u-color-dark-gray">Permalink</span>
-                    <input type="text" value="<?php echo the_permalink(); ?>">
+                    <input type="text" value="<?php the_permalink(); ?>">
                 </div>
             </div>
         </div>
