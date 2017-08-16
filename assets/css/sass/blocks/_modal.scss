@@ -1,0 +1,76 @@
+.modal-active {
+    .modal-overlay {
+        display: block;
+    }
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,.5);
+}
+.modal-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    position: relative;
+    background-color: $tan;
+    @extend .u-px-6;
+    @extend .u-py-4;
+}
+.modal-content {
+    @extend .u-mt-2;
+    display: flex;
+}
+.modal_item {
+    flex-grow: 1;
+    &+& {
+        @extend .u-ml-3;
+    }
+    a {
+        color: $dark-gray;
+        transition: none;
+        &:hover {
+            color: $red;
+        }
+        span {
+            transition: none;
+        }
+    }
+    input {
+        width: 100%;
+        @extend .u-pa-1;
+        @extend .u-mt-1;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    a {
+        &:hover {
+            path {
+                fill: $red;
+            }
+        }
+    }
+    svg {
+        width: 100%;
+        path {
+            fill: $dark-gray;
+        }
+    }
+}

@@ -632,7 +632,7 @@ html {
 .u-ma-1 {
   margin: 1rem; }
 
-.u-mt-1, .slick-dots, .chart-data__key, .form-group, .lb-data .lb-details, .module--entry .module__body ul li,
+.u-mt-1, .slick-dots, .chart-data__key, .form-group, .lb-data .lb-details, .modal_item input, .module--entry .module__body ul li,
 .module--entry .module__body ol li, .module--basic .module__body ul li,
 .module--basic .module__body ol li {
   margin-top: 1rem; }
@@ -654,7 +654,7 @@ html {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-.u-pa-1, .ui-button, .module__sidebar .sidebar {
+.u-pa-1, .ui-button, .modal_item input, .module__sidebar .sidebar {
   padding: 1rem; }
 
 .u-pt-1, .form-field {
@@ -680,7 +680,7 @@ html {
 .u-ma-2 {
   margin: 2rem; }
 
-.u-mt-2, .preface-text p, .footer-nav {
+.u-mt-2, .modal-content, .preface-text p, .footer-nav {
   margin-top: 2rem; }
 
 .u-mr-2 {
@@ -740,7 +740,7 @@ html {
 .u-mb-3, .module--carousel .badge-positioner .badge, .section__header, .module__header, .section__footer, .module__footer {
   margin-bottom: 3rem; }
 
-.u-ml-3 {
+.u-ml-3, .modal_item + .modal_item {
   margin-left: 3rem; }
 
 .u-mx-3 {
@@ -816,7 +816,7 @@ html {
   padding-left: 4rem;
   padding-right: 4rem; }
 
-.u-py-4, .section, .module {
+.u-py-4, .modal, .section, .module {
   padding-top: 4rem;
   padding-bottom: 4rem; }
 
@@ -904,7 +904,7 @@ html {
 .u-pl-6 {
   padding-left: 6rem; }
 
-.u-px-6 {
+.u-px-6, .modal {
   padding-left: 6rem;
   padding-right: 6rem; }
 
@@ -1220,9 +1220,8 @@ section:focus {
 
 @font-face {
   font-family: 'hbsc-ui';
-  src: url("../fonts/hbsc-ui.ttf?xvsxlb") format("truetype"), url("../fonts/hbsc-ui.woff?xvsxlb") format("woff"), url("../fonts/hbsc-ui.svg?xvsxlb#hbsc-ui") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  src: url("../fonts/hbsc-ui.eot?udi0z4");
+  src: url("../fonts/hbsc-ui.eot?udi0z4#iefix") format("embedded-opentype"), url("../fonts/hbsc-ui.ttf?udi0z4") format("truetype"), url("../fonts/hbsc-ui.woff?udi0z4") format("woff"), url("../fonts/hbsc-ui.svg?udi0z4#hbsc-ui") format("svg"); }
 
 .icon, [class^="icon-"], [class*=" icon-"] {
   font-family: "hbsc-ui" !important;
@@ -1249,6 +1248,9 @@ section:focus {
 
 .icon-search:before {
   content: ""; }
+
+.icon-mail:before {
+  content: ""; }
 
 .icon-facebook:before {
   content: ""; }
@@ -3085,6 +3087,60 @@ img {
   border-top: 1px solid #c7c4c0;
   height: 2rem;
   opacity: 1; }
+
+.modal-active .modal-overlay {
+  display: block; }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.modal-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center; }
+
+.modal {
+  position: relative;
+  background-color: #dddad5; }
+
+.modal-content {
+  display: flex; }
+
+.modal_item {
+  flex-grow: 1; }
+  .modal_item a {
+    color: #272727;
+    transition: none; }
+    .modal_item a:hover {
+      color: #e74949; }
+    .modal_item a span {
+      transition: none; }
+  .modal_item input {
+    width: 100%; }
+    .modal_item input:focus {
+      outline: none; }
+
+.close-modal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem; }
+  .close-modal a:hover path {
+    fill: #e74949; }
+  .close-modal svg {
+    width: 100%; }
+    .close-modal svg path {
+      fill: #272727; }
 
 /**
  * Module Parts

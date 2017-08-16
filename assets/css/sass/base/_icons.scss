@@ -3,6 +3,7 @@ $icon-chevron-left : "\e901";
 $icon-chevron-right : "\e902";
 $icon-chevron-up : "\e903";
 $icon-search : "\e986";
+$icon-mail : "\ea85";
 $icon-facebook : "\ea91";
 $icon-instagram : "\ea92";
 $icon-twitter : "\ea96";
@@ -10,12 +11,11 @@ $icon-youtube : "\ea9d";
 
 @font-face {
   font-family: 'hbsc-ui';
-  src:
-    url('../fonts/hbsc-ui.ttf?xvsxlb') format('truetype'),
-    url('../fonts/hbsc-ui.woff?xvsxlb') format('woff'),
-    url('../fonts/hbsc-ui.svg?xvsxlb#hbsc-ui') format('svg');
-  font-weight: normal;
-  font-style: normal;
+  src:  url('../fonts/hbsc-ui.eot?udi0z4');
+  src:  url('../fonts/hbsc-ui.eot?udi0z4#iefix') format('embedded-opentype'),
+    url('../fonts/hbsc-ui.ttf?udi0z4') format('truetype'),
+    url('../fonts/hbsc-ui.woff?udi0z4') format('woff'),
+    url('../fonts/hbsc-ui.svg?udi0z4#hbsc-ui') format('svg');
 }
 
 .icon, [class^="icon-"], [class*=" icon-"] {
@@ -53,6 +53,11 @@ $icon-youtube : "\ea9d";
 .icon-search {
     &:before {
         content: $icon-search;
+    }
+}
+.icon-mail {
+    &:before {
+        content: $icon-mail;
     }
 }
 .icon-facebook {
