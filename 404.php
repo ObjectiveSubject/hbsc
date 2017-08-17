@@ -6,39 +6,34 @@
 get_header();
 ?>
 
-	<div class="site-content error-404">
+<section id="error-404" class="module module--hero error-404">
+    <div class="module__content u-container u-flex-justify-center">
+        <div class="card u-bg-dark-gray">
+           
+            <div class="card-title">
+                <h1>Error</h1>
+                <h3>We can't find the page you're looking for.</h3>
+            </div>               
+            <p>
+                Here are some links that may be helpful:
+            </p>
+            <ul class="useful-links">
+                <li>
+                    <a href="<?php echo home_url(); ?>" class="button module-button">Home</a>
+                </li>
+                <li>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'faq' ) ); ?>" class="button module-button">FAQ</a>
+                </li>
+                <li>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'salons-at-stowe' ) ); ?>" class="button module-button">Salons at Stowe</a>
+                </li>
+                <li>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'the-stowe-center' ) ); ?>" class="button module-button">The Stowe Center</a>
+                </li>
+            </ul>
 
-		<section class="preface section <?php the_field('preface_background_color'); ?>">
-            <div class="section__content u-container">
-                <header class="section__header">
-                    <h1 class="section-title"><?php esc_html_e( 'That page can&rsquo;t be found.', 'hbsc' ); ?></h1>
-                </header>
-                <div class="section__body u-text-center">
-                    <div class="preface-text">
-                        <h2>Oops!</h2>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eligendi recusandae similique mollitia sunt! Ullam eum, explicabo molestiae quaerat ducimus dolor officia iure, magnam aperiam nobis libero quis nemo repudiandae.
-                        </p>
-                    </div>
-                    <div class="u-mt-3">
-                        <?php get_search_form(); ?>
-                    </div>
-                </div>
-
-                <footer class="section__footer">
-                    <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap">
-                        <li class="anchor preface-button">
-                            <a href="<?php echo get_home_url(); ?>" class="button">
-                                Homepage
-                            </a>
-                        </li>
-                    </ul>
-                </footer>
-            </div>
-        </section>
-
-	</div><!-- .error-404 -->
+        </div>
+    </div>
+</section>
 
 <?php get_footer(); ?>
-
-

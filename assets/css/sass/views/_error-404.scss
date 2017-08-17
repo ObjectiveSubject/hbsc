@@ -1,0 +1,44 @@
+.error-404 {
+    .card {
+        max-width: 720px;
+    }
+    .card-title {
+        @extend .u-pb-3;
+    }
+    h1 {
+        @include media($md) {
+            font-size: rem(160);
+        }
+    }
+    h3 {
+        color: $gray;
+        margin-top: 2rem;
+        @include media($md) {
+            font-size: 3rem;
+            padding: 0 6rem;
+        }
+    }
+    p {
+        text-align: center;
+        color: $light-gray;
+        @extend .u-font-miller-bold;
+        margin-top: 3rem;
+    }
+    .useful-links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 2rem;
+        li {
+            flex-basis: 100%;
+            @extend .u-mb-1;
+            @include media($md) {
+                flex-basis: 47.5%;
+            }
+            a {
+                width: 100%;
+            }
+        }
+    }
+}
