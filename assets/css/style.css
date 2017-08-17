@@ -1220,8 +1220,8 @@ section:focus {
 
 @font-face {
   font-family: 'hbsc-ui';
-  src: url("../fonts/hbsc-ui.eot?udi0z4");
-  src: url("../fonts/hbsc-ui.eot?udi0z4#iefix") format("embedded-opentype"), url("../fonts/hbsc-ui.ttf?udi0z4") format("truetype"), url("../fonts/hbsc-ui.woff?udi0z4") format("woff"), url("../fonts/hbsc-ui.svg?udi0z4#hbsc-ui") format("svg"); }
+  src: url("../fonts/hbsc-ui.eot?hzpuxk");
+  src: url("../fonts/hbsc-ui.eot?hzpuxk#iefix") format("embedded-opentype"), url("../fonts/hbsc-ui.ttf?hzpuxk") format("truetype"), url("../fonts/hbsc-ui.woff?hzpuxk") format("woff"), url("../fonts/hbsc-ui.svg?hzpuxk#hbsc-ui") format("svg"); }
 
 .icon, [class^="icon-"], [class*=" icon-"] {
   font-family: "hbsc-ui" !important;
@@ -1235,22 +1235,22 @@ section:focus {
   -moz-osx-font-smoothing: grayscale; }
 
 .icon-chevron-down:before {
-  content: ""; }
+  content: ""; }
 
 .icon-chevron-left:before {
-  content: ""; }
+  content: ""; }
 
 .icon-chevron-right:before {
-  content: ""; }
+  content: ""; }
 
 .icon-chevron-up:before {
-  content: ""; }
+  content: ""; }
 
 .icon-search:before {
   content: ""; }
 
 .icon-mail:before {
-  content: ""; }
+  content: ""; }
 
 .icon-facebook:before {
   content: ""; }
@@ -4225,7 +4225,8 @@ div.zabuto_calendar div.legend span.badge-today {
   .staff-member--item .h3 {
     position: relative;
     z-index: 10;
-    color: #272727; }
+    color: #272727;
+    font-size: 4rem; }
 
 .site-footer a {
   color: white; }
@@ -4378,15 +4379,8 @@ body.home .preface-text {
       padding-left: 2rem;
       padding-top: 0; } }
 
-@media screen and (min-width: 768px) {
-  body.home .card-content {
-    padding: 0 2rem; }
-    body.home .card-content .h2, body.home .card-content h2, body.home .card-content h3, body.home .card-content .h3 {
-      font-size: 5.5rem; } }
-
-@media screen and (min-width: 1000px) {
-  body.home .card-content {
-    padding: 0 3rem; } }
+body.home .card-content .h2, body.home .card-content h2, body.home .card-content h3, body.home .card-content .h3 {
+  font-size: 5.5rem; }
 
 body.home .life-links-section .module__body ul {
   padding-left: 0;

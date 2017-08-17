@@ -26,10 +26,17 @@
                             $cnt++;
                       ?>
                         <li class="u-mt-3 staff-member--item">
+                            <?php if ( has_term( 'board', 'role' ) ) : ?>
+                            <div class="u-display-inline-block staff-member--name-title">
+                                <span class="h2"><?php the_title(); ?></span>
+                                <span class="h3"><?php echo get_field('person_title'); ?></span>
+                            </div>
+                            <?php else : ?>
                             <a href="<?php the_permalink(); ?>" class="u-display-inline-block staff-member--name-title">
                                 <span class="h2"><?php the_title(); ?></span>
-                                <span class="h3"><?php echo get_field('person_title'); ?></span>                                                              
+                                <span class="h3"><?php echo get_field('person_title'); ?></span>
                             </a>
+                            <?php endif; ?>
                             <div class="image--positionner <?php echo $imagePos; ?>" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large')[0];?>');"></div>
                         </li>
                     <?php endwhile; ?>
