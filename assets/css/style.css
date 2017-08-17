@@ -2919,8 +2919,9 @@ body.lb-disable-scrolling {
 body.home .section__body .site-menu.menu--body .logotype, body.home .module__body .site-menu.menu--body .logotype {
   display: flex; }
 
-body.home .site-menu .logotype {
-  display: none; }
+@media screen and (min-width: 768px) {
+  body.home .site-menu .logotype {
+    display: none; } }
 
 .masthead {
   background: #dddad5; }
