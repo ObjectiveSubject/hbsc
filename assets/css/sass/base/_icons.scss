@@ -1,9 +1,9 @@
-$icon-chevron-down : "\e900";
-$icon-chevron-left : "\e901";
-$icon-chevron-right : "\e902";
-$icon-chevron-up : "\e903";
+$icon-chevron-down : "\f107";
+$icon-chevron-left : "\f104";
+$icon-chevron-right : "\f105";
+$icon-chevron-up : "\f106";
 $icon-search : "\e986";
-$icon-mail : "\ea85";
+$icon-mail : "\f0e0";
 $icon-facebook : "\ea91";
 $icon-instagram : "\ea92";
 $icon-twitter : "\ea96";
@@ -11,11 +11,11 @@ $icon-youtube : "\ea9d";
 
 @font-face {
   font-family: 'hbsc-ui';
-  src:  url('../fonts/hbsc-ui.eot?udi0z4');
-  src:  url('../fonts/hbsc-ui.eot?udi0z4#iefix') format('embedded-opentype'),
-    url('../fonts/hbsc-ui.ttf?udi0z4') format('truetype'),
-    url('../fonts/hbsc-ui.woff?udi0z4') format('woff'),
-    url('../fonts/hbsc-ui.svg?udi0z4#hbsc-ui') format('svg');
+  src:  url('../fonts/hbsc-ui.eot?hzpuxk');
+  src:  url('../fonts/hbsc-ui.eot?hzpuxk#iefix') format('embedded-opentype'),
+    url('../fonts/hbsc-ui.ttf?hzpuxk') format('truetype'),
+    url('../fonts/hbsc-ui.woff?hzpuxk') format('woff'),
+    url('../fonts/hbsc-ui.svg?hzpuxk#hbsc-ui') format('svg');
 }
 
 .icon, [class^="icon-"], [class*=" icon-"] {
