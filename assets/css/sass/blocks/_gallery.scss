@@ -8,6 +8,7 @@
 .image-gallery {
     @extend .u-clear;
     li {
+        display: none;
         margin-bottom: 1.5rem;
         a {
             display: block;

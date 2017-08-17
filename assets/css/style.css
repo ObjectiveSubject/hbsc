@@ -2651,6 +2651,7 @@ label {
       padding: 0 4rem; } }
 
 .image-gallery li {
+  display: none;
   margin-bottom: 1.5rem; }
   .image-gallery li a {
     display: block;
