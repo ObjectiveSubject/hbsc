@@ -29,11 +29,9 @@
                         </li>
                     <?php endforeach; ?>
                 </ul>
-                <?php if( count($images) > 3 ) : ?>
                 <div class="u-text-center">
                     <a href="#" id="load-more" class="button module-button">Load more</a>
                 </div>
-                <?php endif; ?>
             <?php endif; ?>
         </div>
     </div>
@@ -43,16 +41,20 @@
 
 (function($) {
     var size = $(".image-gallery li").size();
-    x=12;
+    var x = 12;
     $('.image-gallery li:lt('+x+')').css('display', 'block');
-    $('#load-more').click(function (e) {
-        e.preventDefault();
-        x = (x+6 <= size) ? x+6 : size;
-        $('.image-gallery li:lt('+x+')').css('display', 'block');
-        if ( x == size ) {
-            $('#load-more').css('display', 'none');
-        }
-    });
+    if ( size > x ) {
+        $('#load-more').click(function (e) {
+            e.preventDefault();
+            x = (x+6 <= size) ? x+6 : size;
+            $('.image-gallery li:lt('+x+')').css('display', 'block');
+            if ( x == size ) {
+                $('#load-more').css('display', 'none');
+            }
+        });
+    } else {
+        $('#load-more').css('display', 'none');
+    }
 })(jQuery);
 
 </script>
