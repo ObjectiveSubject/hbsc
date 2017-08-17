@@ -24,12 +24,16 @@ body.home {
     { 
         @include media($md)
         {
-            padding: 0 3rem;
+            padding: 0 2rem;
 
             .h2, h2, h3, .h3
             {
                 font-size: 5.5rem;
             }
+        }
+        @include media($lg)
+        {
+            padding: 0 3rem;
         }
     }
     .life-links-section {

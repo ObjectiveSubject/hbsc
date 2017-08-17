@@ -4380,9 +4380,13 @@ body.home .preface-text {
 
 @media screen and (min-width: 768px) {
   body.home .card-content {
-    padding: 0 3rem; }
+    padding: 0 2rem; }
     body.home .card-content .h2, body.home .card-content h2, body.home .card-content h3, body.home .card-content .h3 {
       font-size: 5.5rem; } }
+
+@media screen and (min-width: 1000px) {
+  body.home .card-content {
+    padding: 0 3rem; } }
 
 body.home .life-links-section .module__body ul {
   padding-left: 0;
