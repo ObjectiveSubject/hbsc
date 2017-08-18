@@ -24,7 +24,16 @@
             'post__not_in'  => array($post->ID),
             'orderby' => array(
                 'event_start_date' => "DESC"
-            )
+            ),
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'event_start_date',
+                    'value' => date('Y-m-d') . ' 00:00:00',
+                    'compare' => '<=',
+                    'type' => 'DATE'
+                )
+            )            
         ),
         'most_viewed' => array( 
             'post_type'      => 'event',
@@ -51,7 +60,7 @@
             'post_type'      => 'event',
             'posts_per_page' => -1,
             'order'          => 'DESC',
-            'meta_key'		 => 'views_count',
+            'meta_key'		 => 'event_start_date',
             'meta_query' => array(
                 'relation' => 'AND',
                 array(
@@ -59,7 +68,7 @@
                     'value' => date('Y-m-d') . ' 00:00:00',
                     'compare' => '<=',
                     'type' => 'DATE'
-                )
+                )              
             ),
             'post__not_in'  => array($post->ID),
             'orderby' => array(
@@ -79,13 +88,13 @@
             </div>
             <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap u-mt-2 u-text-center">
                 <li class="anchor preface-button">
-                    <a href="#" class="button module-button btn--sortby btn--sortby-active" data-sortby-key="recent">Recent</a>
+                    <a href="#" class="button module-button btn--sortby btn--sortby-active" data-sortby-key="recent"><span>Recent</span></a>
                 </li>
                 <li class="anchor preface-button">
-                    <a href="#" class="button module-button btn--sortby" data-sortby-key="most_viewed">Most Viewed</a>
+                    <a href="#" class="button module-button btn--sortby" data-sortby-key="most_viewed"><span>Most Viewed</span></a>
                 </li>
                 <li class="anchor preface-button">
-                    <a href="#" class="button module-button btn--sortby" data-sortby-key="most_discussed">Most Discussed</a>
+                    <a href="#" class="button module-button btn--sortby" data-sortby-key="most_discussed"><span>Most Discussed</span></a>
                 </li>
             </ul>
         </header>
@@ -117,7 +126,7 @@
     {
 ?>    
     <footer class="module__footer">
-        <a href="<?php echo $pastSalonsSectionConfig['button_href']; ?>" class="button module-button"><?php echo $pastSalonsSectionConfig['button_text']; ?></a>
+        <a href="<?php echo $pastSalonsSectionConfig['button_href']; ?>" class="button module-button"><span><?php echo $pastSalonsSectionConfig['button_text']; ?></span></a>
     </footer>
 <?php
     }

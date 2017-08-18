@@ -92,6 +92,7 @@ function postUpdateViews( $post_id, $post, $update )
     return;
 }
 
+
 function getHeaderMenuItemsFirstLevel()
 {
     $footerNavList = array();

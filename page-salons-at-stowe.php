@@ -48,7 +48,7 @@ $eventStartDate = null;
             $upcomingEventsSectionConfig = array(
                 'classes' => 'module--events-upcoming-list u-bg-light-gray',
                 'direction' => 'list',
-                'start_date' => $eventStartDate
+                'start_date' => date('Y-m-d') . ' 00:00:00'
             );
 
             include HBSC_PATH . 'partials/events/upcoming-section.php';
