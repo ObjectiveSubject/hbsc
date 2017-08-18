@@ -22,13 +22,13 @@ get_header();
                     <a href="<?php echo home_url(); ?>" class="button module-button">Home</a>
                 </li>
                 <li>
-                    <a href="<?php echo get_permalink( get_page_by_path( 'faq' ) ); ?>" class="button module-button">FAQ</a>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'about/faq' ) ); ?>" class="button module-button">FAQ</a>
                 </li>
                 <li>
-                    <a href="<?php echo get_permalink( get_page_by_path( 'salons-at-stowe' ) ); ?>" class="button module-button">Salons at Stowe</a>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'programs-learning/salons-at-stowe/' ) ); ?>" class="button module-button">Salons at Stowe</a>
                 </li>
                 <li>
-                    <a href="<?php echo get_permalink( get_page_by_path( 'the-stowe-center' ) ); ?>" class="button module-button">The Stowe Center</a>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'about/why-visit-the-stowe-center/' ) ); ?>" class="button module-button">The Stowe Center</a>
                 </li>
             </ul>
 
