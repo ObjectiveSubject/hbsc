@@ -53,8 +53,12 @@
             <?php endif; ?>
 
             <div class="card u-bg-dark-gray">
+                <?php
+                    $categories = get_the_terms( get_the_ID(), 'event-type');
+                    $eventCat = $categories[0]->name;
+                ?>
                 <div class="card-title">
-                    SALONS AT STOWE
+                    <?php echo $eventCat; ?>
                 </div>
                 <?php
                     if( get_field('event_registration_open') && !isDateOlderThanNow(get_field('event_start_date')) )
