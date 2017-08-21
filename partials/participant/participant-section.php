@@ -56,15 +56,16 @@ $participantsLoop = new WP_Query( array(
 ?>
 <section id="module-<?php echo preg_replace('/\W+/', '-', strtolower($participantsSectionConfig['title'])); ?>" class="module module--participant <?php echo $participantsSectionConfig['color']; ?>">
     <div class="module__content u-container">
-        <?php if( $participantsSectionConfig['display_title'] && !empty($participantsSectionConfig['title']) ) : ?>
-        <header class="module__header">
+        <?php //if( $participantsSectionConfig['display_title'] && !empty($participantsSectionConfig['title']) ) : ?>
+        <!--<header class="module__header">
             <div class="module-title">
-                <?php echo $participantsSectionConfig['title']; ?>
+                <?php //echo $participantsSectionConfig['title']; ?>
             </div>
-        </header>
-        <?php endif; ?>
+        </header>-->
+        <?php //endif; ?>
 
-        <div class="module__body u-pt-2">            
+        <!--<div class="module__body u-pt-2">-->    
+        <div class="module__body">     
 <?php            
             while( $participantsLoop->have_posts() )
             {
