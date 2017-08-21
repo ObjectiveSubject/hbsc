@@ -94,7 +94,7 @@ get_header();
                         <div class="event--content">
                             <div class="event--title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo the_title();?></a></div>
                             <div class="event--taxonomies"><?php echo implode(', ', $taxonomies);?></div>
-                            <div class="event--details"><?php echo get_field('event_doors_open') . ', ' . get_field('event_location');?></div>
+                            <div class="event--details"><?php echo get_field('event_program') . ', ' . get_field('event_location');?></div>
                         </div>
                     </div>
 <?php 
