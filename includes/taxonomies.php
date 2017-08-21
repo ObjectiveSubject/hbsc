@@ -30,9 +30,7 @@ function register_event_type() {
  * Register the 'role' taxonomy and assign it to people.
  */
 function register_role() {
-	register_extended_taxonomy( 'role', 'people', array(
-		'rewrite'      => array('slug' => 'about', 'with_front' => false)
-	));
+	register_extended_taxonomy( 'role', 'people' );
 }
 
 /**
