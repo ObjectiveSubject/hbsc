@@ -109,14 +109,14 @@
     body .masthead & {
         @include media($md) {
             /*min-width: 26rem;*/
-            max-width: 26rem;
+            //max-width: 26rem;
             transition: width .4s cubic-bezier(.12, .94, .37, 1);
         }
     }
     body.home .masthead--collapsed.masthead &,
     body.menu--no-current-page-item .masthead--collapsed.masthead & {
         @include media($md) {
-            max-width: 12rem;
+            //max-width: 12rem;
             transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1),height .4s cubic-bezier(.12, .94, .37, 1);            
             transform: translateX(0%);
         }
@@ -144,7 +144,7 @@
         body .masthead & {
             @include media($md) {
                 /*min-width: 26rem;*/
-                max-width: 32rem;
+                //max-width: 32rem;
                 transition: width .4s cubic-bezier(.12, .94, .37, 1),transform .4s cubic-bezier(.12, .94, .37, 1),height .4s cubic-bezier(.12, .94, .37, 1);            
                 transform: translateX(0%);
             }
