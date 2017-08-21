@@ -46,9 +46,11 @@
 <section id="module-<?php echo $post->ID;?>" class="module module--hero has-background" <?php echo 'style="background-image: url(' . $imgSrc . ')"'; ?>>
     <div class="module__content u-container u-flex-justify-center" style="max-width:50.5rem;">
         <div class="card-positioner card-positioner-fullwidth">
+            <?php if( get_field('event_registration_open') ) : ?>
             <div class="card-event-register">
                 <a href="#" class="button module-button">Register</a>
             </div>
+            <?php endif; ?>
 
             <div class="card u-bg-dark-gray">
                 <div class="card-title">
