@@ -26,6 +26,9 @@
     @include media($md) {
         @include justify-content(space-between);
     }
+    .u-display-block-md {
+        z-index: 10;
+    }
 }
 
 .site-nav {
@@ -160,7 +163,7 @@
     }
 }
 
-.search-toggle {
+.utility-toggle {
     color: $tan;
     &:hover {
         color: $red;
@@ -170,12 +173,28 @@
     }
 }
 
-.site-search {
-    /*display: none;*/
+.utility-item {
     height: rem(0);
     overflow: hidden;
     transition: height .25s cubic-bezier(1, 0, 0, 1) 150ms;
-    .search-open & {
+}
+
+.utility-item--location {
+    .utility-location-open & {
+        display: block;
+        height: rem(58);
+    }
+}
+
+.utility-item--hours {
+    .utility-hours-open & {
+        display: block;
+        height: rem(58);
+    }
+}
+
+.utility-item--search {
+    .utility-search-open & {
         display: block;
         height: rem(58);
     }
