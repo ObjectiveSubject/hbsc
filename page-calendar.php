@@ -16,10 +16,21 @@ get_header();
         'posts_per_page' => -1,
         'order'          => 'ASC',
         'meta_key'		 => 'event_start_date',
-        'orderby'        => 'meta_value',
-        'order'          => 'DESC'       
+        'orderby'        => 'meta_value',      
     ));
+	
+	
 ?>
+<style>
+.old-event, .hide-event {display:none;}
+.event-show {    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: box !important;
+    display: -webkit-flex !important;
+    display: -moz-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;}
+</style>
 <div class="site-content">
     <section class="module module--calendar u-bg-light-gray">
         <div class="module__content u-container">
@@ -68,10 +79,27 @@ get_header();
                 'fields' => 'slugs'
         ) );        
 
-        $calendarData[] = array(
-            'date'  => get_field('event_start_date'),
-            'badge' => false
-        );
+		if ((get_field('event_start_date') == get_field('event_end_date')) 
+			&& get_field('event_end_date') != '') {
+			$calendarData[] = array(
+				'date'  => get_field('event_start_date'),
+				'date_start'  => get_field('event_start_date'),
+				'date_end'  => get_field('event_end_date'),
+				'title' => get_the_title(),
+				'badge' => false
+			);	
+		} else {
+			$arr_range= $Event->getRangeDates();
+			for($i=0; $i < count($arr_range); $i++) {
+				$calendarData[] = array(
+				'date'  => $arr_range[$i],
+				'date_start'  => get_field('event_start_date'),
+				'date_end'  => get_field('event_end_date'),
+				'title' => get_the_title(),
+				'badge' => false
+				);	
+			}
+		}
 
         $evtStartDtSplit = explode('-',get_field('event_start_date'));
         $evtClass = '';
@@ -85,18 +113,22 @@ get_header();
 
             $lastMonth = $evtStartDtSplit[1];
         }
+		
+		
 ?>
-                    <div  class="calendar--event-item <?php echo $evtClass;?>" id="calendar-event<?php echo $post->ID; ?>" data-event-date="<?php echo get_field('event_start_date'); ?>">
-                        <div class="event--date">
-                            <span class="u-caps"><?php echo $Event->getDateMonth();?></span>
-                            <span class="h2 u-font-miller"><?php echo $Event->getDateDay();?></span>
-                        </div>
-                        <div class="event--content">
-                            <div class="event--title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo the_title();?></a></div>
-                            <div class="event--taxonomies"><?php echo implode(', ', $taxonomies);?></div>
-                            <div class="event--details"><?php echo get_field('event_program') . ', ' . get_field('event_location');?></div>
-                        </div>
-                    </div>
+			<div  class="calendar--event-item  <?php echo $evtClass;?> <?php echo $evtStartDtSplit[0]."-".$evtStartDtSplit[1]; ?>" id="calendar-event<?php echo $post->ID; ?>" data-event-date="<?php echo get_field('event_start_date'); ?>"
+			<?php echo (($Event->isOldEvent()) ? 'style="display:none"' : "")?>
+			>
+				<div class="event--date">
+					<span class="u-caps"><?php echo $Event->getDateMonth();?></span>
+					<span class="h2 u-font-miller"><?php echo $Event->getDateDay();?></span>
+				</div>
+				<div class="event--content">
+					<div class="event--title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo the_title();?></a></div>
+					<div class="event--taxonomies"><?php echo implode(', ', $taxonomies);?></div>
+					<div class="event--details"><?php echo get_field('event_program') . ', ' . get_field('event_location');?></div>
+				</div>
+			</div>
 <?php 
     endwhile;
     wp_reset_postdata();
@@ -130,19 +162,38 @@ get_header();
         action : function()
         {
             return calendarNav(this.id, false);
-        }
+        },
+		action_nav: function() { calendarNavMonth(this.id); }
     };
 
     function calendarNav(id, modal)
     {
+		var date_start = $("#" + id).attr("date_start");
         var date     = $("#" + id).data("date");
         var hasEvent = $("#" + id).data("hasEvent");
 
+		
+		console.log($("#" + id));
         if( hasEvent )
         {
-            calEvents.scrollToEvent( date );
+            calEvents.scrollToEvent( date_start );
         }
     }
+	
+	function twoDigit(number) {
+		var twodigit = number >= 10 ? number : "0"+number.toString();
+		return twodigit;
+	}
+	
+	function calendarNavMonth(id) {
+		var to = $("#" + id).data("to");
+		var data_month= to["year"]+"-"+twoDigit(to["month"]);
+		$('.calendar--event-item').css('display', 'none');;
+		$('.calendar--event-item').removeClass("event-show");
+		$('.calendar--event-item.'+data_month).css('display', '');
+		$('.calendar--event-item.'+data_month).addClass("event-show");
+		
+	}
 
     jQuery(document).ready(function()
     {
@@ -210,6 +261,6 @@ get_header();
 
         $('.calendar--event-item:eq(1)' ).offset().top - $(window).scrollTop()
 
-        calEvents.filterEventsOnTerms();
+        //calEvents.filterEventsOnTerms();
     });
 </script>
