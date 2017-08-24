@@ -7,6 +7,11 @@
                     <h1 class="section-title"><?php single_term_title(); ?></h1>
                 </header>
                 <div class="section__body u-text-center">
+                    <?php if( is_tax( 'role', 'board' ) ) : 
+                        $board_page = get_page_by_title( 'Board' );
+                    ?>
+                        <a href="<?php echo get_permalink( $board_page->ID ); ?>" class="button module-button">Board of Trustees Login</a>
+                    <?php endif; ?>
                     <?php
                     
                     if ( have_posts() ) :                         
