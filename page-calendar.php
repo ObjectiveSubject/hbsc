@@ -41,8 +41,8 @@ get_header();
             </header>
             
             <div class="module__body">
-                <aside class="events--calendar-aside">
-                    <div class="events--aside-calendar-terms u-bg-light-gray">
+                <aside class="events--calendar-aside" style="height: 720px;">
+                    <div class="events--aside-calendar-terms">
                         <div id="events-calendar"></div>
 
                         <div class="events--calendar-terms">
@@ -142,6 +142,30 @@ get_header();
 <script>window.$ = jQuery;</script>
 
 <script type="application/javascript">
+    
+    var cal = $('.events--aside-calendar-terms');
+    var aside = $('.events--calendar-aside');
+    var calHeight = cal.height();
+    var asideHeight = aside.height();
+    
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var distance = ( asideHeight - calHeight ) - scroll;
+        if ( aside.hasClass('calendar--aside-scrolled') ) {
+            if( distance <= -112 ) {
+                cal.addClass('at-bottom');
+            } else {
+                cal.removeClass('at-bottom');
+            }
+        } else {
+            if( distance <= 0 ) {
+                cal.addClass('at-bottom');
+            } else {
+                cal.removeClass('at-bottom');
+            }
+        }
+    })
+    
     var currentMonthYear;
     var calEvents;
     var dataCalendar    = <?php echo json_encode($calendarData); ?>;

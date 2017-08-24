@@ -17,6 +17,7 @@ div.zabuto_calendar {
 }
 
 .events--calendar-aside {
+    position: relative;
     width: 100%;
     margin-bottom: 4rem;
     .module--calendar & {
@@ -28,9 +29,10 @@ div.zabuto_calendar {
     &.calendar--aside-scrolled {
         .events--aside-calendar-terms {
             @include media($md) {
-                position: fixed;
                 transform: translateY(-7rem);
-                z-index: 20;
+                &.at-bottom {
+                    bottom: -7rem;
+                }
             }
         }
     }
@@ -43,9 +45,18 @@ div.zabuto_calendar {
             position: fixed;
             transform: translateY(0rem);
             transition: transform .25s cubic-bezier(1, 0, 0, 1) 150ms;
-            width: 18rem;
+            width: rem(324);
+            height: rem(344);
             max-width: 30%;
             //transform .25s cubic-bezier(.12, .94, .37, 1) .s;
+            &.at-bottom {
+                max-width: none;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
         }
     }
 }

@@ -7419,6 +7419,14 @@ jQuery.fn.zabuto_calendar = function (options) {
                     if (typeof(value.title) !== 'undefined') {
                         $dowElement.attr('title', value.title);
                     }
+					
+					if (typeof(value.date_end) !== 'undefined') {
+                        $dowElement.attr('date_end', value.date_end);
+                    }
+					
+					if (typeof(value.date_start) !== 'undefined') {
+                        $dowElement.attr('date_start', value.date_start);
+                    }
 
                     if (typeof(value.classname) === 'undefined') {
                         $dowElement.addClass('event');
