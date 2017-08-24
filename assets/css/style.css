@@ -4040,11 +4040,6 @@ div.zabuto_calendar div.legend span.badge-today {
     .module--calendar .events--calendar-aside {
       width: 30%;
       margin-bottom: 0; } }
-  @media screen and (min-width: 768px) {
-    .events--calendar-aside.calendar--aside-scrolled .events--aside-calendar-terms {
-      transform: translateY(-7rem); }
-      .events--calendar-aside.calendar--aside-scrolled .events--aside-calendar-terms.at-bottom {
-        bottom: -7rem; } }
   .events--calendar-aside .events--aside-calendar-terms {
     width: 100%;
     max-width: 26rem;

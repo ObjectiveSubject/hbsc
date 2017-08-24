@@ -29,9 +29,9 @@ div.zabuto_calendar {
     &.calendar--aside-scrolled {
         .events--aside-calendar-terms {
             @include media($md) {
-                transform: translateY(-7rem);
+                //transform: translateY(-7rem);
                 &.at-bottom {
-                    bottom: -7rem;
+                    //bottom: -7rem;
                 }
             }
         }

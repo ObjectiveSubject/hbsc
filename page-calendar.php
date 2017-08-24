@@ -148,23 +148,21 @@ get_header();
     var calHeight = cal.height();
     var asideHeight = aside.height();
     
+    $(document).ready(function() {
+        $( '.calendar-month-navigation' ).on( 'click', function() {
+            var asideHeight = aside.height();
+        });
+    });
+    
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         var distance = ( asideHeight - calHeight ) - scroll;
-        if ( aside.hasClass('calendar--aside-scrolled') ) {
-            if( distance <= -112 ) {
-                cal.addClass('at-bottom');
-            } else {
-                cal.removeClass('at-bottom');
-            }
+        if( distance <= 0 ) {
+            cal.addClass('at-bottom');
         } else {
-            if( distance <= 0 ) {
-                cal.addClass('at-bottom');
-            } else {
-                cal.removeClass('at-bottom');
-            }
+            cal.removeClass('at-bottom');
         }
-    })
+    });
     
     var currentMonthYear;
     var calEvents;
