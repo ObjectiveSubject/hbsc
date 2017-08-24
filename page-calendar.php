@@ -148,16 +148,10 @@ get_header();
     var calHeight = cal.height();
     var asideHeight = aside.height();
     
-    $(document).ready(function() {
-        $( '.calendar-month-navigation' ).on( 'click', function() {
-            var asideHeight = aside.height();
-        });
-    });
-    
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         var distance = ( asideHeight - calHeight ) - scroll;
-        if( distance <= 0 ) {
+        if( distance <= 0 || asideHeight - calHeight == 0 ) {
             cal.addClass('at-bottom');
         } else {
             cal.removeClass('at-bottom');
