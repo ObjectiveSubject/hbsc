@@ -41,7 +41,7 @@ get_header();
             </header>
             
             <div class="module__body">
-                <aside class="events--calendar-aside" style="height: 720px;">
+                <aside class="events--calendar-aside">
                     <div class="events--aside-calendar-terms">
                         <div id="events-calendar"></div>
 
