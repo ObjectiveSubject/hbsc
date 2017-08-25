@@ -25,33 +25,40 @@
         });
     });
 
+    function addCurrentClass(elm) {
+		var mainItem = jQuery(elm).parents('.menu-item-has-children');
+
+		if (!jQuery(elm).parent().hasClass('current-menu-item')) {
+			jQuery(elm).parent().addClass('current-menu-item');
+			jQuery(elm).css('color', '#e74949');
+		}
+
+		if (!jQuery(elm).parent().hasClass('current_page_item')) {
+			jQuery(elm).parent().addClass('current_page_item');
+			jQuery(elm).css('color', '#e74949');
+		}
+
+		if (!jQuery(mainItem).hasClass('current-menu-parent')) {
+			jQuery(mainItem).addClass('current-menu-parent');
+		}
+		if (!jQuery(mainItem).hasClass('current-menu-ancestor')) {
+			jQuery(mainItem).addClass('current-menu-ancestor');
+		}
+	}
+
     function forceSectionBreadcrumb() {
         var pathname = window.location.pathname;
 
         jQuery('.header-menu .sub-menu a').each(function(i, elm) {
             var url = jQuery(elm).attr('href').replace(window.location.origin, '');
-            console.log(jQuery(elm).attr('href').replace(window.location.origin, ''), pathname, pathname.indexOf(url));
-
-            if (pathname.indexOf(url) !== -1) {
-
-                var mainItem = jQuery(elm).parents('.menu-item-has-children');
-
-                if (!jQuery(elm).parent().hasClass('current-menu-item')) {
-                    jQuery(elm).parent().addClass('current-menu-item');
-                    jQuery(elm).css('color', '#e74949');
-                }
-
-                if (!jQuery(elm).parent().hasClass('current_page_item')) {
-                    jQuery(elm).parent().addClass('current_page_item');
-                    jQuery(elm).css('color', '#e74949');
-                }
-
-                if (!jQuery(mainItem).hasClass('current-menu-parent')) {
-                    jQuery(mainItem).addClass('current-menu-parent');
-                }
-                if (!jQuery(mainItem).hasClass('current-menu-ancestor')) {
-                    jQuery(mainItem).addClass('current-menu-ancestor');
-                }
+            //console.log(jQuery(elm).attr('href').replace(window.location.origin, ''), pathname, pathname.indexOf(url));
+			if (jQuery('.event_cat_name').length > 0 
+			&& jQuery('.event_cat_name').val() != "salons at stowe") {
+				if (jQuery(elm).html() == 'Calendar') {
+					addCurrentClass(elm);
+				}
+			} else if (pathname.indexOf(url) !== -1) {
+                addCurrentClass(elm);
             }
         });
     }

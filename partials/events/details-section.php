@@ -57,6 +57,7 @@
                     $categories = get_the_terms( get_the_ID(), 'event-type');
                     $eventCat = $categories[0]->name;
                 ?>
+				<input type='hidden' class='event_cat_name' value='<?php echo trim(strtolower($eventCat))?>'/>
                 <div class="card-title">
                     <?php echo $eventCat; ?>
                 </div>
