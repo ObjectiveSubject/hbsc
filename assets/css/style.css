@@ -3635,9 +3635,6 @@ caption {
     overflow: hidden;
     width: 100%;
     max-width: 30rem; }
-    @media screen and (min-width: 768px) {
-      .module--events-upcoming-inline .event--upcoming-item {
-        max-width: 18rem; } }
 
 .event--past-salon-item {
   width: 100%;

@@ -43,9 +43,6 @@
         overflow: hidden;
         width: 100%;
         max-width: 30rem;
-        @include media($md) {
-            max-width: 18rem;
-        }
     }
 }
 
