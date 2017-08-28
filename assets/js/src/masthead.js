@@ -52,8 +52,7 @@
         jQuery('.header-menu .sub-menu a').each(function(i, elm) {
             var url = jQuery(elm).attr('href').replace(window.location.origin, '');
             //console.log(jQuery(elm).attr('href').replace(window.location.origin, ''), pathname, pathname.indexOf(url));
-			if (jQuery('.event_cat_name').length > 0 
-			&& jQuery('.event_cat_name').val() != "salons at stowe") {
+			if (jQuery('.event_cat_name').length > 0 && jQuery('.event_cat_name').val() != "salons at stowe") {
 				if (jQuery(elm).html() == 'Calendar') {
 					addCurrentClass(elm);
 				}
@@ -75,8 +74,8 @@
             var elm = $(this);
             var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
             var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
-            
-            //jQuery(nav).find('.sub-menu.is-expanded .menu-item').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});            
+
+            //jQuery(nav).find('.sub-menu.is-expanded .menu-item').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
             //jQuery(nav).find('.sub-menu.is-expanded').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
             //jQuery(nav).find('.menu-item.menu-item-has-children.sub-menu-item-expanded').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
 
@@ -94,7 +93,7 @@
                 if (wasExpanded) {
                     $(elm).find('.sub-menu').removeClass('is-expanded');
                         //$(elm).find('.menu-item').height(0);
-                        //$(elm).find('.sub-menu').height(0);                    
+                        //$(elm).find('.sub-menu').height(0);
                 }
             }, 150);
 

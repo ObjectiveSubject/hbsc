@@ -145,33 +145,39 @@
         });
     });
 
+    function addCurrentClass(elm) {
+		var mainItem = jQuery(elm).parents('.menu-item-has-children');
+
+		if (!jQuery(elm).parent().hasClass('current-menu-item')) {
+			jQuery(elm).parent().addClass('current-menu-item');
+			jQuery(elm).css('color', '#e74949');
+		}
+
+		if (!jQuery(elm).parent().hasClass('current_page_item')) {
+			jQuery(elm).parent().addClass('current_page_item');
+			jQuery(elm).css('color', '#e74949');
+		}
+
+		if (!jQuery(mainItem).hasClass('current-menu-parent')) {
+			jQuery(mainItem).addClass('current-menu-parent');
+		}
+		if (!jQuery(mainItem).hasClass('current-menu-ancestor')) {
+			jQuery(mainItem).addClass('current-menu-ancestor');
+		}
+	}
+
     function forceSectionBreadcrumb() {
         var pathname = window.location.pathname;
 
         jQuery('.header-menu .sub-menu a').each(function(i, elm) {
             var url = jQuery(elm).attr('href').replace(window.location.origin, '');
-            console.log(jQuery(elm).attr('href').replace(window.location.origin, ''), pathname, pathname.indexOf(url));
-
-            if (pathname.indexOf(url) !== -1) {
-
-                var mainItem = jQuery(elm).parents('.menu-item-has-children');
-
-                if (!jQuery(elm).parent().hasClass('current-menu-item')) {
-                    jQuery(elm).parent().addClass('current-menu-item');
-                    jQuery(elm).css('color', '#e74949');
-                }
-
-                if (!jQuery(elm).parent().hasClass('current_page_item')) {
-                    jQuery(elm).parent().addClass('current_page_item');
-                    jQuery(elm).css('color', '#e74949');
-                }
-
-                if (!jQuery(mainItem).hasClass('current-menu-parent')) {
-                    jQuery(mainItem).addClass('current-menu-parent');
-                }
-                if (!jQuery(mainItem).hasClass('current-menu-ancestor')) {
-                    jQuery(mainItem).addClass('current-menu-ancestor');
-                }
+            //console.log(jQuery(elm).attr('href').replace(window.location.origin, ''), pathname, pathname.indexOf(url));
+			if (jQuery('.event_cat_name').length > 0 && jQuery('.event_cat_name').val() != "salons at stowe") {
+				if (jQuery(elm).html() == 'Calendar') {
+					addCurrentClass(elm);
+				}
+			} else if (pathname.indexOf(url) !== -1) {
+                addCurrentClass(elm);
             }
         });
     }
@@ -188,8 +194,8 @@
             var elm = $(this);
             var wasExpanded = $(this).hasClass('sub-menu-item-expanded');
             var wasSubmenuExpanded = $(this).find('.sub-menu').hasClass('is-expanded');
-            
-            //jQuery(nav).find('.sub-menu.is-expanded .menu-item').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});            
+
+            //jQuery(nav).find('.sub-menu.is-expanded .menu-item').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
             //jQuery(nav).find('.sub-menu.is-expanded').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
             //jQuery(nav).find('.menu-item.menu-item-has-children.sub-menu-item-expanded').each(function(i,elm){jQuery(elm).height(jQuery(elm).height())});
 
@@ -207,7 +213,7 @@
                 if (wasExpanded) {
                     $(elm).find('.sub-menu').removeClass('is-expanded');
                         //$(elm).find('.menu-item').height(0);
-                        //$(elm).find('.sub-menu').height(0);                    
+                        //$(elm).find('.sub-menu').height(0);
                 }
             }, 150);
 
@@ -296,6 +302,7 @@
 
 
 })(jQuery, this);
+
 (function($, window) {
 
     window.ScrollEffects = {};
