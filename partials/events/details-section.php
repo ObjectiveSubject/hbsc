@@ -1,4 +1,4 @@
-<?php 
+<?php
     $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
     $imgSrc = (isset($img[0]) ? $img[0] : '');
 ?>
@@ -82,7 +82,14 @@
                 </div>
 
                 <div class="card-date">
-                    <?php echo humanizeDate(get_field('event_start_date'));?>
+                  <?php
+                  if ((get_field('event_start_date') == get_field('event_end_date'))
+              			&& get_field('event_end_date') != '') :
+                      echo humanizeDate(get_field('event_start_date'));
+                  else :
+                    echo humanizeDate(get_field('event_start_date')) . ' to ' . humanizeDate(get_field('event_end_date'));
+                  endif;
+                  ?>
                 </div>
 
                 <div class="card-content">
@@ -102,13 +109,13 @@
                         <span class="event-item-title">Program</span>
                         <span class="event-item-content"><?php echo get_field('event_program');?></span>
                     </div>
-                </div>                
+                </div>
 
                 <div class="card-button">
                 <?php
                     if( $eventDisplayDiscussion == 1 )
                     {
-                ?>                
+                ?>
                         <a href="#join_the_discussion" class="button module-button u-mb-1">Join the discussion</a>
                 <?php
                     }

@@ -4,22 +4,22 @@ get_header();
 
     $termsType = get_terms( 'event-type', array(
         'hide_empty' => true,
-    ) );  
+    ) );
 
     $termsList = get_terms( 'event-type', array(
         'hide_empty' => false,
         'fields'     => 'slugs'
-    ) );        
+    ) );
 
-    $loop = new WP_Query( array( 
+    $loop = new WP_Query( array(
         'post_type'      => 'event',
         'posts_per_page' => -1,
         'order'          => 'ASC',
         'meta_key'		 => 'event_start_date',
-        'orderby'        => 'meta_value',      
+        'orderby'        => 'meta_value',
     ));
-	
-	
+
+
 ?>
 <style>
 .old-event, .hide-event {display:none;}
@@ -39,14 +39,14 @@ get_header();
                     <?php echo the_title(); ?>
                 </div>
             </header>
-            
+
             <div class="module__body">
                 <aside class="events--calendar-aside">
                     <div class="events--aside-calendar-terms">
                         <div id="events-calendar"></div>
 
                         <div class="events--calendar-terms">
-                            <?php 
+                            <?php
                                 foreach($termsType as $term)
                                 {
                                     $termChecked = in_array( $term->slug, $termsList );
@@ -62,7 +62,7 @@ get_header();
                 </aside>
 
                 <div class="calendar--events-list">
-<?php 
+<?php
     $calendarData = array();
     $lastYear = null;
     $lastMonth = null;
@@ -77,9 +77,9 @@ get_header();
         $taxonomiesSlugs = wp_get_post_terms($post->ID, 'event-type', array(
                 'hide_empty' => true,
                 'fields' => 'slugs'
-        ) );        
+        ) );
 
-		if ((get_field('event_start_date') == get_field('event_end_date')) 
+		if ((get_field('event_start_date') == get_field('event_end_date'))
 			&& get_field('event_end_date') != '') {
 			$calendarData[] = array(
 				'date'  => get_field('event_start_date'),
@@ -87,7 +87,7 @@ get_header();
 				'date_end'  => get_field('event_end_date'),
 				'title' => get_the_title(),
 				'badge' => false
-			);	
+			);
 		} else {
 			$arr_range= $Event->getRangeDates();
 			for($i=0; $i < count($arr_range); $i++) {
@@ -97,7 +97,7 @@ get_header();
 				'date_end'  => get_field('event_end_date'),
 				'title' => get_the_title(),
 				'badge' => false
-				);	
+				);
 			}
 		}
 
@@ -105,7 +105,7 @@ get_header();
         $evtClass = '';
 
         if( $lastMonth != $evtStartDtSplit[1] )
-        {            
+        {
             if( $lastMonth != null )
             {
                 $evtClass = 'event--firstofmonth';
@@ -113,15 +113,24 @@ get_header();
 
             $lastMonth = $evtStartDtSplit[1];
         }
-		
-		
+
+
 ?>
 			<div  class="calendar--event-item  <?php echo $evtClass;?> <?php echo $evtStartDtSplit[0]."-".$evtStartDtSplit[1]; ?>" id="calendar-event<?php echo $post->ID; ?>" data-event-date="<?php echo get_field('event_start_date'); ?>"
 			<?php echo (($Event->isOldEvent()) ? 'style="display:none"' : "")?>
 			>
 				<div class="event--date">
 					<span class="u-caps"><?php echo $Event->getDateMonth();?></span>
-					<span class="h2 u-font-miller"><?php echo $Event->getDateDay();?></span>
+          <?php if((get_field('event_start_date') == get_field('event_end_date')) && get_field('event_end_date') != '') : ?>
+					  <span class="h2 u-font-miller"><?php echo $Event->getDateDay();?></span>
+          <?php else :
+            $start_date = get_field('event_start_date', false, false);
+            $start_date = new DateTime($start_date);
+            $end_date = get_field('event_end_date', false, false);
+            $end_date = new DateTime($end_date);
+          ?>
+            <span class="h5 u-font-miller"><?php echo $start_date->format('j') . ' - ' . $end_date->format('j'); ?></span>
+          <?php endif; ?>
 				</div>
 				<div class="event--content">
 					<div class="event--title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo the_title();?></a></div>
@@ -129,7 +138,7 @@ get_header();
 					<div class="event--details"><?php echo get_field('event_program') . ', ' . get_field('event_location');?></div>
 				</div>
 			</div>
-<?php 
+<?php
     endwhile;
     wp_reset_postdata();
 ?>
@@ -142,12 +151,12 @@ get_header();
 <script>window.$ = jQuery;</script>
 
 <script type="application/javascript">
-    
+
     var cal = $('.events--aside-calendar-terms');
     var aside = $('.events--calendar-aside');
     var calHeight = cal.height();
     var asideHeight = aside.height();
-    
+
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         var distance = ( asideHeight - calHeight ) - scroll;
@@ -157,7 +166,7 @@ get_header();
             cal.removeClass('at-bottom');
         }
     });
-    
+
     var currentMonthYear;
     var calEvents;
     var dataCalendar    = <?php echo json_encode($calendarData); ?>;
@@ -173,7 +182,7 @@ get_header();
         nav_icon: {
             prev: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
             next: '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        },        
+        },
         data: dataCalendar,
         action : function()
         {
@@ -188,19 +197,19 @@ get_header();
         var date     = $("#" + id).data("date");
         var hasEvent = $("#" + id).data("hasEvent");
 
-		
+
 		console.log($("#" + id));
         if( hasEvent )
         {
             calEvents.scrollToEvent( date_start );
         }
     }
-	
+
 	function twoDigit(number) {
 		var twodigit = number >= 10 ? number : "0"+number.toString();
 		return twodigit;
 	}
-	
+
 	function calendarNavMonth(id) {
 		var to = $("#" + id).data("to");
 		var data_month= to["year"]+"-"+twoDigit(to["month"]);
@@ -208,7 +217,7 @@ get_header();
 		$('.calendar--event-item').removeClass("event-show");
 		$('.calendar--event-item.'+data_month).css('display', '');
 		$('.calendar--event-item.'+data_month).addClass("event-show");
-		
+
 	}
 
     jQuery(document).ready(function()
@@ -262,7 +271,7 @@ get_header();
                     jQuery('.events--aside-calendar-terms').prepend('<div id="events-calendar"></div>');
                     jQuery("#events-calendar").zabuto_calendar(calendarOptions);
                 }
-            });            
+            });
         }
 
         function calendarAsidePosition( scrollTop )
