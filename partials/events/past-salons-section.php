@@ -6,7 +6,7 @@
             'title'   => 'PAST SALONS',
             'display_button' => false,
             'button_text' => '',
-            'button_href' => ''            
+            'button_href' => ''
         );
     }
 
@@ -15,8 +15,8 @@
     // For mean time
     $defaultSortByKey = 'recent';
 
-    $postsSortbyList = array( 
-        'recent' => array( 
+    $postsSortbyList = array(
+        'recent' => array(
             'post_type'      => 'event',
             'posts_per_page' => -1,
             'order'          => 'DESC',
@@ -33,9 +33,9 @@
                     'compare' => '<=',
                     'type' => 'DATE'
                 )
-            )            
+            )
         ),
-        'most_viewed' => array( 
+        'most_viewed' => array(
             'post_type'      => 'event',
             'posts_per_page' => -1,
             'order'          => 'DESC',
@@ -56,7 +56,7 @@
                 'comment_count' => 'DESC'
             )
         ),
-        'most_discussed' => array( 
+        'most_discussed' => array(
             'post_type'      => 'event',
             'posts_per_page' => -1,
             'order'          => 'DESC',
@@ -68,13 +68,13 @@
                     'value' => date('Y-m-d') . ' 00:00:00',
                     'compare' => '<=',
                     'type' => 'DATE'
-                )              
+                )
             ),
             'post__not_in'  => array($post->ID),
             'orderby' => array(
                 'comment_count' => 'DESC',
                 'event_start_date' => "DESC",
-                'meta_value_num' => 'DESC'                        
+                'meta_value_num' => 'DESC'
             )
         )
     );
@@ -86,7 +86,7 @@
             <div class="module-title">
                 <?php echo $pastSalonsSectionConfig['title']; ?>
             </div>
-            <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap u-mt-2 u-text-center">
+            <!-- <ul class="anchors u-display-flex u-flex-justify-center u-flex-wrap u-mt-2 u-text-center">
                 <li class="anchor preface-button">
                     <a href="#" class="button module-button btn--sortby btn--sortby-active" data-sortby-key="recent"><span>Recent</span></a>
                 </li>
@@ -96,7 +96,7 @@
                 <li class="anchor preface-button">
                     <a href="#" class="button module-button btn--sortby" data-sortby-key="most_discussed"><span>Most Discussed</span></a>
                 </li>
-            </ul>
+            </ul> -->
         </header>
 
         <div class="module__body">
@@ -124,7 +124,7 @@
 <?php
     if( $pastSalonsSectionConfig['display_button'] )
     {
-?>    
+?>
     <footer class="module__footer">
         <a href="<?php echo $pastSalonsSectionConfig['button_href']; ?>" class="button module-button"><span><?php echo $pastSalonsSectionConfig['button_text']; ?></span></a>
     </footer>
