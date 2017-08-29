@@ -1279,7 +1279,7 @@ select,
 textarea {
   font-family: "Miller Text Rom", Georgia, serif;
   color: black;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1351,7 +1351,7 @@ h6,
   @media screen and (min-width: 768px) {
     h6,
     .h6 {
-      font-size: 1.13rem; } }
+      font-size: 1.12rem; } }
 
 h1,
 h2,
@@ -1941,7 +1941,7 @@ TODO clean up the !important
   .card .card-date {
     color: white;
     margin: 0 0 2rem 0;
-    font-size: 1.63rem; }
+    font-size: 1.62rem; }
     @media screen and (min-width: 768px) {
       .card .card-date {
         font-size: 2rem; } }
@@ -2973,6 +2973,18 @@ img {
   font-size: 0.75rem;
   color: gray; }
 
+.alignright {
+  float: right;
+  margin: 1rem 0 1rem 1rem; }
+
+.alignleft {
+  float: left;
+  margin: 1rem 1rem 1rem 0; }
+
+.aligncenter {
+  max-width: 100%;
+  margin: 1rem auto; }
+
 /* Responsive Media
  * -----------------------------------------------------------*/
 [class*="responsive-media-"] {
@@ -3491,7 +3503,7 @@ img {
  */
 .section-title, .module-title, .card-title {
   width: 100%;
-  font-size: 1.13rem;
+  font-size: 1.12rem;
   letter-spacing: .2rem;
   color: #272727;
   text-transform: uppercase;
@@ -4410,7 +4422,7 @@ body.home .life-links-section .module__body ul {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
@@ -4562,15 +4574,15 @@ body.home .life-links-section .module__body ul {
 
 .utility-location-open .utility-item--location {
   display: block;
-  height: 3.63rem; }
+  height: 3.62rem; }
 
 .utility-hours-open .utility-item--hours {
   display: block;
-  height: 3.63rem; }
+  height: 3.62rem; }
 
 .utility-search-open .utility-item--search {
   display: block;
-  height: 3.63rem; }
+  height: 3.62rem; }
 
 .utility-item--search .search-form {
   display: -webkit-box;
@@ -4638,7 +4650,7 @@ body.home .life-links-section .module__body ul {
       transform-origin: 0 100%;
       top: 0; }
     .site-mobile-menu-toggle span:nth-child(2) {
-      top: 0.63rem; }
+      top: 0.62rem; }
     .site-mobile-menu-toggle span:nth-child(3) {
       transform-origin: 0 0;
       bottom: 0; }
