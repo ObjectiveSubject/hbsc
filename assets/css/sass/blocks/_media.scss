@@ -46,6 +46,21 @@ figure {
 	color: gray;
 }
 
+.alignright {
+	float: right;
+	margin: 1rem 0 1rem 1rem;
+}
+
+.alignleft {
+	float: left;
+	margin: 1rem 1rem 1rem 0;
+}
+
+.aligncenter {
+	max-width: 100%;
+	margin: 1rem auto;
+}
+
 /* Responsive Media
  * -----------------------------------------------------------*/
 [class*="responsive-media-"] {
