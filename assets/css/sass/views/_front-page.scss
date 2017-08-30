@@ -8,9 +8,15 @@ body.home {
     }
     .preface-text {
         @extend .h4;
-        text-align: left;        
+        text-align: left;
         p {
             margin-top: 0;
+        }
+        a {
+          color: $dark-gray;
+          &:hover {
+            color: $red;
+          }
         }
         @include media($md) {
             margin: 0;
@@ -21,7 +27,7 @@ body.home {
         }
     }
     .card-content
-    { 
+    {
     @include media($md)
 
         .h2, h2, h3, .h3
