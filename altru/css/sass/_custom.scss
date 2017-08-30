@@ -1,0 +1,53 @@
+$max-width: 1050px;
+
+.u-container {
+    max-width: $max-width;
+    padding: 0;
+}
+
+.MS_contentWrapper_inner {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+.button,
+.btn {
+    @extend .u-font-miller-bold;
+    font-size: 1rem;
+    color: $dark-gray;
+    padding: rem(8) rem(32);
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0;
+    background: none;
+    @include appearance(none);
+    &:hover, &:focus {
+        background: none !important;
+        border-color: $red !important;
+        color: $red !important;
+    }
+    &:focus {
+        box-shadow: 0 0 5px !important;
+        outline: 0 !important;
+    }
+    &:active {
+        background: rgba(0,0,0,0.05) !important;
+        color: $red !important;
+        box-shadow: none !important;
+        border-color: $red !important;
+    }
+}
+
+.btn-primary {
+    border-color: $blue;
+    color: $blue;
+}
+
+.form-control {
+    border-radius: 0;
+    border-color: rgba(0,0,0,.15);
+    box-shadow: none;
+}
+.form-control:focus {
+    border-color: $red;
+    box-shadow: none;
+}

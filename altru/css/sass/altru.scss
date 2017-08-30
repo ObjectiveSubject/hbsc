@@ -1,0 +1,34 @@
+/**
+ * Stylesheet for Altru forms
+ */
+
+@import
+    "../../../assets/css/sass/shared/bourbon/bourbon",
+    "../../../assets/css/sass/shared/neat/neat",
+    "../../../assets/css/sass/shared/variables/variables",
+    "../../../assets/css/sass/shared/mixins",
+    "../../../assets/css/sass/shared/utility/colors",
+    "../../../assets/css/sass/shared/utility/display",
+    "../../../assets/css/sass/shared/utility/effects",
+    "../../../assets/css/sass/shared/utility/grid",
+    "../../../assets/css/sass/shared/utility/flex",
+    "../../../assets/css/sass/shared/utility/layout",
+    "../../../assets/css/sass/shared/utility/typography";
+
+@import
+    "../../../assets/css/sass/base/normalize",
+    "../../../assets/css/sass/base/document",
+    "typography";
+
+@import
+    "../../../assets/css/sass/blocks/buttons",
+    "../../../assets/css/sass/blocks/logo",
+    "../../../assets/css/sass/blocks/masthead";
+    // "../../../assets/css/sass/blocks/sections";
+
+@import
+    "../../../assets/css/sass/views/footer",
+    "../../../assets/css/sass/views/header";
+
+@import
+    "custom";
