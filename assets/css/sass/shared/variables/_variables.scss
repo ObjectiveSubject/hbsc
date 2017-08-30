@@ -1,3 +1,4 @@
+
 // Structure
 // ------------------------------------------- /
 $max-width: rem(1128) !global;
@@ -83,20 +84,6 @@ $color-google: #f44336;
 
 // Typography
 // ------------------------------------------- /
-@import url("//hello.myfonts.net/count/33e42b");
-
-@font-face {
-    font-family: 'RamaGothicE-Heavy';
-    src: url('../fonts/33E42B_0_0.eot');
-    src: url('../fonts/33E42B_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/33E42B_0_0.woff2') format('woff2'),url('../fonts/33E42B_0_0.woff') format('woff'),url('../fonts/33E42B_0_0.ttf') format('truetype');
-}
- 
-@font-face {
-    font-family: 'RamaSlabM-Bold';
-    src: url('../fonts/33E42B_1_0.eot');
-    src: url('../fonts/33E42B_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/33E42B_1_0.woff2') format('woff2'),url('../fonts/33E42B_1_0.woff') format('woff'),url('../fonts/33E42B_1_0.ttf') format('truetype');
-}
-
 $rama-gothic: "RamaGothicE-Heavy", "Helvetica", Arial, sans-serif;
 $rama-slab: "RamaSlabM-Bold", "Helvetica", Arial, sans-serif;
 

@@ -10,7 +10,7 @@ module.exports = {
 		expand: true,
 
 		cwd: 'assets/css/',
-		src: ['style.css'],
+		src: ['style.css','altru.css'],
 
 		dest: 'assets/css/',
 		ext: '.min.css'
