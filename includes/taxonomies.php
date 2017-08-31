@@ -37,5 +37,5 @@ function register_role() {
  * Register the 'role' taxonomy and assign it to people.
  */
 function register_participant() {
-	register_extended_taxonomy( 'participant-type', 'participant' );
+	register_extended_taxonomy( 'participant-type', array( 'participant', 'student_participant' ) );
 }

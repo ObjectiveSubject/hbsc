@@ -13,7 +13,7 @@ function setup() {
 
 	add_action( 'init', $n( 'register_event' ) );
 	add_action( 'init', $n( 'register_people' ) );
-	add_action( 'init', $n( 'register_participant' ) );
+	add_action( 'init', $n( 'register_participants' ) );
 
 	//add_filter('people_post_type_link', $n( 'people_post_type_link' ), 1, 3);	
 }
@@ -75,10 +75,12 @@ function register_people() {
 }
 
 /**
- * Register the 'student' post type
+ * Register the two participant post types, 'literary' and 'student'
  */
-function register_participant() {
+function register_participants() {
 	global $wp_rewrite;
+
+	// Literary 
 
 	register_extended_post_type( 'participant', array(
 		'menu_icon' => 'dashicons-groups',
@@ -86,18 +88,50 @@ function register_participant() {
 		'has_archive' => false,
 		'rewrite' => false,
 		'admin_cols' => array(
+			'entry-status' => array(
+				'title' => 'Entry Status',
+				'meta_key' => 'participant_entry_type'
+			),
 			'participant-type' => array(
 				'taxonomy' => 'participant-type'
 			),
 		)		
 	), array(
 		# Override the base names used for labels:
-		'singular' => 'Participant',
-		'plural'   => 'Participants',
-		'slug'     => 'participant'
+		'singular' => 'Literary Participant',
+		'plural'   => 'Literary Participants',
+		'slug'     => 'literary-participant'
 	) );
 
-	add_rewrite_rule('^stowe-prize/student-stowe-prize/(.*)/?$', 'index.php?participant=$matches[1]', 'top');
+	add_rewrite_rule('^stowe-prize/literary-prize/(.*)/?$', 'index.php?participant=$matches[1]', 'top');
 	$wp_rewrite->add_rewrite_tag("%participant%", '[^/]+', "participant=");
-	$wp_rewrite->add_permastruct('participant', 'stowe-prize/student-stowe-prize/%participant%', false);	
+	$wp_rewrite->add_permastruct('participant', 'stowe-prize/literary-prize/%participant%', false);
+	
+	
+	// Students
+
+	register_extended_post_type( 'student_participant', array(
+		'menu_icon' => 'dashicons-groups',
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'has_archive' => false,
+		'rewrite' => false,
+		'admin_cols' => array(
+			'entry-status' => array(
+				'title' => 'Entry Status',
+				'meta_key' => 'participant_entry_type'
+			),
+			'participant-type' => array(
+				'taxonomy' => 'participant-type'
+			),
+		)		
+	), array(
+		# Override the base names used for labels:
+		'singular' => 'Student Participant',
+		'plural'   => 'Student Participants',
+		'slug'     => 'student-participant'
+	) );
+
+	add_rewrite_rule('^stowe-prize/student-stowe-prize/(.*)/?$', 'index.php?student_participant=$matches[1]', 'top');
+	$wp_rewrite->add_rewrite_tag("%student_participant%", '[^/]+', "student_participant=");
+	$wp_rewrite->add_permastruct('student_participant', 'stowe-prize/student-stowe-prize/%student_participant%', false);
 }

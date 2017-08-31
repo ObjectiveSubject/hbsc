@@ -44,7 +44,7 @@ if( !isset($participantsSectionConfig) )
 }
 
 $participantsLoop = new WP_Query( array( 
-    'post_type'      => 'participant',
+    'post_type'      => ( is_singular( 'participant' ) ) ? 'participant' : 'student_participant',
     'posts_per_page' => $participantsSectionConfig['posts_per_page'],
     'order'          => 'DESC',
     'meta_key'		 => 'participant_winner',

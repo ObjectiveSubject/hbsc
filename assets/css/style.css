@@ -3783,10 +3783,12 @@ caption {
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
-  .single-participant .participant--item {
+  .single-participant .participant--item,
+  .single-student_participant .participant--item {
     max-width: 100%;
     flex: 1; }
-    .single-participant .participant--item .participant--image {
+    .single-participant .participant--item .participant--image,
+    .single-student_participant .participant--item .participant--image {
       max-width: 26rem;
       margin: 0 auto; }
   @media screen and (min-width: 768px) {
