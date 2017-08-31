@@ -29,36 +29,35 @@
                         </div>
                         <?php endif; ?>
                     </div>
+
+                    <?php
+                    $footerNavList = getHeaderMenuItemsFirstLevel();
+                    if ( ! empty( $footerNavList ) ) : ?>
+
                     <div class="footer-column">
                         <nav class="footer-nav">
                             <div class="footer-nav-menu-col">
                             <?php
-                                $footerNavList = getHeaderMenuItemsFirstLevel();
-                                $halfIdx = ceil(count($footerNavList) * 0.5);
-                                $footerNavListFirst =  array_slice( $footerNavList, 0, $halfIdx );
-                                $footerNavListSecond =  array_slice( $footerNavList, $halfIdx );
+                            $halfIdx = ceil(count($footerNavList) * 0.5);
+                            $footerNavListFirst =  array_slice( $footerNavList, 0, $halfIdx );
+                            $footerNavListSecond =  array_slice( $footerNavList, $halfIdx );
 
-                                foreach( $footerNavListFirst as $key => $footerNavItem )
-                                {
-                            ?>
-                                    <a href="<?php echo $footerNavItem->url; ?>" title="<?php echo $footerNavItem->post_title; ?>"><?php echo $footerNavItem->post_title; ?></a>
-                            <?php
-                                }
-                            ?>
+                            foreach( $footerNavListFirst as $key => $footerNavItem ) { ?>
+                                <a href="<?php echo $footerNavItem->url; ?>" title="<?php echo $footerNavItem->post_title; ?>"><?php echo $footerNavItem->post_title; ?></a>
+                            <?php } ?>
                             </div>
                             <div class="footer-nav-menu-col">
 
-                            <?php
-                                foreach( $footerNavListSecond as $key =>  $footerNavItem )
-                                {
-                            ?>
-                                <a href="<?php echo $footerNavItem->url; ?>" title="<?php echo $footerNavItem->post_title; ?>"><?php echo $footerNavItem->post_title; ?></a>
-                            <?php
-                                }
-                            ?>
+                                <?php foreach( $footerNavListSecond as $key =>  $footerNavItem ) { ?>
+                                    <a href="<?php echo $footerNavItem->url; ?>" title="<?php echo $footerNavItem->post_title; ?>"><?php echo $footerNavItem->post_title; ?></a>
+                                <?php } ?>
+
                             </div>
                         </nav>
                     </div>
+
+                    <?php endif; ?>
+
                 </div>
                 <div class="footer-row u-flex-items-center">
                     <div class="footer-social footer-column">
