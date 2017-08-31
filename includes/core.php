@@ -123,7 +123,7 @@ function styles( $debug = false ) {
  */
 function modify_queries( $query ) {
 
-   	if ( ! is_admin() && is_main_query() ) {
+   	if ( ! is_admin() && $query->is_main_query() ) {
 
 		if ( is_tax( 'role' ) ) {
 			$query->set( 'posts_per_page', 100 );
