@@ -1217,7 +1217,7 @@ select,
 textarea {
   font-family: "Miller Text Rom", Georgia, serif;
   color: black;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   line-height: 1.375;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1317,7 +1317,7 @@ h6, .h6 {
     .site-header h6, .site-header .h6,
     .site-footer h6,
     .site-footer .h6 {
-      font-size: 1.12rem; } }
+      font-size: 1.13rem; } }
 
 .site-header h1, .site-header h2, .site-header h3, .site-header h4, .site-header h5, .site-header h6,
 .site-header .h1, .site-header .h2, .site-header .h3, .site-header .h4, .site-header .h5, .site-header .h6,
@@ -1936,7 +1936,7 @@ body.home .section__body .site-menu.menu--body .logotype {
 
 .site-header {
   padding: 0.38rem 0;
-  font-size: 0.62rem;
+  font-size: 0.63rem;
   text-transform: uppercase;
   pointer-events: initial; }
 
@@ -2088,15 +2088,15 @@ body.home .section__body .site-menu.menu--body .logotype {
 
 .utility-location-open .utility-item--location {
   display: block;
-  height: 3.62rem; }
+  height: 3.63rem; }
 
 .utility-hours-open .utility-item--hours {
   display: block;
-  height: 3.62rem; }
+  height: 3.63rem; }
 
 .utility-search-open .utility-item--search {
   display: block;
-  height: 3.62rem; }
+  height: 3.63rem; }
 
 .utility-item--search .search-form {
   display: -webkit-box;
@@ -2164,7 +2164,7 @@ body.home .section__body .site-menu.menu--body .logotype {
       transform-origin: 0 100%;
       top: 0; }
     .site-mobile-menu-toggle span:nth-child(2) {
-      top: 0.62rem; }
+      top: 0.63rem; }
     .site-mobile-menu-toggle span:nth-child(3) {
       transform-origin: 0 0;
       bottom: 0; }
