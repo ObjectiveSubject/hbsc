@@ -13,7 +13,8 @@ function setup() {
 
 	add_action( 'init', $n( 'register_event' ) );
 	add_action( 'init', $n( 'register_people' ) );
-	add_action( 'init', $n( 'register_participants' ) );
+	add_action( 'init', $n( 'register_literary_participants' ) );
+	add_action( 'init', $n( 'register_student_participants' ) );
 
 	//add_filter('people_post_type_link', $n( 'people_post_type_link' ), 1, 3);	
 }
@@ -75,15 +76,15 @@ function register_people() {
 }
 
 /**
- * Register the two participant post types, 'literary' and 'student'
+ * Register literary participants
  */
-function register_participants() {
+function register_literary_participants() {
 	global $wp_rewrite;
 
 	// Literary 
 
 	register_extended_post_type( 'participant', array(
-		'menu_icon' => 'dashicons-groups',
+		'menu_icon' => 'dashicons-businessman',
 		'supports' => array('title', 'editor', 'thumbnail'),
 		'has_archive' => false,
 		'rewrite' => false,
@@ -107,11 +108,20 @@ function register_participants() {
 	$wp_rewrite->add_rewrite_tag("%participant%", '[^/]+', "participant=");
 	$wp_rewrite->add_permastruct('participant', 'stowe-prize/literary-prize/%participant%', false);
 	
-	
+}
+
+
+
+/**
+ * Register student participants
+ */
+ function register_student_participants() {
+	global $wp_rewrite;
+
 	// Students
 
 	register_extended_post_type( 'student_participant', array(
-		'menu_icon' => 'dashicons-groups',
+		'menu_icon' => 'dashicons-welcome-learn-more',
 		'supports' => array('title', 'editor', 'thumbnail'),
 		'has_archive' => false,
 		'rewrite' => false,
@@ -134,4 +144,5 @@ function register_participants() {
 	add_rewrite_rule('^stowe-prize/student-stowe-prize/(.*)/?$', 'index.php?student_participant=$matches[1]', 'top');
 	$wp_rewrite->add_rewrite_tag("%student_participant%", '[^/]+', "student_participant=");
 	$wp_rewrite->add_permastruct('student_participant', 'stowe-prize/student-stowe-prize/%student_participant%', false);
+
 }
