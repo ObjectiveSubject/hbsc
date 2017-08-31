@@ -14,7 +14,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'after_setup_theme', $n( 'features' ) );
-	// add_action( 'pre_get_posts', $n( 'modify_queries' ) );
+	add_action( 'pre_get_posts', $n( 'modify_queries' ) );
 	add_action( 'init', $n( 'add_menus' ) );
 
 	// Remove WordPress header cruft
@@ -123,7 +123,13 @@ function styles( $debug = false ) {
  */
 function modify_queries( $query ) {
 
-   	// Perform query modifications here
+   	if ( ! is_admin() && is_main_query() ) {
+
+		if ( is_tax( 'role' ) ) {
+			$query->set( 'posts_per_page', 100 );
+		}
+
+	}
 
 }
 
