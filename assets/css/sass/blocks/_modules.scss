@@ -214,6 +214,11 @@
 
 .module__sidebar {
     @extend .u-mb-2;
+
+    & > p:first-child {
+        margin-top: 0;
+    }
+
     .sidebar {
         @extend .u-pa-1;
         border: 1px solid $table-border-color;

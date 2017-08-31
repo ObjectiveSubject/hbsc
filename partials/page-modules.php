@@ -14,6 +14,9 @@ while( have_rows('module') ): the_row();
     $display_button = get_sub_field('display_module_button');
     $button_link = get_sub_field('module_button_link');
     $button_text = get_sub_field('module_button_text');
+    $display_ext_button = get_sub_field('display_ext_module_button');
+    $ext_button_link = get_sub_field('module_ext_button_link');
+    $ext_button_text = get_sub_field('module_ext_button_text');
     $image = get_sub_field('module_image');
 
     $buttonLocation = get_sub_field('module_button_location');

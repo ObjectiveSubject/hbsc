@@ -20,19 +20,31 @@
                 <?php echo $sidebar; ?>
             </div>
             <?php endif; ?>
-            <?php if( $display_button && $buttonLocation == 'sidebar' ) : ?>
-                <a href="<?php echo $button_link; ?>" id="<?php echo $button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>">
-                    <?php echo $button_text; ?>
-                </a>
+            <?php if ( $buttonLocation == 'sidebar' ) : ?>
+                <?php if ( $display_button ) : ?>
+                    <p><a href="<?php echo $button_link; ?>" id="<?php echo $button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>">
+                        <?php echo $button_text; ?>
+                    </a></p>
+                <?php endif; ?>
+                <?php if ( $display_ext_button ) : ?>
+                    <p><a href="<?php echo $ext_button_link; ?>" id="<?php echo $ext_button_link; ?>" class="button button--red u-caps <?php echo ( $sidebar ) ? 'u-mt-2' : ''; ?>" target="_blank">
+                        <?php echo $ext_button_text; ?>
+                    </a></p>
+                <?php endif; ?>
             <?php endif; ?>
         </aside>
         <div class="module__body">
             <?php echo $content; ?>
-        </div>        
-<?php if( $display_button && $button_link && $button_text && ( $buttonLocation == 'footer' || !$buttonLocation ) ) : ?>        
-        <footer class="module__footer">            
-                <a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a>
-        </footer>
-<?php endif; ?>
+        </div>
+        <?php if ( $buttonLocation == 'footer' || ! $buttonLocation ) : ?>
+            <footer class="module__footer">            
+                <?php if ( $display_button && $button_link && $button_text ) : ?>  
+                    <p><a href="<?php echo $button_link; ?>" class="button module-button"><?php echo $button_text; ?></a></p>
+                <?php endif; ?>
+                <?php if ( $display_ext_button && $ext_button_link && $ext_button_text ) : ?>  
+                    <p><a href="<?php echo $ext_button_link; ?>" class="button module-button" target="_blank"><?php echo $ext_button_text; ?></a></p>
+                <?php endif; ?>
+            </footer>
+        <?php endif; ?>
     </div>
 </section>
