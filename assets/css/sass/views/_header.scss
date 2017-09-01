@@ -1,8 +1,5 @@
 .site-header {
-    @extend .u-font-miller-bold;
     padding: rem(6) 0;
-    font-size: rem(10);
-    text-transform: uppercase;
     pointer-events: initial;
 }
 
@@ -165,61 +162,97 @@
 
 .utility-toggle {
     color: $tan;
-    &:hover {
+    font-size: rem(12);
+    @extend .u-font-miller-bold;
+    &:hover, &:focus {
         color: $red;
-    }
-    &:focus {
-        color: $tan;
     }
 }
 
 .utility-item {
-    height: rem(0);
+    color: white;
+    display: block;
+    height: auto;
+    max-height: 0;
     overflow: hidden;
-    transition: height .25s cubic-bezier(1, 0, 0, 1) 150ms;
+    transition: max-height 250ms cubic-bezier(1, 0, 0, 1), padding 250ms cubic-bezier(1, 0, 0, 1);
+    a {
+        color: $light-gray;
+        &:hover, &:focus {
+            color: $red;
+        }
+    }
+}
+
+.utility-item--hours-col {
+    @include media($md) {
+        @include span-columns(6);
+    }
+    @include media($lg) {
+        &:first-child {
+            @include span-columns(3);
+        }
+    }
+}
+.utility-item--day-col {
+    @include media($lg) {
+        width: 50% - flex-gutter($grid-columns);
+        float: left;
+        &:first-child {
+            margin-right: flex-gutter($grid-columns) * 2;
+        }
+    }
+}
+.utility-item-day {
+    font-size: 0.85em;
+    @include display(flex);
+    @include justify-content(space-between);
 }
 
 .utility-item--location {
     .utility-location-open & {
-        display: block;
-        height: rem(58);
+        max-height: rem(250);
+        padding: rem(24) 0;
     }
 }
 
 .utility-item--hours {
     .utility-hours-open & {
-        display: block;
-        height: rem(58);
+        max-height: rem(260);
+        padding: rem(24) 0;
     }
 }
 
 .utility-item--search {
     .utility-search-open & {
-        display: block;
-        height: rem(58);
+        max-height: rem(110);
+        padding: rem(12) 0;
     }
     .search-form {
         @include display(flex);
         label {
             flex: 0 100%;
+            padding: 0;
         }
         .search-field {
-            width: 100%;
             @extend .u-py-1;
+            width: 100%;
             background: transparent;
             border: none;
             color: white;
+            padding: 0.5em 0;
             &:focus {
                 outline: 0;
             }
         }
         .search-submit {
-            background: transparent;
-            border: none;
-            color: $gray;
             @extend .u-transition-300;
+            background: transparent;
+            border: 1px solid;
+            color: white;
+            min-width: rem(150);
             &:hover {
-                color: $red;
+                color: $gray;
             }
         }
     }
