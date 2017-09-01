@@ -108,15 +108,38 @@
 			e.preventDefault();
 			var ctClass = $(this).data('class'),
 				ctTarget = $(this).data('target'),
-				ctFocus = $(this).data('focus');
+				ctFocus = $(this).data('focus'),
+				ctRemoveOn = $(this).data('remove-on');
 
 			if ( $(ctTarget).hasClass(ctClass) ) {
-				$(ctTarget).removeClass(ctClass);
-				$(ctFocus).blur();
+				unsetState();
+				if ( ctRemoveOn && ctRemoveOn === 'scroll' ) {
+					$(window).off( 'scroll' , onWindowScroll );
+				}
 			} else {
+				setState();
+				if ( ctRemoveOn && ctRemoveOn === 'scroll' ) {
+					$(window).on( 'scroll' , onWindowScroll );
+				}
+			}
+
+			function setState() {
 				$(ctTarget).addClass(ctClass);
 				$(ctFocus).focus();
 			}
+
+			function unsetState() {
+				$(ctTarget).removeClass(ctClass);
+				$(ctFocus).blur();
+			}
+
+			function onWindowScroll() {
+				if ( $(ctTarget).hasClass(ctClass) ) {
+					unsetState();
+					$(window).off( 'scroll' , onWindowScroll );
+				} 
+			}
+			
 		});
 
 		return this;
