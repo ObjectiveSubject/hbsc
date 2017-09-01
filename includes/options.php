@@ -36,6 +36,10 @@ function display_hbsc_closed_today(){
 	?><input type="checkbox" name="hbsc_closed_today" value="1"value="1"<?php checked( 1 == get_option('hbsc_closed_today') ); ?>><?php
 }
 
+function display_hbsc_hours_desc(){
+?><textarea cols="60" rows="6" name="hbsc_hours_desc"><?php echo get_option('hbsc_hours_desc');?></textarea><?php
+}
+
 function display_hbsc_hours_sunday(){
 	?><input class="regular-text" type="text" name="hbsc_hours_sunday" value="<?php echo esc_attr(get_option('hbsc_hours_sunday'));?>"><?php
 }
@@ -108,7 +112,10 @@ function hbsc_register_settings() {
 	register_setting("hbsc_settings", "hbsc_closed_today");
     add_settings_field("hbsc_closed_today", "Closed Today?", "HBSC\Options\display_hbsc_closed_today", "main_settings_section", "hours_settings");
 	
-	register_setting("hbsc_settings", "hbsc_hours_sunday");
+	register_setting("hbsc_settings", "hbsc_hours_desc");
+    add_settings_field("hbsc_hours_desc", "Hours Description", "HBSC\Options\display_hbsc_hours_desc", "main_settings_section", "hours_settings");
+    
+    register_setting("hbsc_settings", "hbsc_hours_sunday");
     add_settings_field("hbsc_hours_sunday", "Sunday", "HBSC\Options\display_hbsc_hours_sunday", "main_settings_section", "hours_settings");
 	
 	register_setting("hbsc_settings", "hbsc_hours_monday");
