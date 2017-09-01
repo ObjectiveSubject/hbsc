@@ -3405,7 +3405,9 @@ img {
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 100%; }
+  min-width: 100%;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem; }
 
 .module-column {
   flex: 1 0 25%;
