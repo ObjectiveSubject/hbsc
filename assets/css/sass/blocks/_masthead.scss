@@ -9,4 +9,13 @@
         pointer-events: none;
         background: transparent;
     }
+    
+    .admin-bar & {
+        @include media($md) {
+            top: 46px;
+        }
+        @include media(783px) {
+            top: 32px;
+        }
+    }
 }

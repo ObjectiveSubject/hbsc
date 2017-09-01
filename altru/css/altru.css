@@ -1801,6 +1801,12 @@ body.home .section__body .site-menu.menu--body .logotype {
       z-index: 910;
       pointer-events: none;
       background: transparent; } }
+  @media screen and (min-width: 768px) {
+    .admin-bar .masthead {
+      top: 46px; } }
+  @media screen and (min-width: 783px) {
+    .admin-bar .masthead {
+      top: 32px; } }
 
 .site-footer a {
   color: white; }
