@@ -91,9 +91,6 @@ h6,
     @include display(block);
     @extend .u-font-miller-bold;
     font-size: rem(14);
-    @include media($md) {
-        font-size: rem(18);
-    }
 }
 
 h1,

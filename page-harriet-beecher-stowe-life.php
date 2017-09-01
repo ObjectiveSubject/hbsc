@@ -45,9 +45,9 @@ get_header(); ?>
                     <div class="card-positioner">
                         <div class="card u-bg-red js-slide-in">
                             <div class="card-content">
-                                <blockquote><?php echo get_field('life_quote'); ?></blockquote>
+                                <blockquote>&ldquo;<?php echo get_field('life_quote'); ?>&rdquo;</blockquote>
                                 <div class="h6 u-caps u-mt-3">
-                                    <span class="u-font-size-sm"><?php echo get_field('life_quote_author'); ?></span>
+                                    <?php echo get_field('life_quote_author'); ?>
                                 </div>
                             </div>
                         </div>
