@@ -7,7 +7,7 @@ get_header(); ?>
         <section class="module u-bg-light-gray module--posts">
             <div class="module__content u-container">
                 <header class="module__header">
-                    <div class="module-title">News & Annoncements</div>
+                    <div class="module-title">News & Announcements</div>
                 </header>
                 <div class="module__body">
 					<?php 
