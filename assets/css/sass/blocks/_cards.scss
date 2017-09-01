@@ -341,7 +341,7 @@ TODO clean up the !important
             font-size: 2.4rem;
             letter-spacing: 0;
             @include media($md) {
-                font-size: 3.4rem;
+                font-size: rem(52);
             }
             color: white!important;
         }

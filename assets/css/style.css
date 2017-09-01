@@ -2230,7 +2230,7 @@ TODO clean up the !important
         .module--events-upcoming-list .card-title .h3,
         .module--events-upcoming-list .card-title h2,
         .module--events-upcoming-list .card-title h3 {
-          font-size: 3.4rem; } }
+          font-size: 3.25rem; } }
     @media screen and (min-width: 768px) {
       .module--events-upcoming-inline .card-title,
       .module--events-upcoming-list .card-title {
