@@ -7,6 +7,7 @@
             </div>
         </div>
 
+        <?php if ( has_post_thumbnail() ) : ?>
         <div class="image-positioner u-mb-2">
             <?php 
                 $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
@@ -14,9 +15,12 @@
             ?>
             <div data-href-link="<?php the_permalink();?>" class="image" <?php echo 'style="background-image: url(\'' . $imgSrc . '\');"'; ?>></div>
         </div>
+        <?php endif; ?>
 
+        <?php if ( get_the_content() ) : ?>
         <div class="discussion-leader-content u-text-center">
-            <?php echo the_content();?>
-        </div>        
+            <?php the_content(); ?>
+        </div>
+        <?php endif; ?>
     </div>
 </div>
