@@ -726,7 +726,8 @@
 			var ctClass = $(this).data('class'),
 				ctTarget = $(this).data('target'),
 				ctFocus = $(this).data('focus'),
-				ctRemoveOn = $(this).data('remove-on');
+				ctRemoveOn = $(this).data('remove-on'),
+				ctClearBefore = $(this).data('clear-before') || '';
 
 			if ( $(ctTarget).hasClass(ctClass) ) {
 				unsetState();
@@ -741,7 +742,7 @@
 			}
 
 			function setState() {
-				$(ctTarget).addClass(ctClass);
+				$(ctTarget).removeClass(ctClearBefore).addClass(ctClass);
 				$(ctFocus).focus();
 			}
 
