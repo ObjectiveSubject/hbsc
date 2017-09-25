@@ -183,6 +183,10 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
+        .h2,
+        .h3 {
+          font-size: rem(56);
+        }
         a {
             color: $dark-gray;
         }

@@ -3716,6 +3716,9 @@ caption {
       background-size: cover;
       background-position: center;
       padding-bottom: 80%; }
+    .event--discussion-leaders .discussion-leader .h2,
+    .event--discussion-leaders .discussion-leader .h3 {
+      font-size: 3.5rem; }
     .event--discussion-leaders .discussion-leader a {
       color: #272727; }
 

@@ -2,14 +2,14 @@
     <div class="discussion-leader__content">
         <div class="discussion-leader-name u-mb-1">
             <div class="u-text-center">
-                <div class="h2"><a href="<?php the_permalink();?>"><?php echo get_field('person_first_name');?></a></div>
-                <div class="h3"><a href="<?php the_permalink();?>"><?php echo get_field('person_last_name');?></a></div>
+                <div class="h2"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+                <div class="h3"><a href="<?php the_permalink();?>"><?php echo get_field('person_title');?></a></div>
             </div>
         </div>
 
         <?php if ( has_post_thumbnail() ) : ?>
         <div class="image-positioner u-mb-2">
-            <?php 
+            <?php
                 $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
                 $imgSrc = (isset($img[0]) ? $img[0] : '');
             ?>
