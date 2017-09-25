@@ -4791,8 +4791,8 @@ body.home .masterhead .site-menu.menu--body .logotype {
   .staff-member--item.staff-member--item-active .image--positionner {
     transition: opacity 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
     opacity: 1; }
-  .staff-member--item.staff-member--item-active .h2,
-  .staff-member--item.staff-member--item-active .h3 {
+  .staff-member--item.staff-member--item-active a .h2,
+  .staff-member--item.staff-member--item-active a .h3 {
     color: #e74949; }
   .staff-member--item .image--positionner {
     position: fixed;
@@ -4805,6 +4805,6 @@ body.home .masterhead .site-menu.menu--body .logotype {
     position: relative;
     z-index: 10;
     color: #272727;
-    font-size: 3rem; }
+    font-size: 2.5rem; }
 
 /*# sourceMappingURL=style.css.map */
