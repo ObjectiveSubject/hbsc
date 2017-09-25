@@ -1349,103 +1349,44 @@ h6,
   display: block;
   font-size: 0.88rem; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-body.home .preface-text,
-.h5,
-.h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, body.home .preface-text, .h5, .h6 {
   word-wrap: break-word; }
-  [class*='u-bg-'] h1, [class*='u-bg-']
-  h2, [class*='u-bg-']
-  h3, [class*='u-bg-']
-  h4, [class*='u-bg-']
-  h5, [class*='u-bg-']
-  h6, [class*='u-bg-']
-  .h1, [class*='u-bg-']
-  .h2, [class*='u-bg-']
-  .h3,
-  [class*='u-bg-']
-  .h4,
-  [class*='u-bg-'] body.home .preface-text,
-  body.home [class*='u-bg-'] .preface-text, [class*='u-bg-']
-  .h5, [class*='u-bg-']
-  .h6 {
+  [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
+  .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
     color: #dddad5; }
   .u-bg-white h1,
   .u-bg-light-gray h1,
-  .u-bg-tan h1, .u-bg-white
-  h2,
-  .u-bg-light-gray
-  h2,
-  .u-bg-tan
-  h2, .u-bg-white
-  h3,
-  .u-bg-light-gray
-  h3,
-  .u-bg-tan
-  h3, .u-bg-white
-  h4,
-  .u-bg-light-gray
-  h4,
-  .u-bg-tan
-  h4, .u-bg-white
-  h5,
-  .u-bg-light-gray
-  h5,
-  .u-bg-tan
-  h5, .u-bg-white
-  h6,
-  .u-bg-light-gray
-  h6,
-  .u-bg-tan
-  h6, .u-bg-white
+  .u-bg-tan h1, .u-bg-white h2,
+  .u-bg-light-gray h2,
+  .u-bg-tan h2, .u-bg-white h3,
+  .u-bg-light-gray h3,
+  .u-bg-tan h3, .u-bg-white h4,
+  .u-bg-light-gray h4,
+  .u-bg-tan h4, .u-bg-white h5,
+  .u-bg-light-gray h5,
+  .u-bg-tan h5, .u-bg-white h6,
+  .u-bg-light-gray h6,
+  .u-bg-tan h6, .u-bg-white
   .h1,
   .u-bg-light-gray
   .h1,
   .u-bg-tan
-  .h1, .u-bg-white
-  .h2,
-  .u-bg-light-gray
-  .h2,
-  .u-bg-tan
-  .h2, .u-bg-white
-  .h3,
-  .u-bg-light-gray
-  .h3,
-  .u-bg-tan
-  .h3,
-  .u-bg-white
-  .h4,
-  .u-bg-white body.home .preface-text,
-  body.home .u-bg-white .preface-text,
-  .u-bg-light-gray
-  .h4,
-  .u-bg-light-gray body.home .preface-text,
-  body.home
+  .h1, .u-bg-white .h2,
+  .u-bg-light-gray .h2,
+  .u-bg-tan .h2, .u-bg-white .h3,
+  .u-bg-light-gray .h3,
+  .u-bg-tan .h3, .u-bg-white .h4, .u-bg-white body.home .preface-text, body.home .u-bg-white .preface-text,
+  .u-bg-light-gray .h4,
+  .u-bg-light-gray body.home .preface-text, body.home
   .u-bg-light-gray .preface-text,
-  .u-bg-tan
-  .h4,
-  .u-bg-tan body.home .preface-text,
-  body.home
-  .u-bg-tan .preface-text, .u-bg-white
-  .h5,
-  .u-bg-light-gray
-  .h5,
-  .u-bg-tan
-  .h5, .u-bg-white
-  .h6,
-  .u-bg-light-gray
-  .h6,
-  .u-bg-tan
-  .h6 {
+  .u-bg-tan .h4,
+  .u-bg-tan body.home .preface-text, body.home
+  .u-bg-tan .preface-text, .u-bg-white .h5,
+  .u-bg-light-gray .h5,
+  .u-bg-tan .h5, .u-bg-white .h6,
+  .u-bg-light-gray .h6,
+  .u-bg-tan .h6 {
     color: #272727; }
 
 /* Links
@@ -2276,6 +2217,11 @@ TODO clean up the !important
 .single-event .card.badge h3 {
   color: white !important; }
 
+@media screen and (max-width: 768px) {
+  .card-content h2,
+  .card-content h3 {
+    font-size: 3.5rem; } }
+
 .module--carousel .card-content,
 .module--events-upcoming-list .card-content {
   flex-grow: 1;
@@ -2302,11 +2248,6 @@ TODO clean up the !important
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
-  .module--carousel .card-content h2,
-  .module--carousel .card-content h3,
-  .module--events-upcoming-list .card-content h2,
-  .module--events-upcoming-list .card-content h3 {
-    font-size: 3rem; }
 
 .card-content ul {
   list-style-type: disc;
@@ -4421,16 +4362,17 @@ body.home .preface-text {
       padding-left: 2rem;
       padding-top: 0; } }
 
-body.home .card-content .h2, body.home .card-content h2, body.home .card-content h3, body.home .card-content .h3 {
-  font-size: 5.5rem; }
+@media screen and (min-width: 768px) {
+  body.home .card-content .h2, body.home .card-content h2, body.home .card-content h3, body.home .card-content .h3 {
+    font-size: 5.5rem; } }
 
-body.home .life-links-section .module__body ul {
+body.home .card-content .life-links-section .module__body ul {
   padding-left: 0;
   padding-bottom: 1rem;
   background-size: cover;
   background-position: center; }
   @media screen and (min-width: 768px) {
-    body.home .life-links-section .module__body ul {
+    body.home .card-content .life-links-section .module__body ul {
       width: 60%; } }
 
 .site-header {

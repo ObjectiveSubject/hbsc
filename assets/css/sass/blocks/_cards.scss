@@ -382,16 +382,18 @@ TODO clean up the !important
 
 .card-content {
     @extend .u-my-3;
+    @include media($md, max) {
+      h2,
+      h3 {
+          font-size: 3.5rem;
+      }
+    }
     .module--carousel &,
     .module--events-upcoming-list & {
         flex-grow: 1;
         @include display(flex);
         @include flex-direction(column);
         @include justify-content(center);
-        h2,
-        h3 {
-            font-size: 3rem;
-        }
     }
     ul {
         list-style-type: disc;

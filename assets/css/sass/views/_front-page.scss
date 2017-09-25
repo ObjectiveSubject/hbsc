@@ -26,26 +26,24 @@ body.home {
             padding-top: 0;
         }
     }
-    .card-content
-    {
-    @include media($md)
-
-        .h2, h2, h3, .h3
-        {
-            font-size: 5.5rem;
-        }
-    }
-    .life-links-section {
-        .module__body {
-            ul {
-                padding-left: 0;
-                padding-bottom: 1rem;
-                background-size: cover;
-                background-position: center;
-                @include media($md) {
-                    width: 60%;
-                }
-            }
-        }
-    }
+    .card-content {
+      @include media($md) {
+          .h2, h2, h3, .h3 {
+              font-size: 5.5rem;
+          }
+      }
+      .life-links-section {
+          .module__body {
+              ul {
+                  padding-left: 0;
+                  padding-bottom: 1rem;
+                  background-size: cover;
+                  background-position: center;
+                  @include media($md) {
+                      width: 60%;
+                  }
+              }
+          }
+      }
+   }
 }
