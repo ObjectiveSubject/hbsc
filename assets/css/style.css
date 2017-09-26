@@ -1289,7 +1289,7 @@ textarea {
 h1,
 .h1 {
   display: block;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1;
   font-weight: normal;
   margin: 0; }
@@ -1301,7 +1301,7 @@ h1,
 h2,
 .h2 {
   display: block;
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: .82;
   font-weight: normal;
   margin: 0; }
@@ -1313,7 +1313,7 @@ h2,
 h3,
 .h3 {
   display: block;
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: .82;
   font-weight: normal;
   margin: 0; }

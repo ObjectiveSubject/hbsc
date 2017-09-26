@@ -29,7 +29,7 @@ h1,
 .h1 {
     @include display(block);
     @extend .u-font-rama-gothic;
-    font-size: rem(64);
+    font-size: rem(56);
     line-height: 1;
     font-weight: normal;
     margin: 0;
@@ -42,7 +42,7 @@ h2,
 .h2 {
     @include display(block);
     @extend .u-font-rama-gothic;
-    font-size: rem(56);
+    font-size: rem(48);
     line-height: .82;
     font-weight: normal;
     margin: 0;
@@ -55,7 +55,7 @@ h3,
 .h3 {
     @include display(block);
     @extend .u-font-rama-slab;
-    font-size: rem(56);
+    font-size: rem(48);
     line-height: .82;
     font-weight: normal;
     margin: 0;
