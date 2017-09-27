@@ -15,7 +15,7 @@
            <input data-id="url:input" type="hidden" name="url" value="">
            <input data-id="Email Address:input" type="text" name="email" class="u-mr-1" value="" maxlength="80">
            <button type="submit" class="button" data-enabled="enabled">Sign Up</button>
-       	<div><p class="ctct-form-footer">By submitting this form, you are granting: Harriet Beecher Stowe Center, 77 Forest Street, Hartford, Connecticut, 06105, United States, http://www.harrietbeecherstowe.org permission to email you. You may unsubscribe via the link found at the bottom of every email.  (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p></div>
+       	<div class="u-display-none"><p class="ctct-form-footer">By submitting this form, you are granting: Harriet Beecher Stowe Center, 77 Forest Street, Hartford, Connecticut, 06105, United States, http://www.harrietbeecherstowe.org permission to email you. You may unsubscribe via the link found at the bottom of every email.  (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p></div>
        </form>
    </div>
 </div>
