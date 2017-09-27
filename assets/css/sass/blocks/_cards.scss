@@ -408,9 +408,9 @@ TODO clean up the !important
     }
     [class*='u-bg-']>& {
         color: white;
-        @extend .u-transition-300;
         *, h2, h3 {
             color: white;
+            @extend .u-transition-300;
         }
         a {
           color: $red;
