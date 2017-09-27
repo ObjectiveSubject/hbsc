@@ -82,7 +82,9 @@
 .event--past-salon__content {
     position: relative;
     .image-positioner {
-        margin-left: 4rem;
+        @include media ($sm) {
+          margin-left: 4rem;
+        }
         .image {
             min-height: 20rem;
             background-size: cover;
