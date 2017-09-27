@@ -1626,6 +1626,7 @@ hr {
     .module--past-salons .badge-positioner .badge {
       padding: 1rem 3rem;
       width: fit-content;
+      height: auto;
       margin: 0 auto; }
     .module--post-list .badge-positioner .badge {
       padding: 1rem 3rem;
