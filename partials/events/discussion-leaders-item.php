@@ -2,8 +2,8 @@
     <div class="discussion-leader__content">
         <div class="discussion-leader-name u-mb-1">
             <div class="u-text-center">
-                <div class="h2"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
-                <div class="h3"><a href="<?php the_permalink();?>"><?php echo get_field('person_title');?></a></div>
+                <div class="h2"><?php the_title();?></div>
+                <div class="h3"><?php echo get_field('person_title');?></div>
             </div>
         </div>
 
