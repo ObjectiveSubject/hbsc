@@ -52,11 +52,11 @@
 
     .module--past-salons & {
       top: 0;
+      bottom: initial;
       width: 100%;
       transform: translateY(-50%);
       @include media($sm) {
         top: 2.5rem;
-        bottom:initial;
         width: auto;
         transform: none;
       }
@@ -90,7 +90,6 @@
             @extend .u-bg-dark-gray;
             padding: 1rem 3rem;
             width: fit-content;
-            bottom: initial;
             margin: 0 auto;
         }
 
