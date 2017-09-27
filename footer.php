@@ -90,11 +90,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="newsletter footer-column">
-                        <span class="u-font-miller u-mr-1">Newsletter</span>
-                        <form action="###" method="post" class="u-display-inline">
-                            <input type="text" class="u-mr-1">
-                            <button class="button">Sign Up</button>
-                        </form>
+                        <?php get_template_part( 'partials/footer', 'newsletter' ); ?>
                     </div>
                 </div>
                 <div class="footer-row">
