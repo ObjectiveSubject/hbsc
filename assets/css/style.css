@@ -2029,7 +2029,7 @@ TODO clean up the !important
     @media screen and (min-width: 768px) {
       .card-event-register.item--scrolled {
         position: fixed;
-        top: 1.5rem;
+        top: 2.25rem;
         right: calc((100% - 53.5rem) * .5);
         width: auto;
         max-width: inherit; } }
