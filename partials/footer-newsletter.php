@@ -3,10 +3,10 @@
 <div class="ctct-embed-signup">
    <div>
        <span id="success_message" style="display:none;">
-           Thanks for signing up to our
+           Thanks for signing up!
        </span>
-       <span class="u-mr-1">Newsletter</span>
        <form data-id="embedded_signup:form" class="ctct-custom-form Form u-display-inline" name="embedded_signup" method="POST" action="https://visitor2.constantcontact.com/api/signup">
+           <span class="u-mr-1">Newsletter</span>
            <!-- The following code must be included to ensure your sign-up form works properly. -->
            <input data-id="ca:input" type="hidden" name="ca" value="f921e022-3993-4886-9452-ba89fd02789b">
            <input data-id="list:input" type="hidden" name="list" value="1">
