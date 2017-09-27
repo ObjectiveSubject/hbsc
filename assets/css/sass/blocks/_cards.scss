@@ -145,7 +145,7 @@ TODO clean up the !important
         justify-content: center;
         padding: 3rem 1.5rem;
         @include media($sm) {
-          margin-left: 0 0 0 4rem;
+          margin-left: 4rem;
         }
     }
     .card-event-details {

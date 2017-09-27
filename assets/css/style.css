@@ -1933,7 +1933,7 @@ TODO clean up the !important
     padding: 3rem 1.5rem; }
     @media screen and (min-width: 500px) {
       .module--past-salons .card {
-        margin-left: 0 0 0 4rem; } }
+        margin-left: 4rem; } }
   .card .card-event-details {
     -webkit-box-pack: distribute;
     -moz-box-pack: distribute;
