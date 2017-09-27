@@ -99,7 +99,7 @@
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Use</a>
                     </div>
-										<div class="footer-column u-font-size-sm u-color-gray" style="text-align: right;">By submitting this form, you are granting: Harriet Beecher Stowe Center, 77 Forest Street, Hartford, Connecticut, 06105, United States, http://www.harrietbeecherstowe.org permission to email you. You may unsubscribe via the link found at the bottom of every email. (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</div>
+										<div class="footer-column u-font-size-sm u-color-gray u-display-block-md" style="text-align: right;">By submitting this form, you are granting: Harriet Beecher Stowe Center, 77 Forest Street, Hartford, Connecticut, 06105, United States, http://www.harrietbeecherstowe.org permission to email you. You may unsubscribe via the link found at the bottom of every email. (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</div>
                 </div>
             </div>
         </div>
