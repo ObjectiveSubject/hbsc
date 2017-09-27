@@ -63,8 +63,7 @@ html {
 .u-color-dark-gray {
   color: #272727 !important; }
 
-.u-bg-dark-gray, .module--past-salons .badge-positioner .badge,
-.module--post-list .badge-positioner .badge {
+.u-bg-dark-gray, .module--past-salons .badge-positioner .badge, .module--post-list .badge-positioner .badge {
   background-color: #272727 !important; }
 
 .u-color-gray {
@@ -1456,8 +1455,7 @@ blockquote {
   blockquote p {
     margin: 0; }
   .u-bg-red blockquote, .badge-positioner .badge blockquote,
-  .u-bg-dark-gray blockquote, .module--past-salons .badge-positioner .badge blockquote,
-  .module--post-list .badge-positioner .badge blockquote {
+  .u-bg-dark-gray blockquote, .module--past-salons .badge-positioner .badge blockquote, .module--post-list .badge-positioner .badge blockquote {
     color: white; }
   .u-bg-blue blockquote {
     color: #dddad5; }
@@ -1572,8 +1570,15 @@ hr {
         left: auto;
         bottom: initial; } }
   .module--past-salons .badge-positioner {
-    top: 2.5rem;
-    bottom: initial; }
+    top: 0;
+    width: 100%;
+    transform: translateY(-50%); }
+    @media screen and (min-width: 500px) {
+      .module--past-salons .badge-positioner {
+        top: 2.5rem;
+        bottom: initial;
+        width: auto;
+        transform: none; } }
   .module--post-list .badge-positioner {
     top: 0;
     position: relative;
@@ -1618,7 +1623,11 @@ hr {
     width: 9rem;
     color: white;
     text-align: center; }
-    .module--past-salons .badge-positioner .badge,
+    .module--past-salons .badge-positioner .badge {
+      padding: 1rem 3rem;
+      width: fit-content;
+      height: auto;
+      margin: 0 auto; }
     .module--post-list .badge-positioner .badge {
       padding: 1rem 3rem;
       width: auto;
@@ -2194,29 +2203,21 @@ TODO clean up the !important
       .module--events-upcoming-list .card-title {
         margin-bottom: 1rem; } }
 
-.single-event .card.u-bg-dark-gray .h2, .single-event .module--past-salons .badge-positioner .card.badge .h2, .module--past-salons .badge-positioner .single-event .card.badge .h2, .single-event
-.module--post-list .badge-positioner .card.badge .h2,
-.module--post-list .badge-positioner .single-event .card.badge .h2,
+.single-event .card.u-bg-dark-gray .h2, .single-event .module--past-salons .badge-positioner .card.badge .h2, .module--past-salons .badge-positioner .single-event .card.badge .h2, .single-event .module--post-list .badge-positioner .card.badge .h2, .module--post-list .badge-positioner .single-event .card.badge .h2,
 .single-event .card.u-bg-dark-gray .h3,
 .single-event .module--past-salons .badge-positioner .card.badge .h3, .module--past-salons .badge-positioner
 .single-event .card.badge .h3,
-.single-event
-.module--post-list .badge-positioner .card.badge .h3,
-.module--post-list .badge-positioner
+.single-event .module--post-list .badge-positioner .card.badge .h3, .module--post-list .badge-positioner
 .single-event .card.badge .h3,
 .single-event .card.u-bg-dark-gray h2,
 .single-event .module--past-salons .badge-positioner .card.badge h2, .module--past-salons .badge-positioner
 .single-event .card.badge h2,
-.single-event
-.module--post-list .badge-positioner .card.badge h2,
-.module--post-list .badge-positioner
+.single-event .module--post-list .badge-positioner .card.badge h2, .module--post-list .badge-positioner
 .single-event .card.badge h2,
 .single-event .card.u-bg-dark-gray h3,
 .single-event .module--past-salons .badge-positioner .card.badge h3, .module--past-salons .badge-positioner
 .single-event .card.badge h3,
-.single-event
-.module--post-list .badge-positioner .card.badge h3,
-.module--post-list .badge-positioner
+.single-event .module--post-list .badge-positioner .card.badge h3, .module--post-list .badge-positioner
 .single-event .card.badge h3 {
   color: white !important; }
 
@@ -2291,15 +2292,11 @@ TODO clean up the !important
     .card.u-bg-tan > .card-content a blockquote {
       color: #e74949; }
 
-.card.u-bg-dark-gray .card-content a, .module--past-salons .badge-positioner .card.badge .card-content a,
-.module--post-list .badge-positioner .card.badge .card-content a {
+.card.u-bg-dark-gray .card-content a, .module--past-salons .badge-positioner .card.badge .card-content a, .module--post-list .badge-positioner .card.badge .card-content a {
   color: #e74949; }
-  .card.u-bg-dark-gray .card-content a em, .module--past-salons .badge-positioner .card.badge .card-content a em,
-  .module--post-list .badge-positioner .card.badge .card-content a em, .card.u-bg-dark-gray .card-content a blockquote, .module--past-salons .badge-positioner .card.badge .card-content a blockquote,
-  .module--post-list .badge-positioner .card.badge .card-content a blockquote {
+  .card.u-bg-dark-gray .card-content a em, .module--past-salons .badge-positioner .card.badge .card-content a em, .module--post-list .badge-positioner .card.badge .card-content a em, .card.u-bg-dark-gray .card-content a blockquote, .module--past-salons .badge-positioner .card.badge .card-content a blockquote, .module--post-list .badge-positioner .card.badge .card-content a blockquote {
     color: #e74949; }
-  .card.u-bg-dark-gray .card-content a:hover, .module--past-salons .badge-positioner .card.badge .card-content a:hover,
-  .module--post-list .badge-positioner .card.badge .card-content a:hover {
+  .card.u-bg-dark-gray .card-content a:hover, .module--past-salons .badge-positioner .card.badge .card-content a:hover, .module--post-list .badge-positioner .card.badge .card-content a:hover {
     color: #f0efed; }
 
 .module--events-upcoming-inline .card-content,

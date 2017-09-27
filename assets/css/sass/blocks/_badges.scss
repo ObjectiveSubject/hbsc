@@ -25,10 +25,10 @@
         right: initial;
         bottom: initial;
         top: 2rem;
-        
+
         @include media($md)
         {
-            left: 7.25rem;       
+            left: 7.25rem;
             right: initial;
             bottom: initial;
         }
@@ -50,10 +50,16 @@
         }
     }
 
-    .module--past-salons &
-    {
+    .module--past-salons & {
+      top: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      @include media($sm) {
         top: 2.5rem;
         bottom:initial;
+        width: auto;
+        transform: none;
+      }
     }
 
     .module--post-list &
@@ -78,8 +84,16 @@
         .module--carousel & {
             @extend .u-mb-3;
         }
-        
-        .module--past-salons &,
+
+        .module--past-salons &
+        {
+            @extend .u-bg-dark-gray;
+            padding: 1rem 3rem;
+            width: fit-content;
+            height: auto;
+            margin: 0 auto;
+        }
+
         .module--post-list &
         {
             @extend .u-bg-dark-gray;
@@ -103,5 +117,5 @@
                 color: white;
             }
         }
-    }    
+    }
 }
