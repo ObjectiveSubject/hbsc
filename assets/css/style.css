@@ -175,7 +175,7 @@ html {
 .u-overflow-hidden {
   overflow: hidden; }
 
-.u-transition-300, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .dropdown__title, .image-gallery li a, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .participant--item .participant--image, .utility-item--search .search-form .search-submit, .site-menu-toggle, .site-mobile-menu-toggle span {
+.u-transition-300, [class*='u-bg-'] > .card-content, .carousel-slide__content .image, .slick-controls, .slick-dots li button, .dropdown__title, .image-gallery li a, .logo g, .logo g > *, .header-menu .menu-item a, .event--upcoming__content .image, .participant--item .participant--image, .utility-item--search .search-form .search-submit, .site-menu-toggle, .site-mobile-menu-toggle span {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   transition: all 300ms ease; }
