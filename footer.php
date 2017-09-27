@@ -119,7 +119,7 @@
     })
 </script>
 
-<span class="media-size"></span>
+<!-- <span class="media-size"></span> -->
 
 </body>
 </html>
