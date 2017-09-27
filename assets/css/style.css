@@ -2258,18 +2258,16 @@ TODO clean up the !important
 
 [class*='u-bg-'] > .card-content {
   color: white; }
-  [class*='u-bg-'] > .card-content *,
-  [class*='u-bg-'] > .card-content h2,
-  [class*='u-bg-'] > .card-content h3 {
+  [class*='u-bg-'] > .card-content *, [class*='u-bg-'] > .card-content h2, [class*='u-bg-'] > .card-content h3 {
     color: white; }
+  [class*='u-bg-'] > .card-content a {
+    color: #e74949; }
 
 .card.u-bg-white > .card-content,
 .card.u-bg-light-gray > .card-content,
 .card.u-bg-tan > .card-content {
   color: #272727; }
-  .card.u-bg-white > .card-content h2,
-  .card.u-bg-white > .card-content h3,
-  .card.u-bg-white > .card-content *,
+  .card.u-bg-white > .card-content h2, .card.u-bg-white > .card-content h3, .card.u-bg-white > .card-content *,
   .card.u-bg-light-gray > .card-content h2,
   .card.u-bg-light-gray > .card-content h3,
   .card.u-bg-light-gray > .card-content *,
@@ -2277,6 +2275,10 @@ TODO clean up the !important
   .card.u-bg-tan > .card-content h3,
   .card.u-bg-tan > .card-content * {
     color: #272727; }
+  .card.u-bg-white > .card-content a,
+  .card.u-bg-light-gray > .card-content a,
+  .card.u-bg-tan > .card-content a {
+    color: #e74949; }
 
 .card.u-bg-dark-gray .card-content a, .module--past-salons .badge-positioner .card.badge .card-content a,
 .module--post-list .badge-positioner .card.badge .card-content a {

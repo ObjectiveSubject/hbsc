@@ -405,20 +405,22 @@ TODO clean up the !important
     }
     [class*='u-bg-']>& {
         color: white;
-        *,
-        h2,
-        h3 {
+        *, h2, h3 {
             color: white;
+        }
+        a {
+          color: $red;
         }
     }
     .card.u-bg-white>&,
     .card.u-bg-light-gray>&,
     .card.u-bg-tan>& {
         color: $dark-gray;
-        h2,
-        h3,
-        * {
+        h2, h3, * {
             color: $dark-gray;
+        }
+        a {
+          color: $red;
         }
     }
     .card.u-bg-dark-gray & {
