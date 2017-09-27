@@ -2262,6 +2262,8 @@ TODO clean up the !important
     color: white; }
   [class*='u-bg-'] > .card-content a {
     color: #e74949; }
+    [class*='u-bg-'] > .card-content a em, [class*='u-bg-'] > .card-content a blockquote {
+      color: #e74949; }
 
 .card.u-bg-white > .card-content,
 .card.u-bg-light-gray > .card-content,
@@ -2279,10 +2281,20 @@ TODO clean up the !important
   .card.u-bg-light-gray > .card-content a,
   .card.u-bg-tan > .card-content a {
     color: #e74949; }
+    .card.u-bg-white > .card-content a em, .card.u-bg-white > .card-content a blockquote,
+    .card.u-bg-light-gray > .card-content a em,
+    .card.u-bg-light-gray > .card-content a blockquote,
+    .card.u-bg-tan > .card-content a em,
+    .card.u-bg-tan > .card-content a blockquote {
+      color: #e74949; }
 
 .card.u-bg-dark-gray .card-content a, .module--past-salons .badge-positioner .card.badge .card-content a,
 .module--post-list .badge-positioner .card.badge .card-content a {
   color: #e74949; }
+  .card.u-bg-dark-gray .card-content a em, .module--past-salons .badge-positioner .card.badge .card-content a em,
+  .module--post-list .badge-positioner .card.badge .card-content a em, .card.u-bg-dark-gray .card-content a blockquote, .module--past-salons .badge-positioner .card.badge .card-content a blockquote,
+  .module--post-list .badge-positioner .card.badge .card-content a blockquote {
+    color: #e74949; }
   .card.u-bg-dark-gray .card-content a:hover, .module--past-salons .badge-positioner .card.badge .card-content a:hover,
   .module--post-list .badge-positioner .card.badge .card-content a:hover {
     color: #f0efed; }
