@@ -1571,12 +1571,12 @@ hr {
         bottom: initial; } }
   .module--past-salons .badge-positioner {
     top: 0;
+    bottom: initial;
     width: 100%;
     transform: translateY(-50%); }
     @media screen and (min-width: 500px) {
       .module--past-salons .badge-positioner {
         top: 2.5rem;
-        bottom: initial;
         width: auto;
         transform: none; } }
   .module--post-list .badge-positioner {
@@ -1626,7 +1626,6 @@ hr {
     .module--past-salons .badge-positioner .badge {
       padding: 1rem 3rem;
       width: fit-content;
-      height: auto;
       margin: 0 auto; }
     .module--post-list .badge-positioner .badge {
       padding: 1rem 3rem;
@@ -2266,8 +2265,12 @@ TODO clean up the !important
     color: white; }
   [class*='u-bg-'] > .card-content a {
     color: #e74949; }
+    [class*='u-bg-'] > .card-content a:hover {
+      color: white; }
     [class*='u-bg-'] > .card-content a em, [class*='u-bg-'] > .card-content a blockquote {
       color: #e74949; }
+      [class*='u-bg-'] > .card-content a em:hover, [class*='u-bg-'] > .card-content a blockquote:hover {
+        color: white; }
 
 .card.u-bg-white > .card-content,
 .card.u-bg-light-gray > .card-content,
@@ -2285,19 +2288,31 @@ TODO clean up the !important
   .card.u-bg-light-gray > .card-content a,
   .card.u-bg-tan > .card-content a {
     color: #e74949; }
+    .card.u-bg-white > .card-content a:hover,
+    .card.u-bg-light-gray > .card-content a:hover,
+    .card.u-bg-tan > .card-content a:hover {
+      color: white; }
     .card.u-bg-white > .card-content a em, .card.u-bg-white > .card-content a blockquote,
     .card.u-bg-light-gray > .card-content a em,
     .card.u-bg-light-gray > .card-content a blockquote,
     .card.u-bg-tan > .card-content a em,
     .card.u-bg-tan > .card-content a blockquote {
       color: #e74949; }
+      .card.u-bg-white > .card-content a em:hover, .card.u-bg-white > .card-content a blockquote:hover,
+      .card.u-bg-light-gray > .card-content a em:hover,
+      .card.u-bg-light-gray > .card-content a blockquote:hover,
+      .card.u-bg-tan > .card-content a em:hover,
+      .card.u-bg-tan > .card-content a blockquote:hover {
+        color: white; }
 
 .card.u-bg-dark-gray .card-content a, .module--past-salons .badge-positioner .card.badge .card-content a, .module--post-list .badge-positioner .card.badge .card-content a {
   color: #e74949; }
+  .card.u-bg-dark-gray .card-content a:hover, .module--past-salons .badge-positioner .card.badge .card-content a:hover, .module--post-list .badge-positioner .card.badge .card-content a:hover {
+    color: white; }
   .card.u-bg-dark-gray .card-content a em, .module--past-salons .badge-positioner .card.badge .card-content a em, .module--post-list .badge-positioner .card.badge .card-content a em, .card.u-bg-dark-gray .card-content a blockquote, .module--past-salons .badge-positioner .card.badge .card-content a blockquote, .module--post-list .badge-positioner .card.badge .card-content a blockquote {
     color: #e74949; }
-  .card.u-bg-dark-gray .card-content a:hover, .module--past-salons .badge-positioner .card.badge .card-content a:hover, .module--post-list .badge-positioner .card.badge .card-content a:hover {
-    color: #f0efed; }
+    .card.u-bg-dark-gray .card-content a em:hover, .module--past-salons .badge-positioner .card.badge .card-content a em:hover, .module--post-list .badge-positioner .card.badge .card-content a em:hover, .card.u-bg-dark-gray .card-content a blockquote:hover, .module--past-salons .badge-positioner .card.badge .card-content a blockquote:hover, .module--post-list .badge-positioner .card.badge .card-content a blockquote:hover {
+      color: white; }
 
 .module--events-upcoming-inline .card-content,
 .module--events-upcoming-list .card-content {

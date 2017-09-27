@@ -413,8 +413,14 @@ TODO clean up the !important
         }
         a {
           color: $red;
+          &:hover {
+              color: white;
+          }
           em {
             color: $red;
+            &:hover {
+                color: white;
+            }
           }
         }
     }
@@ -427,19 +433,28 @@ TODO clean up the !important
         }
         a {
           color: $red;
+          &:hover {
+              color: white;
+          }
           em {
             color: $red;
+            &:hover {
+                color: white;
+            }
           }
         }
     }
     .card.u-bg-dark-gray & {
         a {
             color: $red;
+            &:hover {
+                color: white;
+            }
             em {
               color: $red;
-            }
-            &:hover {
-                color: $light-gray;
+              &:hover {
+                  color: white;
+              }
             }
         }
     }
