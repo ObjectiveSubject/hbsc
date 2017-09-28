@@ -129,8 +129,7 @@ TODO clean up the !important
         @include justify-content(center);
         background-color: rgba(39, 39, 39, 0.6)!important;
         width: 100%;
-        min-height: 18.5rem;
-        padding: 2rem 3rem 7rem 3rem;
+        padding: 2rem 2rem 7rem;
         @include media($md) {
             width: 22.5rem;
             min-height: 26.5rem;

@@ -54,6 +54,7 @@
       top: 0;
       bottom: initial;
       width: 100%;
+      text-align: center;
       transform: translateY(-50%);
       @include media($sm) {
         top: 2.5rem;
@@ -88,8 +89,9 @@
         .module--past-salons &
         {
             @extend .u-bg-dark-gray;
+            display: inline-block;
             padding: 1rem 3rem;
-            width: fit-content;
+            width: auto;
             height: auto;
             margin: 0 auto;
         }
