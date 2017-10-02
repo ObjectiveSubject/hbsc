@@ -46,7 +46,7 @@
 <section id="module-<?php echo $post->ID;?>" class="module module--hero has-background" <?php echo 'style="background-image: url(' . $imgSrc . ')"'; ?>>
     <div class="module__content u-container u-flex-justify-center" style="max-width:50.5rem;">
         <div class="card-positioner card-positioner-fullwidth">
-            <?php 
+            <?php
             $show_reg_link = get_field('event_registration_open');
             $event_reg_url = get_field('event_registration_url');
             if( $show_reg_link && $event_reg_url ) : ?>

@@ -8,7 +8,7 @@ function humanizeDate( $dateStr = null )
 
     $dt = \DateTime::createFromFormat( 'Y-m-d', $dateStr );
 
-    return $dt->format('F, jS Y');
+    return $dt->format('F jS, Y');
 }
 
 function isDateOlderThanNow( $dateStr )
@@ -30,7 +30,7 @@ function getMostViewsPosts( array $args = array())
     global $wpdb;
 
     $postTypes = array('post', 'page', 'event', 'people');
-    
+
     if( !array_key_exists( 'post_type', $args ) )
     {
         $args['post_type'] = $postTypes;
@@ -41,7 +41,7 @@ function getMostViewsPosts( array $args = array())
     $query = "SELECT DISTINCT W.ID, M.meta_value, W.post_date
             FROM wp_posts W
             LEFT JOIN wp_postmeta as M
-            ON W.ID = M.post_id 
+            ON W.ID = M.post_id
             AND M.meta_key = 'views_count'
             AND W.post_type in (%s)
             ORDER BY M.meta_value DESC, W.post_date DESC";
@@ -63,7 +63,7 @@ function getViewsCount($postID)
 
 function incrementViewsCount($postID)
 {
-    $countKey = 'views_count';    
+    $countKey = 'views_count';
     $count    = (int) get_post_meta($postID, $countKey, true);
     $count++;
 
@@ -86,7 +86,7 @@ function postUpdateViews( $post_id, $post, $update )
 
     if( !$viewsCount )
     {
-        incrementViewsCount($post_id);    
+        incrementViewsCount($post_id);
     }
 
     return;
@@ -106,7 +106,7 @@ function getHeaderMenuItemsFirstLevel()
     }
 
     $menuID = $menuLocations['header'];
-    $primaryNav = wp_get_nav_menu_items($menuID); 
+    $primaryNav = wp_get_nav_menu_items($menuID);
 
     if ( ! empty( $primaryNav ) ) {
 
@@ -118,13 +118,13 @@ function getHeaderMenuItemsFirstLevel()
                 $lastParentId = $navItem->ID;
                 $lastParentChild = false;
             }
-    
+
             if( $navItem->menu_item_parent == $lastParentId && $lastParentChild == false )
             {
                 $lastParentChild = true;
                 $lastIndex = count($footerNavList) - 1;
                 $lastIndex = ( $lastIndex < 0 ? 0 : $lastIndex );
-    
+
                 if( empty( $footerNavList[$lastIndex]->url ) || $footerNavList[$lastIndex]->url == '#' )
                 {
                     $footerNavList[$lastIndex]->url = $navItem->url;
