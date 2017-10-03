@@ -13,7 +13,9 @@
            <input data-id="source:input" type="hidden" name="source" value="EFD">
            <input data-id="required:input" type="hidden" name="required" value="list,email">
            <input data-id="url:input" type="hidden" name="url" value="">
-           <input data-id="Email Address:input" type="text" name="email" class="u-mr-1" value="" maxlength="80">
+           <input data-id="First Name:input" type="text" name="first_name" class="u-mr-1" placeholder="First Name" value="" maxlength="50" required>
+           <input data-id="Last Name:input" type="text" name="last_name" class="u-mr-1" placeholder="Last Name" value="" maxlength="50" required>
+           <input data-id="Email Address:input" type="text" name="email" class="u-mr-1" placeholder="Email" value="" maxlength="80" required>
            <button type="submit" class="button" data-enabled="enabled">Sign Up</button>
        	<div class="u-display-none"><p class="ctct-form-footer">By submitting this form, you are granting: Harriet Beecher Stowe Center, 77 Forest Street, Hartford, Connecticut, 06105, United States, http://www.harrietbeecherstowe.org permission to email you. You may unsubscribe via the link found at the bottom of every email.  (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p></div>
        </form>
