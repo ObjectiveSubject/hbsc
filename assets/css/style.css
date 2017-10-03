@@ -4282,7 +4282,7 @@ div.zabuto_calendar div.legend span.badge-today {
       flex: 1 0 50%;
       text-align: left; }
       .footer-column.footer-social {
-        flex: 1 0 30%; } }
+        flex: 1 0 auto; } }
 
 .footer-nav {
   display: flex;
