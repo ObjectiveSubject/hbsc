@@ -139,6 +139,7 @@ function modify_queries( $query ) {
 		&& 'edit.php' == $pagenow 
 		&& ( get_query_var('post_type') && 'page' == get_query_var('post_type') ) 
 		&& ! in_array( get_current_user_id(), array( 5, 8, 13 ) ) // only allow access to ids (Jessica, Katherine, Maria)
+		|| ! is_admin() && $query->is_search // hide from public searches
 	) {
 		$query->set( 'post__not_in', array( 807 ) ); // Board page (id: 807)
 	}
