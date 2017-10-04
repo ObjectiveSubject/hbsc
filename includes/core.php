@@ -131,6 +131,20 @@ function modify_queries( $query ) {
 
 	}
 
+	global $pagenow;
+
+	// Board page only visible to certain users
+	if ( 
+		is_admin() 
+		&& 'edit.php' == $pagenow 
+		&& ( get_query_var('post_type') && 'page' == get_query_var('post_type') ) 
+		&& ! in_array( get_current_user_id(), array( 5, 8, 13 ) ) // only allow access to ids (Jessica, Katherine, Maria)
+	) {
+		$query->set( 'post__not_in', array( 807 ) ); // Board page (id: 807)
+	}
+
+	return $query;
+
 }
 
 /**
