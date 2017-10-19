@@ -18,6 +18,13 @@
     $postsSortbyList = array(
         'recent' => array(
             'post_type'      => 'event',
+            'tax_query' => array(
+          		array(
+          			'taxonomy' => 'event-type',
+          			'field'    => 'slug',
+          			'terms'    => 'salons-at-stowe',
+          		),
+          	),
             'posts_per_page' => -1,
             'order'          => 'DESC',
             'meta_key'		 => 'event_start_date',
@@ -37,6 +44,13 @@
         ),
         'most_viewed' => array(
             'post_type'      => 'event',
+            'tax_query' => array(
+          		array(
+          			'taxonomy' => 'event-type',
+          			'field'    => 'slug',
+          			'terms'    => 'salons-at-stowe',
+          		),
+          	),
             'posts_per_page' => -1,
             'order'          => 'DESC',
             'meta_key'		 => 'views_count',
@@ -58,6 +72,13 @@
         ),
         'most_discussed' => array(
             'post_type'      => 'event',
+            'tax_query' => array(
+          		array(
+          			'taxonomy' => 'event-type',
+          			'field'    => 'slug',
+          			'terms'    => 'salons-at-stowe',
+          		),
+          	),
             'posts_per_page' => -1,
             'order'          => 'DESC',
             'meta_key'		 => 'event_start_date',
