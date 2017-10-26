@@ -105,7 +105,7 @@
                         <span class="event-item-content"><?php echo get_field('event_location');?></span>
                     </div>
                     <div class="card-event-item">
-                        <span class="event-item-title">Doors Open & Reception</span>
+                        <span class="event-item-title">Doors Open</span>
                         <span class="event-item-content"><?php echo get_field('event_doors_open');?></span>
                     </div>
                     <div class="card-event-item">
