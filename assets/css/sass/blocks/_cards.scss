@@ -406,23 +406,25 @@ TODO clean up the !important
             text-align: left;
         }
     }
-    [class*='u-bg-']>& {
+    [class*='u-bg-'] > & {
         color: white;
-        *, h2, h3 {
+
+        h2, h3 {
             color: white;
             @extend .u-transition-300;
         }
+
         a {
           color: $red;
           &:hover {
               color: white;
           }
-          em {
-            color: $red;
-            &:hover {
-                color: white;
-            }
-          }
+        //   em {
+        //     color: $red;
+        //     &:hover {
+        //         color: white;
+        //     }
+        //   }
         }
     }
     .card.u-bg-white>&,
