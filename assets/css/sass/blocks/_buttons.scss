@@ -4,6 +4,8 @@ button {
 .button {
     @include display(inline-block);
     @extend .u-font-miller-bold;
+    -webkit-appearance: none;
+    background: none;
     font-size: 1rem;
     color: $dark-gray;
     padding: rem(8) rem(32);

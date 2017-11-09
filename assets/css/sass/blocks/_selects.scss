@@ -1,0 +1,20 @@
+.b-select {
+    -webkit-appearance: none;
+    border-radius: 0;
+    min-height: 38px;
+    border: 1px solid #DDDAD5;
+    color: lighten(black, 35%);
+    padding: 0 0.5rem;
+    width: 100%;
+    background-color: #F4EEE4;
+    background-image: url(../images/caret-down@2x.png);
+    background-size: 20px 14px;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.gform_wrapper select {
+    @extend .b-select;
+}
+

@@ -1,0 +1,35 @@
+.b-input {
+
+    -webkit-appearance: none;
+    border-radius: 0;
+    min-height: 38px;
+    border: 1px solid #DDDAD5;
+    color: lighten(black, 35%);
+    padding: 0 0.5rem;
+    width: 100%;
+
+    &:focus {
+        color:black;
+        outline: 0;
+        border-color: black;
+    }
+
+}
+
+.b-textarea {
+    @extend .b-input;
+    padding: 1rem;
+}
+
+.gform_wrapper {
+    input[type="text"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"] {
+        @extend .b-input;
+    }
+    textarea {
+        @extend .b-textarea;
+    }
+}
+

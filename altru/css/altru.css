@@ -1589,6 +1589,8 @@ button {
 
 .button {
   display: inline-block;
+  -webkit-appearance: none;
+  background: none;
   font-size: 1rem;
   color: #272727;
   padding: 0.5rem 2rem;

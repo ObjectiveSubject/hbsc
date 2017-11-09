@@ -1,0 +1,107 @@
+ul.gform_fields,
+ul.gfield_radio {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.gfield {
+    margin-bottom: 3rem;
+
+    .textarea.small {
+        height: 100px;
+    }
+    .textarea.medium {
+        height: 225px;
+    }
+    .textarea.large {
+        height: 350px;
+    }
+}
+
+.gfield_label {
+    color: darken(#9c9a9d, 25%);
+    padding-bottom: 0.5rem;
+}
+.gfield_description {
+    color: darken(#9c9a9d, 10%);
+    font-size: rem(16);
+    padding-bottom: 0.5rem;
+}
+
+.ginput_complex {
+
+    display: flex;
+
+    & > * {
+        flex-grow: 1;
+    }
+    .ginput_left,
+    .name_first {
+        margin-right: 1rem;
+    }
+
+    label {
+        @extend .gfield_label;
+        font-size: rem(14);
+    }
+
+    .gf_clear_complex {
+        display: none;
+    }
+    
+}
+
+// Radios
+// -----------------------------------------
+.gfield_radio {
+    li {
+        margin-bottom: 0.5rem;
+    }
+    label {
+        @extend .gfield_label;
+    }
+}
+
+// File Uploads
+// ----------------------------------------- 
+.ginput_container_fileupload {
+    .validation_message {
+        font-size: rem(14);
+        margin: 0.5em 0;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+.gform_drop_area {
+    border: 1px dashed #DDDAD5;
+    background-color: rgba(#F4EEE4, 0.3);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.gform_drop_instructions {
+    display: block;
+}
+
+.ginput_preview {
+    border: 1px solid;
+    display: inline-block;
+    padding: 0.6rem;
+}
+
+// Validation
+// ------------------------------------------
+.gform_validation_container {
+    display: none;
+}
+
+// Submit
+// ------------------------------------------
+.gform_button[type="submit"] {
+    width: 100%;
+    font-size: 1.5rem;
+}
