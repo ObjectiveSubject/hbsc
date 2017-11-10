@@ -2880,6 +2880,23 @@ ul.gfield_radio {
 .gform_validation_container {
   display: none; }
 
+.validation_error {
+  color: #e74949;
+  border: 1px solid;
+  text-align: center;
+  padding: 0.5em;
+  margin: 1em 0; }
+
+.validation_message {
+  color: #e74949;
+  font-size: 0.88rem; }
+
+.gform_confirmation_wrapper {
+  border: 1px solid;
+  text-align: center;
+  padding: 0.5em;
+  margin: 1em 0; }
+
 .gform_button[type="submit"] {
   width: 100%;
   font-size: 1.5rem; }

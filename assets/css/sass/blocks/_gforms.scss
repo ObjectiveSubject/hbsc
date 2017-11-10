@@ -98,6 +98,26 @@ ul.gfield_radio {
 .gform_validation_container {
     display: none;
 }
+.validation_error {
+    color: $red;
+    border: 1px solid;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1em 0;
+}
+.validation_message {
+    color: $red;
+    font-size: rem(14);
+}
+
+// Confirmation 
+// ------------------------------------------
+.gform_confirmation_wrapper {
+    border: 1px solid;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1em 0;
+}
 
 // Submit
 // ------------------------------------------
