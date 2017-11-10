@@ -25,7 +25,9 @@
     input[type="text"],
     input[type="number"],
     input[type="search"],
-    input[type="tel"] {
+    input[type="tel"],
+    input[type="email"],
+    input[type="url"] {
         @extend .b-input;
     }
     textarea {

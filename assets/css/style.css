@@ -967,7 +967,7 @@ html {
   text-transform: uppercase; }
 
 .u-font-miller, h4,
-.h4, body.home .preface-text, .section-title, .module-title, .card-title, .site-footer a {
+.h4, .gsection_title, body.home .preface-text, .section-title, .module-title, .card-title, .site-footer a {
   font-family: "Miller Text Rom", Georgia, serif;
   font-style: Normal;
   font-weight: Normal; }
@@ -1326,6 +1326,7 @@ h3,
 
 h4,
 .h4,
+.gsection_title,
 body.home .preface-text {
   display: block;
   font-size: 1.5rem;
@@ -1333,6 +1334,7 @@ body.home .preface-text {
   @media screen and (min-width: 768px) {
     h4,
     .h4,
+    .gsection_title,
     body.home .preface-text {
       font-size: 2rem; } }
 
@@ -1352,10 +1354,10 @@ h6,
   font-size: 0.88rem; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, body.home .preface-text, .h5, .h6 {
+.h1, .h2, .h3, .h4, .gsection_title, body.home .preface-text, .h5, .h6 {
   word-wrap: break-word; }
   [class*='u-bg-'] h1, [class*='u-bg-'] h2, [class*='u-bg-'] h3, [class*='u-bg-'] h4, [class*='u-bg-'] h5, [class*='u-bg-'] h6, [class*='u-bg-']
-  .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
+  .h1, [class*='u-bg-'] .h2, [class*='u-bg-'] .h3, [class*='u-bg-'] .h4, [class*='u-bg-'] .gsection_title, [class*='u-bg-'] body.home .preface-text, body.home [class*='u-bg-'] .preface-text, [class*='u-bg-'] .h5, [class*='u-bg-'] .h6 {
     color: #dddad5; }
   .u-bg-white h1,
   .u-bg-light-gray h1,
@@ -1378,11 +1380,13 @@ h1, h2, h3, h4, h5, h6,
   .u-bg-light-gray .h2,
   .u-bg-tan .h2, .u-bg-white .h3,
   .u-bg-light-gray .h3,
-  .u-bg-tan .h3, .u-bg-white .h4, .u-bg-white body.home .preface-text, body.home .u-bg-white .preface-text,
+  .u-bg-tan .h3, .u-bg-white .h4, .u-bg-white .gsection_title, .u-bg-white body.home .preface-text, body.home .u-bg-white .preface-text,
   .u-bg-light-gray .h4,
+  .u-bg-light-gray .gsection_title,
   .u-bg-light-gray body.home .preface-text, body.home
   .u-bg-light-gray .preface-text,
   .u-bg-tan .h4,
+  .u-bg-tan .gsection_title,
   .u-bg-tan body.home .preface-text, body.home
   .u-bg-tan .preface-text, .u-bg-white .h5,
   .u-bg-light-gray .h5,
@@ -2823,6 +2827,9 @@ body.lb-disable-scrolling {
   max-width: 40.62rem;
   margin: 0 auto; }
 
+.gsection_title {
+  text-transform: none; }
+
 ul.gform_fields,
 ul.gfield_radio {
   list-style: none !important;
@@ -2848,9 +2855,12 @@ ul.gfield_radio {
   padding-bottom: 0.5rem; }
 
 .ginput_complex {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
   .ginput_complex > * {
-    flex-grow: 1; }
+    flex-basis: calc(50% - 0.5rem); }
+  .ginput_complex .ginput_full {
+    flex-basis: 100%; }
   .ginput_complex .ginput_left,
   .ginput_complex .name_first {
     margin-right: 1rem; }
@@ -2917,7 +2927,9 @@ ul.gfield_radio {
 .b-input, .b-textarea, .gform_wrapper textarea, .gform_wrapper input[type="text"],
 .gform_wrapper input[type="number"],
 .gform_wrapper input[type="search"],
-.gform_wrapper input[type="tel"] {
+.gform_wrapper input[type="tel"],
+.gform_wrapper input[type="email"],
+.gform_wrapper input[type="url"] {
   -webkit-appearance: none;
   border-radius: 0;
   min-height: 38px;
@@ -2928,7 +2940,9 @@ ul.gfield_radio {
   .b-input:focus, .b-textarea:focus, .gform_wrapper textarea:focus, .gform_wrapper input[type="text"]:focus,
   .gform_wrapper input[type="number"]:focus,
   .gform_wrapper input[type="search"]:focus,
-  .gform_wrapper input[type="tel"]:focus {
+  .gform_wrapper input[type="tel"]:focus,
+  .gform_wrapper input[type="email"]:focus,
+  .gform_wrapper input[type="url"]:focus {
     color: black;
     outline: 0;
     border-color: black; }

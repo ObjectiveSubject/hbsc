@@ -3,6 +3,15 @@
     margin: 0 auto;
 }
 
+// Sections
+// -------------------------------- 
+.gsection_title {
+    @extend .h4;
+    text-transform: none;
+}
+
+// Field Lists
+// -------------------------------- 
 ul.gform_fields,
 ul.gfield_radio {
     list-style: none !important;
@@ -10,6 +19,8 @@ ul.gfield_radio {
     margin: 0 !important;
 }
 
+// Fields
+// -------------------------------- 
 .gfield {
     margin-bottom: 3rem;
 
@@ -24,6 +35,8 @@ ul.gfield_radio {
     }
 }
 
+// Field Labels/Descriptions
+// -------------------------------- 
 .gfield_label {
     color: darken(#9c9a9d, 25%);
     padding-bottom: 0.5rem;
@@ -34,13 +47,21 @@ ul.gfield_radio {
     padding-bottom: 0.5rem;
 }
 
+// Complex input groups
+// -------------------------------- 
 .ginput_complex {
 
     display: flex;
+    flex-wrap: wrap;
 
     & > * {
-        flex-grow: 1;
+        flex-basis: calc(50% - 0.5rem);
     }
+
+    .ginput_full {
+        flex-basis: 100%;
+    }
+
     .ginput_left,
     .name_first {
         margin-right: 1rem;
