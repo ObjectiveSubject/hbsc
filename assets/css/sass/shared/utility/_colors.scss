@@ -5,6 +5,9 @@
     	color: $hex !important;
 	}
     .u-bg-#{$color-name} {
-    	background-color: $hex!important;
+		background-color: $hex!important;
+		@if lightness( $hex ) < 50 {
+			color: white;
+		}
 	}
 }

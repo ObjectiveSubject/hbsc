@@ -34,7 +34,8 @@ html {
   color: #1d374a !important; }
 
 .u-bg-blue {
-  background-color: #1d374a !important; }
+  background-color: #1d374a !important;
+  color: white; }
 
 .u-color-red {
   color: #e74949 !important; }
@@ -58,13 +59,15 @@ html {
   color: black !important; }
 
 .u-bg-black {
-  background-color: black !important; }
+  background-color: black !important;
+  color: white; }
 
 .u-color-dark-gray {
   color: #272727 !important; }
 
 .u-bg-dark-gray, .module--past-salons .badge-positioner .badge, .module--post-list .badge-positioner .badge {
-  background-color: #272727 !important; }
+  background-color: #272727 !important;
+  color: white; }
 
 .u-color-gray {
   color: #898989 !important; }
@@ -2816,6 +2819,10 @@ body.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
+.gform_wrapper {
+  max-width: 40.62rem;
+  margin: 0 auto; }
+
 ul.gform_fields,
 ul.gfield_radio {
   list-style: none !important;
@@ -2899,7 +2906,13 @@ ul.gfield_radio {
 
 .gform_button[type="submit"] {
   width: 100%;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  color: white !important;
+  background-color: #e74949; }
+  .gform_button[type="submit"]:hover {
+    color: #e74949 !important;
+    background-color: white !important;
+    border-color: #e74949 !important; }
 
 .b-input, .b-textarea, .gform_wrapper textarea, .gform_wrapper input[type="text"],
 .gform_wrapper input[type="number"],

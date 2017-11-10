@@ -1,3 +1,8 @@
+.gform_wrapper {
+    max-width: rem(650);
+    margin: 0 auto;
+}
+
 ul.gform_fields,
 ul.gfield_radio {
     list-style: none !important;
@@ -124,4 +129,11 @@ ul.gfield_radio {
 .gform_button[type="submit"] {
     width: 100%;
     font-size: 1.5rem;
+    color: white !important;
+    background-color: $red;
+    &:hover {
+        color: $red !important;
+        background-color: white !important;
+        border-color: $red !important;
+    }
 }
