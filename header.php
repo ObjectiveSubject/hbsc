@@ -2,7 +2,27 @@
 /**
  * The template for displaying the header.
  */
+?>
 
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
+<base href="/" />
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<?php wp_head(); ?>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115005127-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-115005127-1');
+    </script>
+
+</head>
+
+<?php
 $body_class = ''; 
 if ( is_single() || is_page() ) {
     $body_class = get_post_type() . '-' . $post->post_name;
@@ -18,13 +38,6 @@ if ( $is_top_page ) {
 
 incrementViewsCount($post->ID);
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<base href="/" />
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<?php wp_head(); ?>
-</head>
 
 <body <?php body_class( $body_class ); ?>>
 
