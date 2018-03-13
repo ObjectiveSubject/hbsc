@@ -1818,9 +1818,11 @@ body.home .section__body .site-menu.menu--body .logotype {
   .site-footer a:hover {
     color: #e74949; }
 
-.site-footer input[type="text"] {
+.site-footer input[type="text"],
+.site-footer input[type="email"] {
   padding: .375rem; }
-  .site-footer input[type="text"]:focus {
+  .site-footer input[type="text"]:focus,
+  .site-footer input[type="email"]:focus {
     outline: 0; }
 
 .footer-row {

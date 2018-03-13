@@ -1,6 +1,6 @@
 /*! Harriet Beecher Stowe Center - v1.0.0
  * http://github.com/ObjectiveSubject/
- * Copyright (c) 2017; * Licensed GPLv2+ */
+ * Copyright (c) 2018; * Licensed GPLv2+ */
 (function(window, $) {
     var CalendarEvents = function(options) {
         this.options = options;

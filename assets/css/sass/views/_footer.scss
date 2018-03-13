@@ -6,7 +6,8 @@
             color: $red;
         }
     }
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
         padding: .375rem;
         &:focus {
             outline: 0;
